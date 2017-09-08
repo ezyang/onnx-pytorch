@@ -28,6 +28,7 @@ import model_defs.dcgan as dcgan
 import model_defs.word_language_model as word_language_model
 
 import onnx
+import onnx_caffe2.backend as c2
 
 skip = unittest.skip
 
