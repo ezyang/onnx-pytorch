@@ -1,0 +1,39 @@
+graph(%1 : Float(64, 3, 4, 4)
+      %2 : Float(128, 64, 4, 4)
+      %3 : Float(128)
+      %4 : Float(128)
+      %5 : Float(128)
+      %6 : Float(128)
+      %7 : Float(256, 128, 4, 4)
+      %8 : Float(256)
+      %9 : Float(256)
+      %10 : Float(256)
+      %11 : Float(256)
+      %12 : Float(512, 256, 4, 4)
+      %13 : Float(512)
+      %14 : Float(512)
+      %15 : Float(512)
+      %16 : Float(512)
+      %17 : Float(1, 512, 4, 4)
+      %18 : Float(64, 3, 64, 64)) {
+  %20 : UNKNOWN_TYPE = Undefined(), uses = [%19.i2];
+  %21 : Float(64, 64, 32, 32), %22 : Handle = CppOp[ConvForward](%18, %1, %20), uses = [[%23.i0], []];
+  %24 : Float(64, 64, 32, 32), %25 : Handle = ^LeakyReLU(0.2, True)(%21), uses = [[%26.i0], []];
+  %27 : UNKNOWN_TYPE = Undefined(), uses = [%26.i2];
+  %28 : Float(64, 128, 16, 16), %29 : Handle = CppOp[ConvForward](%24, %2, %27), uses = [[%30.i0], []];
+  %31 : Float(64, 128, 16, 16), %32 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%28, %3, %4), uses = [[%33.i0], []];
+  %34 : Float(64, 128, 16, 16), %35 : Handle = ^LeakyReLU(0.2, True)(%31), uses = [[%36.i0], []];
+  %37 : UNKNOWN_TYPE = Undefined(), uses = [%36.i2];
+  %38 : Float(64, 256, 8, 8), %39 : Handle = CppOp[ConvForward](%34, %7, %37), uses = [[%40.i0], []];
+  %41 : Float(64, 256, 8, 8), %42 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%38, %8, %9), uses = [[%43.i0], []];
+  %44 : Float(64, 256, 8, 8), %45 : Handle = ^LeakyReLU(0.2, True)(%41), uses = [[%46.i0], []];
+  %47 : UNKNOWN_TYPE = Undefined(), uses = [%46.i2];
+  %48 : Float(64, 512, 4, 4), %49 : Handle = CppOp[ConvForward](%44, %12, %47), uses = [[%50.i0], []];
+  %51 : Float(64, 512, 4, 4), %52 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%48, %13, %14), uses = [[%53.i0], []];
+  %54 : Float(64, 512, 4, 4), %55 : Handle = ^LeakyReLU(0.2, True)(%51), uses = [[%56.i0], []];
+  %57 : UNKNOWN_TYPE = Undefined(), uses = [%56.i2];
+  %58 : Float(64, 1, 1, 1), %59 : Handle = CppOp[ConvForward](%54, %17, %57), uses = [[%60.i0], []];
+  %61 : Float(64, 1, 1, 1), %62 : Handle = ^Sigmoid()(%58), uses = [[%63.i0], []];
+  %64 : Float(64, 1), %65 : Handle = ^View((-1, 1))(%61), uses = [[%0.i0], []];
+  return (%64);
+}

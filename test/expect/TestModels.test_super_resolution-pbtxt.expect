@@ -1,0 +1,253 @@
+node {
+  input: "9"
+  input: "1"
+  output: "11"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 5
+    ints: 5
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 2
+    ints: 2
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "11"
+  input: "2"
+  output: "12"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "12"
+  output: "13"
+  op_type: "Relu"
+}
+node {
+  input: "13"
+  input: "3"
+  output: "15"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "15"
+  input: "4"
+  output: "16"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "16"
+  output: "17"
+  op_type: "Relu"
+}
+node {
+  input: "17"
+  input: "5"
+  output: "19"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "19"
+  input: "6"
+  output: "20"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "20"
+  output: "21"
+  op_type: "Relu"
+}
+node {
+  input: "21"
+  input: "7"
+  output: "23"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "23"
+  input: "8"
+  output: "24"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "24"
+  output: "25"
+  op_type: "Reshape"
+  attribute {
+    name: "shape"
+    ints: 2
+    ints: 1
+    ints: 3
+    ints: 3
+    ints: 224
+    ints: 224
+  }
+}
+node {
+  input: "25"
+  output: "26"
+  op_type: "Transpose"
+  attribute {
+    name: "perm"
+    ints: 0
+    ints: 1
+    ints: 4
+    ints: 2
+    ints: 5
+    ints: 3
+  }
+}
+node {
+  input: "26"
+  output: "27"
+  op_type: "Reshape"
+  attribute {
+    name: "shape"
+    ints: 2
+    ints: 1
+    ints: 672
+    ints: 672
+  }
+}
+name: "torch-jit-export"
+input: "1"
+input: "2"
+input: "3"
+input: "4"
+input: "5"
+input: "6"
+input: "7"
+input: "8"
+input: "9"
+output: "27"
+ir_version: 1
+producer_version: 20000
+producer_tag: "pytorch"

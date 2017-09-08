@@ -1,0 +1,21 @@
+graph(%1 : Float(64, 1, 5, 5)
+      %2 : Float(64)
+      %3 : Float(64, 64, 3, 3)
+      %4 : Float(64)
+      %5 : Float(32, 64, 3, 3)
+      %6 : Float(32)
+      %7 : Float(9, 32, 3, 3)
+      %8 : Float(9)
+      %9 : Float(2, 1, 224, 224)) {
+  %11 : Float(2, 64, 224, 224), %12 : Handle = CppOp[ConvForward](%9, %1, %2), uses = [[%13.i0], []];
+  %14 : Float(2, 64, 224, 224), %15 : Handle = ^Threshold(0, 0, False)(%11), uses = [[%16.i0], []];
+  %17 : Float(2, 64, 224, 224), %18 : Handle = CppOp[ConvForward](%14, %3, %4), uses = [[%19.i0], []];
+  %20 : Float(2, 64, 224, 224), %21 : Handle = ^Threshold(0, 0, False)(%17), uses = [[%22.i0], []];
+  %23 : Float(2, 32, 224, 224), %24 : Handle = CppOp[ConvForward](%20, %5, %6), uses = [[%25.i0], []];
+  %26 : Float(2, 32, 224, 224), %27 : Handle = ^Threshold(0, 0, False)(%23), uses = [[%28.i0], []];
+  %29 : Float(2, 9, 224, 224), %30 : Handle = CppOp[ConvForward](%26, %7, %8), uses = [[%31.i0], []];
+  %32 : Float(2, 1, 3, 3, 224, 224), %33 : Handle = ^View((2L, 1L, 3, 3, 224L, 224L))(%29), uses = [[%34.i0], []];
+  %35 : Float(2, 1!, 224!, 3!, 224!, 3!), %36 : Handle = ^Permute((0, 1, 4, 2, 5, 3))(%32), uses = [[%37.i0], []];
+  %38 : Float(2, 1, 672, 672), %39 : Handle = ^View((2L, 1L, 672L, 672L))(%35), uses = [[%0.i0], []];
+  return (%38);
+}

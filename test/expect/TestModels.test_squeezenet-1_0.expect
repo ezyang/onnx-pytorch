@@ -1,0 +1,121 @@
+graph(%1 : Float(64, 3, 3, 3)
+      %2 : Float(64)
+      %3 : Float(16, 64, 1, 1)
+      %4 : Float(16)
+      %5 : Float(64, 16, 1, 1)
+      %6 : Float(64)
+      %7 : Float(64, 16, 3, 3)
+      %8 : Float(64)
+      %9 : Float(16, 128, 1, 1)
+      %10 : Float(16)
+      %11 : Float(64, 16, 1, 1)
+      %12 : Float(64)
+      %13 : Float(64, 16, 3, 3)
+      %14 : Float(64)
+      %15 : Float(32, 128, 1, 1)
+      %16 : Float(32)
+      %17 : Float(128, 32, 1, 1)
+      %18 : Float(128)
+      %19 : Float(128, 32, 3, 3)
+      %20 : Float(128)
+      %21 : Float(32, 256, 1, 1)
+      %22 : Float(32)
+      %23 : Float(128, 32, 1, 1)
+      %24 : Float(128)
+      %25 : Float(128, 32, 3, 3)
+      %26 : Float(128)
+      %27 : Float(48, 256, 1, 1)
+      %28 : Float(48)
+      %29 : Float(192, 48, 1, 1)
+      %30 : Float(192)
+      %31 : Float(192, 48, 3, 3)
+      %32 : Float(192)
+      %33 : Float(48, 384, 1, 1)
+      %34 : Float(48)
+      %35 : Float(192, 48, 1, 1)
+      %36 : Float(192)
+      %37 : Float(192, 48, 3, 3)
+      %38 : Float(192)
+      %39 : Float(64, 384, 1, 1)
+      %40 : Float(64)
+      %41 : Float(256, 64, 1, 1)
+      %42 : Float(256)
+      %43 : Float(256, 64, 3, 3)
+      %44 : Float(256)
+      %45 : Float(64, 512, 1, 1)
+      %46 : Float(64)
+      %47 : Float(256, 64, 1, 1)
+      %48 : Float(256)
+      %49 : Float(256, 64, 3, 3)
+      %50 : Float(256)
+      %51 : Float(1000, 512, 1, 1)
+      %52 : Float(1000)
+      %53 : Float(2, 3, 224, 224)) {
+  %55 : Float(2, 64, 111, 111), %56 : Handle = CppOp[ConvForward](%53, %1, %2), uses = [[%57.i0], []];
+  %58 : Float(2, 64, 111, 111), %59 : Handle = ^Threshold(0, 0, True)(%55), uses = [[%60.i0], []];
+  %61 : Float(2, 64, 55, 55), %62 : Long(2, 64, 55, 55), %63 : Handle = ^MaxPool2d(3, 2, 0, 1, False)(%58), uses = [[%64.i0], [], []];
+  %65 : Float(2, 16, 55, 55), %66 : Handle = CppOp[ConvForward](%61, %3, %4), uses = [[%67.i0], []];
+  %68 : Float(2, 16, 55, 55), %69 : Handle = ^Threshold(0, 0, True)(%65), uses = [[%70.i0, %76.i0], []];
+  %71 : Float(2, 64, 55, 55), %72 : Handle = CppOp[ConvForward](%68, %5, %6), uses = [[%73.i0], []];
+  %74 : Float(2, 64, 55, 55), %75 : Handle = ^Threshold(0, 0, True)(%71), uses = [[%82.i0], []];
+  %77 : Float(2, 64, 55, 55), %78 : Handle = CppOp[ConvForward](%68, %7, %8), uses = [[%79.i0], []];
+  %80 : Float(2, 64, 55, 55), %81 : Handle = ^Threshold(0, 0, True)(%77), uses = [[%82.i1], []];
+  %83 : Float(2, 128, 55, 55), %84 : Handle = ^Concat(1)(%74, %80), uses = [[%85.i0], []];
+  %86 : Float(2, 16, 55, 55), %87 : Handle = CppOp[ConvForward](%83, %9, %10), uses = [[%88.i0], []];
+  %89 : Float(2, 16, 55, 55), %90 : Handle = ^Threshold(0, 0, True)(%86), uses = [[%91.i0, %97.i0], []];
+  %92 : Float(2, 64, 55, 55), %93 : Handle = CppOp[ConvForward](%89, %11, %12), uses = [[%94.i0], []];
+  %95 : Float(2, 64, 55, 55), %96 : Handle = ^Threshold(0, 0, True)(%92), uses = [[%103.i0], []];
+  %98 : Float(2, 64, 55, 55), %99 : Handle = CppOp[ConvForward](%89, %13, %14), uses = [[%100.i0], []];
+  %101 : Float(2, 64, 55, 55), %102 : Handle = ^Threshold(0, 0, True)(%98), uses = [[%103.i1], []];
+  %104 : Float(2, 128, 55, 55), %105 : Handle = ^Concat(1)(%95, %101), uses = [[%106.i0], []];
+  %107 : Float(2, 128, 27, 27), %108 : Long(2, 128, 27, 27), %109 : Handle = ^MaxPool2d(3, 2, 0, 1, False)(%104), uses = [[%110.i0], [], []];
+  %111 : Float(2, 32, 27, 27), %112 : Handle = CppOp[ConvForward](%107, %15, %16), uses = [[%113.i0], []];
+  %114 : Float(2, 32, 27, 27), %115 : Handle = ^Threshold(0, 0, True)(%111), uses = [[%116.i0, %122.i0], []];
+  %117 : Float(2, 128, 27, 27), %118 : Handle = CppOp[ConvForward](%114, %17, %18), uses = [[%119.i0], []];
+  %120 : Float(2, 128, 27, 27), %121 : Handle = ^Threshold(0, 0, True)(%117), uses = [[%128.i0], []];
+  %123 : Float(2, 128, 27, 27), %124 : Handle = CppOp[ConvForward](%114, %19, %20), uses = [[%125.i0], []];
+  %126 : Float(2, 128, 27, 27), %127 : Handle = ^Threshold(0, 0, True)(%123), uses = [[%128.i1], []];
+  %129 : Float(2, 256, 27, 27), %130 : Handle = ^Concat(1)(%120, %126), uses = [[%131.i0], []];
+  %132 : Float(2, 32, 27, 27), %133 : Handle = CppOp[ConvForward](%129, %21, %22), uses = [[%134.i0], []];
+  %135 : Float(2, 32, 27, 27), %136 : Handle = ^Threshold(0, 0, True)(%132), uses = [[%137.i0, %143.i0], []];
+  %138 : Float(2, 128, 27, 27), %139 : Handle = CppOp[ConvForward](%135, %23, %24), uses = [[%140.i0], []];
+  %141 : Float(2, 128, 27, 27), %142 : Handle = ^Threshold(0, 0, True)(%138), uses = [[%149.i0], []];
+  %144 : Float(2, 128, 27, 27), %145 : Handle = CppOp[ConvForward](%135, %25, %26), uses = [[%146.i0], []];
+  %147 : Float(2, 128, 27, 27), %148 : Handle = ^Threshold(0, 0, True)(%144), uses = [[%149.i1], []];
+  %150 : Float(2, 256, 27, 27), %151 : Handle = ^Concat(1)(%141, %147), uses = [[%152.i0], []];
+  %153 : Float(2, 256, 13, 13), %154 : Long(2, 256, 13, 13), %155 : Handle = ^MaxPool2d(3, 2, 0, 1, False)(%150), uses = [[%156.i0], [], []];
+  %157 : Float(2, 48, 13, 13), %158 : Handle = CppOp[ConvForward](%153, %27, %28), uses = [[%159.i0], []];
+  %160 : Float(2, 48, 13, 13), %161 : Handle = ^Threshold(0, 0, True)(%157), uses = [[%162.i0, %168.i0], []];
+  %163 : Float(2, 192, 13, 13), %164 : Handle = CppOp[ConvForward](%160, %29, %30), uses = [[%165.i0], []];
+  %166 : Float(2, 192, 13, 13), %167 : Handle = ^Threshold(0, 0, True)(%163), uses = [[%174.i0], []];
+  %169 : Float(2, 192, 13, 13), %170 : Handle = CppOp[ConvForward](%160, %31, %32), uses = [[%171.i0], []];
+  %172 : Float(2, 192, 13, 13), %173 : Handle = ^Threshold(0, 0, True)(%169), uses = [[%174.i1], []];
+  %175 : Float(2, 384, 13, 13), %176 : Handle = ^Concat(1)(%166, %172), uses = [[%177.i0], []];
+  %178 : Float(2, 48, 13, 13), %179 : Handle = CppOp[ConvForward](%175, %33, %34), uses = [[%180.i0], []];
+  %181 : Float(2, 48, 13, 13), %182 : Handle = ^Threshold(0, 0, True)(%178), uses = [[%183.i0, %189.i0], []];
+  %184 : Float(2, 192, 13, 13), %185 : Handle = CppOp[ConvForward](%181, %35, %36), uses = [[%186.i0], []];
+  %187 : Float(2, 192, 13, 13), %188 : Handle = ^Threshold(0, 0, True)(%184), uses = [[%195.i0], []];
+  %190 : Float(2, 192, 13, 13), %191 : Handle = CppOp[ConvForward](%181, %37, %38), uses = [[%192.i0], []];
+  %193 : Float(2, 192, 13, 13), %194 : Handle = ^Threshold(0, 0, True)(%190), uses = [[%195.i1], []];
+  %196 : Float(2, 384, 13, 13), %197 : Handle = ^Concat(1)(%187, %193), uses = [[%198.i0], []];
+  %199 : Float(2, 64, 13, 13), %200 : Handle = CppOp[ConvForward](%196, %39, %40), uses = [[%201.i0], []];
+  %202 : Float(2, 64, 13, 13), %203 : Handle = ^Threshold(0, 0, True)(%199), uses = [[%204.i0, %210.i0], []];
+  %205 : Float(2, 256, 13, 13), %206 : Handle = CppOp[ConvForward](%202, %41, %42), uses = [[%207.i0], []];
+  %208 : Float(2, 256, 13, 13), %209 : Handle = ^Threshold(0, 0, True)(%205), uses = [[%216.i0], []];
+  %211 : Float(2, 256, 13, 13), %212 : Handle = CppOp[ConvForward](%202, %43, %44), uses = [[%213.i0], []];
+  %214 : Float(2, 256, 13, 13), %215 : Handle = ^Threshold(0, 0, True)(%211), uses = [[%216.i1], []];
+  %217 : Float(2, 512, 13, 13), %218 : Handle = ^Concat(1)(%208, %214), uses = [[%219.i0], []];
+  %220 : Float(2, 64, 13, 13), %221 : Handle = CppOp[ConvForward](%217, %45, %46), uses = [[%222.i0], []];
+  %223 : Float(2, 64, 13, 13), %224 : Handle = ^Threshold(0, 0, True)(%220), uses = [[%225.i0, %231.i0], []];
+  %226 : Float(2, 256, 13, 13), %227 : Handle = CppOp[ConvForward](%223, %47, %48), uses = [[%228.i0], []];
+  %229 : Float(2, 256, 13, 13), %230 : Handle = ^Threshold(0, 0, True)(%226), uses = [[%237.i0], []];
+  %232 : Float(2, 256, 13, 13), %233 : Handle = CppOp[ConvForward](%223, %49, %50), uses = [[%234.i0], []];
+  %235 : Float(2, 256, 13, 13), %236 : Handle = ^Threshold(0, 0, True)(%232), uses = [[%237.i1], []];
+  %238 : Float(2, 512, 13, 13), %239 : Handle = ^Concat(1)(%229, %235), uses = [[%240.i0], []];
+  %241 : Float(2, 512, 13, 13), %242 : Handle = ^Dropout(0.5, True, False)(%238), uses = [[%243.i0], []];
+  %244 : Float(2, 1000, 13, 13), %245 : Handle = CppOp[ConvForward](%241, %51, %52), uses = [[%246.i0], []];
+  %247 : Float(2, 1000, 13, 13), %248 : Handle = ^Threshold(0, 0, True)(%244), uses = [[%249.i0], []];
+  %250 : Float(2, 1000, 1, 1), %251 : Handle = ^AvgPool2d(13, 13, 0, False, True)(%247), uses = [[%252.i0], []];
+  %253 : Float(2, 1000), %254 : Handle = ^View((2, 1000))(%250), uses = [[%0.i0], []];
+  return (%253);
+}

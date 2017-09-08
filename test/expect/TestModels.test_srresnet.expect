@@ -1,0 +1,188 @@
+graph(%1 : Float(64, 3, 9, 9)
+      %2 : Float(64)
+      %3 : Float(64)
+      %4 : Float(64, 64, 3, 3)
+      %5 : Float(64)
+      %6 : Float(64)
+      %7 : Float(64)
+      %8 : Float(64)
+      %9 : Float(64)
+      %10 : Float(64, 64, 3, 3)
+      %11 : Float(64)
+      %12 : Float(64)
+      %13 : Float(64)
+      %14 : Float(64)
+      %15 : Float(64, 64, 3, 3)
+      %16 : Float(64)
+      %17 : Float(64)
+      %18 : Float(64)
+      %19 : Float(64)
+      %20 : Float(64)
+      %21 : Float(64, 64, 3, 3)
+      %22 : Float(64)
+      %23 : Float(64)
+      %24 : Float(64)
+      %25 : Float(64)
+      %26 : Float(64, 64, 3, 3)
+      %27 : Float(64)
+      %28 : Float(64)
+      %29 : Float(64)
+      %30 : Float(64)
+      %31 : Float(64)
+      %32 : Float(64, 64, 3, 3)
+      %33 : Float(64)
+      %34 : Float(64)
+      %35 : Float(64)
+      %36 : Float(64)
+      %37 : Float(64, 64, 3, 3)
+      %38 : Float(64)
+      %39 : Float(64)
+      %40 : Float(64)
+      %41 : Float(64)
+      %42 : Float(64)
+      %43 : Float(64, 64, 3, 3)
+      %44 : Float(64)
+      %45 : Float(64)
+      %46 : Float(64)
+      %47 : Float(64)
+      %48 : Float(64, 64, 3, 3)
+      %49 : Float(64)
+      %50 : Float(64)
+      %51 : Float(64)
+      %52 : Float(64)
+      %53 : Float(64)
+      %54 : Float(64, 64, 3, 3)
+      %55 : Float(64)
+      %56 : Float(64)
+      %57 : Float(64)
+      %58 : Float(64)
+      %59 : Float(64, 64, 3, 3)
+      %60 : Float(64)
+      %61 : Float(64)
+      %62 : Float(64)
+      %63 : Float(64)
+      %64 : Float(64)
+      %65 : Float(64, 64, 3, 3)
+      %66 : Float(64)
+      %67 : Float(64)
+      %68 : Float(64)
+      %69 : Float(64)
+      %70 : Float(64, 64, 3, 3)
+      %71 : Float(64)
+      %72 : Float(64)
+      %73 : Float(64)
+      %74 : Float(64)
+      %75 : Float(64)
+      %76 : Float(64, 64, 3, 3)
+      %77 : Float(64)
+      %78 : Float(64)
+      %79 : Float(64)
+      %80 : Float(64)
+      %81 : Float(64, 64, 3, 3)
+      %82 : Float(64)
+      %83 : Float(64)
+      %84 : Float(64)
+      %85 : Float(64)
+      %86 : Float(64)
+      %87 : Float(64, 64, 3, 3)
+      %88 : Float(64)
+      %89 : Float(64)
+      %90 : Float(64)
+      %91 : Float(64)
+      %92 : Float(64, 64, 3, 3)
+      %93 : Float(64)
+      %94 : Float(64)
+      %95 : Float(64)
+      %96 : Float(64)
+      %97 : Float(256, 64, 3, 3)
+      %98 : Float(256)
+      %99 : Float(64)
+      %100 : Float(256, 64, 3, 3)
+      %101 : Float(256)
+      %102 : Float(64)
+      %103 : Float(3, 64, 9, 9)
+      %104 : Float(3)
+      %105 : Float(1, 3, 224, 224)) {
+  %107 : Float(1, 64, 224, 224), %108 : Handle = CppOp[ConvForward](%105, %1, %2), uses = [[%109.i0], []];
+  %110 : Float(1, 64, 224, 224), %111 : Handle = ^PReLU()(%107, %3), uses = [[%112.i0, %129.i0, %279.i1], []];
+  %113 : UNKNOWN_TYPE = Undefined(), uses = [%112.i2];
+  %114 : Float(1, 64, 224, 224), %115 : Handle = CppOp[ConvForward](%110, %4, %113), uses = [[%116.i0], []];
+  %117 : Float(1, 64, 224, 224), %118 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%114, %5, %6), uses = [[%119.i0], []];
+  %120 : Float(1, 64, 224, 224), %121 : Handle = ^PReLU()(%117, %9), uses = [[%122.i0], []];
+  %123 : UNKNOWN_TYPE = Undefined(), uses = [%122.i2];
+  %124 : Float(1, 64, 224, 224), %125 : Handle = CppOp[ConvForward](%120, %10, %123), uses = [[%126.i0], []];
+  %127 : Float(1, 64, 224, 224), %128 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%124, %11, %12), uses = [[%129.i1], []];
+  %130 : Float(1, 64, 224, 224), %131 : Handle = ^Add(False)(%110, %127), uses = [[%132.i0, %149.i0], []];
+  %133 : UNKNOWN_TYPE = Undefined(), uses = [%132.i2];
+  %134 : Float(1, 64, 224, 224), %135 : Handle = CppOp[ConvForward](%130, %15, %133), uses = [[%136.i0], []];
+  %137 : Float(1, 64, 224, 224), %138 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%134, %16, %17), uses = [[%139.i0], []];
+  %140 : Float(1, 64, 224, 224), %141 : Handle = ^PReLU()(%137, %20), uses = [[%142.i0], []];
+  %143 : UNKNOWN_TYPE = Undefined(), uses = [%142.i2];
+  %144 : Float(1, 64, 224, 224), %145 : Handle = CppOp[ConvForward](%140, %21, %143), uses = [[%146.i0], []];
+  %147 : Float(1, 64, 224, 224), %148 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%144, %22, %23), uses = [[%149.i1], []];
+  %150 : Float(1, 64, 224, 224), %151 : Handle = ^Add(False)(%130, %147), uses = [[%152.i0, %169.i0], []];
+  %153 : UNKNOWN_TYPE = Undefined(), uses = [%152.i2];
+  %154 : Float(1, 64, 224, 224), %155 : Handle = CppOp[ConvForward](%150, %26, %153), uses = [[%156.i0], []];
+  %157 : Float(1, 64, 224, 224), %158 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%154, %27, %28), uses = [[%159.i0], []];
+  %160 : Float(1, 64, 224, 224), %161 : Handle = ^PReLU()(%157, %31), uses = [[%162.i0], []];
+  %163 : UNKNOWN_TYPE = Undefined(), uses = [%162.i2];
+  %164 : Float(1, 64, 224, 224), %165 : Handle = CppOp[ConvForward](%160, %32, %163), uses = [[%166.i0], []];
+  %167 : Float(1, 64, 224, 224), %168 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%164, %33, %34), uses = [[%169.i1], []];
+  %170 : Float(1, 64, 224, 224), %171 : Handle = ^Add(False)(%150, %167), uses = [[%172.i0, %189.i0], []];
+  %173 : UNKNOWN_TYPE = Undefined(), uses = [%172.i2];
+  %174 : Float(1, 64, 224, 224), %175 : Handle = CppOp[ConvForward](%170, %37, %173), uses = [[%176.i0], []];
+  %177 : Float(1, 64, 224, 224), %178 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%174, %38, %39), uses = [[%179.i0], []];
+  %180 : Float(1, 64, 224, 224), %181 : Handle = ^PReLU()(%177, %42), uses = [[%182.i0], []];
+  %183 : UNKNOWN_TYPE = Undefined(), uses = [%182.i2];
+  %184 : Float(1, 64, 224, 224), %185 : Handle = CppOp[ConvForward](%180, %43, %183), uses = [[%186.i0], []];
+  %187 : Float(1, 64, 224, 224), %188 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%184, %44, %45), uses = [[%189.i1], []];
+  %190 : Float(1, 64, 224, 224), %191 : Handle = ^Add(False)(%170, %187), uses = [[%192.i0, %209.i0], []];
+  %193 : UNKNOWN_TYPE = Undefined(), uses = [%192.i2];
+  %194 : Float(1, 64, 224, 224), %195 : Handle = CppOp[ConvForward](%190, %48, %193), uses = [[%196.i0], []];
+  %197 : Float(1, 64, 224, 224), %198 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%194, %49, %50), uses = [[%199.i0], []];
+  %200 : Float(1, 64, 224, 224), %201 : Handle = ^PReLU()(%197, %53), uses = [[%202.i0], []];
+  %203 : UNKNOWN_TYPE = Undefined(), uses = [%202.i2];
+  %204 : Float(1, 64, 224, 224), %205 : Handle = CppOp[ConvForward](%200, %54, %203), uses = [[%206.i0], []];
+  %207 : Float(1, 64, 224, 224), %208 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%204, %55, %56), uses = [[%209.i1], []];
+  %210 : Float(1, 64, 224, 224), %211 : Handle = ^Add(False)(%190, %207), uses = [[%212.i0, %229.i0], []];
+  %213 : UNKNOWN_TYPE = Undefined(), uses = [%212.i2];
+  %214 : Float(1, 64, 224, 224), %215 : Handle = CppOp[ConvForward](%210, %59, %213), uses = [[%216.i0], []];
+  %217 : Float(1, 64, 224, 224), %218 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%214, %60, %61), uses = [[%219.i0], []];
+  %220 : Float(1, 64, 224, 224), %221 : Handle = ^PReLU()(%217, %64), uses = [[%222.i0], []];
+  %223 : UNKNOWN_TYPE = Undefined(), uses = [%222.i2];
+  %224 : Float(1, 64, 224, 224), %225 : Handle = CppOp[ConvForward](%220, %65, %223), uses = [[%226.i0], []];
+  %227 : Float(1, 64, 224, 224), %228 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%224, %66, %67), uses = [[%229.i1], []];
+  %230 : Float(1, 64, 224, 224), %231 : Handle = ^Add(False)(%210, %227), uses = [[%232.i0, %249.i0], []];
+  %233 : UNKNOWN_TYPE = Undefined(), uses = [%232.i2];
+  %234 : Float(1, 64, 224, 224), %235 : Handle = CppOp[ConvForward](%230, %70, %233), uses = [[%236.i0], []];
+  %237 : Float(1, 64, 224, 224), %238 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%234, %71, %72), uses = [[%239.i0], []];
+  %240 : Float(1, 64, 224, 224), %241 : Handle = ^PReLU()(%237, %75), uses = [[%242.i0], []];
+  %243 : UNKNOWN_TYPE = Undefined(), uses = [%242.i2];
+  %244 : Float(1, 64, 224, 224), %245 : Handle = CppOp[ConvForward](%240, %76, %243), uses = [[%246.i0], []];
+  %247 : Float(1, 64, 224, 224), %248 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%244, %77, %78), uses = [[%249.i1], []];
+  %250 : Float(1, 64, 224, 224), %251 : Handle = ^Add(False)(%230, %247), uses = [[%252.i0, %269.i0], []];
+  %253 : UNKNOWN_TYPE = Undefined(), uses = [%252.i2];
+  %254 : Float(1, 64, 224, 224), %255 : Handle = CppOp[ConvForward](%250, %81, %253), uses = [[%256.i0], []];
+  %257 : Float(1, 64, 224, 224), %258 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%254, %82, %83), uses = [[%259.i0], []];
+  %260 : Float(1, 64, 224, 224), %261 : Handle = ^PReLU()(%257, %86), uses = [[%262.i0], []];
+  %263 : UNKNOWN_TYPE = Undefined(), uses = [%262.i2];
+  %264 : Float(1, 64, 224, 224), %265 : Handle = CppOp[ConvForward](%260, %87, %263), uses = [[%266.i0], []];
+  %267 : Float(1, 64, 224, 224), %268 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%264, %88, %89), uses = [[%269.i1], []];
+  %270 : Float(1, 64, 224, 224), %271 : Handle = ^Add(False)(%250, %267), uses = [[%272.i0], []];
+  %273 : UNKNOWN_TYPE = Undefined(), uses = [%272.i2];
+  %274 : Float(1, 64, 224, 224), %275 : Handle = CppOp[ConvForward](%270, %92, %273), uses = [[%276.i0], []];
+  %277 : Float(1, 64, 224, 224), %278 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%274, %93, %94), uses = [[%279.i0], []];
+  %280 : Float(1, 64, 224, 224), %281 : Handle = ^Add(False)(%277, %110), uses = [[%282.i0], []];
+  %283 : Float(1, 256, 224, 224), %284 : Handle = CppOp[ConvForward](%280, %97, %98), uses = [[%285.i0], []];
+  %286 : Float(1, 64, 2, 2, 224, 224), %287 : Handle = ^View((1L, 64L, 2, 2, 224L, 224L))(%283), uses = [[%288.i0], []];
+  %289 : Float(1, 64!, 224!, 2!, 224!, 2!), %290 : Handle = ^Permute((0, 1, 4, 2, 5, 3))(%286), uses = [[%291.i0], []];
+  %292 : Float(1, 64, 448, 448), %293 : Handle = ^View((1L, 64L, 448L, 448L))(%289), uses = [[%294.i0], []];
+  %295 : Float(1, 64, 448, 448), %296 : Handle = ^PReLU()(%292, %99), uses = [[%297.i0], []];
+  %298 : Float(1, 256, 448, 448), %299 : Handle = CppOp[ConvForward](%295, %100, %101), uses = [[%300.i0], []];
+  %301 : Float(1, 64, 2, 2, 448, 448), %302 : Handle = ^View((1L, 64L, 2, 2, 448L, 448L))(%298), uses = [[%303.i0], []];
+  %304 : Float(1, 64!, 448!, 2!, 448!, 2!), %305 : Handle = ^Permute((0, 1, 4, 2, 5, 3))(%301), uses = [[%306.i0], []];
+  %307 : Float(1, 64, 896, 896), %308 : Handle = ^View((1L, 64L, 896L, 896L))(%304), uses = [[%309.i0], []];
+  %310 : Float(1, 64, 896, 896), %311 : Handle = ^PReLU()(%307, %102), uses = [[%312.i0], []];
+  %313 : Float(1, 3, 896, 896), %314 : Handle = CppOp[ConvForward](%310, %103, %104), uses = [[%0.i0], []];
+  return (%313);
+}

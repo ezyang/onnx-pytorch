@@ -1,0 +1,5 @@
+graph(%1 : Float(3)
+      %2 : Float(2, 3, 224, 224)) {
+  %4 : Float(2, 3, 224, 224), %5 : Handle = ^PReLU()(%2, %1), uses = [[%0.i0], []];
+  return (%4);
+}

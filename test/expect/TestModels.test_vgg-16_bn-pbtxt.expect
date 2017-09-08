@@ -1,0 +1,1431 @@
+node {
+  input: "85"
+  input: "1"
+  output: "87"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "87"
+  input: "2"
+  output: "88"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "88"
+  input: "3"
+  input: "4"
+  input: "5"
+  input: "6"
+  output: "90"
+  output: "91"
+  output: "92"
+  output: "batch_norm_dead_output_93"
+  output: "batch_norm_dead_output_94"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "90"
+  output: "95"
+  op_type: "Relu"
+}
+node {
+  input: "95"
+  input: "7"
+  output: "97"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "97"
+  input: "8"
+  output: "98"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "98"
+  input: "9"
+  input: "10"
+  input: "11"
+  input: "12"
+  output: "100"
+  output: "101"
+  output: "102"
+  output: "batch_norm_dead_output_103"
+  output: "batch_norm_dead_output_104"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "100"
+  output: "105"
+  op_type: "Relu"
+}
+node {
+  input: "105"
+  output: "106"
+  op_type: "MaxPool"
+  attribute {
+    name: "kernel_shape"
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 2
+    ints: 2
+  }
+}
+node {
+  input: "106"
+  input: "13"
+  output: "108"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "108"
+  input: "14"
+  output: "109"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "109"
+  input: "15"
+  input: "16"
+  input: "17"
+  input: "18"
+  output: "111"
+  output: "112"
+  output: "113"
+  output: "batch_norm_dead_output_114"
+  output: "batch_norm_dead_output_115"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "111"
+  output: "116"
+  op_type: "Relu"
+}
+node {
+  input: "116"
+  input: "19"
+  output: "118"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "118"
+  input: "20"
+  output: "119"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "119"
+  input: "21"
+  input: "22"
+  input: "23"
+  input: "24"
+  output: "121"
+  output: "122"
+  output: "123"
+  output: "batch_norm_dead_output_124"
+  output: "batch_norm_dead_output_125"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "121"
+  output: "126"
+  op_type: "Relu"
+}
+node {
+  input: "126"
+  output: "127"
+  op_type: "MaxPool"
+  attribute {
+    name: "kernel_shape"
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 2
+    ints: 2
+  }
+}
+node {
+  input: "127"
+  input: "25"
+  output: "129"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "129"
+  input: "26"
+  output: "130"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "130"
+  input: "27"
+  input: "28"
+  input: "29"
+  input: "30"
+  output: "132"
+  output: "133"
+  output: "134"
+  output: "batch_norm_dead_output_135"
+  output: "batch_norm_dead_output_136"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "132"
+  output: "137"
+  op_type: "Relu"
+}
+node {
+  input: "137"
+  input: "31"
+  output: "139"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "139"
+  input: "32"
+  output: "140"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "140"
+  input: "33"
+  input: "34"
+  input: "35"
+  input: "36"
+  output: "142"
+  output: "143"
+  output: "144"
+  output: "batch_norm_dead_output_145"
+  output: "batch_norm_dead_output_146"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "142"
+  output: "147"
+  op_type: "Relu"
+}
+node {
+  input: "147"
+  input: "37"
+  output: "149"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "149"
+  input: "38"
+  output: "150"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "150"
+  input: "39"
+  input: "40"
+  input: "41"
+  input: "42"
+  output: "152"
+  output: "153"
+  output: "154"
+  output: "batch_norm_dead_output_155"
+  output: "batch_norm_dead_output_156"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "152"
+  output: "157"
+  op_type: "Relu"
+}
+node {
+  input: "157"
+  output: "158"
+  op_type: "MaxPool"
+  attribute {
+    name: "kernel_shape"
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 2
+    ints: 2
+  }
+}
+node {
+  input: "158"
+  input: "43"
+  output: "160"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "160"
+  input: "44"
+  output: "161"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "161"
+  input: "45"
+  input: "46"
+  input: "47"
+  input: "48"
+  output: "163"
+  output: "164"
+  output: "165"
+  output: "batch_norm_dead_output_166"
+  output: "batch_norm_dead_output_167"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "163"
+  output: "168"
+  op_type: "Relu"
+}
+node {
+  input: "168"
+  input: "49"
+  output: "170"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "170"
+  input: "50"
+  output: "171"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "171"
+  input: "51"
+  input: "52"
+  input: "53"
+  input: "54"
+  output: "173"
+  output: "174"
+  output: "175"
+  output: "batch_norm_dead_output_176"
+  output: "batch_norm_dead_output_177"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "173"
+  output: "178"
+  op_type: "Relu"
+}
+node {
+  input: "178"
+  input: "55"
+  output: "180"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "180"
+  input: "56"
+  output: "181"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "181"
+  input: "57"
+  input: "58"
+  input: "59"
+  input: "60"
+  output: "183"
+  output: "184"
+  output: "185"
+  output: "batch_norm_dead_output_186"
+  output: "batch_norm_dead_output_187"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "183"
+  output: "188"
+  op_type: "Relu"
+}
+node {
+  input: "188"
+  output: "189"
+  op_type: "MaxPool"
+  attribute {
+    name: "kernel_shape"
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 2
+    ints: 2
+  }
+}
+node {
+  input: "189"
+  input: "61"
+  output: "191"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "191"
+  input: "62"
+  output: "192"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "192"
+  input: "63"
+  input: "64"
+  input: "65"
+  input: "66"
+  output: "194"
+  output: "195"
+  output: "196"
+  output: "batch_norm_dead_output_197"
+  output: "batch_norm_dead_output_198"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "194"
+  output: "199"
+  op_type: "Relu"
+}
+node {
+  input: "199"
+  input: "67"
+  output: "201"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "201"
+  input: "68"
+  output: "202"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "202"
+  input: "69"
+  input: "70"
+  input: "71"
+  input: "72"
+  output: "204"
+  output: "205"
+  output: "206"
+  output: "batch_norm_dead_output_207"
+  output: "batch_norm_dead_output_208"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "204"
+  output: "209"
+  op_type: "Relu"
+}
+node {
+  input: "209"
+  input: "73"
+  output: "211"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "211"
+  input: "74"
+  output: "212"
+  op_type: "Add"
+  attribute {
+    name: "broadcast"
+    i: 1
+  }
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "212"
+  input: "75"
+  input: "76"
+  input: "77"
+  input: "78"
+  output: "214"
+  output: "215"
+  output: "216"
+  output: "batch_norm_dead_output_217"
+  output: "batch_norm_dead_output_218"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+  attribute {
+    name: "epsilon"
+    f: 9.99999974737875e-06
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "214"
+  output: "219"
+  op_type: "Relu"
+}
+node {
+  input: "219"
+  output: "220"
+  op_type: "MaxPool"
+  attribute {
+    name: "kernel_shape"
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 2
+    ints: 2
+  }
+}
+node {
+  input: "220"
+  output: "221"
+  op_type: "Reshape"
+  attribute {
+    name: "shape"
+    ints: 2
+    ints: -1
+  }
+}
+node {
+  input: "79"
+  output: "222"
+  op_type: "Transpose"
+  attribute {
+    name: "perm"
+    ints: 1
+    ints: 0
+  }
+}
+node {
+  input: "222"
+  output: "223"
+  op_type: "Transpose"
+}
+node {
+  input: "221"
+  input: "223"
+  input: "80"
+  output: "224"
+  op_type: "FC"
+}
+node {
+  input: "224"
+  output: "225"
+  op_type: "Relu"
+}
+node {
+  input: "225"
+  output: "227"
+  output: "228"
+  op_type: "Dropout"
+  attribute {
+    name: "ratio"
+    f: 0.5
+  }
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+}
+node {
+  input: "81"
+  output: "229"
+  op_type: "Transpose"
+  attribute {
+    name: "perm"
+    ints: 1
+    ints: 0
+  }
+}
+node {
+  input: "229"
+  output: "230"
+  op_type: "Transpose"
+}
+node {
+  input: "227"
+  input: "230"
+  input: "82"
+  output: "231"
+  op_type: "FC"
+}
+node {
+  input: "231"
+  output: "232"
+  op_type: "Relu"
+}
+node {
+  input: "232"
+  output: "234"
+  output: "235"
+  op_type: "Dropout"
+  attribute {
+    name: "ratio"
+    f: 0.5
+  }
+  attribute {
+    name: "is_test"
+    i: 0
+  }
+}
+node {
+  input: "83"
+  output: "236"
+  op_type: "Transpose"
+  attribute {
+    name: "perm"
+    ints: 1
+    ints: 0
+  }
+}
+node {
+  input: "236"
+  output: "237"
+  op_type: "Transpose"
+}
+node {
+  input: "234"
+  input: "237"
+  input: "84"
+  output: "238"
+  op_type: "FC"
+}
+name: "torch-jit-export"
+input: "1"
+input: "2"
+input: "3"
+input: "4"
+input: "5"
+input: "6"
+input: "7"
+input: "8"
+input: "9"
+input: "10"
+input: "11"
+input: "12"
+input: "13"
+input: "14"
+input: "15"
+input: "16"
+input: "17"
+input: "18"
+input: "19"
+input: "20"
+input: "21"
+input: "22"
+input: "23"
+input: "24"
+input: "25"
+input: "26"
+input: "27"
+input: "28"
+input: "29"
+input: "30"
+input: "31"
+input: "32"
+input: "33"
+input: "34"
+input: "35"
+input: "36"
+input: "37"
+input: "38"
+input: "39"
+input: "40"
+input: "41"
+input: "42"
+input: "43"
+input: "44"
+input: "45"
+input: "46"
+input: "47"
+input: "48"
+input: "49"
+input: "50"
+input: "51"
+input: "52"
+input: "53"
+input: "54"
+input: "55"
+input: "56"
+input: "57"
+input: "58"
+input: "59"
+input: "60"
+input: "61"
+input: "62"
+input: "63"
+input: "64"
+input: "65"
+input: "66"
+input: "67"
+input: "68"
+input: "69"
+input: "70"
+input: "71"
+input: "72"
+input: "73"
+input: "74"
+input: "75"
+input: "76"
+input: "77"
+input: "78"
+input: "79"
+input: "80"
+input: "81"
+input: "82"
+input: "83"
+input: "84"
+input: "85"
+output: "238"
+ir_version: 1
+producer_version: 20000
+producer_tag: "pytorch"

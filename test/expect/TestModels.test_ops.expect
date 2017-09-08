@@ -1,0 +1,12 @@
+graph(%1 : Float(3)
+      %2 : Float(3)
+      %3 : Float(3)
+      %4 : Float(3)
+      %5 : Float(2, 3, 224, 224)) {
+  %7 : Float(2, 3, 224, 224), %8 : Handle = ^LeakyReLU(0.02, False)(%5), uses = [[%9.i0], []];
+  %10 : Float(2, 3, 224, 224), %11 : Handle = CppOp[N5torch8autograd16BatchNormForwardE](%7, %1, %2), uses = [[%12.i0], []];
+  %13 : Float(2, 3, 112, 112), %14 : Handle = ^AvgPool2d(3, 2, 1, False, True)(%10), uses = [[%15.i0], []];
+  %16 : Float(75264, 1), %17 : Handle = ^View((-1, 1))(%13), uses = [[%18.i0], []];
+  %19 : Float(75264), %20 : Handle = ^Squeeze(1)(%16), uses = [[], []];
+  return (%5);
+}
