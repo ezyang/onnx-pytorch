@@ -35,7 +35,7 @@ fi
 
 BUILDER=${BUILDER_TYPE:-LOCAL}
 BUILDER_OS=${BUILDER_OS:-LINUX}
-OS="$BUILD_OS"
+OS="$BUILDER_OS"
 
 echo "Username: $USER"
 echo "Homedir: $HOME"
