@@ -2,10 +2,10 @@
 
 set -ex
 
-env | grep GIT
-env | grep ghprb
-env | grep jenkins_python_version
-env | grep BUILDER
+env | grep GIT || true
+env | grep ghprb || true
+env | grep jenkins_python_version || true
+env | grep BUILDER || true
 
 if [ -z "$github_token" ]; then
     echo "could not find env variable github_token, exiting"
