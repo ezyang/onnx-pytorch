@@ -27,6 +27,8 @@ from model_defs.srresnet import SRResNet
 import model_defs.dcgan as dcgan
 import model_defs.word_language_model as word_language_model
 
+import onnx
+
 skip = unittest.skip
 
 
