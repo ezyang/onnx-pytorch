@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 env | grep GIT
 env | grep ghprb
 env | grep jenkins_python_version
@@ -104,7 +106,7 @@ fi
 export PATH="$HOME/miniconda/bin:$PATH"
 
 if [ ! -d "$WORKSPACE-env" ]; then
-    conda create -p "$WORKSPACE-env" python=$PYTHON_VERSION -y
+    conda create -p "$WORKSPACE-env" python=$jenkins_python_version -y
 fi
 source activate "$WORKSPACE-env"
 export CONDA_ROOT_PREFIX="$WORKSPACE-env"
