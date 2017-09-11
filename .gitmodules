@@ -1,13 +1,1 @@
 # Keep this file synced with the .gitmodules of our subtrees.
-[submodule "pytorch/torch/lib/gloo"]
-	path = pytorch/torch/lib/gloo
-	url = https://github.com/facebookincubator/gloo
-[submodule "pytorch/torch/lib/pybind11"]
-	path = pytorch/torch/lib/pybind11
-	url = https://github.com/pybind/pybind11
-[submodule "pytorch/torch/lib/nanopb"]
-	path = pytorch/torch/lib/nanopb
-	url = https://github.com/nanopb/nanopb.git
-[submodule "onnx/third_party/pybind11"]
-	path = onnx/third_party/pybind11
-	url = https://github.com/pybind/pybind11.git
