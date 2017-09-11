@@ -1,1 +1,10 @@
 # Keep this file synced with the .gitmodules of our subtrees.
+[submodule "pytorch"]
+	path = pytorch
+	url = https://github.com/ezyang/pytorch.git
+[submodule "onnx"]
+	path = onnx
+	url = https://github.com/onnx/onnx.git
+[submodule "onnx-caffe2"]
+	path = onnx-caffe2
+	url = https://github.com/onnx/onnx-caffe2.git
