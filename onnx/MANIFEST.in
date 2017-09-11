@@ -1,2 +1,0 @@
-recursive-include onnx *.h *.cc *.proto
-recursive-include third_party *
