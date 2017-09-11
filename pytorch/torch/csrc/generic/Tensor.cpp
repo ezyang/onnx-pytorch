@@ -823,8 +823,8 @@ static bool THPTensor_(_convertToTensorIndexers)(
         if (!indexer) {
           PyErr_Format(PyExc_IndexError,
               "When performing advanced indexing the indexing objects must be LongTensors or "
-              "convertible to LongTensors. The indexing object at position %d is of type %s "
-              "and cannot be converted", i, THPUtils_typename(obj));
+              "convertible to LongTensors. The indexing object at position %ld is of type %s "
+              "and cannot be converted", (long)i, THPUtils_typename(obj));
 
           // Clean up Indexers
           for (auto& idx : indexers) {
