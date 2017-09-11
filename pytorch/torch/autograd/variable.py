@@ -6,6 +6,13 @@ import torch.sparse as sparse
 import torch.utils.hooks as hooks
 import warnings
 import weakref
+import itertools
+
+
+if hasattr(itertools, 'imap'):
+    imap = itertools.imap
+else:
+    imap = map
 
 
 class Variable(_C._VariableBase):
@@ -868,7 +875,7 @@ class Variable(_C._VariableBase):
         return len(self.data)
 
     def __iter__(self):
-        return iter(map(lambda i: self[i], range(self.size(0))))
+        return iter(imap(lambda i: self[i], range(self.size(0))))
 
     def __mod__(self, other):
         return self.remainder(other)
