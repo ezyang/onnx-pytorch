@@ -62,8 +62,6 @@ node {
     name: "pads"
     ints: 0
     ints: 0
-    ints: 0
-    ints: 0
   }
   attribute {
     name: "dilations"
@@ -417,8 +415,6 @@ node {
     name: "pads"
     ints: 0
     ints: 0
-    ints: 0
-    ints: 0
   }
   attribute {
     name: "dilations"
@@ -770,8 +766,6 @@ node {
   }
   attribute {
     name: "pads"
-    ints: 0
-    ints: 0
     ints: 0
     ints: 0
   }

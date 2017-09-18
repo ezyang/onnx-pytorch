@@ -81,8 +81,6 @@ node {
     name: "pads"
     ints: 1
     ints: 1
-    ints: 1
-    ints: 1
   }
   attribute {
     name: "dilations"
