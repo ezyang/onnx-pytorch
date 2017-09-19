@@ -8,6 +8,8 @@ import numpy as np
 import sys
 import unittest
 
+import onnx_caffe2
+import onnx_pytorch
 import torch.onnx
 from torch import nn
 from torch.autograd import Variable
@@ -151,24 +153,12 @@ class TestCaffe2Backend(unittest.TestCase):
         if input is None:
             input = Variable(torch.randn(batch_size, 3, 224, 224),
                              requires_grad=True)
-        # Convert the model to ONNX IR and run model in pytorch
+        # GPU-ize the model, if requested
         if use_gpu:
             model, input = self.convert_cuda(model, input)
 
-        onnxir, torch_out = do_export(model, input, export_params=self.embed_params)
-
-        if isinstance(input, tuple):
-            flatten_input = torch.jit.flatten(input)
-            input = tuple([t.data.cpu().numpy() for t in flatten_input])
-        else:
-            input = input.data.cpu().numpy()
-        # Pass the ONNX IR and input to load and run in caffe2
-        caffe2_out = import_model(onnxir, input, use_gpu=use_gpu)
-
-        # Verify Pytorch and Caffe2 produce almost same outputs upto certain
-        # decimal places
-        np.testing.assert_almost_equal(torch_out.data.cpu().numpy(),
-                                       caffe2_out, decimal=3)
+        # Verify the model runs the same in Caffe2
+        onnx_pytorch.verify.verify(model, input, onnx_caffe2.backend)
 
     def run_model_test(self, model, train, batch_size, state_dict=None,
                        input=None, use_gpu=True):
