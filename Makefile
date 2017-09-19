@@ -1,5 +1,7 @@
-.PHONY: all onnx onnx-caffe2 pytorch
-all: onnx onnx-caffe2 pytorch
+.PHONY: all onnx onnx-caffe2 pytorch pytorch-onnx
+all: onnx onnx-caffe2 pytorch pytorch-onnx
+pytorch-onnx:
+	python setup.py develop
 onnx:
 	cd onnx && python setup.py develop
 onnx-caffe2:
