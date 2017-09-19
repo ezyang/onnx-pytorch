@@ -50,14 +50,10 @@ node {
   input: "4"
   input: "5"
   output: "27"
-  output: "28"
-  output: "29"
-  output: "batch_norm_dead_output_30"
-  output: "batch_norm_dead_output_31"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -78,11 +74,11 @@ node {
 }
 node {
   input: "27"
-  output: "32"
+  output: "28"
   op_type: "Relu"
 }
 node {
-  output: "35"
+  output: "31"
   op_type: "Constant"
   attribute {
     name: "value"
@@ -94,10 +90,10 @@ node {
   }
 }
 node {
-  input: "32"
+  input: "28"
   input: "6"
-  input: "35"
-  output: "34"
+  input: "31"
+  output: "30"
   op_type: "Caffe2ConvTranspose"
   attribute {
     name: "kernel_shape"
@@ -127,20 +123,16 @@ node {
   }
 }
 node {
-  input: "34"
+  input: "30"
   input: "7"
   input: "8"
   input: "9"
   input: "10"
-  output: "37"
-  output: "38"
-  output: "39"
-  output: "batch_norm_dead_output_40"
-  output: "batch_norm_dead_output_41"
+  output: "33"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -160,12 +152,12 @@ node {
   }
 }
 node {
-  input: "37"
-  output: "42"
+  input: "33"
+  output: "34"
   op_type: "Relu"
 }
 node {
-  output: "45"
+  output: "37"
   op_type: "Constant"
   attribute {
     name: "value"
@@ -177,10 +169,10 @@ node {
   }
 }
 node {
-  input: "42"
+  input: "34"
   input: "11"
-  input: "45"
-  output: "44"
+  input: "37"
+  output: "36"
   op_type: "Caffe2ConvTranspose"
   attribute {
     name: "kernel_shape"
@@ -210,20 +202,16 @@ node {
   }
 }
 node {
-  input: "44"
+  input: "36"
   input: "12"
   input: "13"
   input: "14"
   input: "15"
-  output: "47"
-  output: "48"
-  output: "49"
-  output: "batch_norm_dead_output_50"
-  output: "batch_norm_dead_output_51"
+  output: "39"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -243,12 +231,12 @@ node {
   }
 }
 node {
-  input: "47"
-  output: "52"
+  input: "39"
+  output: "40"
   op_type: "Relu"
 }
 node {
-  output: "55"
+  output: "43"
   op_type: "Constant"
   attribute {
     name: "value"
@@ -260,10 +248,10 @@ node {
   }
 }
 node {
-  input: "52"
+  input: "40"
   input: "16"
-  input: "55"
-  output: "54"
+  input: "43"
+  output: "42"
   op_type: "Caffe2ConvTranspose"
   attribute {
     name: "kernel_shape"
@@ -293,20 +281,16 @@ node {
   }
 }
 node {
-  input: "54"
+  input: "42"
   input: "17"
   input: "18"
   input: "19"
   input: "20"
-  output: "57"
-  output: "58"
-  output: "59"
-  output: "batch_norm_dead_output_60"
-  output: "batch_norm_dead_output_61"
+  output: "45"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -326,12 +310,12 @@ node {
   }
 }
 node {
-  input: "57"
-  output: "62"
+  input: "45"
+  output: "46"
   op_type: "Relu"
 }
 node {
-  output: "65"
+  output: "49"
   op_type: "Constant"
   attribute {
     name: "value"
@@ -343,10 +327,10 @@ node {
   }
 }
 node {
-  input: "62"
+  input: "46"
   input: "21"
-  input: "65"
-  output: "64"
+  input: "49"
+  output: "48"
   op_type: "Caffe2ConvTranspose"
   attribute {
     name: "kernel_shape"
@@ -376,8 +360,8 @@ node {
   }
 }
 node {
-  input: "64"
-  output: "66"
+  input: "48"
+  output: "50"
   op_type: "Tanh"
 }
 name: "torch-jit-export"
@@ -403,7 +387,7 @@ input: "19"
 input: "20"
 input: "21"
 input: "22"
-output: "66"
+output: "50"
 ir_version: 1
 producer_version: 20000
 producer_tag: "pytorch"

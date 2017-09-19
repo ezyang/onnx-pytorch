@@ -37,14 +37,10 @@ node {
   input: "4"
   input: "5"
   output: "489"
-  output: "490"
-  output: "491"
-  output: "batch_norm_dead_output_492"
-  output: "batch_norm_dead_output_493"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -65,13 +61,13 @@ node {
 }
 node {
   input: "489"
-  output: "494"
+  output: "490"
   op_type: "Relu"
 }
 node {
-  input: "494"
+  input: "490"
   input: "6"
-  output: "496"
+  output: "492"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -101,20 +97,16 @@ node {
   }
 }
 node {
-  input: "496"
+  input: "492"
   input: "7"
   input: "8"
   input: "9"
   input: "10"
-  output: "498"
-  output: "499"
-  output: "500"
-  output: "batch_norm_dead_output_501"
-  output: "batch_norm_dead_output_502"
+  output: "494"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -134,14 +126,14 @@ node {
   }
 }
 node {
-  input: "498"
-  output: "503"
+  input: "494"
+  output: "495"
   op_type: "Relu"
 }
 node {
-  input: "503"
+  input: "495"
   input: "11"
-  output: "505"
+  output: "497"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -171,20 +163,16 @@ node {
   }
 }
 node {
-  input: "505"
+  input: "497"
   input: "12"
   input: "13"
   input: "14"
   input: "15"
-  output: "507"
-  output: "508"
-  output: "509"
-  output: "batch_norm_dead_output_510"
-  output: "batch_norm_dead_output_511"
+  output: "499"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -204,13 +192,13 @@ node {
   }
 }
 node {
-  input: "507"
-  output: "512"
+  input: "499"
+  output: "500"
   op_type: "Relu"
 }
 node {
-  input: "512"
-  output: "513"
+  input: "500"
+  output: "501"
   op_type: "MaxPool"
   attribute {
     name: "kernel_shape"
@@ -234,9 +222,9 @@ node {
   }
 }
 node {
-  input: "513"
+  input: "501"
   input: "16"
-  output: "515"
+  output: "503"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -266,20 +254,16 @@ node {
   }
 }
 node {
-  input: "515"
+  input: "503"
   input: "17"
   input: "18"
   input: "19"
   input: "20"
-  output: "517"
-  output: "518"
-  output: "519"
-  output: "batch_norm_dead_output_520"
-  output: "batch_norm_dead_output_521"
+  output: "505"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -299,14 +283,14 @@ node {
   }
 }
 node {
-  input: "517"
-  output: "522"
+  input: "505"
+  output: "506"
   op_type: "Relu"
 }
 node {
-  input: "522"
+  input: "506"
   input: "21"
-  output: "524"
+  output: "508"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -336,20 +320,239 @@ node {
   }
 }
 node {
-  input: "524"
+  input: "508"
   input: "22"
   input: "23"
   input: "24"
   input: "25"
-  output: "526"
-  output: "527"
-  output: "528"
-  output: "batch_norm_dead_output_529"
-  output: "batch_norm_dead_output_530"
+  output: "510"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "510"
+  output: "511"
+  op_type: "Relu"
+}
+node {
+  input: "511"
+  output: "512"
+  op_type: "MaxPool"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 2
+    ints: 2
+  }
+}
+node {
+  input: "512"
+  input: "26"
+  output: "514"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "514"
+  input: "27"
+  input: "28"
+  input: "29"
+  input: "30"
+  output: "516"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "516"
+  output: "517"
+  op_type: "Relu"
+}
+node {
+  input: "512"
+  input: "31"
+  output: "519"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "519"
+  input: "32"
+  input: "33"
+  input: "34"
+  input: "35"
+  output: "521"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "521"
+  output: "522"
+  op_type: "Relu"
+}
+node {
+  input: "522"
+  input: "36"
+  output: "524"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 5
+    ints: 5
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 2
+    ints: 2
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "524"
+  input: "37"
+  input: "38"
+  input: "39"
+  input: "40"
+  output: "526"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -370,38 +573,13 @@ node {
 }
 node {
   input: "526"
-  output: "531"
+  output: "527"
   op_type: "Relu"
 }
 node {
-  input: "531"
-  output: "532"
-  op_type: "MaxPool"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 2
-    ints: 2
-  }
-}
-node {
-  input: "532"
-  input: "26"
-  output: "534"
+  input: "512"
+  input: "41"
+  output: "529"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -431,20 +609,82 @@ node {
   }
 }
 node {
-  input: "534"
-  input: "27"
-  input: "28"
-  input: "29"
-  input: "30"
-  output: "536"
-  output: "537"
-  output: "538"
-  output: "batch_norm_dead_output_539"
-  output: "batch_norm_dead_output_540"
+  input: "529"
+  input: "42"
+  input: "43"
+  input: "44"
+  input: "45"
+  output: "531"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "531"
+  output: "532"
+  op_type: "Relu"
+}
+node {
+  input: "532"
+  input: "46"
+  output: "534"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "534"
+  input: "47"
+  input: "48"
+  input: "49"
+  input: "50"
+  output: "536"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -465,18 +705,18 @@ node {
 }
 node {
   input: "536"
-  output: "541"
+  output: "537"
   op_type: "Relu"
 }
 node {
-  input: "532"
-  input: "31"
-  output: "543"
+  input: "537"
+  input: "51"
+  output: "539"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
-    ints: 1
-    ints: 1
+    ints: 3
+    ints: 3
   }
   attribute {
     name: "strides"
@@ -485,10 +725,10 @@ node {
   }
   attribute {
     name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
   }
   attribute {
     name: "dilations"
@@ -498,55 +738,71 @@ node {
   attribute {
     name: "group"
     i: 1
+  }
+}
+node {
+  input: "539"
+  input: "52"
+  input: "53"
+  input: "54"
+  input: "55"
+  output: "541"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "541"
+  output: "542"
+  op_type: "Relu"
+}
+node {
+  input: "512"
+  output: "543"
+  op_type: "AveragePool"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
   }
 }
 node {
   input: "543"
-  input: "32"
-  input: "33"
-  input: "34"
-  input: "35"
+  input: "56"
   output: "545"
-  output: "546"
-  output: "547"
-  output: "batch_norm_dead_output_548"
-  output: "batch_norm_dead_output_549"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "545"
-  output: "550"
-  op_type: "Relu"
-}
-node {
-  input: "550"
-  input: "36"
-  output: "552"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
-    ints: 5
-    ints: 5
+    ints: 1
+    ints: 1
   }
   attribute {
     name: "strides"
@@ -555,10 +811,10 @@ node {
   }
   attribute {
     name: "pads"
-    ints: 2
-    ints: 2
-    ints: 2
-    ints: 2
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
   }
   attribute {
     name: "dilations"
@@ -571,20 +827,16 @@ node {
   }
 }
 node {
-  input: "552"
-  input: "37"
-  input: "38"
-  input: "39"
-  input: "40"
-  output: "554"
-  output: "555"
-  output: "556"
-  output: "batch_norm_dead_output_557"
-  output: "batch_norm_dead_output_558"
+  input: "545"
+  input: "57"
+  input: "58"
+  input: "59"
+  input: "60"
+  output: "547"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -604,14 +856,27 @@ node {
   }
 }
 node {
-  input: "554"
-  output: "559"
+  input: "547"
+  output: "548"
   op_type: "Relu"
 }
 node {
-  input: "532"
-  input: "41"
-  output: "561"
+  input: "517"
+  input: "527"
+  input: "542"
+  input: "548"
+  output: "992"
+  output: "993"
+  op_type: "Concat"
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "992"
+  input: "61"
+  output: "551"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -629,6 +894,138 @@ node {
     ints: 0
     ints: 0
     ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "551"
+  input: "62"
+  input: "63"
+  input: "64"
+  input: "65"
+  output: "553"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "553"
+  output: "554"
+  op_type: "Relu"
+}
+node {
+  input: "992"
+  input: "66"
+  output: "556"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "556"
+  input: "67"
+  input: "68"
+  input: "69"
+  input: "70"
+  output: "558"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "558"
+  output: "559"
+  op_type: "Relu"
+}
+node {
+  input: "559"
+  input: "71"
+  output: "561"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 5
+    ints: 5
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 2
+    ints: 2
+    ints: 2
+    ints: 2
   }
   attribute {
     name: "dilations"
@@ -642,19 +1039,15 @@ node {
 }
 node {
   input: "561"
-  input: "42"
-  input: "43"
-  input: "44"
-  input: "45"
+  input: "72"
+  input: "73"
+  input: "74"
+  input: "75"
   output: "563"
-  output: "564"
-  output: "565"
-  output: "batch_norm_dead_output_566"
-  output: "batch_norm_dead_output_567"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -675,13 +1068,79 @@ node {
 }
 node {
   input: "563"
-  output: "568"
+  output: "564"
   op_type: "Relu"
+}
+node {
+  input: "992"
+  input: "76"
+  output: "566"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "566"
+  input: "77"
+  input: "78"
+  input: "79"
+  input: "80"
+  output: "568"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
 }
 node {
   input: "568"
-  input: "46"
-  output: "570"
+  output: "569"
+  op_type: "Relu"
+}
+node {
+  input: "569"
+  input: "81"
+  output: "571"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -711,20 +1170,16 @@ node {
   }
 }
 node {
-  input: "570"
-  input: "47"
-  input: "48"
-  input: "49"
-  input: "50"
-  output: "572"
+  input: "571"
+  input: "82"
+  input: "83"
+  input: "84"
+  input: "85"
   output: "573"
-  output: "574"
-  output: "batch_norm_dead_output_575"
-  output: "batch_norm_dead_output_576"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -744,14 +1199,14 @@ node {
   }
 }
 node {
-  input: "572"
-  output: "577"
+  input: "573"
+  output: "574"
   op_type: "Relu"
 }
 node {
-  input: "577"
-  input: "51"
-  output: "579"
+  input: "574"
+  input: "86"
+  output: "576"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -781,20 +1236,16 @@ node {
   }
 }
 node {
-  input: "579"
-  input: "52"
-  input: "53"
-  input: "54"
-  input: "55"
-  output: "581"
-  output: "582"
-  output: "583"
-  output: "batch_norm_dead_output_584"
-  output: "batch_norm_dead_output_585"
+  input: "576"
+  input: "87"
+  input: "88"
+  input: "89"
+  input: "90"
+  output: "578"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -814,13 +1265,13 @@ node {
   }
 }
 node {
-  input: "581"
-  output: "586"
+  input: "578"
+  output: "579"
   op_type: "Relu"
 }
 node {
-  input: "532"
-  output: "587"
+  input: "992"
+  output: "580"
   op_type: "AveragePool"
   attribute {
     name: "kernel_shape"
@@ -836,14 +1287,12 @@ node {
     name: "pads"
     ints: 1
     ints: 1
-    ints: 1
-    ints: 1
   }
 }
 node {
-  input: "587"
-  input: "56"
-  output: "589"
+  input: "580"
+  input: "91"
+  output: "582"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -873,20 +1322,16 @@ node {
   }
 }
 node {
-  input: "589"
-  input: "57"
-  input: "58"
-  input: "59"
-  input: "60"
-  output: "591"
-  output: "592"
-  output: "593"
-  output: "batch_norm_dead_output_594"
-  output: "batch_norm_dead_output_595"
+  input: "582"
+  input: "92"
+  input: "93"
+  input: "94"
+  input: "95"
+  output: "584"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -906,17 +1351,17 @@ node {
   }
 }
 node {
-  input: "591"
-  output: "596"
+  input: "584"
+  output: "585"
   op_type: "Relu"
 }
 node {
-  input: "541"
-  input: "559"
-  input: "586"
-  input: "596"
-  output: "598"
-  output: "599"
+  input: "554"
+  input: "564"
+  input: "579"
+  input: "585"
+  output: "994"
+  output: "995"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -924,9 +1369,9 @@ node {
   }
 }
 node {
-  input: "598"
-  input: "61"
-  output: "601"
+  input: "994"
+  input: "96"
+  output: "588"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -956,20 +1401,16 @@ node {
   }
 }
 node {
-  input: "601"
-  input: "62"
-  input: "63"
-  input: "64"
-  input: "65"
-  output: "603"
-  output: "604"
-  output: "605"
-  output: "batch_norm_dead_output_606"
-  output: "batch_norm_dead_output_607"
+  input: "588"
+  input: "97"
+  input: "98"
+  input: "99"
+  input: "100"
+  output: "590"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -986,60 +1427,188 @@ node {
     ints: 0
     ints: 1
     ints: 1
+  }
+}
+node {
+  input: "590"
+  output: "591"
+  op_type: "Relu"
+}
+node {
+  input: "994"
+  input: "101"
+  output: "593"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "593"
+  input: "102"
+  input: "103"
+  input: "104"
+  input: "105"
+  output: "595"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "595"
+  output: "596"
+  op_type: "Relu"
+}
+node {
+  input: "596"
+  input: "106"
+  output: "598"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 5
+    ints: 5
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 2
+    ints: 2
+    ints: 2
+    ints: 2
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "598"
+  input: "107"
+  input: "108"
+  input: "109"
+  input: "110"
+  output: "600"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "600"
+  output: "601"
+  op_type: "Relu"
+}
+node {
+  input: "994"
+  input: "111"
+  output: "603"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
   }
 }
 node {
   input: "603"
-  output: "608"
-  op_type: "Relu"
-}
-node {
-  input: "598"
-  input: "66"
-  output: "610"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "610"
-  input: "67"
-  input: "68"
-  input: "69"
-  input: "70"
-  output: "612"
-  output: "613"
-  output: "614"
-  output: "batch_norm_dead_output_615"
-  output: "batch_norm_dead_output_616"
+  input: "112"
+  input: "113"
+  input: "114"
+  input: "115"
+  output: "605"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -1059,19 +1628,19 @@ node {
   }
 }
 node {
-  input: "612"
-  output: "617"
+  input: "605"
+  output: "606"
   op_type: "Relu"
 }
 node {
-  input: "617"
-  input: "71"
-  output: "619"
+  input: "606"
+  input: "116"
+  output: "608"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
-    ints: 5
-    ints: 5
+    ints: 3
+    ints: 3
   }
   attribute {
     name: "strides"
@@ -1080,10 +1649,162 @@ node {
   }
   attribute {
     name: "pads"
-    ints: 2
-    ints: 2
-    ints: 2
-    ints: 2
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "608"
+  input: "117"
+  input: "118"
+  input: "119"
+  input: "120"
+  output: "610"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "610"
+  output: "611"
+  op_type: "Relu"
+}
+node {
+  input: "611"
+  input: "121"
+  output: "613"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "613"
+  input: "122"
+  input: "123"
+  input: "124"
+  input: "125"
+  output: "615"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "615"
+  output: "616"
+  op_type: "Relu"
+}
+node {
+  input: "994"
+  output: "617"
+  op_type: "AveragePool"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "617"
+  input: "126"
+  output: "619"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
   }
   attribute {
     name: "dilations"
@@ -1097,19 +1818,15 @@ node {
 }
 node {
   input: "619"
-  input: "72"
-  input: "73"
-  input: "74"
-  input: "75"
+  input: "127"
+  input: "128"
+  input: "129"
+  input: "130"
   output: "621"
-  output: "622"
-  output: "623"
-  output: "batch_norm_dead_output_624"
-  output: "batch_norm_dead_output_625"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -1130,318 +1847,16 @@ node {
 }
 node {
   input: "621"
-  output: "626"
+  output: "622"
   op_type: "Relu"
 }
 node {
-  input: "598"
-  input: "76"
-  output: "628"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "628"
-  input: "77"
-  input: "78"
-  input: "79"
-  input: "80"
-  output: "630"
-  output: "631"
-  output: "632"
-  output: "batch_norm_dead_output_633"
-  output: "batch_norm_dead_output_634"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "630"
-  output: "635"
-  op_type: "Relu"
-}
-node {
-  input: "635"
-  input: "81"
-  output: "637"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "637"
-  input: "82"
-  input: "83"
-  input: "84"
-  input: "85"
-  output: "639"
-  output: "640"
-  output: "641"
-  output: "batch_norm_dead_output_642"
-  output: "batch_norm_dead_output_643"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "639"
-  output: "644"
-  op_type: "Relu"
-}
-node {
-  input: "644"
-  input: "86"
-  output: "646"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "646"
-  input: "87"
-  input: "88"
-  input: "89"
-  input: "90"
-  output: "648"
-  output: "649"
-  output: "650"
-  output: "batch_norm_dead_output_651"
-  output: "batch_norm_dead_output_652"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "648"
-  output: "653"
-  op_type: "Relu"
-}
-node {
-  input: "598"
-  output: "654"
-  op_type: "AveragePool"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "654"
-  input: "91"
-  output: "656"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "656"
-  input: "92"
-  input: "93"
-  input: "94"
-  input: "95"
-  output: "658"
-  output: "659"
-  output: "660"
-  output: "batch_norm_dead_output_661"
-  output: "batch_norm_dead_output_662"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "658"
-  output: "663"
-  op_type: "Relu"
-}
-node {
-  input: "608"
-  input: "626"
-  input: "653"
-  input: "663"
-  output: "665"
-  output: "666"
+  input: "591"
+  input: "601"
+  input: "616"
+  input: "622"
+  output: "996"
+  output: "997"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -1449,534 +1864,9 @@ node {
   }
 }
 node {
-  input: "665"
-  input: "96"
-  output: "668"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "668"
-  input: "97"
-  input: "98"
-  input: "99"
-  input: "100"
-  output: "670"
-  output: "671"
-  output: "672"
-  output: "batch_norm_dead_output_673"
-  output: "batch_norm_dead_output_674"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "670"
-  output: "675"
-  op_type: "Relu"
-}
-node {
-  input: "665"
-  input: "101"
-  output: "677"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "677"
-  input: "102"
-  input: "103"
-  input: "104"
-  input: "105"
-  output: "679"
-  output: "680"
-  output: "681"
-  output: "batch_norm_dead_output_682"
-  output: "batch_norm_dead_output_683"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "679"
-  output: "684"
-  op_type: "Relu"
-}
-node {
-  input: "684"
-  input: "106"
-  output: "686"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 5
-    ints: 5
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 2
-    ints: 2
-    ints: 2
-    ints: 2
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "686"
-  input: "107"
-  input: "108"
-  input: "109"
-  input: "110"
-  output: "688"
-  output: "689"
-  output: "690"
-  output: "batch_norm_dead_output_691"
-  output: "batch_norm_dead_output_692"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "688"
-  output: "693"
-  op_type: "Relu"
-}
-node {
-  input: "665"
-  input: "111"
-  output: "695"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "695"
-  input: "112"
-  input: "113"
-  input: "114"
-  input: "115"
-  output: "697"
-  output: "698"
-  output: "699"
-  output: "batch_norm_dead_output_700"
-  output: "batch_norm_dead_output_701"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "697"
-  output: "702"
-  op_type: "Relu"
-}
-node {
-  input: "702"
-  input: "116"
-  output: "704"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "704"
-  input: "117"
-  input: "118"
-  input: "119"
-  input: "120"
-  output: "706"
-  output: "707"
-  output: "708"
-  output: "batch_norm_dead_output_709"
-  output: "batch_norm_dead_output_710"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "706"
-  output: "711"
-  op_type: "Relu"
-}
-node {
-  input: "711"
-  input: "121"
-  output: "713"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "713"
-  input: "122"
-  input: "123"
-  input: "124"
-  input: "125"
-  output: "715"
-  output: "716"
-  output: "717"
-  output: "batch_norm_dead_output_718"
-  output: "batch_norm_dead_output_719"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "715"
-  output: "720"
-  op_type: "Relu"
-}
-node {
-  input: "665"
-  output: "721"
-  op_type: "AveragePool"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "721"
-  input: "126"
-  output: "723"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "723"
-  input: "127"
-  input: "128"
-  input: "129"
-  input: "130"
-  output: "725"
-  output: "726"
-  output: "727"
-  output: "batch_norm_dead_output_728"
-  output: "batch_norm_dead_output_729"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "725"
-  output: "730"
-  op_type: "Relu"
-}
-node {
-  input: "675"
-  input: "693"
-  input: "720"
-  input: "730"
-  output: "732"
-  output: "733"
-  op_type: "Concat"
-  attribute {
-    name: "axis"
-    i: 1
-  }
-}
-node {
-  input: "732"
+  input: "996"
   input: "131"
-  output: "735"
+  output: "625"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2006,20 +1896,16 @@ node {
   }
 }
 node {
-  input: "735"
+  input: "625"
   input: "132"
   input: "133"
   input: "134"
   input: "135"
-  output: "737"
-  output: "738"
-  output: "739"
-  output: "batch_norm_dead_output_740"
-  output: "batch_norm_dead_output_741"
+  output: "627"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2039,14 +1925,14 @@ node {
   }
 }
 node {
-  input: "737"
-  output: "742"
+  input: "627"
+  output: "628"
   op_type: "Relu"
 }
 node {
-  input: "732"
+  input: "996"
   input: "136"
-  output: "744"
+  output: "630"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2076,20 +1962,16 @@ node {
   }
 }
 node {
-  input: "744"
+  input: "630"
   input: "137"
   input: "138"
   input: "139"
   input: "140"
-  output: "746"
-  output: "747"
-  output: "748"
-  output: "batch_norm_dead_output_749"
-  output: "batch_norm_dead_output_750"
+  output: "632"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2109,14 +1991,14 @@ node {
   }
 }
 node {
-  input: "746"
-  output: "751"
+  input: "632"
+  output: "633"
   op_type: "Relu"
 }
 node {
-  input: "751"
+  input: "633"
   input: "141"
-  output: "753"
+  output: "635"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2146,20 +2028,16 @@ node {
   }
 }
 node {
-  input: "753"
+  input: "635"
   input: "142"
   input: "143"
   input: "144"
   input: "145"
-  output: "755"
-  output: "756"
-  output: "757"
-  output: "batch_norm_dead_output_758"
-  output: "batch_norm_dead_output_759"
+  output: "637"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2179,14 +2057,14 @@ node {
   }
 }
 node {
-  input: "755"
-  output: "760"
+  input: "637"
+  output: "638"
   op_type: "Relu"
 }
 node {
-  input: "760"
+  input: "638"
   input: "146"
-  output: "762"
+  output: "640"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2216,20 +2094,16 @@ node {
   }
 }
 node {
-  input: "762"
+  input: "640"
   input: "147"
   input: "148"
   input: "149"
   input: "150"
-  output: "764"
-  output: "765"
-  output: "766"
-  output: "batch_norm_dead_output_767"
-  output: "batch_norm_dead_output_768"
+  output: "642"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2249,13 +2123,13 @@ node {
   }
 }
 node {
-  input: "764"
-  output: "769"
+  input: "642"
+  output: "643"
   op_type: "Relu"
 }
 node {
-  input: "732"
-  output: "770"
+  input: "996"
+  output: "644"
   op_type: "MaxPool"
   attribute {
     name: "kernel_shape"
@@ -2279,11 +2153,11 @@ node {
   }
 }
 node {
-  input: "742"
-  input: "769"
-  input: "770"
-  output: "772"
-  output: "773"
+  input: "628"
+  input: "643"
+  input: "644"
+  output: "998"
+  output: "999"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -2291,9 +2165,9 @@ node {
   }
 }
 node {
-  input: "772"
+  input: "998"
   input: "151"
-  output: "775"
+  output: "647"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2323,20 +2197,16 @@ node {
   }
 }
 node {
-  input: "775"
+  input: "647"
   input: "152"
   input: "153"
   input: "154"
   input: "155"
-  output: "777"
-  output: "778"
-  output: "779"
-  output: "batch_norm_dead_output_780"
-  output: "batch_norm_dead_output_781"
+  output: "649"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2356,14 +2226,14 @@ node {
   }
 }
 node {
-  input: "777"
-  output: "782"
+  input: "649"
+  output: "650"
   op_type: "Relu"
 }
 node {
-  input: "772"
+  input: "998"
   input: "156"
-  output: "784"
+  output: "652"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2393,20 +2263,16 @@ node {
   }
 }
 node {
-  input: "784"
+  input: "652"
   input: "157"
   input: "158"
   input: "159"
   input: "160"
-  output: "786"
-  output: "787"
-  output: "788"
-  output: "batch_norm_dead_output_789"
-  output: "batch_norm_dead_output_790"
+  output: "654"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2426,14 +2292,14 @@ node {
   }
 }
 node {
-  input: "786"
-  output: "791"
+  input: "654"
+  output: "655"
   op_type: "Relu"
 }
 node {
-  input: "791"
+  input: "655"
   input: "161"
-  output: "793"
+  output: "657"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2463,20 +2329,16 @@ node {
   }
 }
 node {
-  input: "793"
+  input: "657"
   input: "162"
   input: "163"
   input: "164"
   input: "165"
-  output: "795"
-  output: "796"
-  output: "797"
-  output: "batch_norm_dead_output_798"
-  output: "batch_norm_dead_output_799"
+  output: "659"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2491,23 +2353,1904 @@ node {
     ints: 0
     ints: 0
     ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "659"
+  output: "660"
+  op_type: "Relu"
+}
+node {
+  input: "660"
+  input: "166"
+  output: "662"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "662"
+  input: "167"
+  input: "168"
+  input: "169"
+  input: "170"
+  output: "664"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "664"
+  output: "665"
+  op_type: "Relu"
+}
+node {
+  input: "998"
+  input: "171"
+  output: "667"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "667"
+  input: "172"
+  input: "173"
+  input: "174"
+  input: "175"
+  output: "669"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "669"
+  output: "670"
+  op_type: "Relu"
+}
+node {
+  input: "670"
+  input: "176"
+  output: "672"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "672"
+  input: "177"
+  input: "178"
+  input: "179"
+  input: "180"
+  output: "674"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "674"
+  output: "675"
+  op_type: "Relu"
+}
+node {
+  input: "675"
+  input: "181"
+  output: "677"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "677"
+  input: "182"
+  input: "183"
+  input: "184"
+  input: "185"
+  output: "679"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "679"
+  output: "680"
+  op_type: "Relu"
+}
+node {
+  input: "680"
+  input: "186"
+  output: "682"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "682"
+  input: "187"
+  input: "188"
+  input: "189"
+  input: "190"
+  output: "684"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "684"
+  output: "685"
+  op_type: "Relu"
+}
+node {
+  input: "685"
+  input: "191"
+  output: "687"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "687"
+  input: "192"
+  input: "193"
+  input: "194"
+  input: "195"
+  output: "689"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "689"
+  output: "690"
+  op_type: "Relu"
+}
+node {
+  input: "998"
+  output: "691"
+  op_type: "AveragePool"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "691"
+  input: "196"
+  output: "693"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "693"
+  input: "197"
+  input: "198"
+  input: "199"
+  input: "200"
+  output: "695"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "695"
+  output: "696"
+  op_type: "Relu"
+}
+node {
+  input: "650"
+  input: "665"
+  input: "690"
+  input: "696"
+  output: "1000"
+  output: "1001"
+  op_type: "Concat"
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "1000"
+  input: "201"
+  output: "699"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "699"
+  input: "202"
+  input: "203"
+  input: "204"
+  input: "205"
+  output: "701"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "701"
+  output: "702"
+  op_type: "Relu"
+}
+node {
+  input: "1000"
+  input: "206"
+  output: "704"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "704"
+  input: "207"
+  input: "208"
+  input: "209"
+  input: "210"
+  output: "706"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "706"
+  output: "707"
+  op_type: "Relu"
+}
+node {
+  input: "707"
+  input: "211"
+  output: "709"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "709"
+  input: "212"
+  input: "213"
+  input: "214"
+  input: "215"
+  output: "711"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "711"
+  output: "712"
+  op_type: "Relu"
+}
+node {
+  input: "712"
+  input: "216"
+  output: "714"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "714"
+  input: "217"
+  input: "218"
+  input: "219"
+  input: "220"
+  output: "716"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "716"
+  output: "717"
+  op_type: "Relu"
+}
+node {
+  input: "1000"
+  input: "221"
+  output: "719"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "719"
+  input: "222"
+  input: "223"
+  input: "224"
+  input: "225"
+  output: "721"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "721"
+  output: "722"
+  op_type: "Relu"
+}
+node {
+  input: "722"
+  input: "226"
+  output: "724"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "724"
+  input: "227"
+  input: "228"
+  input: "229"
+  input: "230"
+  output: "726"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "726"
+  output: "727"
+  op_type: "Relu"
+}
+node {
+  input: "727"
+  input: "231"
+  output: "729"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "729"
+  input: "232"
+  input: "233"
+  input: "234"
+  input: "235"
+  output: "731"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "731"
+  output: "732"
+  op_type: "Relu"
+}
+node {
+  input: "732"
+  input: "236"
+  output: "734"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "734"
+  input: "237"
+  input: "238"
+  input: "239"
+  input: "240"
+  output: "736"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "736"
+  output: "737"
+  op_type: "Relu"
+}
+node {
+  input: "737"
+  input: "241"
+  output: "739"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "739"
+  input: "242"
+  input: "243"
+  input: "244"
+  input: "245"
+  output: "741"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "741"
+  output: "742"
+  op_type: "Relu"
+}
+node {
+  input: "1000"
+  output: "743"
+  op_type: "AveragePool"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "743"
+  input: "246"
+  output: "745"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "745"
+  input: "247"
+  input: "248"
+  input: "249"
+  input: "250"
+  output: "747"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "747"
+  output: "748"
+  op_type: "Relu"
+}
+node {
+  input: "702"
+  input: "717"
+  input: "742"
+  input: "748"
+  output: "1002"
+  output: "1003"
+  op_type: "Concat"
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "1002"
+  input: "251"
+  output: "751"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "751"
+  input: "252"
+  input: "253"
+  input: "254"
+  input: "255"
+  output: "753"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "753"
+  output: "754"
+  op_type: "Relu"
+}
+node {
+  input: "1002"
+  input: "256"
+  output: "756"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "756"
+  input: "257"
+  input: "258"
+  input: "259"
+  input: "260"
+  output: "758"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "758"
+  output: "759"
+  op_type: "Relu"
+}
+node {
+  input: "759"
+  input: "261"
+  output: "761"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "761"
+  input: "262"
+  input: "263"
+  input: "264"
+  input: "265"
+  output: "763"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "763"
+  output: "764"
+  op_type: "Relu"
+}
+node {
+  input: "764"
+  input: "266"
+  output: "766"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "766"
+  input: "267"
+  input: "268"
+  input: "269"
+  input: "270"
+  output: "768"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "768"
+  output: "769"
+  op_type: "Relu"
+}
+node {
+  input: "1002"
+  input: "271"
+  output: "771"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "771"
+  input: "272"
+  input: "273"
+  input: "274"
+  input: "275"
+  output: "773"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "773"
+  output: "774"
+  op_type: "Relu"
+}
+node {
+  input: "774"
+  input: "276"
+  output: "776"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "776"
+  input: "277"
+  input: "278"
+  input: "279"
+  input: "280"
+  output: "778"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "778"
+  output: "779"
+  op_type: "Relu"
+}
+node {
+  input: "779"
+  input: "281"
+  output: "781"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "781"
+  input: "282"
+  input: "283"
+  input: "284"
+  input: "285"
+  output: "783"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "783"
+  output: "784"
+  op_type: "Relu"
+}
+node {
+  input: "784"
+  input: "286"
+  output: "786"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "786"
+  input: "287"
+  input: "288"
+  input: "289"
+  input: "290"
+  output: "788"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "788"
+  output: "789"
+  op_type: "Relu"
+}
+node {
+  input: "789"
+  input: "291"
+  output: "791"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "791"
+  input: "292"
+  input: "293"
+  input: "294"
+  input: "295"
+  output: "793"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "793"
+  output: "794"
+  op_type: "Relu"
+}
+node {
+  input: "1002"
+  output: "795"
+  op_type: "AveragePool"
+  attribute {
+    name: "kernel_shape"
+    ints: 3
+    ints: 3
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
     ints: 1
     ints: 1
   }
 }
 node {
   input: "795"
+  input: "296"
+  output: "797"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "797"
+  input: "297"
+  input: "298"
+  input: "299"
+  input: "300"
+  output: "799"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "799"
   output: "800"
   op_type: "Relu"
 }
 node {
+  input: "754"
+  input: "769"
+  input: "794"
   input: "800"
-  input: "166"
-  output: "802"
+  output: "1004"
+  output: "1005"
+  op_type: "Concat"
+  attribute {
+    name: "axis"
+    i: 1
+  }
+}
+node {
+  input: "1004"
+  input: "301"
+  output: "803"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
-    ints: 7
+    ints: 1
     ints: 1
   }
   attribute {
@@ -2517,9 +4260,9 @@ node {
   }
   attribute {
     name: "pads"
-    ints: 3
     ints: 0
-    ints: 3
+    ints: 0
+    ints: 0
     ints: 0
   }
   attribute {
@@ -2533,20 +4276,16 @@ node {
   }
 }
 node {
-  input: "802"
-  input: "167"
-  input: "168"
-  input: "169"
-  input: "170"
-  output: "804"
+  input: "803"
+  input: "302"
+  input: "303"
+  input: "304"
+  input: "305"
   output: "805"
-  output: "806"
-  output: "batch_norm_dead_output_807"
-  output: "batch_norm_dead_output_808"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2566,14 +4305,14 @@ node {
   }
 }
 node {
-  input: "804"
-  output: "809"
+  input: "805"
+  output: "806"
   op_type: "Relu"
 }
 node {
-  input: "772"
-  input: "171"
-  output: "811"
+  input: "1004"
+  input: "306"
+  output: "808"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2603,20 +4342,16 @@ node {
   }
 }
 node {
-  input: "811"
-  input: "172"
-  input: "173"
-  input: "174"
-  input: "175"
-  output: "813"
-  output: "814"
-  output: "815"
-  output: "batch_norm_dead_output_816"
-  output: "batch_norm_dead_output_817"
+  input: "808"
+  input: "307"
+  input: "308"
+  input: "309"
+  input: "310"
+  output: "810"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2633,17 +4368,83 @@ node {
     ints: 0
     ints: 1
     ints: 1
+  }
+}
+node {
+  input: "810"
+  output: "811"
+  op_type: "Relu"
+}
+node {
+  input: "811"
+  input: "311"
+  output: "813"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 7
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 3
+    ints: 0
+    ints: 3
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
   }
 }
 node {
   input: "813"
-  output: "818"
+  input: "312"
+  input: "313"
+  input: "314"
+  input: "315"
+  output: "815"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "815"
+  output: "816"
   op_type: "Relu"
 }
 node {
-  input: "818"
-  input: "176"
-  output: "820"
+  input: "816"
+  input: "316"
+  output: "818"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2670,23 +4471,85 @@ node {
   attribute {
     name: "group"
     i: 1
+  }
+}
+node {
+  input: "818"
+  input: "317"
+  input: "318"
+  input: "319"
+  input: "320"
+  output: "820"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
   }
 }
 node {
   input: "820"
-  input: "177"
-  input: "178"
-  input: "179"
-  input: "180"
-  output: "822"
+  output: "821"
+  op_type: "Relu"
+}
+node {
+  input: "1004"
+  input: "321"
   output: "823"
-  output: "824"
-  output: "batch_norm_dead_output_825"
-  output: "batch_norm_dead_output_826"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "823"
+  input: "322"
+  input: "323"
+  input: "324"
+  input: "325"
+  output: "825"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2706,14 +4569,80 @@ node {
   }
 }
 node {
-  input: "822"
-  output: "827"
+  input: "825"
+  output: "826"
   op_type: "Relu"
 }
 node {
-  input: "827"
-  input: "181"
-  output: "829"
+  input: "826"
+  input: "326"
+  output: "828"
+  op_type: "Conv"
+  attribute {
+    name: "kernel_shape"
+    ints: 7
+    ints: 1
+  }
+  attribute {
+    name: "strides"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "pads"
+    ints: 3
+    ints: 0
+    ints: 3
+    ints: 0
+  }
+  attribute {
+    name: "dilations"
+    ints: 1
+    ints: 1
+  }
+  attribute {
+    name: "group"
+    i: 1
+  }
+}
+node {
+  input: "828"
+  input: "327"
+  input: "328"
+  input: "329"
+  input: "330"
+  output: "830"
+  op_type: "SpatialBN"
+  attribute {
+    name: "is_test"
+    i: 1
+  }
+  attribute {
+    name: "epsilon"
+    f: 0.00100000004749745
+  }
+  attribute {
+    name: "momentum"
+    f: 0.899999976158142
+  }
+  attribute {
+    name: "consumed_inputs"
+    ints: 0
+    ints: 0
+    ints: 0
+    ints: 1
+    ints: 1
+  }
+}
+node {
+  input: "830"
+  output: "831"
+  op_type: "Relu"
+}
+node {
+  input: "831"
+  input: "331"
+  output: "833"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -2743,20 +4672,16 @@ node {
   }
 }
 node {
-  input: "829"
-  input: "182"
-  input: "183"
-  input: "184"
-  input: "185"
-  output: "831"
-  output: "832"
-  output: "833"
-  output: "batch_norm_dead_output_834"
-  output: "batch_norm_dead_output_835"
+  input: "833"
+  input: "332"
+  input: "333"
+  input: "334"
+  input: "335"
+  output: "835"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2776,13 +4701,13 @@ node {
   }
 }
 node {
-  input: "831"
+  input: "835"
   output: "836"
   op_type: "Relu"
 }
 node {
   input: "836"
-  input: "186"
+  input: "336"
   output: "838"
   op_type: "Conv"
   attribute {
@@ -2814,19 +4739,15 @@ node {
 }
 node {
   input: "838"
-  input: "187"
-  input: "188"
-  input: "189"
-  input: "190"
+  input: "337"
+  input: "338"
+  input: "339"
+  input: "340"
   output: "840"
-  output: "841"
-  output: "842"
-  output: "batch_norm_dead_output_843"
-  output: "batch_norm_dead_output_844"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -2847,2218 +4768,13 @@ node {
 }
 node {
   input: "840"
-  output: "845"
+  output: "841"
   op_type: "Relu"
 }
 node {
-  input: "845"
-  input: "191"
-  output: "847"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "847"
-  input: "192"
-  input: "193"
-  input: "194"
-  input: "195"
-  output: "849"
-  output: "850"
-  output: "851"
-  output: "batch_norm_dead_output_852"
-  output: "batch_norm_dead_output_853"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "849"
-  output: "854"
-  op_type: "Relu"
-}
-node {
-  input: "772"
-  output: "855"
-  op_type: "AveragePool"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "855"
-  input: "196"
-  output: "857"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "857"
-  input: "197"
-  input: "198"
-  input: "199"
-  input: "200"
-  output: "859"
-  output: "860"
-  output: "861"
-  output: "batch_norm_dead_output_862"
-  output: "batch_norm_dead_output_863"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "859"
-  output: "864"
-  op_type: "Relu"
-}
-node {
-  input: "782"
-  input: "809"
-  input: "854"
-  input: "864"
-  output: "866"
-  output: "867"
-  op_type: "Concat"
-  attribute {
-    name: "axis"
-    i: 1
-  }
-}
-node {
-  input: "866"
-  input: "201"
-  output: "869"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "869"
-  input: "202"
-  input: "203"
-  input: "204"
-  input: "205"
-  output: "871"
-  output: "872"
-  output: "873"
-  output: "batch_norm_dead_output_874"
-  output: "batch_norm_dead_output_875"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "871"
-  output: "876"
-  op_type: "Relu"
-}
-node {
-  input: "866"
-  input: "206"
-  output: "878"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "878"
-  input: "207"
-  input: "208"
-  input: "209"
-  input: "210"
-  output: "880"
-  output: "881"
-  output: "882"
-  output: "batch_norm_dead_output_883"
-  output: "batch_norm_dead_output_884"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "880"
-  output: "885"
-  op_type: "Relu"
-}
-node {
-  input: "885"
-  input: "211"
-  output: "887"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "887"
-  input: "212"
-  input: "213"
-  input: "214"
-  input: "215"
-  output: "889"
-  output: "890"
-  output: "891"
-  output: "batch_norm_dead_output_892"
-  output: "batch_norm_dead_output_893"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "889"
-  output: "894"
-  op_type: "Relu"
-}
-node {
-  input: "894"
-  input: "216"
-  output: "896"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "896"
-  input: "217"
-  input: "218"
-  input: "219"
-  input: "220"
-  output: "898"
-  output: "899"
-  output: "900"
-  output: "batch_norm_dead_output_901"
-  output: "batch_norm_dead_output_902"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "898"
-  output: "903"
-  op_type: "Relu"
-}
-node {
-  input: "866"
-  input: "221"
-  output: "905"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "905"
-  input: "222"
-  input: "223"
-  input: "224"
-  input: "225"
-  output: "907"
-  output: "908"
-  output: "909"
-  output: "batch_norm_dead_output_910"
-  output: "batch_norm_dead_output_911"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "907"
-  output: "912"
-  op_type: "Relu"
-}
-node {
-  input: "912"
-  input: "226"
-  output: "914"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "914"
-  input: "227"
-  input: "228"
-  input: "229"
-  input: "230"
-  output: "916"
-  output: "917"
-  output: "918"
-  output: "batch_norm_dead_output_919"
-  output: "batch_norm_dead_output_920"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "916"
-  output: "921"
-  op_type: "Relu"
-}
-node {
-  input: "921"
-  input: "231"
-  output: "923"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "923"
-  input: "232"
-  input: "233"
-  input: "234"
-  input: "235"
-  output: "925"
-  output: "926"
-  output: "927"
-  output: "batch_norm_dead_output_928"
-  output: "batch_norm_dead_output_929"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "925"
-  output: "930"
-  op_type: "Relu"
-}
-node {
-  input: "930"
-  input: "236"
-  output: "932"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "932"
-  input: "237"
-  input: "238"
-  input: "239"
-  input: "240"
-  output: "934"
-  output: "935"
-  output: "936"
-  output: "batch_norm_dead_output_937"
-  output: "batch_norm_dead_output_938"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "934"
-  output: "939"
-  op_type: "Relu"
-}
-node {
-  input: "939"
-  input: "241"
-  output: "941"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "941"
-  input: "242"
-  input: "243"
-  input: "244"
-  input: "245"
-  output: "943"
-  output: "944"
-  output: "945"
-  output: "batch_norm_dead_output_946"
-  output: "batch_norm_dead_output_947"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "943"
-  output: "948"
-  op_type: "Relu"
-}
-node {
-  input: "866"
-  output: "949"
-  op_type: "AveragePool"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "949"
-  input: "246"
-  output: "951"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "951"
-  input: "247"
-  input: "248"
-  input: "249"
-  input: "250"
-  output: "953"
-  output: "954"
-  output: "955"
-  output: "batch_norm_dead_output_956"
-  output: "batch_norm_dead_output_957"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "953"
-  output: "958"
-  op_type: "Relu"
-}
-node {
-  input: "876"
-  input: "903"
-  input: "948"
-  input: "958"
-  output: "960"
-  output: "961"
-  op_type: "Concat"
-  attribute {
-    name: "axis"
-    i: 1
-  }
-}
-node {
-  input: "960"
-  input: "251"
-  output: "963"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "963"
-  input: "252"
-  input: "253"
-  input: "254"
-  input: "255"
-  output: "965"
-  output: "966"
-  output: "967"
-  output: "batch_norm_dead_output_968"
-  output: "batch_norm_dead_output_969"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "965"
-  output: "970"
-  op_type: "Relu"
-}
-node {
-  input: "960"
-  input: "256"
-  output: "972"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "972"
-  input: "257"
-  input: "258"
-  input: "259"
-  input: "260"
-  output: "974"
-  output: "975"
-  output: "976"
-  output: "batch_norm_dead_output_977"
-  output: "batch_norm_dead_output_978"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "974"
-  output: "979"
-  op_type: "Relu"
-}
-node {
-  input: "979"
-  input: "261"
-  output: "981"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "981"
-  input: "262"
-  input: "263"
-  input: "264"
-  input: "265"
-  output: "983"
-  output: "984"
-  output: "985"
-  output: "batch_norm_dead_output_986"
-  output: "batch_norm_dead_output_987"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "983"
-  output: "988"
-  op_type: "Relu"
-}
-node {
-  input: "988"
-  input: "266"
-  output: "990"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "990"
-  input: "267"
-  input: "268"
-  input: "269"
-  input: "270"
-  output: "992"
-  output: "993"
-  output: "994"
-  output: "batch_norm_dead_output_995"
-  output: "batch_norm_dead_output_996"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "992"
-  output: "997"
-  op_type: "Relu"
-}
-node {
-  input: "960"
-  input: "271"
-  output: "999"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "999"
-  input: "272"
-  input: "273"
-  input: "274"
-  input: "275"
-  output: "1001"
-  output: "1002"
-  output: "1003"
-  output: "batch_norm_dead_output_1004"
-  output: "batch_norm_dead_output_1005"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1001"
-  output: "1006"
-  op_type: "Relu"
-}
-node {
-  input: "1006"
-  input: "276"
-  output: "1008"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1008"
-  input: "277"
-  input: "278"
-  input: "279"
-  input: "280"
-  output: "1010"
-  output: "1011"
-  output: "1012"
-  output: "batch_norm_dead_output_1013"
-  output: "batch_norm_dead_output_1014"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1010"
-  output: "1015"
-  op_type: "Relu"
-}
-node {
-  input: "1015"
-  input: "281"
-  output: "1017"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1017"
-  input: "282"
-  input: "283"
-  input: "284"
-  input: "285"
-  output: "1019"
-  output: "1020"
-  output: "1021"
-  output: "batch_norm_dead_output_1022"
-  output: "batch_norm_dead_output_1023"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1019"
-  output: "1024"
-  op_type: "Relu"
-}
-node {
-  input: "1024"
-  input: "286"
-  output: "1026"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1026"
-  input: "287"
-  input: "288"
-  input: "289"
-  input: "290"
-  output: "1028"
-  output: "1029"
-  output: "1030"
-  output: "batch_norm_dead_output_1031"
-  output: "batch_norm_dead_output_1032"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1028"
-  output: "1033"
-  op_type: "Relu"
-}
-node {
-  input: "1033"
-  input: "291"
-  output: "1035"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1035"
-  input: "292"
-  input: "293"
-  input: "294"
-  input: "295"
-  output: "1037"
-  output: "1038"
-  output: "1039"
-  output: "batch_norm_dead_output_1040"
-  output: "batch_norm_dead_output_1041"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1037"
-  output: "1042"
-  op_type: "Relu"
-}
-node {
-  input: "960"
-  output: "1043"
-  op_type: "AveragePool"
-  attribute {
-    name: "kernel_shape"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 1
-    ints: 1
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1043"
-  input: "296"
-  output: "1045"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1045"
-  input: "297"
-  input: "298"
-  input: "299"
-  input: "300"
-  output: "1047"
-  output: "1048"
-  output: "1049"
-  output: "batch_norm_dead_output_1050"
-  output: "batch_norm_dead_output_1051"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1047"
-  output: "1052"
-  op_type: "Relu"
-}
-node {
-  input: "970"
-  input: "997"
-  input: "1042"
-  input: "1052"
-  output: "1054"
-  output: "1055"
-  op_type: "Concat"
-  attribute {
-    name: "axis"
-    i: 1
-  }
-}
-node {
-  input: "1054"
-  input: "301"
-  output: "1057"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1057"
-  input: "302"
-  input: "303"
-  input: "304"
-  input: "305"
-  output: "1059"
-  output: "1060"
-  output: "1061"
-  output: "batch_norm_dead_output_1062"
-  output: "batch_norm_dead_output_1063"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1059"
-  output: "1064"
-  op_type: "Relu"
-}
-node {
-  input: "1054"
-  input: "306"
-  output: "1066"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1066"
-  input: "307"
-  input: "308"
-  input: "309"
-  input: "310"
-  output: "1068"
-  output: "1069"
-  output: "1070"
-  output: "batch_norm_dead_output_1071"
-  output: "batch_norm_dead_output_1072"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1068"
-  output: "1073"
-  op_type: "Relu"
-}
-node {
-  input: "1073"
-  input: "311"
-  output: "1075"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1075"
-  input: "312"
-  input: "313"
-  input: "314"
-  input: "315"
-  output: "1077"
-  output: "1078"
-  output: "1079"
-  output: "batch_norm_dead_output_1080"
-  output: "batch_norm_dead_output_1081"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1077"
-  output: "1082"
-  op_type: "Relu"
-}
-node {
-  input: "1082"
-  input: "316"
-  output: "1084"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1084"
-  input: "317"
-  input: "318"
-  input: "319"
-  input: "320"
-  output: "1086"
-  output: "1087"
-  output: "1088"
-  output: "batch_norm_dead_output_1089"
-  output: "batch_norm_dead_output_1090"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1086"
-  output: "1091"
-  op_type: "Relu"
-}
-node {
-  input: "1054"
-  input: "321"
-  output: "1093"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1093"
-  input: "322"
-  input: "323"
-  input: "324"
-  input: "325"
-  output: "1095"
-  output: "1096"
-  output: "1097"
-  output: "batch_norm_dead_output_1098"
-  output: "batch_norm_dead_output_1099"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1095"
-  output: "1100"
-  op_type: "Relu"
-}
-node {
-  input: "1100"
-  input: "326"
-  output: "1102"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1102"
-  input: "327"
-  input: "328"
-  input: "329"
-  input: "330"
-  output: "1104"
-  output: "1105"
-  output: "1106"
-  output: "batch_norm_dead_output_1107"
-  output: "batch_norm_dead_output_1108"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1104"
-  output: "1109"
-  op_type: "Relu"
-}
-node {
-  input: "1109"
-  input: "331"
-  output: "1111"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 7
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 3
-    ints: 0
-    ints: 3
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1111"
-  input: "332"
-  input: "333"
-  input: "334"
-  input: "335"
-  output: "1113"
-  output: "1114"
-  output: "1115"
-  output: "batch_norm_dead_output_1116"
-  output: "batch_norm_dead_output_1117"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1113"
-  output: "1118"
-  op_type: "Relu"
-}
-node {
-  input: "1118"
-  input: "336"
-  output: "1120"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 7
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 3
-    ints: 0
-    ints: 3
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1120"
-  input: "337"
-  input: "338"
-  input: "339"
-  input: "340"
-  output: "1122"
-  output: "1123"
-  output: "1124"
-  output: "batch_norm_dead_output_1125"
-  output: "batch_norm_dead_output_1126"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1122"
-  output: "1127"
-  op_type: "Relu"
-}
-node {
-  input: "1127"
+  input: "841"
   input: "341"
-  output: "1129"
+  output: "843"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5088,20 +4804,16 @@ node {
   }
 }
 node {
-  input: "1129"
+  input: "843"
   input: "342"
   input: "343"
   input: "344"
   input: "345"
-  output: "1131"
-  output: "1132"
-  output: "1133"
-  output: "batch_norm_dead_output_1134"
-  output: "batch_norm_dead_output_1135"
+  output: "845"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5121,13 +4833,13 @@ node {
   }
 }
 node {
-  input: "1131"
-  output: "1136"
+  input: "845"
+  output: "846"
   op_type: "Relu"
 }
 node {
-  input: "1054"
-  output: "1137"
+  input: "1004"
+  output: "847"
   op_type: "AveragePool"
   attribute {
     name: "kernel_shape"
@@ -5143,14 +4855,12 @@ node {
     name: "pads"
     ints: 1
     ints: 1
-    ints: 1
-    ints: 1
   }
 }
 node {
-  input: "1137"
+  input: "847"
   input: "346"
-  output: "1139"
+  output: "849"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5180,20 +4890,16 @@ node {
   }
 }
 node {
-  input: "1139"
+  input: "849"
   input: "347"
   input: "348"
   input: "349"
   input: "350"
-  output: "1141"
-  output: "1142"
-  output: "1143"
-  output: "batch_norm_dead_output_1144"
-  output: "batch_norm_dead_output_1145"
+  output: "851"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5213,17 +4919,17 @@ node {
   }
 }
 node {
-  input: "1141"
-  output: "1146"
+  input: "851"
+  output: "852"
   op_type: "Relu"
 }
 node {
-  input: "1064"
-  input: "1091"
-  input: "1136"
-  input: "1146"
-  output: "1148"
-  output: "1149"
+  input: "806"
+  input: "821"
+  input: "846"
+  input: "852"
+  output: "1006"
+  output: "1007"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -5231,203 +4937,9 @@ node {
   }
 }
 node {
-  input: "1148"
-  output: "1150"
-  op_type: "AveragePool"
-  attribute {
-    name: "kernel_shape"
-    ints: 5
-    ints: 5
-  }
-  attribute {
-    name: "strides"
-    ints: 3
-    ints: 3
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-}
-node {
-  input: "1150"
-  input: "351"
-  output: "1152"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1152"
-  input: "352"
-  input: "353"
-  input: "354"
-  input: "355"
-  output: "1154"
-  output: "1155"
-  output: "1156"
-  output: "batch_norm_dead_output_1157"
-  output: "batch_norm_dead_output_1158"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1154"
-  output: "1159"
-  op_type: "Relu"
-}
-node {
-  input: "1159"
-  input: "356"
-  output: "1161"
-  op_type: "Conv"
-  attribute {
-    name: "kernel_shape"
-    ints: 5
-    ints: 5
-  }
-  attribute {
-    name: "strides"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "pads"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 0
-  }
-  attribute {
-    name: "dilations"
-    ints: 1
-    ints: 1
-  }
-  attribute {
-    name: "group"
-    i: 1
-  }
-}
-node {
-  input: "1161"
-  input: "357"
-  input: "358"
-  input: "359"
-  input: "360"
-  output: "1163"
-  output: "1164"
-  output: "1165"
-  output: "batch_norm_dead_output_1166"
-  output: "batch_norm_dead_output_1167"
-  op_type: "SpatialBN"
-  attribute {
-    name: "is_test"
-    i: 0
-  }
-  attribute {
-    name: "epsilon"
-    f: 0.00100000004749745
-  }
-  attribute {
-    name: "momentum"
-    f: 0.899999976158142
-  }
-  attribute {
-    name: "consumed_inputs"
-    ints: 0
-    ints: 0
-    ints: 0
-    ints: 1
-    ints: 1
-  }
-}
-node {
-  input: "1163"
-  output: "1168"
-  op_type: "Relu"
-}
-node {
-  input: "1168"
-  output: "1169"
-  op_type: "Reshape"
-  attribute {
-    name: "shape"
-    ints: 2
-    ints: -1
-  }
-}
-node {
-  input: "361"
-  output: "1170"
-  op_type: "Transpose"
-  attribute {
-    name: "perm"
-    ints: 1
-    ints: 0
-  }
-}
-node {
-  input: "1170"
-  output: "1171"
-  op_type: "Transpose"
-}
-node {
-  input: "1169"
-  input: "1171"
-  input: "362"
-  output: "1172"
-  op_type: "FC"
-}
-node {
-  input: "1148"
+  input: "1006"
   input: "363"
-  output: "1174"
+  output: "855"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5457,20 +4969,16 @@ node {
   }
 }
 node {
-  input: "1174"
+  input: "855"
   input: "364"
   input: "365"
   input: "366"
   input: "367"
-  output: "1176"
-  output: "1177"
-  output: "1178"
-  output: "batch_norm_dead_output_1179"
-  output: "batch_norm_dead_output_1180"
+  output: "857"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5490,14 +4998,14 @@ node {
   }
 }
 node {
-  input: "1176"
-  output: "1181"
+  input: "857"
+  output: "858"
   op_type: "Relu"
 }
 node {
-  input: "1181"
+  input: "858"
   input: "368"
-  output: "1183"
+  output: "860"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5527,20 +5035,16 @@ node {
   }
 }
 node {
-  input: "1183"
+  input: "860"
   input: "369"
   input: "370"
   input: "371"
   input: "372"
-  output: "1185"
-  output: "1186"
-  output: "1187"
-  output: "batch_norm_dead_output_1188"
-  output: "batch_norm_dead_output_1189"
+  output: "862"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5560,14 +5064,14 @@ node {
   }
 }
 node {
-  input: "1185"
-  output: "1190"
+  input: "862"
+  output: "863"
   op_type: "Relu"
 }
 node {
-  input: "1148"
+  input: "1006"
   input: "373"
-  output: "1192"
+  output: "865"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5597,20 +5101,16 @@ node {
   }
 }
 node {
-  input: "1192"
+  input: "865"
   input: "374"
   input: "375"
   input: "376"
   input: "377"
-  output: "1194"
-  output: "1195"
-  output: "1196"
-  output: "batch_norm_dead_output_1197"
-  output: "batch_norm_dead_output_1198"
+  output: "867"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5630,14 +5130,14 @@ node {
   }
 }
 node {
-  input: "1194"
-  output: "1199"
+  input: "867"
+  output: "868"
   op_type: "Relu"
 }
 node {
-  input: "1199"
+  input: "868"
   input: "378"
-  output: "1201"
+  output: "870"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5667,20 +5167,16 @@ node {
   }
 }
 node {
-  input: "1201"
+  input: "870"
   input: "379"
   input: "380"
   input: "381"
   input: "382"
-  output: "1203"
-  output: "1204"
-  output: "1205"
-  output: "batch_norm_dead_output_1206"
-  output: "batch_norm_dead_output_1207"
+  output: "872"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5700,14 +5196,14 @@ node {
   }
 }
 node {
-  input: "1203"
-  output: "1208"
+  input: "872"
+  output: "873"
   op_type: "Relu"
 }
 node {
-  input: "1208"
+  input: "873"
   input: "383"
-  output: "1210"
+  output: "875"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5737,20 +5233,16 @@ node {
   }
 }
 node {
-  input: "1210"
+  input: "875"
   input: "384"
   input: "385"
   input: "386"
   input: "387"
-  output: "1212"
-  output: "1213"
-  output: "1214"
-  output: "batch_norm_dead_output_1215"
-  output: "batch_norm_dead_output_1216"
+  output: "877"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5770,14 +5262,14 @@ node {
   }
 }
 node {
-  input: "1212"
-  output: "1217"
+  input: "877"
+  output: "878"
   op_type: "Relu"
 }
 node {
-  input: "1217"
+  input: "878"
   input: "388"
-  output: "1219"
+  output: "880"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5807,20 +5299,16 @@ node {
   }
 }
 node {
-  input: "1219"
+  input: "880"
   input: "389"
   input: "390"
   input: "391"
   input: "392"
-  output: "1221"
-  output: "1222"
-  output: "1223"
-  output: "batch_norm_dead_output_1224"
-  output: "batch_norm_dead_output_1225"
+  output: "882"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5840,13 +5328,13 @@ node {
   }
 }
 node {
-  input: "1221"
-  output: "1226"
+  input: "882"
+  output: "883"
   op_type: "Relu"
 }
 node {
-  input: "1148"
-  output: "1227"
+  input: "1006"
+  output: "884"
   op_type: "MaxPool"
   attribute {
     name: "kernel_shape"
@@ -5870,11 +5358,11 @@ node {
   }
 }
 node {
-  input: "1190"
-  input: "1226"
-  input: "1227"
-  output: "1229"
-  output: "1230"
+  input: "863"
+  input: "883"
+  input: "884"
+  output: "1008"
+  output: "1009"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -5882,9 +5370,9 @@ node {
   }
 }
 node {
-  input: "1229"
+  input: "1008"
   input: "393"
-  output: "1232"
+  output: "887"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5914,20 +5402,16 @@ node {
   }
 }
 node {
-  input: "1232"
+  input: "887"
   input: "394"
   input: "395"
   input: "396"
   input: "397"
-  output: "1234"
-  output: "1235"
-  output: "1236"
-  output: "batch_norm_dead_output_1237"
-  output: "batch_norm_dead_output_1238"
+  output: "889"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -5947,14 +5431,14 @@ node {
   }
 }
 node {
-  input: "1234"
-  output: "1239"
+  input: "889"
+  output: "890"
   op_type: "Relu"
 }
 node {
-  input: "1229"
+  input: "1008"
   input: "398"
-  output: "1241"
+  output: "892"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -5984,20 +5468,16 @@ node {
   }
 }
 node {
-  input: "1241"
+  input: "892"
   input: "399"
   input: "400"
   input: "401"
   input: "402"
-  output: "1243"
-  output: "1244"
-  output: "1245"
-  output: "batch_norm_dead_output_1246"
-  output: "batch_norm_dead_output_1247"
+  output: "894"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6017,14 +5497,14 @@ node {
   }
 }
 node {
-  input: "1243"
-  output: "1248"
+  input: "894"
+  output: "895"
   op_type: "Relu"
 }
 node {
-  input: "1248"
+  input: "895"
   input: "403"
-  output: "1250"
+  output: "897"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6054,20 +5534,16 @@ node {
   }
 }
 node {
-  input: "1250"
+  input: "897"
   input: "404"
   input: "405"
   input: "406"
   input: "407"
-  output: "1252"
-  output: "1253"
-  output: "1254"
-  output: "batch_norm_dead_output_1255"
-  output: "batch_norm_dead_output_1256"
+  output: "899"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6087,14 +5563,14 @@ node {
   }
 }
 node {
-  input: "1252"
-  output: "1257"
+  input: "899"
+  output: "900"
   op_type: "Relu"
 }
 node {
-  input: "1248"
+  input: "895"
   input: "408"
-  output: "1259"
+  output: "902"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6124,20 +5600,16 @@ node {
   }
 }
 node {
-  input: "1259"
+  input: "902"
   input: "409"
   input: "410"
   input: "411"
   input: "412"
-  output: "1261"
-  output: "1262"
-  output: "1263"
-  output: "batch_norm_dead_output_1264"
-  output: "batch_norm_dead_output_1265"
+  output: "904"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6157,15 +5629,15 @@ node {
   }
 }
 node {
-  input: "1261"
-  output: "1266"
+  input: "904"
+  output: "905"
   op_type: "Relu"
 }
 node {
-  input: "1257"
-  input: "1266"
-  output: "1268"
-  output: "1269"
+  input: "900"
+  input: "905"
+  output: "1010"
+  output: "1011"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -6173,9 +5645,9 @@ node {
   }
 }
 node {
-  input: "1229"
+  input: "1008"
   input: "413"
-  output: "1271"
+  output: "908"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6205,20 +5677,16 @@ node {
   }
 }
 node {
-  input: "1271"
+  input: "908"
   input: "414"
   input: "415"
   input: "416"
   input: "417"
-  output: "1273"
-  output: "1274"
-  output: "1275"
-  output: "batch_norm_dead_output_1276"
-  output: "batch_norm_dead_output_1277"
+  output: "910"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6238,14 +5706,14 @@ node {
   }
 }
 node {
-  input: "1273"
-  output: "1278"
+  input: "910"
+  output: "911"
   op_type: "Relu"
 }
 node {
-  input: "1278"
+  input: "911"
   input: "418"
-  output: "1280"
+  output: "913"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6275,20 +5743,16 @@ node {
   }
 }
 node {
-  input: "1280"
+  input: "913"
   input: "419"
   input: "420"
   input: "421"
   input: "422"
-  output: "1282"
-  output: "1283"
-  output: "1284"
-  output: "batch_norm_dead_output_1285"
-  output: "batch_norm_dead_output_1286"
+  output: "915"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6308,14 +5772,14 @@ node {
   }
 }
 node {
-  input: "1282"
-  output: "1287"
+  input: "915"
+  output: "916"
   op_type: "Relu"
 }
 node {
-  input: "1287"
+  input: "916"
   input: "423"
-  output: "1289"
+  output: "918"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6345,20 +5809,16 @@ node {
   }
 }
 node {
-  input: "1289"
+  input: "918"
   input: "424"
   input: "425"
   input: "426"
   input: "427"
-  output: "1291"
-  output: "1292"
-  output: "1293"
-  output: "batch_norm_dead_output_1294"
-  output: "batch_norm_dead_output_1295"
+  output: "920"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6378,14 +5838,14 @@ node {
   }
 }
 node {
-  input: "1291"
-  output: "1296"
+  input: "920"
+  output: "921"
   op_type: "Relu"
 }
 node {
-  input: "1287"
+  input: "916"
   input: "428"
-  output: "1298"
+  output: "923"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6415,20 +5875,16 @@ node {
   }
 }
 node {
-  input: "1298"
+  input: "923"
   input: "429"
   input: "430"
   input: "431"
   input: "432"
-  output: "1300"
-  output: "1301"
-  output: "1302"
-  output: "batch_norm_dead_output_1303"
-  output: "batch_norm_dead_output_1304"
+  output: "925"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6448,15 +5904,15 @@ node {
   }
 }
 node {
-  input: "1300"
-  output: "1305"
+  input: "925"
+  output: "926"
   op_type: "Relu"
 }
 node {
-  input: "1296"
-  input: "1305"
-  output: "1307"
-  output: "1308"
+  input: "921"
+  input: "926"
+  output: "1012"
+  output: "1013"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -6464,8 +5920,8 @@ node {
   }
 }
 node {
-  input: "1229"
-  output: "1309"
+  input: "1008"
+  output: "928"
   op_type: "AveragePool"
   attribute {
     name: "kernel_shape"
@@ -6481,14 +5937,12 @@ node {
     name: "pads"
     ints: 1
     ints: 1
-    ints: 1
-    ints: 1
   }
 }
 node {
-  input: "1309"
+  input: "928"
   input: "433"
-  output: "1311"
+  output: "930"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6518,20 +5972,16 @@ node {
   }
 }
 node {
-  input: "1311"
+  input: "930"
   input: "434"
   input: "435"
   input: "436"
   input: "437"
-  output: "1313"
-  output: "1314"
-  output: "1315"
-  output: "batch_norm_dead_output_1316"
-  output: "batch_norm_dead_output_1317"
+  output: "932"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6551,17 +6001,17 @@ node {
   }
 }
 node {
-  input: "1313"
-  output: "1318"
+  input: "932"
+  output: "933"
   op_type: "Relu"
 }
 node {
-  input: "1239"
-  input: "1268"
-  input: "1307"
-  input: "1318"
-  output: "1320"
-  output: "1321"
+  input: "890"
+  input: "1010"
+  input: "1012"
+  input: "933"
+  output: "1014"
+  output: "1015"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -6569,9 +6019,9 @@ node {
   }
 }
 node {
-  input: "1320"
+  input: "1014"
   input: "438"
-  output: "1323"
+  output: "936"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6601,20 +6051,16 @@ node {
   }
 }
 node {
-  input: "1323"
+  input: "936"
   input: "439"
   input: "440"
   input: "441"
   input: "442"
-  output: "1325"
-  output: "1326"
-  output: "1327"
-  output: "batch_norm_dead_output_1328"
-  output: "batch_norm_dead_output_1329"
+  output: "938"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6634,14 +6080,14 @@ node {
   }
 }
 node {
-  input: "1325"
-  output: "1330"
+  input: "938"
+  output: "939"
   op_type: "Relu"
 }
 node {
-  input: "1320"
+  input: "1014"
   input: "443"
-  output: "1332"
+  output: "941"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6671,20 +6117,16 @@ node {
   }
 }
 node {
-  input: "1332"
+  input: "941"
   input: "444"
   input: "445"
   input: "446"
   input: "447"
-  output: "1334"
-  output: "1335"
-  output: "1336"
-  output: "batch_norm_dead_output_1337"
-  output: "batch_norm_dead_output_1338"
+  output: "943"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6704,14 +6146,14 @@ node {
   }
 }
 node {
-  input: "1334"
-  output: "1339"
+  input: "943"
+  output: "944"
   op_type: "Relu"
 }
 node {
-  input: "1339"
+  input: "944"
   input: "448"
-  output: "1341"
+  output: "946"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6741,20 +6183,16 @@ node {
   }
 }
 node {
-  input: "1341"
+  input: "946"
   input: "449"
   input: "450"
   input: "451"
   input: "452"
-  output: "1343"
-  output: "1344"
-  output: "1345"
-  output: "batch_norm_dead_output_1346"
-  output: "batch_norm_dead_output_1347"
+  output: "948"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6774,14 +6212,14 @@ node {
   }
 }
 node {
-  input: "1343"
-  output: "1348"
+  input: "948"
+  output: "949"
   op_type: "Relu"
 }
 node {
-  input: "1339"
+  input: "944"
   input: "453"
-  output: "1350"
+  output: "951"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6811,20 +6249,16 @@ node {
   }
 }
 node {
-  input: "1350"
+  input: "951"
   input: "454"
   input: "455"
   input: "456"
   input: "457"
-  output: "1352"
-  output: "1353"
-  output: "1354"
-  output: "batch_norm_dead_output_1355"
-  output: "batch_norm_dead_output_1356"
+  output: "953"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6844,15 +6278,15 @@ node {
   }
 }
 node {
-  input: "1352"
-  output: "1357"
+  input: "953"
+  output: "954"
   op_type: "Relu"
 }
 node {
-  input: "1348"
-  input: "1357"
-  output: "1359"
-  output: "1360"
+  input: "949"
+  input: "954"
+  output: "1016"
+  output: "1017"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -6860,9 +6294,9 @@ node {
   }
 }
 node {
-  input: "1320"
+  input: "1014"
   input: "458"
-  output: "1362"
+  output: "957"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6892,20 +6326,16 @@ node {
   }
 }
 node {
-  input: "1362"
+  input: "957"
   input: "459"
   input: "460"
   input: "461"
   input: "462"
-  output: "1364"
-  output: "1365"
-  output: "1366"
-  output: "batch_norm_dead_output_1367"
-  output: "batch_norm_dead_output_1368"
+  output: "959"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6925,14 +6355,14 @@ node {
   }
 }
 node {
-  input: "1364"
-  output: "1369"
+  input: "959"
+  output: "960"
   op_type: "Relu"
 }
 node {
-  input: "1369"
+  input: "960"
   input: "463"
-  output: "1371"
+  output: "962"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -6962,20 +6392,16 @@ node {
   }
 }
 node {
-  input: "1371"
+  input: "962"
   input: "464"
   input: "465"
   input: "466"
   input: "467"
-  output: "1373"
-  output: "1374"
-  output: "1375"
-  output: "batch_norm_dead_output_1376"
-  output: "batch_norm_dead_output_1377"
+  output: "964"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -6995,14 +6421,14 @@ node {
   }
 }
 node {
-  input: "1373"
-  output: "1378"
+  input: "964"
+  output: "965"
   op_type: "Relu"
 }
 node {
-  input: "1378"
+  input: "965"
   input: "468"
-  output: "1380"
+  output: "967"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -7032,20 +6458,16 @@ node {
   }
 }
 node {
-  input: "1380"
+  input: "967"
   input: "469"
   input: "470"
   input: "471"
   input: "472"
-  output: "1382"
-  output: "1383"
-  output: "1384"
-  output: "batch_norm_dead_output_1385"
-  output: "batch_norm_dead_output_1386"
+  output: "969"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -7065,14 +6487,14 @@ node {
   }
 }
 node {
-  input: "1382"
-  output: "1387"
+  input: "969"
+  output: "970"
   op_type: "Relu"
 }
 node {
-  input: "1378"
+  input: "965"
   input: "473"
-  output: "1389"
+  output: "972"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -7102,20 +6524,16 @@ node {
   }
 }
 node {
-  input: "1389"
+  input: "972"
   input: "474"
   input: "475"
   input: "476"
   input: "477"
-  output: "1391"
-  output: "1392"
-  output: "1393"
-  output: "batch_norm_dead_output_1394"
-  output: "batch_norm_dead_output_1395"
+  output: "974"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -7135,15 +6553,15 @@ node {
   }
 }
 node {
-  input: "1391"
-  output: "1396"
+  input: "974"
+  output: "975"
   op_type: "Relu"
 }
 node {
-  input: "1387"
-  input: "1396"
-  output: "1398"
-  output: "1399"
+  input: "970"
+  input: "975"
+  output: "1018"
+  output: "1019"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -7151,8 +6569,8 @@ node {
   }
 }
 node {
-  input: "1320"
-  output: "1400"
+  input: "1014"
+  output: "977"
   op_type: "AveragePool"
   attribute {
     name: "kernel_shape"
@@ -7168,14 +6586,12 @@ node {
     name: "pads"
     ints: 1
     ints: 1
-    ints: 1
-    ints: 1
   }
 }
 node {
-  input: "1400"
+  input: "977"
   input: "478"
-  output: "1402"
+  output: "979"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -7205,20 +6621,16 @@ node {
   }
 }
 node {
-  input: "1402"
+  input: "979"
   input: "479"
   input: "480"
   input: "481"
   input: "482"
-  output: "1404"
-  output: "1405"
-  output: "1406"
-  output: "batch_norm_dead_output_1407"
-  output: "batch_norm_dead_output_1408"
+  output: "981"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -7238,17 +6650,17 @@ node {
   }
 }
 node {
-  input: "1404"
-  output: "1409"
+  input: "981"
+  output: "982"
   op_type: "Relu"
 }
 node {
-  input: "1330"
-  input: "1359"
-  input: "1398"
-  input: "1409"
-  output: "1411"
-  output: "1412"
+  input: "939"
+  input: "1016"
+  input: "1018"
+  input: "982"
+  output: "1020"
+  output: "1021"
   op_type: "Concat"
   attribute {
     name: "axis"
@@ -7256,8 +6668,8 @@ node {
   }
 }
 node {
-  input: "1411"
-  output: "1413"
+  input: "1020"
+  output: "984"
   op_type: "AveragePool"
   attribute {
     name: "kernel_shape"
@@ -7273,14 +6685,12 @@ node {
     name: "pads"
     ints: 0
     ints: 0
-    ints: 0
-    ints: 0
   }
 }
 node {
-  input: "1413"
-  output: "1415"
-  output: "1416"
+  input: "984"
+  output: "986"
+  output: "987"
   op_type: "Dropout"
   attribute {
     name: "ratio"
@@ -7288,12 +6698,12 @@ node {
   }
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
 }
 node {
-  input: "1415"
-  output: "1417"
+  input: "986"
+  output: "988"
   op_type: "Reshape"
   attribute {
     name: "shape"
@@ -7303,7 +6713,7 @@ node {
 }
 node {
   input: "483"
-  output: "1418"
+  output: "989"
   op_type: "Transpose"
   attribute {
     name: "perm"
@@ -7312,15 +6722,15 @@ node {
   }
 }
 node {
-  input: "1418"
-  output: "1419"
+  input: "989"
+  output: "990"
   op_type: "Transpose"
 }
 node {
-  input: "1417"
-  input: "1419"
+  input: "988"
+  input: "990"
   input: "484"
-  output: "1420"
+  output: "991"
   op_type: "FC"
 }
 name: "torch-jit-export"
@@ -7809,8 +7219,7 @@ input: "482"
 input: "483"
 input: "484"
 input: "485"
-output: "1420"
-output: "1172"
+output: "991"
 ir_version: 1
 producer_version: 20000
 producer_tag: "pytorch"

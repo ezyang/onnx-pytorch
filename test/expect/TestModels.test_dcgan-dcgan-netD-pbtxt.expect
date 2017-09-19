@@ -78,14 +78,10 @@ node {
   input: "5"
   input: "6"
   output: "25"
-  output: "26"
-  output: "27"
-  output: "batch_norm_dead_output_28"
-  output: "batch_norm_dead_output_29"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -106,7 +102,7 @@ node {
 }
 node {
   input: "25"
-  output: "30"
+  output: "26"
   op_type: "LeakyRelu"
   attribute {
     name: "alpha"
@@ -114,9 +110,9 @@ node {
   }
 }
 node {
-  input: "30"
+  input: "26"
   input: "7"
-  output: "32"
+  output: "28"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -146,20 +142,16 @@ node {
   }
 }
 node {
-  input: "32"
+  input: "28"
   input: "8"
   input: "9"
   input: "10"
   input: "11"
-  output: "34"
-  output: "35"
-  output: "36"
-  output: "batch_norm_dead_output_37"
-  output: "batch_norm_dead_output_38"
+  output: "30"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -179,8 +171,8 @@ node {
   }
 }
 node {
-  input: "34"
-  output: "39"
+  input: "30"
+  output: "31"
   op_type: "LeakyRelu"
   attribute {
     name: "alpha"
@@ -188,9 +180,9 @@ node {
   }
 }
 node {
-  input: "39"
+  input: "31"
   input: "12"
-  output: "41"
+  output: "33"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -220,20 +212,16 @@ node {
   }
 }
 node {
-  input: "41"
+  input: "33"
   input: "13"
   input: "14"
   input: "15"
   input: "16"
-  output: "43"
-  output: "44"
-  output: "45"
-  output: "batch_norm_dead_output_46"
-  output: "batch_norm_dead_output_47"
+  output: "35"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -253,8 +241,8 @@ node {
   }
 }
 node {
-  input: "43"
-  output: "48"
+  input: "35"
+  output: "36"
   op_type: "LeakyRelu"
   attribute {
     name: "alpha"
@@ -262,9 +250,9 @@ node {
   }
 }
 node {
-  input: "48"
+  input: "36"
   input: "17"
-  output: "50"
+  output: "38"
   op_type: "Conv"
   attribute {
     name: "kernel_shape"
@@ -294,13 +282,13 @@ node {
   }
 }
 node {
-  input: "50"
-  output: "51"
+  input: "38"
+  output: "39"
   op_type: "Sigmoid"
 }
 node {
-  input: "51"
-  output: "52"
+  input: "39"
+  output: "40"
   op_type: "Reshape"
   attribute {
     name: "shape"
@@ -327,7 +315,7 @@ input: "15"
 input: "16"
 input: "17"
 input: "18"
-output: "52"
+output: "40"
 ir_version: 1
 producer_version: 20000
 producer_tag: "pytorch"

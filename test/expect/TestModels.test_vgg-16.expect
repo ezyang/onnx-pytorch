@@ -1,77 +1,61 @@
-graph(%1 : Float(64, 3, 3, 3)
-      %2 : Float(64)
-      %3 : Float(64, 64, 3, 3)
-      %4 : Float(64)
-      %5 : Float(128, 64, 3, 3)
-      %6 : Float(128)
-      %7 : Float(128, 128, 3, 3)
-      %8 : Float(128)
-      %9 : Float(256, 128, 3, 3)
-      %10 : Float(256)
-      %11 : Float(256, 256, 3, 3)
-      %12 : Float(256)
-      %13 : Float(256, 256, 3, 3)
-      %14 : Float(256)
-      %15 : Float(512, 256, 3, 3)
-      %16 : Float(512)
-      %17 : Float(512, 512, 3, 3)
-      %18 : Float(512)
-      %19 : Float(512, 512, 3, 3)
-      %20 : Float(512)
-      %21 : Float(512, 512, 3, 3)
-      %22 : Float(512)
-      %23 : Float(512, 512, 3, 3)
-      %24 : Float(512)
-      %25 : Float(512, 512, 3, 3)
-      %26 : Float(512)
-      %27 : Float(4096, 25088)
-      %28 : Float(4096)
-      %29 : Float(4096, 4096)
-      %30 : Float(4096)
-      %31 : Float(1000, 4096)
-      %32 : Float(1000)
-      %33 : Float(2, 3, 224, 224)) {
-  %35 : Float(2, 64, 224, 224), %36 : Handle = CppOp[ConvForward](%33, %1, %2), uses = [[%37.i0], []];
-  %38 : Float(2, 64, 224, 224), %39 : Handle = ^Threshold(0, 0, True)(%35), uses = [[%40.i0], []];
-  %41 : Float(2, 64, 224, 224), %42 : Handle = CppOp[ConvForward](%38, %3, %4), uses = [[%43.i0], []];
-  %44 : Float(2, 64, 224, 224), %45 : Handle = ^Threshold(0, 0, True)(%41), uses = [[%46.i0], []];
-  %47 : Float(2, 64, 112, 112), %48 : Long(2, 64, 112, 112), %49 : Handle = ^MaxPool2d(2, 2, 0, 1, False)(%44), uses = [[%50.i0], [], []];
-  %51 : Float(2, 128, 112, 112), %52 : Handle = CppOp[ConvForward](%47, %5, %6), uses = [[%53.i0], []];
-  %54 : Float(2, 128, 112, 112), %55 : Handle = ^Threshold(0, 0, True)(%51), uses = [[%56.i0], []];
-  %57 : Float(2, 128, 112, 112), %58 : Handle = CppOp[ConvForward](%54, %7, %8), uses = [[%59.i0], []];
-  %60 : Float(2, 128, 112, 112), %61 : Handle = ^Threshold(0, 0, True)(%57), uses = [[%62.i0], []];
-  %63 : Float(2, 128, 56, 56), %64 : Long(2, 128, 56, 56), %65 : Handle = ^MaxPool2d(2, 2, 0, 1, False)(%60), uses = [[%66.i0], [], []];
-  %67 : Float(2, 256, 56, 56), %68 : Handle = CppOp[ConvForward](%63, %9, %10), uses = [[%69.i0], []];
-  %70 : Float(2, 256, 56, 56), %71 : Handle = ^Threshold(0, 0, True)(%67), uses = [[%72.i0], []];
-  %73 : Float(2, 256, 56, 56), %74 : Handle = CppOp[ConvForward](%70, %11, %12), uses = [[%75.i0], []];
-  %76 : Float(2, 256, 56, 56), %77 : Handle = ^Threshold(0, 0, True)(%73), uses = [[%78.i0], []];
-  %79 : Float(2, 256, 56, 56), %80 : Handle = CppOp[ConvForward](%76, %13, %14), uses = [[%81.i0], []];
-  %82 : Float(2, 256, 56, 56), %83 : Handle = ^Threshold(0, 0, True)(%79), uses = [[%84.i0], []];
-  %85 : Float(2, 256, 28, 28), %86 : Long(2, 256, 28, 28), %87 : Handle = ^MaxPool2d(2, 2, 0, 1, False)(%82), uses = [[%88.i0], [], []];
-  %89 : Float(2, 512, 28, 28), %90 : Handle = CppOp[ConvForward](%85, %15, %16), uses = [[%91.i0], []];
-  %92 : Float(2, 512, 28, 28), %93 : Handle = ^Threshold(0, 0, True)(%89), uses = [[%94.i0], []];
-  %95 : Float(2, 512, 28, 28), %96 : Handle = CppOp[ConvForward](%92, %17, %18), uses = [[%97.i0], []];
-  %98 : Float(2, 512, 28, 28), %99 : Handle = ^Threshold(0, 0, True)(%95), uses = [[%100.i0], []];
-  %101 : Float(2, 512, 28, 28), %102 : Handle = CppOp[ConvForward](%98, %19, %20), uses = [[%103.i0], []];
-  %104 : Float(2, 512, 28, 28), %105 : Handle = ^Threshold(0, 0, True)(%101), uses = [[%106.i0], []];
-  %107 : Float(2, 512, 14, 14), %108 : Long(2, 512, 14, 14), %109 : Handle = ^MaxPool2d(2, 2, 0, 1, False)(%104), uses = [[%110.i0], [], []];
-  %111 : Float(2, 512, 14, 14), %112 : Handle = CppOp[ConvForward](%107, %21, %22), uses = [[%113.i0], []];
-  %114 : Float(2, 512, 14, 14), %115 : Handle = ^Threshold(0, 0, True)(%111), uses = [[%116.i0], []];
-  %117 : Float(2, 512, 14, 14), %118 : Handle = CppOp[ConvForward](%114, %23, %24), uses = [[%119.i0], []];
-  %120 : Float(2, 512, 14, 14), %121 : Handle = ^Threshold(0, 0, True)(%117), uses = [[%122.i0], []];
-  %123 : Float(2, 512, 14, 14), %124 : Handle = CppOp[ConvForward](%120, %25, %26), uses = [[%125.i0], []];
-  %126 : Float(2, 512, 14, 14), %127 : Handle = ^Threshold(0, 0, True)(%123), uses = [[%128.i0], []];
-  %129 : Float(2, 512, 7, 7), %130 : Long(2, 512, 7, 7), %131 : Handle = ^MaxPool2d(2, 2, 0, 1, False)(%126), uses = [[%132.i0], [], []];
-  %133 : Float(2, 25088), %134 : Handle = ^View((2, -1))(%129), uses = [[%138.i1], []];
-  %136 : Float(25088!, 4096!), %137 : Handle = ^Transpose(0, 1)(%27), uses = [[%138.i2], []];
-  %139 : Float(2, 4096), %140 : Handle = ^Addmm(1, 1, False)(%28, %133, %136), uses = [[%141.i0], []];
-  %142 : Float(2, 4096), %143 : Handle = ^Threshold(0, 0, True)(%139), uses = [[%144.i0], []];
-  %145 : Float(2, 4096), %146 : Handle = ^Dropout(0.5, True, False)(%142), uses = [[%150.i1], []];
-  %148 : Float(4096!, 4096!), %149 : Handle = ^Transpose(0, 1)(%29), uses = [[%150.i2], []];
-  %151 : Float(2, 4096), %152 : Handle = ^Addmm(1, 1, False)(%30, %145, %148), uses = [[%153.i0], []];
-  %154 : Float(2, 4096), %155 : Handle = ^Threshold(0, 0, True)(%151), uses = [[%156.i0], []];
-  %157 : Float(2, 4096), %158 : Handle = ^Dropout(0.5, True, False)(%154), uses = [[%162.i1], []];
-  %160 : Float(4096!, 1000!), %161 : Handle = ^Transpose(0, 1)(%31), uses = [[%162.i2], []];
-  %163 : Float(2, 1000), %164 : Handle = ^Addmm(1, 1, False)(%32, %157, %160), uses = [[%0.i0], []];
-  return (%163);
+graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17, %18, %19, %20, %21, %22, %23, %24, %25, %26, %27, %28, %29, %30, %31, %32, %33) {
+  %35 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%33, %1)
+  %36 = Add[broadcast = 1, axis = 1](%35, %2)
+  %37 = Relu(%36)
+  %39 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%37, %3)
+  %40 = Add[broadcast = 1, axis = 1](%39, %4)
+  %41 = Relu(%40)
+  %42 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], dilations = [1, 1], strides = [2, 2]](%41)
+  %44 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%42, %5)
+  %45 = Add[broadcast = 1, axis = 1](%44, %6)
+  %46 = Relu(%45)
+  %48 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%46, %7)
+  %49 = Add[broadcast = 1, axis = 1](%48, %8)
+  %50 = Relu(%49)
+  %51 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], dilations = [1, 1], strides = [2, 2]](%50)
+  %53 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%51, %9)
+  %54 = Add[broadcast = 1, axis = 1](%53, %10)
+  %55 = Relu(%54)
+  %57 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%55, %11)
+  %58 = Add[broadcast = 1, axis = 1](%57, %12)
+  %59 = Relu(%58)
+  %61 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%59, %13)
+  %62 = Add[broadcast = 1, axis = 1](%61, %14)
+  %63 = Relu(%62)
+  %64 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], dilations = [1, 1], strides = [2, 2]](%63)
+  %66 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%64, %15)
+  %67 = Add[broadcast = 1, axis = 1](%66, %16)
+  %68 = Relu(%67)
+  %70 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%68, %17)
+  %71 = Add[broadcast = 1, axis = 1](%70, %18)
+  %72 = Relu(%71)
+  %74 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%72, %19)
+  %75 = Add[broadcast = 1, axis = 1](%74, %20)
+  %76 = Relu(%75)
+  %77 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], dilations = [1, 1], strides = [2, 2]](%76)
+  %79 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%77, %21)
+  %80 = Add[broadcast = 1, axis = 1](%79, %22)
+  %81 = Relu(%80)
+  %83 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%81, %23)
+  %84 = Add[broadcast = 1, axis = 1](%83, %24)
+  %85 = Relu(%84)
+  %87 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%85, %25)
+  %88 = Add[broadcast = 1, axis = 1](%87, %26)
+  %89 = Relu(%88)
+  %90 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], dilations = [1, 1], strides = [2, 2]](%89)
+  %91 = Reshape[shape = [2, -1]](%90)
+  %92 = Transpose[perm = [1, 0]](%27)
+  %93 = Transpose(%92)
+  %94 = FC(%91, %93, %28)
+  %95 = Relu(%94)
+  %97, %98 = Dropout[ratio = 0.5, is_test = 1](%95)
+  %99 = Transpose[perm = [1, 0]](%29)
+  %100 = Transpose(%99)
+  %101 = FC(%97, %100, %30)
+  %102 = Relu(%101)
+  %104, %105 = Dropout[ratio = 0.5, is_test = 1](%102)
+  %106 = Transpose[perm = [1, 0]](%31)
+  %107 = Transpose(%106)
+  %108 = FC(%104, %107, %32)
+  return %108
 }
