@@ -1,868 +1,1124 @@
-graph(%1 : Float(10, 5)
-      %2 : Float(20, 5)
-      %3 : Float(20, 5)
-      %4 : Float(20)
-      %5 : Float(20)
-      %6 : Float(20, 5)
-      %7 : Float(20, 5)
-      %8 : Float(20)
-      %9 : Float(20)
-      %10 : Float(20, 5)
-      %11 : Float(20, 5)
-      %12 : Float(20)
-      %13 : Float(20)
-      %14 : Float(20, 5)
-      %15 : Float(20, 5)
-      %16 : Float(20)
-      %17 : Float(20)
-      %18 : Float(20, 5)
-      %19 : Float(20, 5)
-      %20 : Float(20)
-      %21 : Float(20)
-      %22 : Float(10, 5)
-      %23 : Float(10)
-      %24 : Long(10, 5)
-      %25 : Float(5, 5, 5)
-      %26 : Float(5, 5, 5)) {
-  %28 : Float(10, 5, 5), %29 : Handle = ^Embedding(-1, None, 2, False, False)(%24, %1), uses = [[%30.i0], []];
-  %31 : Float(10, 5, 5), %32 : Handle = ^Dropout(0.2, True, False)(%28), uses = [[%63.i0, %114.i0, %165.i0, %216.i0, %267.i0, %318.i0, %369.i0, %420.i0, %471.i0, %522.i0], []];
-  %34 : Float(5, 5), %35 : Handle = ^Index(0)(%25), uses = [[%75.i1], []];
-  %37 : Float(5, 5), %38 : Handle = ^Index(0)(%26), uses = [[%99.i1], []];
-  %40 : Float(5, 5), %41 : Handle = ^Index(1)(%25), uses = [[%597.i1], []];
-  %43 : Float(5, 5), %44 : Handle = ^Index(1)(%26), uses = [[%621.i1], []];
-  %46 : Float(5, 5), %47 : Handle = ^Index(2)(%25), uses = [[%1119.i1], []];
-  %49 : Float(5, 5), %50 : Handle = ^Index(2)(%26), uses = [[%1143.i1], []];
-  %52 : Float(5, 5), %53 : Handle = ^Index(3)(%25), uses = [[%1641.i1], []];
-  %55 : Float(5, 5), %56 : Handle = ^Index(3)(%26), uses = [[%1665.i1], []];
-  %58 : Float(5, 5), %59 : Handle = ^Index(4)(%25), uses = [[%2163.i1], []];
-  %61 : Float(5, 5), %62 : Handle = ^Index(4)(%26), uses = [[%2187.i1], []];
-  %64 : Float(5, 5), %65 : Handle = ^Index(0)(%31), uses = [[%69.i1], []];
-  %67 : Float(5!, 20!), %68 : Handle = ^Transpose(0, 1)(%2), uses = [[%69.i2], []];
-  %70 : Float(5, 20), %71 : Handle = ^Addmm(1, 1, False)(%4, %64, %67), uses = [[%78.i0], []];
-  %73 : Float(5!, 20!), %74 : Handle = ^Transpose(0, 1)(%3), uses = [[%75.i2], []];
-  %76 : Float(5, 20), %77 : Handle = ^Addmm(1, 1, False)(%5, %34, %73), uses = [[%78.i1], []];
-  %79 : Float(5, 20), %80 : Handle = ^Add(False)(%70, %76), uses = [[%81.i0], []];
-  %82 : Float(5!, 5), %83 : Float(5!, 5), %84 : Float(5!, 5), %85 : Float(5!, 5), %86 : Handle = ^Chunk(4, 1)(%79), uses = [[%87.i0], [%90.i0], [%93.i0], [%96.i0], []];
-  %88 : Float(5, 5), %89 : Handle = ^Sigmoid()(%82), uses = [[%102.i0], []];
-  %91 : Float(5, 5), %92 : Handle = ^Sigmoid()(%83), uses = [[%99.i0], []];
-  %94 : Float(5, 5), %95 : Handle = ^Tanh()(%84), uses = [[%102.i1], []];
-  %97 : Float(5, 5), %98 : Handle = ^Sigmoid()(%85), uses = [[%111.i0], []];
-  %100 : Float(5, 5), %101 : Handle = ^Mul()(%91, %37), uses = [[%105.i0], []];
-  %103 : Float(5, 5), %104 : Handle = ^Mul()(%88, %94), uses = [[%105.i1], []];
-  %106 : Float(5, 5), %107 : Handle = ^Add(False)(%100, %103), uses = [[%108.i0, %150.i1], []];
-  %109 : Float(5, 5), %110 : Handle = ^Tanh()(%106), uses = [[%111.i1], []];
-  %112 : Float(5, 5), %113 : Handle = ^Mul()(%97, %109), uses = [[%126.i1, %573.i0], []];
-  %115 : Float(5, 5), %116 : Handle = ^Index(1)(%31), uses = [[%120.i1], []];
-  %118 : Float(5!, 20!), %119 : Handle = ^Transpose(0, 1)(%2), uses = [[%120.i2], []];
-  %121 : Float(5, 20), %122 : Handle = ^Addmm(1, 1, False)(%4, %115, %118), uses = [[%129.i0], []];
-  %124 : Float(5!, 20!), %125 : Handle = ^Transpose(0, 1)(%3), uses = [[%126.i2], []];
-  %127 : Float(5, 20), %128 : Handle = ^Addmm(1, 1, False)(%5, %112, %124), uses = [[%129.i1], []];
-  %130 : Float(5, 20), %131 : Handle = ^Add(False)(%121, %127), uses = [[%132.i0], []];
-  %133 : Float(5!, 5), %134 : Float(5!, 5), %135 : Float(5!, 5), %136 : Float(5!, 5), %137 : Handle = ^Chunk(4, 1)(%130), uses = [[%138.i0], [%141.i0], [%144.i0], [%147.i0], []];
-  %139 : Float(5, 5), %140 : Handle = ^Sigmoid()(%133), uses = [[%153.i0], []];
-  %142 : Float(5, 5), %143 : Handle = ^Sigmoid()(%134), uses = [[%150.i0], []];
-  %145 : Float(5, 5), %146 : Handle = ^Tanh()(%135), uses = [[%153.i1], []];
-  %148 : Float(5, 5), %149 : Handle = ^Sigmoid()(%136), uses = [[%162.i0], []];
-  %151 : Float(5, 5), %152 : Handle = ^Mul()(%142, %106), uses = [[%156.i0], []];
-  %154 : Float(5, 5), %155 : Handle = ^Mul()(%139, %145), uses = [[%156.i1], []];
-  %157 : Float(5, 5), %158 : Handle = ^Add(False)(%151, %154), uses = [[%159.i0, %201.i1], []];
-  %160 : Float(5, 5), %161 : Handle = ^Tanh()(%157), uses = [[%162.i1], []];
-  %163 : Float(5, 5), %164 : Handle = ^Mul()(%148, %160), uses = [[%177.i1, %573.i1], []];
-  %166 : Float(5, 5), %167 : Handle = ^Index(2)(%31), uses = [[%171.i1], []];
-  %169 : Float(5!, 20!), %170 : Handle = ^Transpose(0, 1)(%2), uses = [[%171.i2], []];
-  %172 : Float(5, 20), %173 : Handle = ^Addmm(1, 1, False)(%4, %166, %169), uses = [[%180.i0], []];
-  %175 : Float(5!, 20!), %176 : Handle = ^Transpose(0, 1)(%3), uses = [[%177.i2], []];
-  %178 : Float(5, 20), %179 : Handle = ^Addmm(1, 1, False)(%5, %163, %175), uses = [[%180.i1], []];
-  %181 : Float(5, 20), %182 : Handle = ^Add(False)(%172, %178), uses = [[%183.i0], []];
-  %184 : Float(5!, 5), %185 : Float(5!, 5), %186 : Float(5!, 5), %187 : Float(5!, 5), %188 : Handle = ^Chunk(4, 1)(%181), uses = [[%189.i0], [%192.i0], [%195.i0], [%198.i0], []];
-  %190 : Float(5, 5), %191 : Handle = ^Sigmoid()(%184), uses = [[%204.i0], []];
-  %193 : Float(5, 5), %194 : Handle = ^Sigmoid()(%185), uses = [[%201.i0], []];
-  %196 : Float(5, 5), %197 : Handle = ^Tanh()(%186), uses = [[%204.i1], []];
-  %199 : Float(5, 5), %200 : Handle = ^Sigmoid()(%187), uses = [[%213.i0], []];
-  %202 : Float(5, 5), %203 : Handle = ^Mul()(%193, %157), uses = [[%207.i0], []];
-  %205 : Float(5, 5), %206 : Handle = ^Mul()(%190, %196), uses = [[%207.i1], []];
-  %208 : Float(5, 5), %209 : Handle = ^Add(False)(%202, %205), uses = [[%210.i0, %252.i1], []];
-  %211 : Float(5, 5), %212 : Handle = ^Tanh()(%208), uses = [[%213.i1], []];
-  %214 : Float(5, 5), %215 : Handle = ^Mul()(%199, %211), uses = [[%228.i1, %573.i2], []];
-  %217 : Float(5, 5), %218 : Handle = ^Index(3)(%31), uses = [[%222.i1], []];
-  %220 : Float(5!, 20!), %221 : Handle = ^Transpose(0, 1)(%2), uses = [[%222.i2], []];
-  %223 : Float(5, 20), %224 : Handle = ^Addmm(1, 1, False)(%4, %217, %220), uses = [[%231.i0], []];
-  %226 : Float(5!, 20!), %227 : Handle = ^Transpose(0, 1)(%3), uses = [[%228.i2], []];
-  %229 : Float(5, 20), %230 : Handle = ^Addmm(1, 1, False)(%5, %214, %226), uses = [[%231.i1], []];
-  %232 : Float(5, 20), %233 : Handle = ^Add(False)(%223, %229), uses = [[%234.i0], []];
-  %235 : Float(5!, 5), %236 : Float(5!, 5), %237 : Float(5!, 5), %238 : Float(5!, 5), %239 : Handle = ^Chunk(4, 1)(%232), uses = [[%240.i0], [%243.i0], [%246.i0], [%249.i0], []];
-  %241 : Float(5, 5), %242 : Handle = ^Sigmoid()(%235), uses = [[%255.i0], []];
-  %244 : Float(5, 5), %245 : Handle = ^Sigmoid()(%236), uses = [[%252.i0], []];
-  %247 : Float(5, 5), %248 : Handle = ^Tanh()(%237), uses = [[%255.i1], []];
-  %250 : Float(5, 5), %251 : Handle = ^Sigmoid()(%238), uses = [[%264.i0], []];
-  %253 : Float(5, 5), %254 : Handle = ^Mul()(%244, %208), uses = [[%258.i0], []];
-  %256 : Float(5, 5), %257 : Handle = ^Mul()(%241, %247), uses = [[%258.i1], []];
-  %259 : Float(5, 5), %260 : Handle = ^Add(False)(%253, %256), uses = [[%261.i0, %303.i1], []];
-  %262 : Float(5, 5), %263 : Handle = ^Tanh()(%259), uses = [[%264.i1], []];
-  %265 : Float(5, 5), %266 : Handle = ^Mul()(%250, %262), uses = [[%279.i1, %573.i3], []];
-  %268 : Float(5, 5), %269 : Handle = ^Index(4)(%31), uses = [[%273.i1], []];
-  %271 : Float(5!, 20!), %272 : Handle = ^Transpose(0, 1)(%2), uses = [[%273.i2], []];
-  %274 : Float(5, 20), %275 : Handle = ^Addmm(1, 1, False)(%4, %268, %271), uses = [[%282.i0], []];
-  %277 : Float(5!, 20!), %278 : Handle = ^Transpose(0, 1)(%3), uses = [[%279.i2], []];
-  %280 : Float(5, 20), %281 : Handle = ^Addmm(1, 1, False)(%5, %265, %277), uses = [[%282.i1], []];
-  %283 : Float(5, 20), %284 : Handle = ^Add(False)(%274, %280), uses = [[%285.i0], []];
-  %286 : Float(5!, 5), %287 : Float(5!, 5), %288 : Float(5!, 5), %289 : Float(5!, 5), %290 : Handle = ^Chunk(4, 1)(%283), uses = [[%291.i0], [%294.i0], [%297.i0], [%300.i0], []];
-  %292 : Float(5, 5), %293 : Handle = ^Sigmoid()(%286), uses = [[%306.i0], []];
-  %295 : Float(5, 5), %296 : Handle = ^Sigmoid()(%287), uses = [[%303.i0], []];
-  %298 : Float(5, 5), %299 : Handle = ^Tanh()(%288), uses = [[%306.i1], []];
-  %301 : Float(5, 5), %302 : Handle = ^Sigmoid()(%289), uses = [[%315.i0], []];
-  %304 : Float(5, 5), %305 : Handle = ^Mul()(%295, %259), uses = [[%309.i0], []];
-  %307 : Float(5, 5), %308 : Handle = ^Mul()(%292, %298), uses = [[%309.i1], []];
-  %310 : Float(5, 5), %311 : Handle = ^Add(False)(%304, %307), uses = [[%312.i0, %354.i1], []];
-  %313 : Float(5, 5), %314 : Handle = ^Tanh()(%310), uses = [[%315.i1], []];
-  %316 : Float(5, 5), %317 : Handle = ^Mul()(%301, %313), uses = [[%330.i1, %573.i4], []];
-  %319 : Float(5, 5), %320 : Handle = ^Index(5)(%31), uses = [[%324.i1], []];
-  %322 : Float(5!, 20!), %323 : Handle = ^Transpose(0, 1)(%2), uses = [[%324.i2], []];
-  %325 : Float(5, 20), %326 : Handle = ^Addmm(1, 1, False)(%4, %319, %322), uses = [[%333.i0], []];
-  %328 : Float(5!, 20!), %329 : Handle = ^Transpose(0, 1)(%3), uses = [[%330.i2], []];
-  %331 : Float(5, 20), %332 : Handle = ^Addmm(1, 1, False)(%5, %316, %328), uses = [[%333.i1], []];
-  %334 : Float(5, 20), %335 : Handle = ^Add(False)(%325, %331), uses = [[%336.i0], []];
-  %337 : Float(5!, 5), %338 : Float(5!, 5), %339 : Float(5!, 5), %340 : Float(5!, 5), %341 : Handle = ^Chunk(4, 1)(%334), uses = [[%342.i0], [%345.i0], [%348.i0], [%351.i0], []];
-  %343 : Float(5, 5), %344 : Handle = ^Sigmoid()(%337), uses = [[%357.i0], []];
-  %346 : Float(5, 5), %347 : Handle = ^Sigmoid()(%338), uses = [[%354.i0], []];
-  %349 : Float(5, 5), %350 : Handle = ^Tanh()(%339), uses = [[%357.i1], []];
-  %352 : Float(5, 5), %353 : Handle = ^Sigmoid()(%340), uses = [[%366.i0], []];
-  %355 : Float(5, 5), %356 : Handle = ^Mul()(%346, %310), uses = [[%360.i0], []];
-  %358 : Float(5, 5), %359 : Handle = ^Mul()(%343, %349), uses = [[%360.i1], []];
-  %361 : Float(5, 5), %362 : Handle = ^Add(False)(%355, %358), uses = [[%363.i0, %405.i1], []];
-  %364 : Float(5, 5), %365 : Handle = ^Tanh()(%361), uses = [[%366.i1], []];
-  %367 : Float(5, 5), %368 : Handle = ^Mul()(%352, %364), uses = [[%381.i1, %573.i5], []];
-  %370 : Float(5, 5), %371 : Handle = ^Index(6)(%31), uses = [[%375.i1], []];
-  %373 : Float(5!, 20!), %374 : Handle = ^Transpose(0, 1)(%2), uses = [[%375.i2], []];
-  %376 : Float(5, 20), %377 : Handle = ^Addmm(1, 1, False)(%4, %370, %373), uses = [[%384.i0], []];
-  %379 : Float(5!, 20!), %380 : Handle = ^Transpose(0, 1)(%3), uses = [[%381.i2], []];
-  %382 : Float(5, 20), %383 : Handle = ^Addmm(1, 1, False)(%5, %367, %379), uses = [[%384.i1], []];
-  %385 : Float(5, 20), %386 : Handle = ^Add(False)(%376, %382), uses = [[%387.i0], []];
-  %388 : Float(5!, 5), %389 : Float(5!, 5), %390 : Float(5!, 5), %391 : Float(5!, 5), %392 : Handle = ^Chunk(4, 1)(%385), uses = [[%393.i0], [%396.i0], [%399.i0], [%402.i0], []];
-  %394 : Float(5, 5), %395 : Handle = ^Sigmoid()(%388), uses = [[%408.i0], []];
-  %397 : Float(5, 5), %398 : Handle = ^Sigmoid()(%389), uses = [[%405.i0], []];
-  %400 : Float(5, 5), %401 : Handle = ^Tanh()(%390), uses = [[%408.i1], []];
-  %403 : Float(5, 5), %404 : Handle = ^Sigmoid()(%391), uses = [[%417.i0], []];
-  %406 : Float(5, 5), %407 : Handle = ^Mul()(%397, %361), uses = [[%411.i0], []];
-  %409 : Float(5, 5), %410 : Handle = ^Mul()(%394, %400), uses = [[%411.i1], []];
-  %412 : Float(5, 5), %413 : Handle = ^Add(False)(%406, %409), uses = [[%414.i0, %456.i1], []];
-  %415 : Float(5, 5), %416 : Handle = ^Tanh()(%412), uses = [[%417.i1], []];
-  %418 : Float(5, 5), %419 : Handle = ^Mul()(%403, %415), uses = [[%432.i1, %573.i6], []];
-  %421 : Float(5, 5), %422 : Handle = ^Index(7)(%31), uses = [[%426.i1], []];
-  %424 : Float(5!, 20!), %425 : Handle = ^Transpose(0, 1)(%2), uses = [[%426.i2], []];
-  %427 : Float(5, 20), %428 : Handle = ^Addmm(1, 1, False)(%4, %421, %424), uses = [[%435.i0], []];
-  %430 : Float(5!, 20!), %431 : Handle = ^Transpose(0, 1)(%3), uses = [[%432.i2], []];
-  %433 : Float(5, 20), %434 : Handle = ^Addmm(1, 1, False)(%5, %418, %430), uses = [[%435.i1], []];
-  %436 : Float(5, 20), %437 : Handle = ^Add(False)(%427, %433), uses = [[%438.i0], []];
-  %439 : Float(5!, 5), %440 : Float(5!, 5), %441 : Float(5!, 5), %442 : Float(5!, 5), %443 : Handle = ^Chunk(4, 1)(%436), uses = [[%444.i0], [%447.i0], [%450.i0], [%453.i0], []];
-  %445 : Float(5, 5), %446 : Handle = ^Sigmoid()(%439), uses = [[%459.i0], []];
-  %448 : Float(5, 5), %449 : Handle = ^Sigmoid()(%440), uses = [[%456.i0], []];
-  %451 : Float(5, 5), %452 : Handle = ^Tanh()(%441), uses = [[%459.i1], []];
-  %454 : Float(5, 5), %455 : Handle = ^Sigmoid()(%442), uses = [[%468.i0], []];
-  %457 : Float(5, 5), %458 : Handle = ^Mul()(%448, %412), uses = [[%462.i0], []];
-  %460 : Float(5, 5), %461 : Handle = ^Mul()(%445, %451), uses = [[%462.i1], []];
-  %463 : Float(5, 5), %464 : Handle = ^Add(False)(%457, %460), uses = [[%465.i0, %507.i1], []];
-  %466 : Float(5, 5), %467 : Handle = ^Tanh()(%463), uses = [[%468.i1], []];
-  %469 : Float(5, 5), %470 : Handle = ^Mul()(%454, %466), uses = [[%483.i1, %573.i7], []];
-  %472 : Float(5, 5), %473 : Handle = ^Index(8)(%31), uses = [[%477.i1], []];
-  %475 : Float(5!, 20!), %476 : Handle = ^Transpose(0, 1)(%2), uses = [[%477.i2], []];
-  %478 : Float(5, 20), %479 : Handle = ^Addmm(1, 1, False)(%4, %472, %475), uses = [[%486.i0], []];
-  %481 : Float(5!, 20!), %482 : Handle = ^Transpose(0, 1)(%3), uses = [[%483.i2], []];
-  %484 : Float(5, 20), %485 : Handle = ^Addmm(1, 1, False)(%5, %469, %481), uses = [[%486.i1], []];
-  %487 : Float(5, 20), %488 : Handle = ^Add(False)(%478, %484), uses = [[%489.i0], []];
-  %490 : Float(5!, 5), %491 : Float(5!, 5), %492 : Float(5!, 5), %493 : Float(5!, 5), %494 : Handle = ^Chunk(4, 1)(%487), uses = [[%495.i0], [%498.i0], [%501.i0], [%504.i0], []];
-  %496 : Float(5, 5), %497 : Handle = ^Sigmoid()(%490), uses = [[%510.i0], []];
-  %499 : Float(5, 5), %500 : Handle = ^Sigmoid()(%491), uses = [[%507.i0], []];
-  %502 : Float(5, 5), %503 : Handle = ^Tanh()(%492), uses = [[%510.i1], []];
-  %505 : Float(5, 5), %506 : Handle = ^Sigmoid()(%493), uses = [[%519.i0], []];
-  %508 : Float(5, 5), %509 : Handle = ^Mul()(%499, %463), uses = [[%513.i0], []];
-  %511 : Float(5, 5), %512 : Handle = ^Mul()(%496, %502), uses = [[%513.i1], []];
-  %514 : Float(5, 5), %515 : Handle = ^Add(False)(%508, %511), uses = [[%516.i0, %558.i1], []];
-  %517 : Float(5, 5), %518 : Handle = ^Tanh()(%514), uses = [[%519.i1], []];
-  %520 : Float(5, 5), %521 : Handle = ^Mul()(%505, %517), uses = [[%534.i1, %573.i8], []];
-  %523 : Float(5, 5), %524 : Handle = ^Index(9)(%31), uses = [[%528.i1], []];
-  %526 : Float(5!, 20!), %527 : Handle = ^Transpose(0, 1)(%2), uses = [[%528.i2], []];
-  %529 : Float(5, 20), %530 : Handle = ^Addmm(1, 1, False)(%4, %523, %526), uses = [[%537.i0], []];
-  %532 : Float(5!, 20!), %533 : Handle = ^Transpose(0, 1)(%3), uses = [[%534.i2], []];
-  %535 : Float(5, 20), %536 : Handle = ^Addmm(1, 1, False)(%5, %520, %532), uses = [[%537.i1], []];
-  %538 : Float(5, 20), %539 : Handle = ^Add(False)(%529, %535), uses = [[%540.i0], []];
-  %541 : Float(5!, 5), %542 : Float(5!, 5), %543 : Float(5!, 5), %544 : Float(5!, 5), %545 : Handle = ^Chunk(4, 1)(%538), uses = [[%546.i0], [%549.i0], [%552.i0], [%555.i0], []];
-  %547 : Float(5, 5), %548 : Handle = ^Sigmoid()(%541), uses = [[%561.i0], []];
-  %550 : Float(5, 5), %551 : Handle = ^Sigmoid()(%542), uses = [[%558.i0], []];
-  %553 : Float(5, 5), %554 : Handle = ^Tanh()(%543), uses = [[%561.i1], []];
-  %556 : Float(5, 5), %557 : Handle = ^Sigmoid()(%544), uses = [[%570.i0], []];
-  %559 : Float(5, 5), %560 : Handle = ^Mul()(%550, %514), uses = [[%564.i0], []];
-  %562 : Float(5, 5), %563 : Handle = ^Mul()(%547, %553), uses = [[%564.i1], []];
-  %565 : Float(5, 5), %566 : Handle = ^Add(False)(%559, %562), uses = [[%567.i0, %2676.i0], []];
-  %568 : Float(5, 5), %569 : Handle = ^Tanh()(%565), uses = [[%570.i1], []];
-  %571 : Float(5, 5), %572 : Handle = ^Mul()(%556, %568), uses = [[%573.i9, %2670.i0], []];
-  %574 : Float(50, 5), %575 : Handle = ^Concat(0)(%112, %163, %214, %265, %316, %367, %418, %469, %520, %571), uses = [[%576.i0], []];
-  %577 : Float(10, 5, 5), %578 : Handle = ^View((10, 5, 5))(%574), uses = [[%579.i0], []];
-  %580 : Float(10, 5, 5), %581 : Handle = ^Concat(2)(%577), uses = [[%582.i0], []];
-  %583 : Float(10, 5, 5), %584 : Handle = ^Dropout(0.2, True, False)(%580), uses = [[%585.i0, %636.i0, %687.i0, %738.i0, %789.i0, %840.i0, %891.i0, %942.i0, %993.i0, %1044.i0], []];
-  %586 : Float(5, 5), %587 : Handle = ^Index(0)(%583), uses = [[%591.i1], []];
-  %589 : Float(5!, 20!), %590 : Handle = ^Transpose(0, 1)(%6), uses = [[%591.i2], []];
-  %592 : Float(5, 20), %593 : Handle = ^Addmm(1, 1, False)(%8, %586, %589), uses = [[%600.i0], []];
-  %595 : Float(5!, 20!), %596 : Handle = ^Transpose(0, 1)(%7), uses = [[%597.i2], []];
-  %598 : Float(5, 20), %599 : Handle = ^Addmm(1, 1, False)(%9, %40, %595), uses = [[%600.i1], []];
-  %601 : Float(5, 20), %602 : Handle = ^Add(False)(%592, %598), uses = [[%603.i0], []];
-  %604 : Float(5!, 5), %605 : Float(5!, 5), %606 : Float(5!, 5), %607 : Float(5!, 5), %608 : Handle = ^Chunk(4, 1)(%601), uses = [[%609.i0], [%612.i0], [%615.i0], [%618.i0], []];
-  %610 : Float(5, 5), %611 : Handle = ^Sigmoid()(%604), uses = [[%624.i0], []];
-  %613 : Float(5, 5), %614 : Handle = ^Sigmoid()(%605), uses = [[%621.i0], []];
-  %616 : Float(5, 5), %617 : Handle = ^Tanh()(%606), uses = [[%624.i1], []];
-  %619 : Float(5, 5), %620 : Handle = ^Sigmoid()(%607), uses = [[%633.i0], []];
-  %622 : Float(5, 5), %623 : Handle = ^Mul()(%613, %43), uses = [[%627.i0], []];
-  %625 : Float(5, 5), %626 : Handle = ^Mul()(%610, %616), uses = [[%627.i1], []];
-  %628 : Float(5, 5), %629 : Handle = ^Add(False)(%622, %625), uses = [[%630.i0, %672.i1], []];
-  %631 : Float(5, 5), %632 : Handle = ^Tanh()(%628), uses = [[%633.i1], []];
-  %634 : Float(5, 5), %635 : Handle = ^Mul()(%619, %631), uses = [[%648.i1, %1095.i0], []];
-  %637 : Float(5, 5), %638 : Handle = ^Index(1)(%583), uses = [[%642.i1], []];
-  %640 : Float(5!, 20!), %641 : Handle = ^Transpose(0, 1)(%6), uses = [[%642.i2], []];
-  %643 : Float(5, 20), %644 : Handle = ^Addmm(1, 1, False)(%8, %637, %640), uses = [[%651.i0], []];
-  %646 : Float(5!, 20!), %647 : Handle = ^Transpose(0, 1)(%7), uses = [[%648.i2], []];
-  %649 : Float(5, 20), %650 : Handle = ^Addmm(1, 1, False)(%9, %634, %646), uses = [[%651.i1], []];
-  %652 : Float(5, 20), %653 : Handle = ^Add(False)(%643, %649), uses = [[%654.i0], []];
-  %655 : Float(5!, 5), %656 : Float(5!, 5), %657 : Float(5!, 5), %658 : Float(5!, 5), %659 : Handle = ^Chunk(4, 1)(%652), uses = [[%660.i0], [%663.i0], [%666.i0], [%669.i0], []];
-  %661 : Float(5, 5), %662 : Handle = ^Sigmoid()(%655), uses = [[%675.i0], []];
-  %664 : Float(5, 5), %665 : Handle = ^Sigmoid()(%656), uses = [[%672.i0], []];
-  %667 : Float(5, 5), %668 : Handle = ^Tanh()(%657), uses = [[%675.i1], []];
-  %670 : Float(5, 5), %671 : Handle = ^Sigmoid()(%658), uses = [[%684.i0], []];
-  %673 : Float(5, 5), %674 : Handle = ^Mul()(%664, %628), uses = [[%678.i0], []];
-  %676 : Float(5, 5), %677 : Handle = ^Mul()(%661, %667), uses = [[%678.i1], []];
-  %679 : Float(5, 5), %680 : Handle = ^Add(False)(%673, %676), uses = [[%681.i0, %723.i1], []];
-  %682 : Float(5, 5), %683 : Handle = ^Tanh()(%679), uses = [[%684.i1], []];
-  %685 : Float(5, 5), %686 : Handle = ^Mul()(%670, %682), uses = [[%699.i1, %1095.i1], []];
-  %688 : Float(5, 5), %689 : Handle = ^Index(2)(%583), uses = [[%693.i1], []];
-  %691 : Float(5!, 20!), %692 : Handle = ^Transpose(0, 1)(%6), uses = [[%693.i2], []];
-  %694 : Float(5, 20), %695 : Handle = ^Addmm(1, 1, False)(%8, %688, %691), uses = [[%702.i0], []];
-  %697 : Float(5!, 20!), %698 : Handle = ^Transpose(0, 1)(%7), uses = [[%699.i2], []];
-  %700 : Float(5, 20), %701 : Handle = ^Addmm(1, 1, False)(%9, %685, %697), uses = [[%702.i1], []];
-  %703 : Float(5, 20), %704 : Handle = ^Add(False)(%694, %700), uses = [[%705.i0], []];
-  %706 : Float(5!, 5), %707 : Float(5!, 5), %708 : Float(5!, 5), %709 : Float(5!, 5), %710 : Handle = ^Chunk(4, 1)(%703), uses = [[%711.i0], [%714.i0], [%717.i0], [%720.i0], []];
-  %712 : Float(5, 5), %713 : Handle = ^Sigmoid()(%706), uses = [[%726.i0], []];
-  %715 : Float(5, 5), %716 : Handle = ^Sigmoid()(%707), uses = [[%723.i0], []];
-  %718 : Float(5, 5), %719 : Handle = ^Tanh()(%708), uses = [[%726.i1], []];
-  %721 : Float(5, 5), %722 : Handle = ^Sigmoid()(%709), uses = [[%735.i0], []];
-  %724 : Float(5, 5), %725 : Handle = ^Mul()(%715, %679), uses = [[%729.i0], []];
-  %727 : Float(5, 5), %728 : Handle = ^Mul()(%712, %718), uses = [[%729.i1], []];
-  %730 : Float(5, 5), %731 : Handle = ^Add(False)(%724, %727), uses = [[%732.i0, %774.i1], []];
-  %733 : Float(5, 5), %734 : Handle = ^Tanh()(%730), uses = [[%735.i1], []];
-  %736 : Float(5, 5), %737 : Handle = ^Mul()(%721, %733), uses = [[%750.i1, %1095.i2], []];
-  %739 : Float(5, 5), %740 : Handle = ^Index(3)(%583), uses = [[%744.i1], []];
-  %742 : Float(5!, 20!), %743 : Handle = ^Transpose(0, 1)(%6), uses = [[%744.i2], []];
-  %745 : Float(5, 20), %746 : Handle = ^Addmm(1, 1, False)(%8, %739, %742), uses = [[%753.i0], []];
-  %748 : Float(5!, 20!), %749 : Handle = ^Transpose(0, 1)(%7), uses = [[%750.i2], []];
-  %751 : Float(5, 20), %752 : Handle = ^Addmm(1, 1, False)(%9, %736, %748), uses = [[%753.i1], []];
-  %754 : Float(5, 20), %755 : Handle = ^Add(False)(%745, %751), uses = [[%756.i0], []];
-  %757 : Float(5!, 5), %758 : Float(5!, 5), %759 : Float(5!, 5), %760 : Float(5!, 5), %761 : Handle = ^Chunk(4, 1)(%754), uses = [[%762.i0], [%765.i0], [%768.i0], [%771.i0], []];
-  %763 : Float(5, 5), %764 : Handle = ^Sigmoid()(%757), uses = [[%777.i0], []];
-  %766 : Float(5, 5), %767 : Handle = ^Sigmoid()(%758), uses = [[%774.i0], []];
-  %769 : Float(5, 5), %770 : Handle = ^Tanh()(%759), uses = [[%777.i1], []];
-  %772 : Float(5, 5), %773 : Handle = ^Sigmoid()(%760), uses = [[%786.i0], []];
-  %775 : Float(5, 5), %776 : Handle = ^Mul()(%766, %730), uses = [[%780.i0], []];
-  %778 : Float(5, 5), %779 : Handle = ^Mul()(%763, %769), uses = [[%780.i1], []];
-  %781 : Float(5, 5), %782 : Handle = ^Add(False)(%775, %778), uses = [[%783.i0, %825.i1], []];
-  %784 : Float(5, 5), %785 : Handle = ^Tanh()(%781), uses = [[%786.i1], []];
-  %787 : Float(5, 5), %788 : Handle = ^Mul()(%772, %784), uses = [[%801.i1, %1095.i3], []];
-  %790 : Float(5, 5), %791 : Handle = ^Index(4)(%583), uses = [[%795.i1], []];
-  %793 : Float(5!, 20!), %794 : Handle = ^Transpose(0, 1)(%6), uses = [[%795.i2], []];
-  %796 : Float(5, 20), %797 : Handle = ^Addmm(1, 1, False)(%8, %790, %793), uses = [[%804.i0], []];
-  %799 : Float(5!, 20!), %800 : Handle = ^Transpose(0, 1)(%7), uses = [[%801.i2], []];
-  %802 : Float(5, 20), %803 : Handle = ^Addmm(1, 1, False)(%9, %787, %799), uses = [[%804.i1], []];
-  %805 : Float(5, 20), %806 : Handle = ^Add(False)(%796, %802), uses = [[%807.i0], []];
-  %808 : Float(5!, 5), %809 : Float(5!, 5), %810 : Float(5!, 5), %811 : Float(5!, 5), %812 : Handle = ^Chunk(4, 1)(%805), uses = [[%813.i0], [%816.i0], [%819.i0], [%822.i0], []];
-  %814 : Float(5, 5), %815 : Handle = ^Sigmoid()(%808), uses = [[%828.i0], []];
-  %817 : Float(5, 5), %818 : Handle = ^Sigmoid()(%809), uses = [[%825.i0], []];
-  %820 : Float(5, 5), %821 : Handle = ^Tanh()(%810), uses = [[%828.i1], []];
-  %823 : Float(5, 5), %824 : Handle = ^Sigmoid()(%811), uses = [[%837.i0], []];
-  %826 : Float(5, 5), %827 : Handle = ^Mul()(%817, %781), uses = [[%831.i0], []];
-  %829 : Float(5, 5), %830 : Handle = ^Mul()(%814, %820), uses = [[%831.i1], []];
-  %832 : Float(5, 5), %833 : Handle = ^Add(False)(%826, %829), uses = [[%834.i0, %876.i1], []];
-  %835 : Float(5, 5), %836 : Handle = ^Tanh()(%832), uses = [[%837.i1], []];
-  %838 : Float(5, 5), %839 : Handle = ^Mul()(%823, %835), uses = [[%852.i1, %1095.i4], []];
-  %841 : Float(5, 5), %842 : Handle = ^Index(5)(%583), uses = [[%846.i1], []];
-  %844 : Float(5!, 20!), %845 : Handle = ^Transpose(0, 1)(%6), uses = [[%846.i2], []];
-  %847 : Float(5, 20), %848 : Handle = ^Addmm(1, 1, False)(%8, %841, %844), uses = [[%855.i0], []];
-  %850 : Float(5!, 20!), %851 : Handle = ^Transpose(0, 1)(%7), uses = [[%852.i2], []];
-  %853 : Float(5, 20), %854 : Handle = ^Addmm(1, 1, False)(%9, %838, %850), uses = [[%855.i1], []];
-  %856 : Float(5, 20), %857 : Handle = ^Add(False)(%847, %853), uses = [[%858.i0], []];
-  %859 : Float(5!, 5), %860 : Float(5!, 5), %861 : Float(5!, 5), %862 : Float(5!, 5), %863 : Handle = ^Chunk(4, 1)(%856), uses = [[%864.i0], [%867.i0], [%870.i0], [%873.i0], []];
-  %865 : Float(5, 5), %866 : Handle = ^Sigmoid()(%859), uses = [[%879.i0], []];
-  %868 : Float(5, 5), %869 : Handle = ^Sigmoid()(%860), uses = [[%876.i0], []];
-  %871 : Float(5, 5), %872 : Handle = ^Tanh()(%861), uses = [[%879.i1], []];
-  %874 : Float(5, 5), %875 : Handle = ^Sigmoid()(%862), uses = [[%888.i0], []];
-  %877 : Float(5, 5), %878 : Handle = ^Mul()(%868, %832), uses = [[%882.i0], []];
-  %880 : Float(5, 5), %881 : Handle = ^Mul()(%865, %871), uses = [[%882.i1], []];
-  %883 : Float(5, 5), %884 : Handle = ^Add(False)(%877, %880), uses = [[%885.i0, %927.i1], []];
-  %886 : Float(5, 5), %887 : Handle = ^Tanh()(%883), uses = [[%888.i1], []];
-  %889 : Float(5, 5), %890 : Handle = ^Mul()(%874, %886), uses = [[%903.i1, %1095.i5], []];
-  %892 : Float(5, 5), %893 : Handle = ^Index(6)(%583), uses = [[%897.i1], []];
-  %895 : Float(5!, 20!), %896 : Handle = ^Transpose(0, 1)(%6), uses = [[%897.i2], []];
-  %898 : Float(5, 20), %899 : Handle = ^Addmm(1, 1, False)(%8, %892, %895), uses = [[%906.i0], []];
-  %901 : Float(5!, 20!), %902 : Handle = ^Transpose(0, 1)(%7), uses = [[%903.i2], []];
-  %904 : Float(5, 20), %905 : Handle = ^Addmm(1, 1, False)(%9, %889, %901), uses = [[%906.i1], []];
-  %907 : Float(5, 20), %908 : Handle = ^Add(False)(%898, %904), uses = [[%909.i0], []];
-  %910 : Float(5!, 5), %911 : Float(5!, 5), %912 : Float(5!, 5), %913 : Float(5!, 5), %914 : Handle = ^Chunk(4, 1)(%907), uses = [[%915.i0], [%918.i0], [%921.i0], [%924.i0], []];
-  %916 : Float(5, 5), %917 : Handle = ^Sigmoid()(%910), uses = [[%930.i0], []];
-  %919 : Float(5, 5), %920 : Handle = ^Sigmoid()(%911), uses = [[%927.i0], []];
-  %922 : Float(5, 5), %923 : Handle = ^Tanh()(%912), uses = [[%930.i1], []];
-  %925 : Float(5, 5), %926 : Handle = ^Sigmoid()(%913), uses = [[%939.i0], []];
-  %928 : Float(5, 5), %929 : Handle = ^Mul()(%919, %883), uses = [[%933.i0], []];
-  %931 : Float(5, 5), %932 : Handle = ^Mul()(%916, %922), uses = [[%933.i1], []];
-  %934 : Float(5, 5), %935 : Handle = ^Add(False)(%928, %931), uses = [[%936.i0, %978.i1], []];
-  %937 : Float(5, 5), %938 : Handle = ^Tanh()(%934), uses = [[%939.i1], []];
-  %940 : Float(5, 5), %941 : Handle = ^Mul()(%925, %937), uses = [[%954.i1, %1095.i6], []];
-  %943 : Float(5, 5), %944 : Handle = ^Index(7)(%583), uses = [[%948.i1], []];
-  %946 : Float(5!, 20!), %947 : Handle = ^Transpose(0, 1)(%6), uses = [[%948.i2], []];
-  %949 : Float(5, 20), %950 : Handle = ^Addmm(1, 1, False)(%8, %943, %946), uses = [[%957.i0], []];
-  %952 : Float(5!, 20!), %953 : Handle = ^Transpose(0, 1)(%7), uses = [[%954.i2], []];
-  %955 : Float(5, 20), %956 : Handle = ^Addmm(1, 1, False)(%9, %940, %952), uses = [[%957.i1], []];
-  %958 : Float(5, 20), %959 : Handle = ^Add(False)(%949, %955), uses = [[%960.i0], []];
-  %961 : Float(5!, 5), %962 : Float(5!, 5), %963 : Float(5!, 5), %964 : Float(5!, 5), %965 : Handle = ^Chunk(4, 1)(%958), uses = [[%966.i0], [%969.i0], [%972.i0], [%975.i0], []];
-  %967 : Float(5, 5), %968 : Handle = ^Sigmoid()(%961), uses = [[%981.i0], []];
-  %970 : Float(5, 5), %971 : Handle = ^Sigmoid()(%962), uses = [[%978.i0], []];
-  %973 : Float(5, 5), %974 : Handle = ^Tanh()(%963), uses = [[%981.i1], []];
-  %976 : Float(5, 5), %977 : Handle = ^Sigmoid()(%964), uses = [[%990.i0], []];
-  %979 : Float(5, 5), %980 : Handle = ^Mul()(%970, %934), uses = [[%984.i0], []];
-  %982 : Float(5, 5), %983 : Handle = ^Mul()(%967, %973), uses = [[%984.i1], []];
-  %985 : Float(5, 5), %986 : Handle = ^Add(False)(%979, %982), uses = [[%987.i0, %1029.i1], []];
-  %988 : Float(5, 5), %989 : Handle = ^Tanh()(%985), uses = [[%990.i1], []];
-  %991 : Float(5, 5), %992 : Handle = ^Mul()(%976, %988), uses = [[%1005.i1, %1095.i7], []];
-  %994 : Float(5, 5), %995 : Handle = ^Index(8)(%583), uses = [[%999.i1], []];
-  %997 : Float(5!, 20!), %998 : Handle = ^Transpose(0, 1)(%6), uses = [[%999.i2], []];
-  %1000 : Float(5, 20), %1001 : Handle = ^Addmm(1, 1, False)(%8, %994, %997), uses = [[%1008.i0], []];
-  %1003 : Float(5!, 20!), %1004 : Handle = ^Transpose(0, 1)(%7), uses = [[%1005.i2], []];
-  %1006 : Float(5, 20), %1007 : Handle = ^Addmm(1, 1, False)(%9, %991, %1003), uses = [[%1008.i1], []];
-  %1009 : Float(5, 20), %1010 : Handle = ^Add(False)(%1000, %1006), uses = [[%1011.i0], []];
-  %1012 : Float(5!, 5), %1013 : Float(5!, 5), %1014 : Float(5!, 5), %1015 : Float(5!, 5), %1016 : Handle = ^Chunk(4, 1)(%1009), uses = [[%1017.i0], [%1020.i0], [%1023.i0], [%1026.i0], []];
-  %1018 : Float(5, 5), %1019 : Handle = ^Sigmoid()(%1012), uses = [[%1032.i0], []];
-  %1021 : Float(5, 5), %1022 : Handle = ^Sigmoid()(%1013), uses = [[%1029.i0], []];
-  %1024 : Float(5, 5), %1025 : Handle = ^Tanh()(%1014), uses = [[%1032.i1], []];
-  %1027 : Float(5, 5), %1028 : Handle = ^Sigmoid()(%1015), uses = [[%1041.i0], []];
-  %1030 : Float(5, 5), %1031 : Handle = ^Mul()(%1021, %985), uses = [[%1035.i0], []];
-  %1033 : Float(5, 5), %1034 : Handle = ^Mul()(%1018, %1024), uses = [[%1035.i1], []];
-  %1036 : Float(5, 5), %1037 : Handle = ^Add(False)(%1030, %1033), uses = [[%1038.i0, %1080.i1], []];
-  %1039 : Float(5, 5), %1040 : Handle = ^Tanh()(%1036), uses = [[%1041.i1], []];
-  %1042 : Float(5, 5), %1043 : Handle = ^Mul()(%1027, %1039), uses = [[%1056.i1, %1095.i8], []];
-  %1045 : Float(5, 5), %1046 : Handle = ^Index(9)(%583), uses = [[%1050.i1], []];
-  %1048 : Float(5!, 20!), %1049 : Handle = ^Transpose(0, 1)(%6), uses = [[%1050.i2], []];
-  %1051 : Float(5, 20), %1052 : Handle = ^Addmm(1, 1, False)(%8, %1045, %1048), uses = [[%1059.i0], []];
-  %1054 : Float(5!, 20!), %1055 : Handle = ^Transpose(0, 1)(%7), uses = [[%1056.i2], []];
-  %1057 : Float(5, 20), %1058 : Handle = ^Addmm(1, 1, False)(%9, %1042, %1054), uses = [[%1059.i1], []];
-  %1060 : Float(5, 20), %1061 : Handle = ^Add(False)(%1051, %1057), uses = [[%1062.i0], []];
-  %1063 : Float(5!, 5), %1064 : Float(5!, 5), %1065 : Float(5!, 5), %1066 : Float(5!, 5), %1067 : Handle = ^Chunk(4, 1)(%1060), uses = [[%1068.i0], [%1071.i0], [%1074.i0], [%1077.i0], []];
-  %1069 : Float(5, 5), %1070 : Handle = ^Sigmoid()(%1063), uses = [[%1083.i0], []];
-  %1072 : Float(5, 5), %1073 : Handle = ^Sigmoid()(%1064), uses = [[%1080.i0], []];
-  %1075 : Float(5, 5), %1076 : Handle = ^Tanh()(%1065), uses = [[%1083.i1], []];
-  %1078 : Float(5, 5), %1079 : Handle = ^Sigmoid()(%1066), uses = [[%1092.i0], []];
-  %1081 : Float(5, 5), %1082 : Handle = ^Mul()(%1072, %1036), uses = [[%1086.i0], []];
-  %1084 : Float(5, 5), %1085 : Handle = ^Mul()(%1069, %1075), uses = [[%1086.i1], []];
-  %1087 : Float(5, 5), %1088 : Handle = ^Add(False)(%1081, %1084), uses = [[%1089.i0, %2676.i1], []];
-  %1090 : Float(5, 5), %1091 : Handle = ^Tanh()(%1087), uses = [[%1092.i1], []];
-  %1093 : Float(5, 5), %1094 : Handle = ^Mul()(%1078, %1090), uses = [[%1095.i9, %2670.i1], []];
-  %1096 : Float(50, 5), %1097 : Handle = ^Concat(0)(%634, %685, %736, %787, %838, %889, %940, %991, %1042, %1093), uses = [[%1098.i0], []];
-  %1099 : Float(10, 5, 5), %1100 : Handle = ^View((10, 5, 5))(%1096), uses = [[%1101.i0], []];
-  %1102 : Float(10, 5, 5), %1103 : Handle = ^Concat(2)(%1099), uses = [[%1104.i0], []];
-  %1105 : Float(10, 5, 5), %1106 : Handle = ^Dropout(0.2, True, False)(%1102), uses = [[%1107.i0, %1158.i0, %1209.i0, %1260.i0, %1311.i0, %1362.i0, %1413.i0, %1464.i0, %1515.i0, %1566.i0], []];
-  %1108 : Float(5, 5), %1109 : Handle = ^Index(0)(%1105), uses = [[%1113.i1], []];
-  %1111 : Float(5!, 20!), %1112 : Handle = ^Transpose(0, 1)(%10), uses = [[%1113.i2], []];
-  %1114 : Float(5, 20), %1115 : Handle = ^Addmm(1, 1, False)(%12, %1108, %1111), uses = [[%1122.i0], []];
-  %1117 : Float(5!, 20!), %1118 : Handle = ^Transpose(0, 1)(%11), uses = [[%1119.i2], []];
-  %1120 : Float(5, 20), %1121 : Handle = ^Addmm(1, 1, False)(%13, %46, %1117), uses = [[%1122.i1], []];
-  %1123 : Float(5, 20), %1124 : Handle = ^Add(False)(%1114, %1120), uses = [[%1125.i0], []];
-  %1126 : Float(5!, 5), %1127 : Float(5!, 5), %1128 : Float(5!, 5), %1129 : Float(5!, 5), %1130 : Handle = ^Chunk(4, 1)(%1123), uses = [[%1131.i0], [%1134.i0], [%1137.i0], [%1140.i0], []];
-  %1132 : Float(5, 5), %1133 : Handle = ^Sigmoid()(%1126), uses = [[%1146.i0], []];
-  %1135 : Float(5, 5), %1136 : Handle = ^Sigmoid()(%1127), uses = [[%1143.i0], []];
-  %1138 : Float(5, 5), %1139 : Handle = ^Tanh()(%1128), uses = [[%1146.i1], []];
-  %1141 : Float(5, 5), %1142 : Handle = ^Sigmoid()(%1129), uses = [[%1155.i0], []];
-  %1144 : Float(5, 5), %1145 : Handle = ^Mul()(%1135, %49), uses = [[%1149.i0], []];
-  %1147 : Float(5, 5), %1148 : Handle = ^Mul()(%1132, %1138), uses = [[%1149.i1], []];
-  %1150 : Float(5, 5), %1151 : Handle = ^Add(False)(%1144, %1147), uses = [[%1152.i0, %1194.i1], []];
-  %1153 : Float(5, 5), %1154 : Handle = ^Tanh()(%1150), uses = [[%1155.i1], []];
-  %1156 : Float(5, 5), %1157 : Handle = ^Mul()(%1141, %1153), uses = [[%1170.i1, %1617.i0], []];
-  %1159 : Float(5, 5), %1160 : Handle = ^Index(1)(%1105), uses = [[%1164.i1], []];
-  %1162 : Float(5!, 20!), %1163 : Handle = ^Transpose(0, 1)(%10), uses = [[%1164.i2], []];
-  %1165 : Float(5, 20), %1166 : Handle = ^Addmm(1, 1, False)(%12, %1159, %1162), uses = [[%1173.i0], []];
-  %1168 : Float(5!, 20!), %1169 : Handle = ^Transpose(0, 1)(%11), uses = [[%1170.i2], []];
-  %1171 : Float(5, 20), %1172 : Handle = ^Addmm(1, 1, False)(%13, %1156, %1168), uses = [[%1173.i1], []];
-  %1174 : Float(5, 20), %1175 : Handle = ^Add(False)(%1165, %1171), uses = [[%1176.i0], []];
-  %1177 : Float(5!, 5), %1178 : Float(5!, 5), %1179 : Float(5!, 5), %1180 : Float(5!, 5), %1181 : Handle = ^Chunk(4, 1)(%1174), uses = [[%1182.i0], [%1185.i0], [%1188.i0], [%1191.i0], []];
-  %1183 : Float(5, 5), %1184 : Handle = ^Sigmoid()(%1177), uses = [[%1197.i0], []];
-  %1186 : Float(5, 5), %1187 : Handle = ^Sigmoid()(%1178), uses = [[%1194.i0], []];
-  %1189 : Float(5, 5), %1190 : Handle = ^Tanh()(%1179), uses = [[%1197.i1], []];
-  %1192 : Float(5, 5), %1193 : Handle = ^Sigmoid()(%1180), uses = [[%1206.i0], []];
-  %1195 : Float(5, 5), %1196 : Handle = ^Mul()(%1186, %1150), uses = [[%1200.i0], []];
-  %1198 : Float(5, 5), %1199 : Handle = ^Mul()(%1183, %1189), uses = [[%1200.i1], []];
-  %1201 : Float(5, 5), %1202 : Handle = ^Add(False)(%1195, %1198), uses = [[%1203.i0, %1245.i1], []];
-  %1204 : Float(5, 5), %1205 : Handle = ^Tanh()(%1201), uses = [[%1206.i1], []];
-  %1207 : Float(5, 5), %1208 : Handle = ^Mul()(%1192, %1204), uses = [[%1221.i1, %1617.i1], []];
-  %1210 : Float(5, 5), %1211 : Handle = ^Index(2)(%1105), uses = [[%1215.i1], []];
-  %1213 : Float(5!, 20!), %1214 : Handle = ^Transpose(0, 1)(%10), uses = [[%1215.i2], []];
-  %1216 : Float(5, 20), %1217 : Handle = ^Addmm(1, 1, False)(%12, %1210, %1213), uses = [[%1224.i0], []];
-  %1219 : Float(5!, 20!), %1220 : Handle = ^Transpose(0, 1)(%11), uses = [[%1221.i2], []];
-  %1222 : Float(5, 20), %1223 : Handle = ^Addmm(1, 1, False)(%13, %1207, %1219), uses = [[%1224.i1], []];
-  %1225 : Float(5, 20), %1226 : Handle = ^Add(False)(%1216, %1222), uses = [[%1227.i0], []];
-  %1228 : Float(5!, 5), %1229 : Float(5!, 5), %1230 : Float(5!, 5), %1231 : Float(5!, 5), %1232 : Handle = ^Chunk(4, 1)(%1225), uses = [[%1233.i0], [%1236.i0], [%1239.i0], [%1242.i0], []];
-  %1234 : Float(5, 5), %1235 : Handle = ^Sigmoid()(%1228), uses = [[%1248.i0], []];
-  %1237 : Float(5, 5), %1238 : Handle = ^Sigmoid()(%1229), uses = [[%1245.i0], []];
-  %1240 : Float(5, 5), %1241 : Handle = ^Tanh()(%1230), uses = [[%1248.i1], []];
-  %1243 : Float(5, 5), %1244 : Handle = ^Sigmoid()(%1231), uses = [[%1257.i0], []];
-  %1246 : Float(5, 5), %1247 : Handle = ^Mul()(%1237, %1201), uses = [[%1251.i0], []];
-  %1249 : Float(5, 5), %1250 : Handle = ^Mul()(%1234, %1240), uses = [[%1251.i1], []];
-  %1252 : Float(5, 5), %1253 : Handle = ^Add(False)(%1246, %1249), uses = [[%1254.i0, %1296.i1], []];
-  %1255 : Float(5, 5), %1256 : Handle = ^Tanh()(%1252), uses = [[%1257.i1], []];
-  %1258 : Float(5, 5), %1259 : Handle = ^Mul()(%1243, %1255), uses = [[%1272.i1, %1617.i2], []];
-  %1261 : Float(5, 5), %1262 : Handle = ^Index(3)(%1105), uses = [[%1266.i1], []];
-  %1264 : Float(5!, 20!), %1265 : Handle = ^Transpose(0, 1)(%10), uses = [[%1266.i2], []];
-  %1267 : Float(5, 20), %1268 : Handle = ^Addmm(1, 1, False)(%12, %1261, %1264), uses = [[%1275.i0], []];
-  %1270 : Float(5!, 20!), %1271 : Handle = ^Transpose(0, 1)(%11), uses = [[%1272.i2], []];
-  %1273 : Float(5, 20), %1274 : Handle = ^Addmm(1, 1, False)(%13, %1258, %1270), uses = [[%1275.i1], []];
-  %1276 : Float(5, 20), %1277 : Handle = ^Add(False)(%1267, %1273), uses = [[%1278.i0], []];
-  %1279 : Float(5!, 5), %1280 : Float(5!, 5), %1281 : Float(5!, 5), %1282 : Float(5!, 5), %1283 : Handle = ^Chunk(4, 1)(%1276), uses = [[%1284.i0], [%1287.i0], [%1290.i0], [%1293.i0], []];
-  %1285 : Float(5, 5), %1286 : Handle = ^Sigmoid()(%1279), uses = [[%1299.i0], []];
-  %1288 : Float(5, 5), %1289 : Handle = ^Sigmoid()(%1280), uses = [[%1296.i0], []];
-  %1291 : Float(5, 5), %1292 : Handle = ^Tanh()(%1281), uses = [[%1299.i1], []];
-  %1294 : Float(5, 5), %1295 : Handle = ^Sigmoid()(%1282), uses = [[%1308.i0], []];
-  %1297 : Float(5, 5), %1298 : Handle = ^Mul()(%1288, %1252), uses = [[%1302.i0], []];
-  %1300 : Float(5, 5), %1301 : Handle = ^Mul()(%1285, %1291), uses = [[%1302.i1], []];
-  %1303 : Float(5, 5), %1304 : Handle = ^Add(False)(%1297, %1300), uses = [[%1305.i0, %1347.i1], []];
-  %1306 : Float(5, 5), %1307 : Handle = ^Tanh()(%1303), uses = [[%1308.i1], []];
-  %1309 : Float(5, 5), %1310 : Handle = ^Mul()(%1294, %1306), uses = [[%1323.i1, %1617.i3], []];
-  %1312 : Float(5, 5), %1313 : Handle = ^Index(4)(%1105), uses = [[%1317.i1], []];
-  %1315 : Float(5!, 20!), %1316 : Handle = ^Transpose(0, 1)(%10), uses = [[%1317.i2], []];
-  %1318 : Float(5, 20), %1319 : Handle = ^Addmm(1, 1, False)(%12, %1312, %1315), uses = [[%1326.i0], []];
-  %1321 : Float(5!, 20!), %1322 : Handle = ^Transpose(0, 1)(%11), uses = [[%1323.i2], []];
-  %1324 : Float(5, 20), %1325 : Handle = ^Addmm(1, 1, False)(%13, %1309, %1321), uses = [[%1326.i1], []];
-  %1327 : Float(5, 20), %1328 : Handle = ^Add(False)(%1318, %1324), uses = [[%1329.i0], []];
-  %1330 : Float(5!, 5), %1331 : Float(5!, 5), %1332 : Float(5!, 5), %1333 : Float(5!, 5), %1334 : Handle = ^Chunk(4, 1)(%1327), uses = [[%1335.i0], [%1338.i0], [%1341.i0], [%1344.i0], []];
-  %1336 : Float(5, 5), %1337 : Handle = ^Sigmoid()(%1330), uses = [[%1350.i0], []];
-  %1339 : Float(5, 5), %1340 : Handle = ^Sigmoid()(%1331), uses = [[%1347.i0], []];
-  %1342 : Float(5, 5), %1343 : Handle = ^Tanh()(%1332), uses = [[%1350.i1], []];
-  %1345 : Float(5, 5), %1346 : Handle = ^Sigmoid()(%1333), uses = [[%1359.i0], []];
-  %1348 : Float(5, 5), %1349 : Handle = ^Mul()(%1339, %1303), uses = [[%1353.i0], []];
-  %1351 : Float(5, 5), %1352 : Handle = ^Mul()(%1336, %1342), uses = [[%1353.i1], []];
-  %1354 : Float(5, 5), %1355 : Handle = ^Add(False)(%1348, %1351), uses = [[%1356.i0, %1398.i1], []];
-  %1357 : Float(5, 5), %1358 : Handle = ^Tanh()(%1354), uses = [[%1359.i1], []];
-  %1360 : Float(5, 5), %1361 : Handle = ^Mul()(%1345, %1357), uses = [[%1374.i1, %1617.i4], []];
-  %1363 : Float(5, 5), %1364 : Handle = ^Index(5)(%1105), uses = [[%1368.i1], []];
-  %1366 : Float(5!, 20!), %1367 : Handle = ^Transpose(0, 1)(%10), uses = [[%1368.i2], []];
-  %1369 : Float(5, 20), %1370 : Handle = ^Addmm(1, 1, False)(%12, %1363, %1366), uses = [[%1377.i0], []];
-  %1372 : Float(5!, 20!), %1373 : Handle = ^Transpose(0, 1)(%11), uses = [[%1374.i2], []];
-  %1375 : Float(5, 20), %1376 : Handle = ^Addmm(1, 1, False)(%13, %1360, %1372), uses = [[%1377.i1], []];
-  %1378 : Float(5, 20), %1379 : Handle = ^Add(False)(%1369, %1375), uses = [[%1380.i0], []];
-  %1381 : Float(5!, 5), %1382 : Float(5!, 5), %1383 : Float(5!, 5), %1384 : Float(5!, 5), %1385 : Handle = ^Chunk(4, 1)(%1378), uses = [[%1386.i0], [%1389.i0], [%1392.i0], [%1395.i0], []];
-  %1387 : Float(5, 5), %1388 : Handle = ^Sigmoid()(%1381), uses = [[%1401.i0], []];
-  %1390 : Float(5, 5), %1391 : Handle = ^Sigmoid()(%1382), uses = [[%1398.i0], []];
-  %1393 : Float(5, 5), %1394 : Handle = ^Tanh()(%1383), uses = [[%1401.i1], []];
-  %1396 : Float(5, 5), %1397 : Handle = ^Sigmoid()(%1384), uses = [[%1410.i0], []];
-  %1399 : Float(5, 5), %1400 : Handle = ^Mul()(%1390, %1354), uses = [[%1404.i0], []];
-  %1402 : Float(5, 5), %1403 : Handle = ^Mul()(%1387, %1393), uses = [[%1404.i1], []];
-  %1405 : Float(5, 5), %1406 : Handle = ^Add(False)(%1399, %1402), uses = [[%1407.i0, %1449.i1], []];
-  %1408 : Float(5, 5), %1409 : Handle = ^Tanh()(%1405), uses = [[%1410.i1], []];
-  %1411 : Float(5, 5), %1412 : Handle = ^Mul()(%1396, %1408), uses = [[%1425.i1, %1617.i5], []];
-  %1414 : Float(5, 5), %1415 : Handle = ^Index(6)(%1105), uses = [[%1419.i1], []];
-  %1417 : Float(5!, 20!), %1418 : Handle = ^Transpose(0, 1)(%10), uses = [[%1419.i2], []];
-  %1420 : Float(5, 20), %1421 : Handle = ^Addmm(1, 1, False)(%12, %1414, %1417), uses = [[%1428.i0], []];
-  %1423 : Float(5!, 20!), %1424 : Handle = ^Transpose(0, 1)(%11), uses = [[%1425.i2], []];
-  %1426 : Float(5, 20), %1427 : Handle = ^Addmm(1, 1, False)(%13, %1411, %1423), uses = [[%1428.i1], []];
-  %1429 : Float(5, 20), %1430 : Handle = ^Add(False)(%1420, %1426), uses = [[%1431.i0], []];
-  %1432 : Float(5!, 5), %1433 : Float(5!, 5), %1434 : Float(5!, 5), %1435 : Float(5!, 5), %1436 : Handle = ^Chunk(4, 1)(%1429), uses = [[%1437.i0], [%1440.i0], [%1443.i0], [%1446.i0], []];
-  %1438 : Float(5, 5), %1439 : Handle = ^Sigmoid()(%1432), uses = [[%1452.i0], []];
-  %1441 : Float(5, 5), %1442 : Handle = ^Sigmoid()(%1433), uses = [[%1449.i0], []];
-  %1444 : Float(5, 5), %1445 : Handle = ^Tanh()(%1434), uses = [[%1452.i1], []];
-  %1447 : Float(5, 5), %1448 : Handle = ^Sigmoid()(%1435), uses = [[%1461.i0], []];
-  %1450 : Float(5, 5), %1451 : Handle = ^Mul()(%1441, %1405), uses = [[%1455.i0], []];
-  %1453 : Float(5, 5), %1454 : Handle = ^Mul()(%1438, %1444), uses = [[%1455.i1], []];
-  %1456 : Float(5, 5), %1457 : Handle = ^Add(False)(%1450, %1453), uses = [[%1458.i0, %1500.i1], []];
-  %1459 : Float(5, 5), %1460 : Handle = ^Tanh()(%1456), uses = [[%1461.i1], []];
-  %1462 : Float(5, 5), %1463 : Handle = ^Mul()(%1447, %1459), uses = [[%1476.i1, %1617.i6], []];
-  %1465 : Float(5, 5), %1466 : Handle = ^Index(7)(%1105), uses = [[%1470.i1], []];
-  %1468 : Float(5!, 20!), %1469 : Handle = ^Transpose(0, 1)(%10), uses = [[%1470.i2], []];
-  %1471 : Float(5, 20), %1472 : Handle = ^Addmm(1, 1, False)(%12, %1465, %1468), uses = [[%1479.i0], []];
-  %1474 : Float(5!, 20!), %1475 : Handle = ^Transpose(0, 1)(%11), uses = [[%1476.i2], []];
-  %1477 : Float(5, 20), %1478 : Handle = ^Addmm(1, 1, False)(%13, %1462, %1474), uses = [[%1479.i1], []];
-  %1480 : Float(5, 20), %1481 : Handle = ^Add(False)(%1471, %1477), uses = [[%1482.i0], []];
-  %1483 : Float(5!, 5), %1484 : Float(5!, 5), %1485 : Float(5!, 5), %1486 : Float(5!, 5), %1487 : Handle = ^Chunk(4, 1)(%1480), uses = [[%1488.i0], [%1491.i0], [%1494.i0], [%1497.i0], []];
-  %1489 : Float(5, 5), %1490 : Handle = ^Sigmoid()(%1483), uses = [[%1503.i0], []];
-  %1492 : Float(5, 5), %1493 : Handle = ^Sigmoid()(%1484), uses = [[%1500.i0], []];
-  %1495 : Float(5, 5), %1496 : Handle = ^Tanh()(%1485), uses = [[%1503.i1], []];
-  %1498 : Float(5, 5), %1499 : Handle = ^Sigmoid()(%1486), uses = [[%1512.i0], []];
-  %1501 : Float(5, 5), %1502 : Handle = ^Mul()(%1492, %1456), uses = [[%1506.i0], []];
-  %1504 : Float(5, 5), %1505 : Handle = ^Mul()(%1489, %1495), uses = [[%1506.i1], []];
-  %1507 : Float(5, 5), %1508 : Handle = ^Add(False)(%1501, %1504), uses = [[%1509.i0, %1551.i1], []];
-  %1510 : Float(5, 5), %1511 : Handle = ^Tanh()(%1507), uses = [[%1512.i1], []];
-  %1513 : Float(5, 5), %1514 : Handle = ^Mul()(%1498, %1510), uses = [[%1527.i1, %1617.i7], []];
-  %1516 : Float(5, 5), %1517 : Handle = ^Index(8)(%1105), uses = [[%1521.i1], []];
-  %1519 : Float(5!, 20!), %1520 : Handle = ^Transpose(0, 1)(%10), uses = [[%1521.i2], []];
-  %1522 : Float(5, 20), %1523 : Handle = ^Addmm(1, 1, False)(%12, %1516, %1519), uses = [[%1530.i0], []];
-  %1525 : Float(5!, 20!), %1526 : Handle = ^Transpose(0, 1)(%11), uses = [[%1527.i2], []];
-  %1528 : Float(5, 20), %1529 : Handle = ^Addmm(1, 1, False)(%13, %1513, %1525), uses = [[%1530.i1], []];
-  %1531 : Float(5, 20), %1532 : Handle = ^Add(False)(%1522, %1528), uses = [[%1533.i0], []];
-  %1534 : Float(5!, 5), %1535 : Float(5!, 5), %1536 : Float(5!, 5), %1537 : Float(5!, 5), %1538 : Handle = ^Chunk(4, 1)(%1531), uses = [[%1539.i0], [%1542.i0], [%1545.i0], [%1548.i0], []];
-  %1540 : Float(5, 5), %1541 : Handle = ^Sigmoid()(%1534), uses = [[%1554.i0], []];
-  %1543 : Float(5, 5), %1544 : Handle = ^Sigmoid()(%1535), uses = [[%1551.i0], []];
-  %1546 : Float(5, 5), %1547 : Handle = ^Tanh()(%1536), uses = [[%1554.i1], []];
-  %1549 : Float(5, 5), %1550 : Handle = ^Sigmoid()(%1537), uses = [[%1563.i0], []];
-  %1552 : Float(5, 5), %1553 : Handle = ^Mul()(%1543, %1507), uses = [[%1557.i0], []];
-  %1555 : Float(5, 5), %1556 : Handle = ^Mul()(%1540, %1546), uses = [[%1557.i1], []];
-  %1558 : Float(5, 5), %1559 : Handle = ^Add(False)(%1552, %1555), uses = [[%1560.i0, %1602.i1], []];
-  %1561 : Float(5, 5), %1562 : Handle = ^Tanh()(%1558), uses = [[%1563.i1], []];
-  %1564 : Float(5, 5), %1565 : Handle = ^Mul()(%1549, %1561), uses = [[%1578.i1, %1617.i8], []];
-  %1567 : Float(5, 5), %1568 : Handle = ^Index(9)(%1105), uses = [[%1572.i1], []];
-  %1570 : Float(5!, 20!), %1571 : Handle = ^Transpose(0, 1)(%10), uses = [[%1572.i2], []];
-  %1573 : Float(5, 20), %1574 : Handle = ^Addmm(1, 1, False)(%12, %1567, %1570), uses = [[%1581.i0], []];
-  %1576 : Float(5!, 20!), %1577 : Handle = ^Transpose(0, 1)(%11), uses = [[%1578.i2], []];
-  %1579 : Float(5, 20), %1580 : Handle = ^Addmm(1, 1, False)(%13, %1564, %1576), uses = [[%1581.i1], []];
-  %1582 : Float(5, 20), %1583 : Handle = ^Add(False)(%1573, %1579), uses = [[%1584.i0], []];
-  %1585 : Float(5!, 5), %1586 : Float(5!, 5), %1587 : Float(5!, 5), %1588 : Float(5!, 5), %1589 : Handle = ^Chunk(4, 1)(%1582), uses = [[%1590.i0], [%1593.i0], [%1596.i0], [%1599.i0], []];
-  %1591 : Float(5, 5), %1592 : Handle = ^Sigmoid()(%1585), uses = [[%1605.i0], []];
-  %1594 : Float(5, 5), %1595 : Handle = ^Sigmoid()(%1586), uses = [[%1602.i0], []];
-  %1597 : Float(5, 5), %1598 : Handle = ^Tanh()(%1587), uses = [[%1605.i1], []];
-  %1600 : Float(5, 5), %1601 : Handle = ^Sigmoid()(%1588), uses = [[%1614.i0], []];
-  %1603 : Float(5, 5), %1604 : Handle = ^Mul()(%1594, %1558), uses = [[%1608.i0], []];
-  %1606 : Float(5, 5), %1607 : Handle = ^Mul()(%1591, %1597), uses = [[%1608.i1], []];
-  %1609 : Float(5, 5), %1610 : Handle = ^Add(False)(%1603, %1606), uses = [[%1611.i0, %2676.i2], []];
-  %1612 : Float(5, 5), %1613 : Handle = ^Tanh()(%1609), uses = [[%1614.i1], []];
-  %1615 : Float(5, 5), %1616 : Handle = ^Mul()(%1600, %1612), uses = [[%1617.i9, %2670.i2], []];
-  %1618 : Float(50, 5), %1619 : Handle = ^Concat(0)(%1156, %1207, %1258, %1309, %1360, %1411, %1462, %1513, %1564, %1615), uses = [[%1620.i0], []];
-  %1621 : Float(10, 5, 5), %1622 : Handle = ^View((10, 5, 5))(%1618), uses = [[%1623.i0], []];
-  %1624 : Float(10, 5, 5), %1625 : Handle = ^Concat(2)(%1621), uses = [[%1626.i0], []];
-  %1627 : Float(10, 5, 5), %1628 : Handle = ^Dropout(0.2, True, False)(%1624), uses = [[%1629.i0, %1680.i0, %1731.i0, %1782.i0, %1833.i0, %1884.i0, %1935.i0, %1986.i0, %2037.i0, %2088.i0], []];
-  %1630 : Float(5, 5), %1631 : Handle = ^Index(0)(%1627), uses = [[%1635.i1], []];
-  %1633 : Float(5!, 20!), %1634 : Handle = ^Transpose(0, 1)(%14), uses = [[%1635.i2], []];
-  %1636 : Float(5, 20), %1637 : Handle = ^Addmm(1, 1, False)(%16, %1630, %1633), uses = [[%1644.i0], []];
-  %1639 : Float(5!, 20!), %1640 : Handle = ^Transpose(0, 1)(%15), uses = [[%1641.i2], []];
-  %1642 : Float(5, 20), %1643 : Handle = ^Addmm(1, 1, False)(%17, %52, %1639), uses = [[%1644.i1], []];
-  %1645 : Float(5, 20), %1646 : Handle = ^Add(False)(%1636, %1642), uses = [[%1647.i0], []];
-  %1648 : Float(5!, 5), %1649 : Float(5!, 5), %1650 : Float(5!, 5), %1651 : Float(5!, 5), %1652 : Handle = ^Chunk(4, 1)(%1645), uses = [[%1653.i0], [%1656.i0], [%1659.i0], [%1662.i0], []];
-  %1654 : Float(5, 5), %1655 : Handle = ^Sigmoid()(%1648), uses = [[%1668.i0], []];
-  %1657 : Float(5, 5), %1658 : Handle = ^Sigmoid()(%1649), uses = [[%1665.i0], []];
-  %1660 : Float(5, 5), %1661 : Handle = ^Tanh()(%1650), uses = [[%1668.i1], []];
-  %1663 : Float(5, 5), %1664 : Handle = ^Sigmoid()(%1651), uses = [[%1677.i0], []];
-  %1666 : Float(5, 5), %1667 : Handle = ^Mul()(%1657, %55), uses = [[%1671.i0], []];
-  %1669 : Float(5, 5), %1670 : Handle = ^Mul()(%1654, %1660), uses = [[%1671.i1], []];
-  %1672 : Float(5, 5), %1673 : Handle = ^Add(False)(%1666, %1669), uses = [[%1674.i0, %1716.i1], []];
-  %1675 : Float(5, 5), %1676 : Handle = ^Tanh()(%1672), uses = [[%1677.i1], []];
-  %1678 : Float(5, 5), %1679 : Handle = ^Mul()(%1663, %1675), uses = [[%1692.i1, %2139.i0], []];
-  %1681 : Float(5, 5), %1682 : Handle = ^Index(1)(%1627), uses = [[%1686.i1], []];
-  %1684 : Float(5!, 20!), %1685 : Handle = ^Transpose(0, 1)(%14), uses = [[%1686.i2], []];
-  %1687 : Float(5, 20), %1688 : Handle = ^Addmm(1, 1, False)(%16, %1681, %1684), uses = [[%1695.i0], []];
-  %1690 : Float(5!, 20!), %1691 : Handle = ^Transpose(0, 1)(%15), uses = [[%1692.i2], []];
-  %1693 : Float(5, 20), %1694 : Handle = ^Addmm(1, 1, False)(%17, %1678, %1690), uses = [[%1695.i1], []];
-  %1696 : Float(5, 20), %1697 : Handle = ^Add(False)(%1687, %1693), uses = [[%1698.i0], []];
-  %1699 : Float(5!, 5), %1700 : Float(5!, 5), %1701 : Float(5!, 5), %1702 : Float(5!, 5), %1703 : Handle = ^Chunk(4, 1)(%1696), uses = [[%1704.i0], [%1707.i0], [%1710.i0], [%1713.i0], []];
-  %1705 : Float(5, 5), %1706 : Handle = ^Sigmoid()(%1699), uses = [[%1719.i0], []];
-  %1708 : Float(5, 5), %1709 : Handle = ^Sigmoid()(%1700), uses = [[%1716.i0], []];
-  %1711 : Float(5, 5), %1712 : Handle = ^Tanh()(%1701), uses = [[%1719.i1], []];
-  %1714 : Float(5, 5), %1715 : Handle = ^Sigmoid()(%1702), uses = [[%1728.i0], []];
-  %1717 : Float(5, 5), %1718 : Handle = ^Mul()(%1708, %1672), uses = [[%1722.i0], []];
-  %1720 : Float(5, 5), %1721 : Handle = ^Mul()(%1705, %1711), uses = [[%1722.i1], []];
-  %1723 : Float(5, 5), %1724 : Handle = ^Add(False)(%1717, %1720), uses = [[%1725.i0, %1767.i1], []];
-  %1726 : Float(5, 5), %1727 : Handle = ^Tanh()(%1723), uses = [[%1728.i1], []];
-  %1729 : Float(5, 5), %1730 : Handle = ^Mul()(%1714, %1726), uses = [[%1743.i1, %2139.i1], []];
-  %1732 : Float(5, 5), %1733 : Handle = ^Index(2)(%1627), uses = [[%1737.i1], []];
-  %1735 : Float(5!, 20!), %1736 : Handle = ^Transpose(0, 1)(%14), uses = [[%1737.i2], []];
-  %1738 : Float(5, 20), %1739 : Handle = ^Addmm(1, 1, False)(%16, %1732, %1735), uses = [[%1746.i0], []];
-  %1741 : Float(5!, 20!), %1742 : Handle = ^Transpose(0, 1)(%15), uses = [[%1743.i2], []];
-  %1744 : Float(5, 20), %1745 : Handle = ^Addmm(1, 1, False)(%17, %1729, %1741), uses = [[%1746.i1], []];
-  %1747 : Float(5, 20), %1748 : Handle = ^Add(False)(%1738, %1744), uses = [[%1749.i0], []];
-  %1750 : Float(5!, 5), %1751 : Float(5!, 5), %1752 : Float(5!, 5), %1753 : Float(5!, 5), %1754 : Handle = ^Chunk(4, 1)(%1747), uses = [[%1755.i0], [%1758.i0], [%1761.i0], [%1764.i0], []];
-  %1756 : Float(5, 5), %1757 : Handle = ^Sigmoid()(%1750), uses = [[%1770.i0], []];
-  %1759 : Float(5, 5), %1760 : Handle = ^Sigmoid()(%1751), uses = [[%1767.i0], []];
-  %1762 : Float(5, 5), %1763 : Handle = ^Tanh()(%1752), uses = [[%1770.i1], []];
-  %1765 : Float(5, 5), %1766 : Handle = ^Sigmoid()(%1753), uses = [[%1779.i0], []];
-  %1768 : Float(5, 5), %1769 : Handle = ^Mul()(%1759, %1723), uses = [[%1773.i0], []];
-  %1771 : Float(5, 5), %1772 : Handle = ^Mul()(%1756, %1762), uses = [[%1773.i1], []];
-  %1774 : Float(5, 5), %1775 : Handle = ^Add(False)(%1768, %1771), uses = [[%1776.i0, %1818.i1], []];
-  %1777 : Float(5, 5), %1778 : Handle = ^Tanh()(%1774), uses = [[%1779.i1], []];
-  %1780 : Float(5, 5), %1781 : Handle = ^Mul()(%1765, %1777), uses = [[%1794.i1, %2139.i2], []];
-  %1783 : Float(5, 5), %1784 : Handle = ^Index(3)(%1627), uses = [[%1788.i1], []];
-  %1786 : Float(5!, 20!), %1787 : Handle = ^Transpose(0, 1)(%14), uses = [[%1788.i2], []];
-  %1789 : Float(5, 20), %1790 : Handle = ^Addmm(1, 1, False)(%16, %1783, %1786), uses = [[%1797.i0], []];
-  %1792 : Float(5!, 20!), %1793 : Handle = ^Transpose(0, 1)(%15), uses = [[%1794.i2], []];
-  %1795 : Float(5, 20), %1796 : Handle = ^Addmm(1, 1, False)(%17, %1780, %1792), uses = [[%1797.i1], []];
-  %1798 : Float(5, 20), %1799 : Handle = ^Add(False)(%1789, %1795), uses = [[%1800.i0], []];
-  %1801 : Float(5!, 5), %1802 : Float(5!, 5), %1803 : Float(5!, 5), %1804 : Float(5!, 5), %1805 : Handle = ^Chunk(4, 1)(%1798), uses = [[%1806.i0], [%1809.i0], [%1812.i0], [%1815.i0], []];
-  %1807 : Float(5, 5), %1808 : Handle = ^Sigmoid()(%1801), uses = [[%1821.i0], []];
-  %1810 : Float(5, 5), %1811 : Handle = ^Sigmoid()(%1802), uses = [[%1818.i0], []];
-  %1813 : Float(5, 5), %1814 : Handle = ^Tanh()(%1803), uses = [[%1821.i1], []];
-  %1816 : Float(5, 5), %1817 : Handle = ^Sigmoid()(%1804), uses = [[%1830.i0], []];
-  %1819 : Float(5, 5), %1820 : Handle = ^Mul()(%1810, %1774), uses = [[%1824.i0], []];
-  %1822 : Float(5, 5), %1823 : Handle = ^Mul()(%1807, %1813), uses = [[%1824.i1], []];
-  %1825 : Float(5, 5), %1826 : Handle = ^Add(False)(%1819, %1822), uses = [[%1827.i0, %1869.i1], []];
-  %1828 : Float(5, 5), %1829 : Handle = ^Tanh()(%1825), uses = [[%1830.i1], []];
-  %1831 : Float(5, 5), %1832 : Handle = ^Mul()(%1816, %1828), uses = [[%1845.i1, %2139.i3], []];
-  %1834 : Float(5, 5), %1835 : Handle = ^Index(4)(%1627), uses = [[%1839.i1], []];
-  %1837 : Float(5!, 20!), %1838 : Handle = ^Transpose(0, 1)(%14), uses = [[%1839.i2], []];
-  %1840 : Float(5, 20), %1841 : Handle = ^Addmm(1, 1, False)(%16, %1834, %1837), uses = [[%1848.i0], []];
-  %1843 : Float(5!, 20!), %1844 : Handle = ^Transpose(0, 1)(%15), uses = [[%1845.i2], []];
-  %1846 : Float(5, 20), %1847 : Handle = ^Addmm(1, 1, False)(%17, %1831, %1843), uses = [[%1848.i1], []];
-  %1849 : Float(5, 20), %1850 : Handle = ^Add(False)(%1840, %1846), uses = [[%1851.i0], []];
-  %1852 : Float(5!, 5), %1853 : Float(5!, 5), %1854 : Float(5!, 5), %1855 : Float(5!, 5), %1856 : Handle = ^Chunk(4, 1)(%1849), uses = [[%1857.i0], [%1860.i0], [%1863.i0], [%1866.i0], []];
-  %1858 : Float(5, 5), %1859 : Handle = ^Sigmoid()(%1852), uses = [[%1872.i0], []];
-  %1861 : Float(5, 5), %1862 : Handle = ^Sigmoid()(%1853), uses = [[%1869.i0], []];
-  %1864 : Float(5, 5), %1865 : Handle = ^Tanh()(%1854), uses = [[%1872.i1], []];
-  %1867 : Float(5, 5), %1868 : Handle = ^Sigmoid()(%1855), uses = [[%1881.i0], []];
-  %1870 : Float(5, 5), %1871 : Handle = ^Mul()(%1861, %1825), uses = [[%1875.i0], []];
-  %1873 : Float(5, 5), %1874 : Handle = ^Mul()(%1858, %1864), uses = [[%1875.i1], []];
-  %1876 : Float(5, 5), %1877 : Handle = ^Add(False)(%1870, %1873), uses = [[%1878.i0, %1920.i1], []];
-  %1879 : Float(5, 5), %1880 : Handle = ^Tanh()(%1876), uses = [[%1881.i1], []];
-  %1882 : Float(5, 5), %1883 : Handle = ^Mul()(%1867, %1879), uses = [[%1896.i1, %2139.i4], []];
-  %1885 : Float(5, 5), %1886 : Handle = ^Index(5)(%1627), uses = [[%1890.i1], []];
-  %1888 : Float(5!, 20!), %1889 : Handle = ^Transpose(0, 1)(%14), uses = [[%1890.i2], []];
-  %1891 : Float(5, 20), %1892 : Handle = ^Addmm(1, 1, False)(%16, %1885, %1888), uses = [[%1899.i0], []];
-  %1894 : Float(5!, 20!), %1895 : Handle = ^Transpose(0, 1)(%15), uses = [[%1896.i2], []];
-  %1897 : Float(5, 20), %1898 : Handle = ^Addmm(1, 1, False)(%17, %1882, %1894), uses = [[%1899.i1], []];
-  %1900 : Float(5, 20), %1901 : Handle = ^Add(False)(%1891, %1897), uses = [[%1902.i0], []];
-  %1903 : Float(5!, 5), %1904 : Float(5!, 5), %1905 : Float(5!, 5), %1906 : Float(5!, 5), %1907 : Handle = ^Chunk(4, 1)(%1900), uses = [[%1908.i0], [%1911.i0], [%1914.i0], [%1917.i0], []];
-  %1909 : Float(5, 5), %1910 : Handle = ^Sigmoid()(%1903), uses = [[%1923.i0], []];
-  %1912 : Float(5, 5), %1913 : Handle = ^Sigmoid()(%1904), uses = [[%1920.i0], []];
-  %1915 : Float(5, 5), %1916 : Handle = ^Tanh()(%1905), uses = [[%1923.i1], []];
-  %1918 : Float(5, 5), %1919 : Handle = ^Sigmoid()(%1906), uses = [[%1932.i0], []];
-  %1921 : Float(5, 5), %1922 : Handle = ^Mul()(%1912, %1876), uses = [[%1926.i0], []];
-  %1924 : Float(5, 5), %1925 : Handle = ^Mul()(%1909, %1915), uses = [[%1926.i1], []];
-  %1927 : Float(5, 5), %1928 : Handle = ^Add(False)(%1921, %1924), uses = [[%1929.i0, %1971.i1], []];
-  %1930 : Float(5, 5), %1931 : Handle = ^Tanh()(%1927), uses = [[%1932.i1], []];
-  %1933 : Float(5, 5), %1934 : Handle = ^Mul()(%1918, %1930), uses = [[%1947.i1, %2139.i5], []];
-  %1936 : Float(5, 5), %1937 : Handle = ^Index(6)(%1627), uses = [[%1941.i1], []];
-  %1939 : Float(5!, 20!), %1940 : Handle = ^Transpose(0, 1)(%14), uses = [[%1941.i2], []];
-  %1942 : Float(5, 20), %1943 : Handle = ^Addmm(1, 1, False)(%16, %1936, %1939), uses = [[%1950.i0], []];
-  %1945 : Float(5!, 20!), %1946 : Handle = ^Transpose(0, 1)(%15), uses = [[%1947.i2], []];
-  %1948 : Float(5, 20), %1949 : Handle = ^Addmm(1, 1, False)(%17, %1933, %1945), uses = [[%1950.i1], []];
-  %1951 : Float(5, 20), %1952 : Handle = ^Add(False)(%1942, %1948), uses = [[%1953.i0], []];
-  %1954 : Float(5!, 5), %1955 : Float(5!, 5), %1956 : Float(5!, 5), %1957 : Float(5!, 5), %1958 : Handle = ^Chunk(4, 1)(%1951), uses = [[%1959.i0], [%1962.i0], [%1965.i0], [%1968.i0], []];
-  %1960 : Float(5, 5), %1961 : Handle = ^Sigmoid()(%1954), uses = [[%1974.i0], []];
-  %1963 : Float(5, 5), %1964 : Handle = ^Sigmoid()(%1955), uses = [[%1971.i0], []];
-  %1966 : Float(5, 5), %1967 : Handle = ^Tanh()(%1956), uses = [[%1974.i1], []];
-  %1969 : Float(5, 5), %1970 : Handle = ^Sigmoid()(%1957), uses = [[%1983.i0], []];
-  %1972 : Float(5, 5), %1973 : Handle = ^Mul()(%1963, %1927), uses = [[%1977.i0], []];
-  %1975 : Float(5, 5), %1976 : Handle = ^Mul()(%1960, %1966), uses = [[%1977.i1], []];
-  %1978 : Float(5, 5), %1979 : Handle = ^Add(False)(%1972, %1975), uses = [[%1980.i0, %2022.i1], []];
-  %1981 : Float(5, 5), %1982 : Handle = ^Tanh()(%1978), uses = [[%1983.i1], []];
-  %1984 : Float(5, 5), %1985 : Handle = ^Mul()(%1969, %1981), uses = [[%1998.i1, %2139.i6], []];
-  %1987 : Float(5, 5), %1988 : Handle = ^Index(7)(%1627), uses = [[%1992.i1], []];
-  %1990 : Float(5!, 20!), %1991 : Handle = ^Transpose(0, 1)(%14), uses = [[%1992.i2], []];
-  %1993 : Float(5, 20), %1994 : Handle = ^Addmm(1, 1, False)(%16, %1987, %1990), uses = [[%2001.i0], []];
-  %1996 : Float(5!, 20!), %1997 : Handle = ^Transpose(0, 1)(%15), uses = [[%1998.i2], []];
-  %1999 : Float(5, 20), %2000 : Handle = ^Addmm(1, 1, False)(%17, %1984, %1996), uses = [[%2001.i1], []];
-  %2002 : Float(5, 20), %2003 : Handle = ^Add(False)(%1993, %1999), uses = [[%2004.i0], []];
-  %2005 : Float(5!, 5), %2006 : Float(5!, 5), %2007 : Float(5!, 5), %2008 : Float(5!, 5), %2009 : Handle = ^Chunk(4, 1)(%2002), uses = [[%2010.i0], [%2013.i0], [%2016.i0], [%2019.i0], []];
-  %2011 : Float(5, 5), %2012 : Handle = ^Sigmoid()(%2005), uses = [[%2025.i0], []];
-  %2014 : Float(5, 5), %2015 : Handle = ^Sigmoid()(%2006), uses = [[%2022.i0], []];
-  %2017 : Float(5, 5), %2018 : Handle = ^Tanh()(%2007), uses = [[%2025.i1], []];
-  %2020 : Float(5, 5), %2021 : Handle = ^Sigmoid()(%2008), uses = [[%2034.i0], []];
-  %2023 : Float(5, 5), %2024 : Handle = ^Mul()(%2014, %1978), uses = [[%2028.i0], []];
-  %2026 : Float(5, 5), %2027 : Handle = ^Mul()(%2011, %2017), uses = [[%2028.i1], []];
-  %2029 : Float(5, 5), %2030 : Handle = ^Add(False)(%2023, %2026), uses = [[%2031.i0, %2073.i1], []];
-  %2032 : Float(5, 5), %2033 : Handle = ^Tanh()(%2029), uses = [[%2034.i1], []];
-  %2035 : Float(5, 5), %2036 : Handle = ^Mul()(%2020, %2032), uses = [[%2049.i1, %2139.i7], []];
-  %2038 : Float(5, 5), %2039 : Handle = ^Index(8)(%1627), uses = [[%2043.i1], []];
-  %2041 : Float(5!, 20!), %2042 : Handle = ^Transpose(0, 1)(%14), uses = [[%2043.i2], []];
-  %2044 : Float(5, 20), %2045 : Handle = ^Addmm(1, 1, False)(%16, %2038, %2041), uses = [[%2052.i0], []];
-  %2047 : Float(5!, 20!), %2048 : Handle = ^Transpose(0, 1)(%15), uses = [[%2049.i2], []];
-  %2050 : Float(5, 20), %2051 : Handle = ^Addmm(1, 1, False)(%17, %2035, %2047), uses = [[%2052.i1], []];
-  %2053 : Float(5, 20), %2054 : Handle = ^Add(False)(%2044, %2050), uses = [[%2055.i0], []];
-  %2056 : Float(5!, 5), %2057 : Float(5!, 5), %2058 : Float(5!, 5), %2059 : Float(5!, 5), %2060 : Handle = ^Chunk(4, 1)(%2053), uses = [[%2061.i0], [%2064.i0], [%2067.i0], [%2070.i0], []];
-  %2062 : Float(5, 5), %2063 : Handle = ^Sigmoid()(%2056), uses = [[%2076.i0], []];
-  %2065 : Float(5, 5), %2066 : Handle = ^Sigmoid()(%2057), uses = [[%2073.i0], []];
-  %2068 : Float(5, 5), %2069 : Handle = ^Tanh()(%2058), uses = [[%2076.i1], []];
-  %2071 : Float(5, 5), %2072 : Handle = ^Sigmoid()(%2059), uses = [[%2085.i0], []];
-  %2074 : Float(5, 5), %2075 : Handle = ^Mul()(%2065, %2029), uses = [[%2079.i0], []];
-  %2077 : Float(5, 5), %2078 : Handle = ^Mul()(%2062, %2068), uses = [[%2079.i1], []];
-  %2080 : Float(5, 5), %2081 : Handle = ^Add(False)(%2074, %2077), uses = [[%2082.i0, %2124.i1], []];
-  %2083 : Float(5, 5), %2084 : Handle = ^Tanh()(%2080), uses = [[%2085.i1], []];
-  %2086 : Float(5, 5), %2087 : Handle = ^Mul()(%2071, %2083), uses = [[%2100.i1, %2139.i8], []];
-  %2089 : Float(5, 5), %2090 : Handle = ^Index(9)(%1627), uses = [[%2094.i1], []];
-  %2092 : Float(5!, 20!), %2093 : Handle = ^Transpose(0, 1)(%14), uses = [[%2094.i2], []];
-  %2095 : Float(5, 20), %2096 : Handle = ^Addmm(1, 1, False)(%16, %2089, %2092), uses = [[%2103.i0], []];
-  %2098 : Float(5!, 20!), %2099 : Handle = ^Transpose(0, 1)(%15), uses = [[%2100.i2], []];
-  %2101 : Float(5, 20), %2102 : Handle = ^Addmm(1, 1, False)(%17, %2086, %2098), uses = [[%2103.i1], []];
-  %2104 : Float(5, 20), %2105 : Handle = ^Add(False)(%2095, %2101), uses = [[%2106.i0], []];
-  %2107 : Float(5!, 5), %2108 : Float(5!, 5), %2109 : Float(5!, 5), %2110 : Float(5!, 5), %2111 : Handle = ^Chunk(4, 1)(%2104), uses = [[%2112.i0], [%2115.i0], [%2118.i0], [%2121.i0], []];
-  %2113 : Float(5, 5), %2114 : Handle = ^Sigmoid()(%2107), uses = [[%2127.i0], []];
-  %2116 : Float(5, 5), %2117 : Handle = ^Sigmoid()(%2108), uses = [[%2124.i0], []];
-  %2119 : Float(5, 5), %2120 : Handle = ^Tanh()(%2109), uses = [[%2127.i1], []];
-  %2122 : Float(5, 5), %2123 : Handle = ^Sigmoid()(%2110), uses = [[%2136.i0], []];
-  %2125 : Float(5, 5), %2126 : Handle = ^Mul()(%2116, %2080), uses = [[%2130.i0], []];
-  %2128 : Float(5, 5), %2129 : Handle = ^Mul()(%2113, %2119), uses = [[%2130.i1], []];
-  %2131 : Float(5, 5), %2132 : Handle = ^Add(False)(%2125, %2128), uses = [[%2133.i0, %2676.i3], []];
-  %2134 : Float(5, 5), %2135 : Handle = ^Tanh()(%2131), uses = [[%2136.i1], []];
-  %2137 : Float(5, 5), %2138 : Handle = ^Mul()(%2122, %2134), uses = [[%2139.i9, %2670.i3], []];
-  %2140 : Float(50, 5), %2141 : Handle = ^Concat(0)(%1678, %1729, %1780, %1831, %1882, %1933, %1984, %2035, %2086, %2137), uses = [[%2142.i0], []];
-  %2143 : Float(10, 5, 5), %2144 : Handle = ^View((10, 5, 5))(%2140), uses = [[%2145.i0], []];
-  %2146 : Float(10, 5, 5), %2147 : Handle = ^Concat(2)(%2143), uses = [[%2148.i0], []];
-  %2149 : Float(10, 5, 5), %2150 : Handle = ^Dropout(0.2, True, False)(%2146), uses = [[%2151.i0, %2202.i0, %2253.i0, %2304.i0, %2355.i0, %2406.i0, %2457.i0, %2508.i0, %2559.i0, %2610.i0], []];
-  %2152 : Float(5, 5), %2153 : Handle = ^Index(0)(%2149), uses = [[%2157.i1], []];
-  %2155 : Float(5!, 20!), %2156 : Handle = ^Transpose(0, 1)(%18), uses = [[%2157.i2], []];
-  %2158 : Float(5, 20), %2159 : Handle = ^Addmm(1, 1, False)(%20, %2152, %2155), uses = [[%2166.i0], []];
-  %2161 : Float(5!, 20!), %2162 : Handle = ^Transpose(0, 1)(%19), uses = [[%2163.i2], []];
-  %2164 : Float(5, 20), %2165 : Handle = ^Addmm(1, 1, False)(%21, %58, %2161), uses = [[%2166.i1], []];
-  %2167 : Float(5, 20), %2168 : Handle = ^Add(False)(%2158, %2164), uses = [[%2169.i0], []];
-  %2170 : Float(5!, 5), %2171 : Float(5!, 5), %2172 : Float(5!, 5), %2173 : Float(5!, 5), %2174 : Handle = ^Chunk(4, 1)(%2167), uses = [[%2175.i0], [%2178.i0], [%2181.i0], [%2184.i0], []];
-  %2176 : Float(5, 5), %2177 : Handle = ^Sigmoid()(%2170), uses = [[%2190.i0], []];
-  %2179 : Float(5, 5), %2180 : Handle = ^Sigmoid()(%2171), uses = [[%2187.i0], []];
-  %2182 : Float(5, 5), %2183 : Handle = ^Tanh()(%2172), uses = [[%2190.i1], []];
-  %2185 : Float(5, 5), %2186 : Handle = ^Sigmoid()(%2173), uses = [[%2199.i0], []];
-  %2188 : Float(5, 5), %2189 : Handle = ^Mul()(%2179, %61), uses = [[%2193.i0], []];
-  %2191 : Float(5, 5), %2192 : Handle = ^Mul()(%2176, %2182), uses = [[%2193.i1], []];
-  %2194 : Float(5, 5), %2195 : Handle = ^Add(False)(%2188, %2191), uses = [[%2196.i0, %2238.i1], []];
-  %2197 : Float(5, 5), %2198 : Handle = ^Tanh()(%2194), uses = [[%2199.i1], []];
-  %2200 : Float(5, 5), %2201 : Handle = ^Mul()(%2185, %2197), uses = [[%2214.i1, %2661.i0], []];
-  %2203 : Float(5, 5), %2204 : Handle = ^Index(1)(%2149), uses = [[%2208.i1], []];
-  %2206 : Float(5!, 20!), %2207 : Handle = ^Transpose(0, 1)(%18), uses = [[%2208.i2], []];
-  %2209 : Float(5, 20), %2210 : Handle = ^Addmm(1, 1, False)(%20, %2203, %2206), uses = [[%2217.i0], []];
-  %2212 : Float(5!, 20!), %2213 : Handle = ^Transpose(0, 1)(%19), uses = [[%2214.i2], []];
-  %2215 : Float(5, 20), %2216 : Handle = ^Addmm(1, 1, False)(%21, %2200, %2212), uses = [[%2217.i1], []];
-  %2218 : Float(5, 20), %2219 : Handle = ^Add(False)(%2209, %2215), uses = [[%2220.i0], []];
-  %2221 : Float(5!, 5), %2222 : Float(5!, 5), %2223 : Float(5!, 5), %2224 : Float(5!, 5), %2225 : Handle = ^Chunk(4, 1)(%2218), uses = [[%2226.i0], [%2229.i0], [%2232.i0], [%2235.i0], []];
-  %2227 : Float(5, 5), %2228 : Handle = ^Sigmoid()(%2221), uses = [[%2241.i0], []];
-  %2230 : Float(5, 5), %2231 : Handle = ^Sigmoid()(%2222), uses = [[%2238.i0], []];
-  %2233 : Float(5, 5), %2234 : Handle = ^Tanh()(%2223), uses = [[%2241.i1], []];
-  %2236 : Float(5, 5), %2237 : Handle = ^Sigmoid()(%2224), uses = [[%2250.i0], []];
-  %2239 : Float(5, 5), %2240 : Handle = ^Mul()(%2230, %2194), uses = [[%2244.i0], []];
-  %2242 : Float(5, 5), %2243 : Handle = ^Mul()(%2227, %2233), uses = [[%2244.i1], []];
-  %2245 : Float(5, 5), %2246 : Handle = ^Add(False)(%2239, %2242), uses = [[%2247.i0, %2289.i1], []];
-  %2248 : Float(5, 5), %2249 : Handle = ^Tanh()(%2245), uses = [[%2250.i1], []];
-  %2251 : Float(5, 5), %2252 : Handle = ^Mul()(%2236, %2248), uses = [[%2265.i1, %2661.i1], []];
-  %2254 : Float(5, 5), %2255 : Handle = ^Index(2)(%2149), uses = [[%2259.i1], []];
-  %2257 : Float(5!, 20!), %2258 : Handle = ^Transpose(0, 1)(%18), uses = [[%2259.i2], []];
-  %2260 : Float(5, 20), %2261 : Handle = ^Addmm(1, 1, False)(%20, %2254, %2257), uses = [[%2268.i0], []];
-  %2263 : Float(5!, 20!), %2264 : Handle = ^Transpose(0, 1)(%19), uses = [[%2265.i2], []];
-  %2266 : Float(5, 20), %2267 : Handle = ^Addmm(1, 1, False)(%21, %2251, %2263), uses = [[%2268.i1], []];
-  %2269 : Float(5, 20), %2270 : Handle = ^Add(False)(%2260, %2266), uses = [[%2271.i0], []];
-  %2272 : Float(5!, 5), %2273 : Float(5!, 5), %2274 : Float(5!, 5), %2275 : Float(5!, 5), %2276 : Handle = ^Chunk(4, 1)(%2269), uses = [[%2277.i0], [%2280.i0], [%2283.i0], [%2286.i0], []];
-  %2278 : Float(5, 5), %2279 : Handle = ^Sigmoid()(%2272), uses = [[%2292.i0], []];
-  %2281 : Float(5, 5), %2282 : Handle = ^Sigmoid()(%2273), uses = [[%2289.i0], []];
-  %2284 : Float(5, 5), %2285 : Handle = ^Tanh()(%2274), uses = [[%2292.i1], []];
-  %2287 : Float(5, 5), %2288 : Handle = ^Sigmoid()(%2275), uses = [[%2301.i0], []];
-  %2290 : Float(5, 5), %2291 : Handle = ^Mul()(%2281, %2245), uses = [[%2295.i0], []];
-  %2293 : Float(5, 5), %2294 : Handle = ^Mul()(%2278, %2284), uses = [[%2295.i1], []];
-  %2296 : Float(5, 5), %2297 : Handle = ^Add(False)(%2290, %2293), uses = [[%2298.i0, %2340.i1], []];
-  %2299 : Float(5, 5), %2300 : Handle = ^Tanh()(%2296), uses = [[%2301.i1], []];
-  %2302 : Float(5, 5), %2303 : Handle = ^Mul()(%2287, %2299), uses = [[%2316.i1, %2661.i2], []];
-  %2305 : Float(5, 5), %2306 : Handle = ^Index(3)(%2149), uses = [[%2310.i1], []];
-  %2308 : Float(5!, 20!), %2309 : Handle = ^Transpose(0, 1)(%18), uses = [[%2310.i2], []];
-  %2311 : Float(5, 20), %2312 : Handle = ^Addmm(1, 1, False)(%20, %2305, %2308), uses = [[%2319.i0], []];
-  %2314 : Float(5!, 20!), %2315 : Handle = ^Transpose(0, 1)(%19), uses = [[%2316.i2], []];
-  %2317 : Float(5, 20), %2318 : Handle = ^Addmm(1, 1, False)(%21, %2302, %2314), uses = [[%2319.i1], []];
-  %2320 : Float(5, 20), %2321 : Handle = ^Add(False)(%2311, %2317), uses = [[%2322.i0], []];
-  %2323 : Float(5!, 5), %2324 : Float(5!, 5), %2325 : Float(5!, 5), %2326 : Float(5!, 5), %2327 : Handle = ^Chunk(4, 1)(%2320), uses = [[%2328.i0], [%2331.i0], [%2334.i0], [%2337.i0], []];
-  %2329 : Float(5, 5), %2330 : Handle = ^Sigmoid()(%2323), uses = [[%2343.i0], []];
-  %2332 : Float(5, 5), %2333 : Handle = ^Sigmoid()(%2324), uses = [[%2340.i0], []];
-  %2335 : Float(5, 5), %2336 : Handle = ^Tanh()(%2325), uses = [[%2343.i1], []];
-  %2338 : Float(5, 5), %2339 : Handle = ^Sigmoid()(%2326), uses = [[%2352.i0], []];
-  %2341 : Float(5, 5), %2342 : Handle = ^Mul()(%2332, %2296), uses = [[%2346.i0], []];
-  %2344 : Float(5, 5), %2345 : Handle = ^Mul()(%2329, %2335), uses = [[%2346.i1], []];
-  %2347 : Float(5, 5), %2348 : Handle = ^Add(False)(%2341, %2344), uses = [[%2349.i0, %2391.i1], []];
-  %2350 : Float(5, 5), %2351 : Handle = ^Tanh()(%2347), uses = [[%2352.i1], []];
-  %2353 : Float(5, 5), %2354 : Handle = ^Mul()(%2338, %2350), uses = [[%2367.i1, %2661.i3], []];
-  %2356 : Float(5, 5), %2357 : Handle = ^Index(4)(%2149), uses = [[%2361.i1], []];
-  %2359 : Float(5!, 20!), %2360 : Handle = ^Transpose(0, 1)(%18), uses = [[%2361.i2], []];
-  %2362 : Float(5, 20), %2363 : Handle = ^Addmm(1, 1, False)(%20, %2356, %2359), uses = [[%2370.i0], []];
-  %2365 : Float(5!, 20!), %2366 : Handle = ^Transpose(0, 1)(%19), uses = [[%2367.i2], []];
-  %2368 : Float(5, 20), %2369 : Handle = ^Addmm(1, 1, False)(%21, %2353, %2365), uses = [[%2370.i1], []];
-  %2371 : Float(5, 20), %2372 : Handle = ^Add(False)(%2362, %2368), uses = [[%2373.i0], []];
-  %2374 : Float(5!, 5), %2375 : Float(5!, 5), %2376 : Float(5!, 5), %2377 : Float(5!, 5), %2378 : Handle = ^Chunk(4, 1)(%2371), uses = [[%2379.i0], [%2382.i0], [%2385.i0], [%2388.i0], []];
-  %2380 : Float(5, 5), %2381 : Handle = ^Sigmoid()(%2374), uses = [[%2394.i0], []];
-  %2383 : Float(5, 5), %2384 : Handle = ^Sigmoid()(%2375), uses = [[%2391.i0], []];
-  %2386 : Float(5, 5), %2387 : Handle = ^Tanh()(%2376), uses = [[%2394.i1], []];
-  %2389 : Float(5, 5), %2390 : Handle = ^Sigmoid()(%2377), uses = [[%2403.i0], []];
-  %2392 : Float(5, 5), %2393 : Handle = ^Mul()(%2383, %2347), uses = [[%2397.i0], []];
-  %2395 : Float(5, 5), %2396 : Handle = ^Mul()(%2380, %2386), uses = [[%2397.i1], []];
-  %2398 : Float(5, 5), %2399 : Handle = ^Add(False)(%2392, %2395), uses = [[%2400.i0, %2442.i1], []];
-  %2401 : Float(5, 5), %2402 : Handle = ^Tanh()(%2398), uses = [[%2403.i1], []];
-  %2404 : Float(5, 5), %2405 : Handle = ^Mul()(%2389, %2401), uses = [[%2418.i1, %2661.i4], []];
-  %2407 : Float(5, 5), %2408 : Handle = ^Index(5)(%2149), uses = [[%2412.i1], []];
-  %2410 : Float(5!, 20!), %2411 : Handle = ^Transpose(0, 1)(%18), uses = [[%2412.i2], []];
-  %2413 : Float(5, 20), %2414 : Handle = ^Addmm(1, 1, False)(%20, %2407, %2410), uses = [[%2421.i0], []];
-  %2416 : Float(5!, 20!), %2417 : Handle = ^Transpose(0, 1)(%19), uses = [[%2418.i2], []];
-  %2419 : Float(5, 20), %2420 : Handle = ^Addmm(1, 1, False)(%21, %2404, %2416), uses = [[%2421.i1], []];
-  %2422 : Float(5, 20), %2423 : Handle = ^Add(False)(%2413, %2419), uses = [[%2424.i0], []];
-  %2425 : Float(5!, 5), %2426 : Float(5!, 5), %2427 : Float(5!, 5), %2428 : Float(5!, 5), %2429 : Handle = ^Chunk(4, 1)(%2422), uses = [[%2430.i0], [%2433.i0], [%2436.i0], [%2439.i0], []];
-  %2431 : Float(5, 5), %2432 : Handle = ^Sigmoid()(%2425), uses = [[%2445.i0], []];
-  %2434 : Float(5, 5), %2435 : Handle = ^Sigmoid()(%2426), uses = [[%2442.i0], []];
-  %2437 : Float(5, 5), %2438 : Handle = ^Tanh()(%2427), uses = [[%2445.i1], []];
-  %2440 : Float(5, 5), %2441 : Handle = ^Sigmoid()(%2428), uses = [[%2454.i0], []];
-  %2443 : Float(5, 5), %2444 : Handle = ^Mul()(%2434, %2398), uses = [[%2448.i0], []];
-  %2446 : Float(5, 5), %2447 : Handle = ^Mul()(%2431, %2437), uses = [[%2448.i1], []];
-  %2449 : Float(5, 5), %2450 : Handle = ^Add(False)(%2443, %2446), uses = [[%2451.i0, %2493.i1], []];
-  %2452 : Float(5, 5), %2453 : Handle = ^Tanh()(%2449), uses = [[%2454.i1], []];
-  %2455 : Float(5, 5), %2456 : Handle = ^Mul()(%2440, %2452), uses = [[%2469.i1, %2661.i5], []];
-  %2458 : Float(5, 5), %2459 : Handle = ^Index(6)(%2149), uses = [[%2463.i1], []];
-  %2461 : Float(5!, 20!), %2462 : Handle = ^Transpose(0, 1)(%18), uses = [[%2463.i2], []];
-  %2464 : Float(5, 20), %2465 : Handle = ^Addmm(1, 1, False)(%20, %2458, %2461), uses = [[%2472.i0], []];
-  %2467 : Float(5!, 20!), %2468 : Handle = ^Transpose(0, 1)(%19), uses = [[%2469.i2], []];
-  %2470 : Float(5, 20), %2471 : Handle = ^Addmm(1, 1, False)(%21, %2455, %2467), uses = [[%2472.i1], []];
-  %2473 : Float(5, 20), %2474 : Handle = ^Add(False)(%2464, %2470), uses = [[%2475.i0], []];
-  %2476 : Float(5!, 5), %2477 : Float(5!, 5), %2478 : Float(5!, 5), %2479 : Float(5!, 5), %2480 : Handle = ^Chunk(4, 1)(%2473), uses = [[%2481.i0], [%2484.i0], [%2487.i0], [%2490.i0], []];
-  %2482 : Float(5, 5), %2483 : Handle = ^Sigmoid()(%2476), uses = [[%2496.i0], []];
-  %2485 : Float(5, 5), %2486 : Handle = ^Sigmoid()(%2477), uses = [[%2493.i0], []];
-  %2488 : Float(5, 5), %2489 : Handle = ^Tanh()(%2478), uses = [[%2496.i1], []];
-  %2491 : Float(5, 5), %2492 : Handle = ^Sigmoid()(%2479), uses = [[%2505.i0], []];
-  %2494 : Float(5, 5), %2495 : Handle = ^Mul()(%2485, %2449), uses = [[%2499.i0], []];
-  %2497 : Float(5, 5), %2498 : Handle = ^Mul()(%2482, %2488), uses = [[%2499.i1], []];
-  %2500 : Float(5, 5), %2501 : Handle = ^Add(False)(%2494, %2497), uses = [[%2502.i0, %2544.i1], []];
-  %2503 : Float(5, 5), %2504 : Handle = ^Tanh()(%2500), uses = [[%2505.i1], []];
-  %2506 : Float(5, 5), %2507 : Handle = ^Mul()(%2491, %2503), uses = [[%2520.i1, %2661.i6], []];
-  %2509 : Float(5, 5), %2510 : Handle = ^Index(7)(%2149), uses = [[%2514.i1], []];
-  %2512 : Float(5!, 20!), %2513 : Handle = ^Transpose(0, 1)(%18), uses = [[%2514.i2], []];
-  %2515 : Float(5, 20), %2516 : Handle = ^Addmm(1, 1, False)(%20, %2509, %2512), uses = [[%2523.i0], []];
-  %2518 : Float(5!, 20!), %2519 : Handle = ^Transpose(0, 1)(%19), uses = [[%2520.i2], []];
-  %2521 : Float(5, 20), %2522 : Handle = ^Addmm(1, 1, False)(%21, %2506, %2518), uses = [[%2523.i1], []];
-  %2524 : Float(5, 20), %2525 : Handle = ^Add(False)(%2515, %2521), uses = [[%2526.i0], []];
-  %2527 : Float(5!, 5), %2528 : Float(5!, 5), %2529 : Float(5!, 5), %2530 : Float(5!, 5), %2531 : Handle = ^Chunk(4, 1)(%2524), uses = [[%2532.i0], [%2535.i0], [%2538.i0], [%2541.i0], []];
-  %2533 : Float(5, 5), %2534 : Handle = ^Sigmoid()(%2527), uses = [[%2547.i0], []];
-  %2536 : Float(5, 5), %2537 : Handle = ^Sigmoid()(%2528), uses = [[%2544.i0], []];
-  %2539 : Float(5, 5), %2540 : Handle = ^Tanh()(%2529), uses = [[%2547.i1], []];
-  %2542 : Float(5, 5), %2543 : Handle = ^Sigmoid()(%2530), uses = [[%2556.i0], []];
-  %2545 : Float(5, 5), %2546 : Handle = ^Mul()(%2536, %2500), uses = [[%2550.i0], []];
-  %2548 : Float(5, 5), %2549 : Handle = ^Mul()(%2533, %2539), uses = [[%2550.i1], []];
-  %2551 : Float(5, 5), %2552 : Handle = ^Add(False)(%2545, %2548), uses = [[%2553.i0, %2595.i1], []];
-  %2554 : Float(5, 5), %2555 : Handle = ^Tanh()(%2551), uses = [[%2556.i1], []];
-  %2557 : Float(5, 5), %2558 : Handle = ^Mul()(%2542, %2554), uses = [[%2571.i1, %2661.i7], []];
-  %2560 : Float(5, 5), %2561 : Handle = ^Index(8)(%2149), uses = [[%2565.i1], []];
-  %2563 : Float(5!, 20!), %2564 : Handle = ^Transpose(0, 1)(%18), uses = [[%2565.i2], []];
-  %2566 : Float(5, 20), %2567 : Handle = ^Addmm(1, 1, False)(%20, %2560, %2563), uses = [[%2574.i0], []];
-  %2569 : Float(5!, 20!), %2570 : Handle = ^Transpose(0, 1)(%19), uses = [[%2571.i2], []];
-  %2572 : Float(5, 20), %2573 : Handle = ^Addmm(1, 1, False)(%21, %2557, %2569), uses = [[%2574.i1], []];
-  %2575 : Float(5, 20), %2576 : Handle = ^Add(False)(%2566, %2572), uses = [[%2577.i0], []];
-  %2578 : Float(5!, 5), %2579 : Float(5!, 5), %2580 : Float(5!, 5), %2581 : Float(5!, 5), %2582 : Handle = ^Chunk(4, 1)(%2575), uses = [[%2583.i0], [%2586.i0], [%2589.i0], [%2592.i0], []];
-  %2584 : Float(5, 5), %2585 : Handle = ^Sigmoid()(%2578), uses = [[%2598.i0], []];
-  %2587 : Float(5, 5), %2588 : Handle = ^Sigmoid()(%2579), uses = [[%2595.i0], []];
-  %2590 : Float(5, 5), %2591 : Handle = ^Tanh()(%2580), uses = [[%2598.i1], []];
-  %2593 : Float(5, 5), %2594 : Handle = ^Sigmoid()(%2581), uses = [[%2607.i0], []];
-  %2596 : Float(5, 5), %2597 : Handle = ^Mul()(%2587, %2551), uses = [[%2601.i0], []];
-  %2599 : Float(5, 5), %2600 : Handle = ^Mul()(%2584, %2590), uses = [[%2601.i1], []];
-  %2602 : Float(5, 5), %2603 : Handle = ^Add(False)(%2596, %2599), uses = [[%2604.i0, %2646.i1], []];
-  %2605 : Float(5, 5), %2606 : Handle = ^Tanh()(%2602), uses = [[%2607.i1], []];
-  %2608 : Float(5, 5), %2609 : Handle = ^Mul()(%2593, %2605), uses = [[%2622.i1, %2661.i8], []];
-  %2611 : Float(5, 5), %2612 : Handle = ^Index(9)(%2149), uses = [[%2616.i1], []];
-  %2614 : Float(5!, 20!), %2615 : Handle = ^Transpose(0, 1)(%18), uses = [[%2616.i2], []];
-  %2617 : Float(5, 20), %2618 : Handle = ^Addmm(1, 1, False)(%20, %2611, %2614), uses = [[%2625.i0], []];
-  %2620 : Float(5!, 20!), %2621 : Handle = ^Transpose(0, 1)(%19), uses = [[%2622.i2], []];
-  %2623 : Float(5, 20), %2624 : Handle = ^Addmm(1, 1, False)(%21, %2608, %2620), uses = [[%2625.i1], []];
-  %2626 : Float(5, 20), %2627 : Handle = ^Add(False)(%2617, %2623), uses = [[%2628.i0], []];
-  %2629 : Float(5!, 5), %2630 : Float(5!, 5), %2631 : Float(5!, 5), %2632 : Float(5!, 5), %2633 : Handle = ^Chunk(4, 1)(%2626), uses = [[%2634.i0], [%2637.i0], [%2640.i0], [%2643.i0], []];
-  %2635 : Float(5, 5), %2636 : Handle = ^Sigmoid()(%2629), uses = [[%2649.i0], []];
-  %2638 : Float(5, 5), %2639 : Handle = ^Sigmoid()(%2630), uses = [[%2646.i0], []];
-  %2641 : Float(5, 5), %2642 : Handle = ^Tanh()(%2631), uses = [[%2649.i1], []];
-  %2644 : Float(5, 5), %2645 : Handle = ^Sigmoid()(%2632), uses = [[%2658.i0], []];
-  %2647 : Float(5, 5), %2648 : Handle = ^Mul()(%2638, %2602), uses = [[%2652.i0], []];
-  %2650 : Float(5, 5), %2651 : Handle = ^Mul()(%2635, %2641), uses = [[%2652.i1], []];
-  %2653 : Float(5, 5), %2654 : Handle = ^Add(False)(%2647, %2650), uses = [[%2655.i0, %2676.i4], []];
-  %2656 : Float(5, 5), %2657 : Handle = ^Tanh()(%2653), uses = [[%2658.i1], []];
-  %2659 : Float(5, 5), %2660 : Handle = ^Mul()(%2644, %2656), uses = [[%2661.i9, %2670.i4], []];
-  %2662 : Float(50, 5), %2663 : Handle = ^Concat(0)(%2200, %2251, %2302, %2353, %2404, %2455, %2506, %2557, %2608, %2659), uses = [[%2664.i0], []];
-  %2665 : Float(10, 5, 5), %2666 : Handle = ^View((10, 5, 5))(%2662), uses = [[%2667.i0], []];
-  %2668 : Float(10, 5, 5), %2669 : Handle = ^Concat(2)(%2665), uses = [[%2682.i0], []];
-  %2671 : Float(25, 5), %2672 : Handle = ^Concat(0)(%571, %1093, %1615, %2137, %2659), uses = [[%2673.i0], []];
-  %2674 : Float(5, 5, 5), %2675 : Handle = ^View((5, 5, 5))(%2671), uses = [[], []];
-  %2677 : Float(25, 5), %2678 : Handle = ^Concat(0)(%565, %1087, %1609, %2131, %2653), uses = [[%2679.i0], []];
-  %2680 : Float(5, 5, 5), %2681 : Handle = ^View((5, 5, 5))(%2677), uses = [[], []];
-  %2683 : Float(10, 5, 5), %2684 : Handle = ^Dropout(0.2, True, False)(%2668), uses = [[%2685.i0], []];
-  %2686 : Float(50, 5), %2687 : Handle = ^View((50, 5))(%2683), uses = [[%2691.i1], []];
-  %2689 : Float(5!, 10!), %2690 : Handle = ^Transpose(0, 1)(%22), uses = [[%2691.i2], []];
-  %2692 : Float(50, 10), %2693 : Handle = ^Addmm(1, 1, False)(%23, %2686, %2689), uses = [[%2694.i0], []];
-  %2695 : Float(10, 5, 10), %2696 : Handle = ^View((10, 5, 10))(%2692), uses = [[%0.i0], []];
-  return (%2695);
+graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17, %18, %19, %20, %21, %22, %23, %24, %25, %26) {
+  %27 = Gather(%1, %24)
+  %29, %30 = Dropout[ratio = 0.20000000298, is_test = 1](%27)
+  %1300 = Constant[value = <Tensor>]()
+  %1301 = Constant[value = <Tensor>]()
+  %1302 = Slice(%25, %1300, %1301)
+  %1303 = Squeeze[axes = [0]](%1302)
+  %1304 = Constant[value = <Tensor>]()
+  %1305 = Constant[value = <Tensor>]()
+  %1306 = Slice(%26, %1304, %1305)
+  %1307 = Squeeze[axes = [0]](%1306)
+  %1308 = Constant[value = <Tensor>]()
+  %1309 = Constant[value = <Tensor>]()
+  %1310 = Slice(%25, %1308, %1309)
+  %1311 = Squeeze[axes = [0]](%1310)
+  %1312 = Constant[value = <Tensor>]()
+  %1313 = Constant[value = <Tensor>]()
+  %1314 = Slice(%26, %1312, %1313)
+  %1315 = Squeeze[axes = [0]](%1314)
+  %1316 = Constant[value = <Tensor>]()
+  %1317 = Constant[value = <Tensor>]()
+  %1318 = Slice(%25, %1316, %1317)
+  %1319 = Squeeze[axes = [0]](%1318)
+  %1320 = Constant[value = <Tensor>]()
+  %1321 = Constant[value = <Tensor>]()
+  %1322 = Slice(%26, %1320, %1321)
+  %1323 = Squeeze[axes = [0]](%1322)
+  %1324 = Constant[value = <Tensor>]()
+  %1325 = Constant[value = <Tensor>]()
+  %1326 = Slice(%25, %1324, %1325)
+  %1327 = Squeeze[axes = [0]](%1326)
+  %1328 = Constant[value = <Tensor>]()
+  %1329 = Constant[value = <Tensor>]()
+  %1330 = Slice(%26, %1328, %1329)
+  %1331 = Squeeze[axes = [0]](%1330)
+  %1332 = Constant[value = <Tensor>]()
+  %1333 = Constant[value = <Tensor>]()
+  %1334 = Slice(%25, %1332, %1333)
+  %1335 = Squeeze[axes = [0]](%1334)
+  %1336 = Constant[value = <Tensor>]()
+  %1337 = Constant[value = <Tensor>]()
+  %1338 = Slice(%26, %1336, %1337)
+  %1339 = Squeeze[axes = [0]](%1338)
+  %1340 = Constant[value = <Tensor>]()
+  %1341 = Constant[value = <Tensor>]()
+  %1342 = Slice(%29, %1340, %1341)
+  %1343 = Squeeze[axes = [0]](%1342)
+  %64 = Transpose[perm = [1, 0]](%2)
+  %65 = Transpose(%64)
+  %66 = FC(%1343, %65, %4)
+  %67 = Transpose[perm = [1, 0]](%3)
+  %68 = Transpose(%67)
+  %69 = FC(%1303, %68, %5)
+  %70 = Add(%66, %69)
+  %72, %73, %74, %75 = Split[split = [5, 5, 5, 5], axis = 1](%70)
+  %76 = Sigmoid(%72)
+  %77 = Sigmoid(%73)
+  %78 = Tanh(%74)
+  %79 = Sigmoid(%75)
+  %80 = Mul(%77, %1307)
+  %81 = Mul(%76, %78)
+  %82 = Add(%80, %81)
+  %83 = Tanh(%82)
+  %84 = Mul(%79, %83)
+  %1344 = Constant[value = <Tensor>]()
+  %1345 = Constant[value = <Tensor>]()
+  %1346 = Slice(%29, %1344, %1345)
+  %1347 = Squeeze[axes = [0]](%1346)
+  %88 = Transpose[perm = [1, 0]](%2)
+  %89 = Transpose(%88)
+  %90 = FC(%1347, %89, %4)
+  %91 = Transpose[perm = [1, 0]](%3)
+  %92 = Transpose(%91)
+  %93 = FC(%84, %92, %5)
+  %94 = Add(%90, %93)
+  %96, %97, %98, %99 = Split[split = [5, 5, 5, 5], axis = 1](%94)
+  %100 = Sigmoid(%96)
+  %101 = Sigmoid(%97)
+  %102 = Tanh(%98)
+  %103 = Sigmoid(%99)
+  %104 = Mul(%101, %82)
+  %105 = Mul(%100, %102)
+  %106 = Add(%104, %105)
+  %107 = Tanh(%106)
+  %108 = Mul(%103, %107)
+  %1348 = Constant[value = <Tensor>]()
+  %1349 = Constant[value = <Tensor>]()
+  %1350 = Slice(%29, %1348, %1349)
+  %1351 = Squeeze[axes = [0]](%1350)
+  %112 = Transpose[perm = [1, 0]](%2)
+  %113 = Transpose(%112)
+  %114 = FC(%1351, %113, %4)
+  %115 = Transpose[perm = [1, 0]](%3)
+  %116 = Transpose(%115)
+  %117 = FC(%108, %116, %5)
+  %118 = Add(%114, %117)
+  %120, %121, %122, %123 = Split[split = [5, 5, 5, 5], axis = 1](%118)
+  %124 = Sigmoid(%120)
+  %125 = Sigmoid(%121)
+  %126 = Tanh(%122)
+  %127 = Sigmoid(%123)
+  %128 = Mul(%125, %106)
+  %129 = Mul(%124, %126)
+  %130 = Add(%128, %129)
+  %131 = Tanh(%130)
+  %132 = Mul(%127, %131)
+  %1352 = Constant[value = <Tensor>]()
+  %1353 = Constant[value = <Tensor>]()
+  %1354 = Slice(%29, %1352, %1353)
+  %1355 = Squeeze[axes = [0]](%1354)
+  %136 = Transpose[perm = [1, 0]](%2)
+  %137 = Transpose(%136)
+  %138 = FC(%1355, %137, %4)
+  %139 = Transpose[perm = [1, 0]](%3)
+  %140 = Transpose(%139)
+  %141 = FC(%132, %140, %5)
+  %142 = Add(%138, %141)
+  %144, %145, %146, %147 = Split[split = [5, 5, 5, 5], axis = 1](%142)
+  %148 = Sigmoid(%144)
+  %149 = Sigmoid(%145)
+  %150 = Tanh(%146)
+  %151 = Sigmoid(%147)
+  %152 = Mul(%149, %130)
+  %153 = Mul(%148, %150)
+  %154 = Add(%152, %153)
+  %155 = Tanh(%154)
+  %156 = Mul(%151, %155)
+  %1356 = Constant[value = <Tensor>]()
+  %1357 = Constant[value = <Tensor>]()
+  %1358 = Slice(%29, %1356, %1357)
+  %1359 = Squeeze[axes = [0]](%1358)
+  %160 = Transpose[perm = [1, 0]](%2)
+  %161 = Transpose(%160)
+  %162 = FC(%1359, %161, %4)
+  %163 = Transpose[perm = [1, 0]](%3)
+  %164 = Transpose(%163)
+  %165 = FC(%156, %164, %5)
+  %166 = Add(%162, %165)
+  %168, %169, %170, %171 = Split[split = [5, 5, 5, 5], axis = 1](%166)
+  %172 = Sigmoid(%168)
+  %173 = Sigmoid(%169)
+  %174 = Tanh(%170)
+  %175 = Sigmoid(%171)
+  %176 = Mul(%173, %154)
+  %177 = Mul(%172, %174)
+  %178 = Add(%176, %177)
+  %179 = Tanh(%178)
+  %180 = Mul(%175, %179)
+  %1360 = Constant[value = <Tensor>]()
+  %1361 = Constant[value = <Tensor>]()
+  %1362 = Slice(%29, %1360, %1361)
+  %1363 = Squeeze[axes = [0]](%1362)
+  %184 = Transpose[perm = [1, 0]](%2)
+  %185 = Transpose(%184)
+  %186 = FC(%1363, %185, %4)
+  %187 = Transpose[perm = [1, 0]](%3)
+  %188 = Transpose(%187)
+  %189 = FC(%180, %188, %5)
+  %190 = Add(%186, %189)
+  %192, %193, %194, %195 = Split[split = [5, 5, 5, 5], axis = 1](%190)
+  %196 = Sigmoid(%192)
+  %197 = Sigmoid(%193)
+  %198 = Tanh(%194)
+  %199 = Sigmoid(%195)
+  %200 = Mul(%197, %178)
+  %201 = Mul(%196, %198)
+  %202 = Add(%200, %201)
+  %203 = Tanh(%202)
+  %204 = Mul(%199, %203)
+  %1364 = Constant[value = <Tensor>]()
+  %1365 = Constant[value = <Tensor>]()
+  %1366 = Slice(%29, %1364, %1365)
+  %1367 = Squeeze[axes = [0]](%1366)
+  %208 = Transpose[perm = [1, 0]](%2)
+  %209 = Transpose(%208)
+  %210 = FC(%1367, %209, %4)
+  %211 = Transpose[perm = [1, 0]](%3)
+  %212 = Transpose(%211)
+  %213 = FC(%204, %212, %5)
+  %214 = Add(%210, %213)
+  %216, %217, %218, %219 = Split[split = [5, 5, 5, 5], axis = 1](%214)
+  %220 = Sigmoid(%216)
+  %221 = Sigmoid(%217)
+  %222 = Tanh(%218)
+  %223 = Sigmoid(%219)
+  %224 = Mul(%221, %202)
+  %225 = Mul(%220, %222)
+  %226 = Add(%224, %225)
+  %227 = Tanh(%226)
+  %228 = Mul(%223, %227)
+  %1368 = Constant[value = <Tensor>]()
+  %1369 = Constant[value = <Tensor>]()
+  %1370 = Slice(%29, %1368, %1369)
+  %1371 = Squeeze[axes = [0]](%1370)
+  %232 = Transpose[perm = [1, 0]](%2)
+  %233 = Transpose(%232)
+  %234 = FC(%1371, %233, %4)
+  %235 = Transpose[perm = [1, 0]](%3)
+  %236 = Transpose(%235)
+  %237 = FC(%228, %236, %5)
+  %238 = Add(%234, %237)
+  %240, %241, %242, %243 = Split[split = [5, 5, 5, 5], axis = 1](%238)
+  %244 = Sigmoid(%240)
+  %245 = Sigmoid(%241)
+  %246 = Tanh(%242)
+  %247 = Sigmoid(%243)
+  %248 = Mul(%245, %226)
+  %249 = Mul(%244, %246)
+  %250 = Add(%248, %249)
+  %251 = Tanh(%250)
+  %252 = Mul(%247, %251)
+  %1372 = Constant[value = <Tensor>]()
+  %1373 = Constant[value = <Tensor>]()
+  %1374 = Slice(%29, %1372, %1373)
+  %1375 = Squeeze[axes = [0]](%1374)
+  %256 = Transpose[perm = [1, 0]](%2)
+  %257 = Transpose(%256)
+  %258 = FC(%1375, %257, %4)
+  %259 = Transpose[perm = [1, 0]](%3)
+  %260 = Transpose(%259)
+  %261 = FC(%252, %260, %5)
+  %262 = Add(%258, %261)
+  %264, %265, %266, %267 = Split[split = [5, 5, 5, 5], axis = 1](%262)
+  %268 = Sigmoid(%264)
+  %269 = Sigmoid(%265)
+  %270 = Tanh(%266)
+  %271 = Sigmoid(%267)
+  %272 = Mul(%269, %250)
+  %273 = Mul(%268, %270)
+  %274 = Add(%272, %273)
+  %275 = Tanh(%274)
+  %276 = Mul(%271, %275)
+  %1376 = Constant[value = <Tensor>]()
+  %1377 = Constant[value = <Tensor>]()
+  %1378 = Slice(%29, %1376, %1377)
+  %1379 = Squeeze[axes = [0]](%1378)
+  %280 = Transpose[perm = [1, 0]](%2)
+  %281 = Transpose(%280)
+  %282 = FC(%1379, %281, %4)
+  %283 = Transpose[perm = [1, 0]](%3)
+  %284 = Transpose(%283)
+  %285 = FC(%276, %284, %5)
+  %286 = Add(%282, %285)
+  %288, %289, %290, %291 = Split[split = [5, 5, 5, 5], axis = 1](%286)
+  %292 = Sigmoid(%288)
+  %293 = Sigmoid(%289)
+  %294 = Tanh(%290)
+  %295 = Sigmoid(%291)
+  %296 = Mul(%293, %274)
+  %297 = Mul(%292, %294)
+  %298 = Add(%296, %297)
+  %299 = Tanh(%298)
+  %300 = Mul(%295, %299)
+  %1380, %1381 = Concat[axis = 0](%84, %108, %132, %156, %180, %204, %228, %252, %276, %300)
+  %302 = Reshape[shape = [10, 5, 5]](%1380)
+  %1382, %1383 = Concat[axis = 2](%302)
+  %305, %306 = Dropout[ratio = 0.20000000298, is_test = 1](%1382)
+  %1384 = Constant[value = <Tensor>]()
+  %1385 = Constant[value = <Tensor>]()
+  %1386 = Slice(%305, %1384, %1385)
+  %1387 = Squeeze[axes = [0]](%1386)
+  %310 = Transpose[perm = [1, 0]](%6)
+  %311 = Transpose(%310)
+  %312 = FC(%1387, %311, %8)
+  %313 = Transpose[perm = [1, 0]](%7)
+  %314 = Transpose(%313)
+  %315 = FC(%1311, %314, %9)
+  %316 = Add(%312, %315)
+  %318, %319, %320, %321 = Split[split = [5, 5, 5, 5], axis = 1](%316)
+  %322 = Sigmoid(%318)
+  %323 = Sigmoid(%319)
+  %324 = Tanh(%320)
+  %325 = Sigmoid(%321)
+  %326 = Mul(%323, %1315)
+  %327 = Mul(%322, %324)
+  %328 = Add(%326, %327)
+  %329 = Tanh(%328)
+  %330 = Mul(%325, %329)
+  %1388 = Constant[value = <Tensor>]()
+  %1389 = Constant[value = <Tensor>]()
+  %1390 = Slice(%305, %1388, %1389)
+  %1391 = Squeeze[axes = [0]](%1390)
+  %334 = Transpose[perm = [1, 0]](%6)
+  %335 = Transpose(%334)
+  %336 = FC(%1391, %335, %8)
+  %337 = Transpose[perm = [1, 0]](%7)
+  %338 = Transpose(%337)
+  %339 = FC(%330, %338, %9)
+  %340 = Add(%336, %339)
+  %342, %343, %344, %345 = Split[split = [5, 5, 5, 5], axis = 1](%340)
+  %346 = Sigmoid(%342)
+  %347 = Sigmoid(%343)
+  %348 = Tanh(%344)
+  %349 = Sigmoid(%345)
+  %350 = Mul(%347, %328)
+  %351 = Mul(%346, %348)
+  %352 = Add(%350, %351)
+  %353 = Tanh(%352)
+  %354 = Mul(%349, %353)
+  %1392 = Constant[value = <Tensor>]()
+  %1393 = Constant[value = <Tensor>]()
+  %1394 = Slice(%305, %1392, %1393)
+  %1395 = Squeeze[axes = [0]](%1394)
+  %358 = Transpose[perm = [1, 0]](%6)
+  %359 = Transpose(%358)
+  %360 = FC(%1395, %359, %8)
+  %361 = Transpose[perm = [1, 0]](%7)
+  %362 = Transpose(%361)
+  %363 = FC(%354, %362, %9)
+  %364 = Add(%360, %363)
+  %366, %367, %368, %369 = Split[split = [5, 5, 5, 5], axis = 1](%364)
+  %370 = Sigmoid(%366)
+  %371 = Sigmoid(%367)
+  %372 = Tanh(%368)
+  %373 = Sigmoid(%369)
+  %374 = Mul(%371, %352)
+  %375 = Mul(%370, %372)
+  %376 = Add(%374, %375)
+  %377 = Tanh(%376)
+  %378 = Mul(%373, %377)
+  %1396 = Constant[value = <Tensor>]()
+  %1397 = Constant[value = <Tensor>]()
+  %1398 = Slice(%305, %1396, %1397)
+  %1399 = Squeeze[axes = [0]](%1398)
+  %382 = Transpose[perm = [1, 0]](%6)
+  %383 = Transpose(%382)
+  %384 = FC(%1399, %383, %8)
+  %385 = Transpose[perm = [1, 0]](%7)
+  %386 = Transpose(%385)
+  %387 = FC(%378, %386, %9)
+  %388 = Add(%384, %387)
+  %390, %391, %392, %393 = Split[split = [5, 5, 5, 5], axis = 1](%388)
+  %394 = Sigmoid(%390)
+  %395 = Sigmoid(%391)
+  %396 = Tanh(%392)
+  %397 = Sigmoid(%393)
+  %398 = Mul(%395, %376)
+  %399 = Mul(%394, %396)
+  %400 = Add(%398, %399)
+  %401 = Tanh(%400)
+  %402 = Mul(%397, %401)
+  %1400 = Constant[value = <Tensor>]()
+  %1401 = Constant[value = <Tensor>]()
+  %1402 = Slice(%305, %1400, %1401)
+  %1403 = Squeeze[axes = [0]](%1402)
+  %406 = Transpose[perm = [1, 0]](%6)
+  %407 = Transpose(%406)
+  %408 = FC(%1403, %407, %8)
+  %409 = Transpose[perm = [1, 0]](%7)
+  %410 = Transpose(%409)
+  %411 = FC(%402, %410, %9)
+  %412 = Add(%408, %411)
+  %414, %415, %416, %417 = Split[split = [5, 5, 5, 5], axis = 1](%412)
+  %418 = Sigmoid(%414)
+  %419 = Sigmoid(%415)
+  %420 = Tanh(%416)
+  %421 = Sigmoid(%417)
+  %422 = Mul(%419, %400)
+  %423 = Mul(%418, %420)
+  %424 = Add(%422, %423)
+  %425 = Tanh(%424)
+  %426 = Mul(%421, %425)
+  %1404 = Constant[value = <Tensor>]()
+  %1405 = Constant[value = <Tensor>]()
+  %1406 = Slice(%305, %1404, %1405)
+  %1407 = Squeeze[axes = [0]](%1406)
+  %430 = Transpose[perm = [1, 0]](%6)
+  %431 = Transpose(%430)
+  %432 = FC(%1407, %431, %8)
+  %433 = Transpose[perm = [1, 0]](%7)
+  %434 = Transpose(%433)
+  %435 = FC(%426, %434, %9)
+  %436 = Add(%432, %435)
+  %438, %439, %440, %441 = Split[split = [5, 5, 5, 5], axis = 1](%436)
+  %442 = Sigmoid(%438)
+  %443 = Sigmoid(%439)
+  %444 = Tanh(%440)
+  %445 = Sigmoid(%441)
+  %446 = Mul(%443, %424)
+  %447 = Mul(%442, %444)
+  %448 = Add(%446, %447)
+  %449 = Tanh(%448)
+  %450 = Mul(%445, %449)
+  %1408 = Constant[value = <Tensor>]()
+  %1409 = Constant[value = <Tensor>]()
+  %1410 = Slice(%305, %1408, %1409)
+  %1411 = Squeeze[axes = [0]](%1410)
+  %454 = Transpose[perm = [1, 0]](%6)
+  %455 = Transpose(%454)
+  %456 = FC(%1411, %455, %8)
+  %457 = Transpose[perm = [1, 0]](%7)
+  %458 = Transpose(%457)
+  %459 = FC(%450, %458, %9)
+  %460 = Add(%456, %459)
+  %462, %463, %464, %465 = Split[split = [5, 5, 5, 5], axis = 1](%460)
+  %466 = Sigmoid(%462)
+  %467 = Sigmoid(%463)
+  %468 = Tanh(%464)
+  %469 = Sigmoid(%465)
+  %470 = Mul(%467, %448)
+  %471 = Mul(%466, %468)
+  %472 = Add(%470, %471)
+  %473 = Tanh(%472)
+  %474 = Mul(%469, %473)
+  %1412 = Constant[value = <Tensor>]()
+  %1413 = Constant[value = <Tensor>]()
+  %1414 = Slice(%305, %1412, %1413)
+  %1415 = Squeeze[axes = [0]](%1414)
+  %478 = Transpose[perm = [1, 0]](%6)
+  %479 = Transpose(%478)
+  %480 = FC(%1415, %479, %8)
+  %481 = Transpose[perm = [1, 0]](%7)
+  %482 = Transpose(%481)
+  %483 = FC(%474, %482, %9)
+  %484 = Add(%480, %483)
+  %486, %487, %488, %489 = Split[split = [5, 5, 5, 5], axis = 1](%484)
+  %490 = Sigmoid(%486)
+  %491 = Sigmoid(%487)
+  %492 = Tanh(%488)
+  %493 = Sigmoid(%489)
+  %494 = Mul(%491, %472)
+  %495 = Mul(%490, %492)
+  %496 = Add(%494, %495)
+  %497 = Tanh(%496)
+  %498 = Mul(%493, %497)
+  %1416 = Constant[value = <Tensor>]()
+  %1417 = Constant[value = <Tensor>]()
+  %1418 = Slice(%305, %1416, %1417)
+  %1419 = Squeeze[axes = [0]](%1418)
+  %502 = Transpose[perm = [1, 0]](%6)
+  %503 = Transpose(%502)
+  %504 = FC(%1419, %503, %8)
+  %505 = Transpose[perm = [1, 0]](%7)
+  %506 = Transpose(%505)
+  %507 = FC(%498, %506, %9)
+  %508 = Add(%504, %507)
+  %510, %511, %512, %513 = Split[split = [5, 5, 5, 5], axis = 1](%508)
+  %514 = Sigmoid(%510)
+  %515 = Sigmoid(%511)
+  %516 = Tanh(%512)
+  %517 = Sigmoid(%513)
+  %518 = Mul(%515, %496)
+  %519 = Mul(%514, %516)
+  %520 = Add(%518, %519)
+  %521 = Tanh(%520)
+  %522 = Mul(%517, %521)
+  %1420 = Constant[value = <Tensor>]()
+  %1421 = Constant[value = <Tensor>]()
+  %1422 = Slice(%305, %1420, %1421)
+  %1423 = Squeeze[axes = [0]](%1422)
+  %526 = Transpose[perm = [1, 0]](%6)
+  %527 = Transpose(%526)
+  %528 = FC(%1423, %527, %8)
+  %529 = Transpose[perm = [1, 0]](%7)
+  %530 = Transpose(%529)
+  %531 = FC(%522, %530, %9)
+  %532 = Add(%528, %531)
+  %534, %535, %536, %537 = Split[split = [5, 5, 5, 5], axis = 1](%532)
+  %538 = Sigmoid(%534)
+  %539 = Sigmoid(%535)
+  %540 = Tanh(%536)
+  %541 = Sigmoid(%537)
+  %542 = Mul(%539, %520)
+  %543 = Mul(%538, %540)
+  %544 = Add(%542, %543)
+  %545 = Tanh(%544)
+  %546 = Mul(%541, %545)
+  %1424, %1425 = Concat[axis = 0](%330, %354, %378, %402, %426, %450, %474, %498, %522, %546)
+  %548 = Reshape[shape = [10, 5, 5]](%1424)
+  %1426, %1427 = Concat[axis = 2](%548)
+  %551, %552 = Dropout[ratio = 0.20000000298, is_test = 1](%1426)
+  %1428 = Constant[value = <Tensor>]()
+  %1429 = Constant[value = <Tensor>]()
+  %1430 = Slice(%551, %1428, %1429)
+  %1431 = Squeeze[axes = [0]](%1430)
+  %556 = Transpose[perm = [1, 0]](%10)
+  %557 = Transpose(%556)
+  %558 = FC(%1431, %557, %12)
+  %559 = Transpose[perm = [1, 0]](%11)
+  %560 = Transpose(%559)
+  %561 = FC(%1319, %560, %13)
+  %562 = Add(%558, %561)
+  %564, %565, %566, %567 = Split[split = [5, 5, 5, 5], axis = 1](%562)
+  %568 = Sigmoid(%564)
+  %569 = Sigmoid(%565)
+  %570 = Tanh(%566)
+  %571 = Sigmoid(%567)
+  %572 = Mul(%569, %1323)
+  %573 = Mul(%568, %570)
+  %574 = Add(%572, %573)
+  %575 = Tanh(%574)
+  %576 = Mul(%571, %575)
+  %1432 = Constant[value = <Tensor>]()
+  %1433 = Constant[value = <Tensor>]()
+  %1434 = Slice(%551, %1432, %1433)
+  %1435 = Squeeze[axes = [0]](%1434)
+  %580 = Transpose[perm = [1, 0]](%10)
+  %581 = Transpose(%580)
+  %582 = FC(%1435, %581, %12)
+  %583 = Transpose[perm = [1, 0]](%11)
+  %584 = Transpose(%583)
+  %585 = FC(%576, %584, %13)
+  %586 = Add(%582, %585)
+  %588, %589, %590, %591 = Split[split = [5, 5, 5, 5], axis = 1](%586)
+  %592 = Sigmoid(%588)
+  %593 = Sigmoid(%589)
+  %594 = Tanh(%590)
+  %595 = Sigmoid(%591)
+  %596 = Mul(%593, %574)
+  %597 = Mul(%592, %594)
+  %598 = Add(%596, %597)
+  %599 = Tanh(%598)
+  %600 = Mul(%595, %599)
+  %1436 = Constant[value = <Tensor>]()
+  %1437 = Constant[value = <Tensor>]()
+  %1438 = Slice(%551, %1436, %1437)
+  %1439 = Squeeze[axes = [0]](%1438)
+  %604 = Transpose[perm = [1, 0]](%10)
+  %605 = Transpose(%604)
+  %606 = FC(%1439, %605, %12)
+  %607 = Transpose[perm = [1, 0]](%11)
+  %608 = Transpose(%607)
+  %609 = FC(%600, %608, %13)
+  %610 = Add(%606, %609)
+  %612, %613, %614, %615 = Split[split = [5, 5, 5, 5], axis = 1](%610)
+  %616 = Sigmoid(%612)
+  %617 = Sigmoid(%613)
+  %618 = Tanh(%614)
+  %619 = Sigmoid(%615)
+  %620 = Mul(%617, %598)
+  %621 = Mul(%616, %618)
+  %622 = Add(%620, %621)
+  %623 = Tanh(%622)
+  %624 = Mul(%619, %623)
+  %1440 = Constant[value = <Tensor>]()
+  %1441 = Constant[value = <Tensor>]()
+  %1442 = Slice(%551, %1440, %1441)
+  %1443 = Squeeze[axes = [0]](%1442)
+  %628 = Transpose[perm = [1, 0]](%10)
+  %629 = Transpose(%628)
+  %630 = FC(%1443, %629, %12)
+  %631 = Transpose[perm = [1, 0]](%11)
+  %632 = Transpose(%631)
+  %633 = FC(%624, %632, %13)
+  %634 = Add(%630, %633)
+  %636, %637, %638, %639 = Split[split = [5, 5, 5, 5], axis = 1](%634)
+  %640 = Sigmoid(%636)
+  %641 = Sigmoid(%637)
+  %642 = Tanh(%638)
+  %643 = Sigmoid(%639)
+  %644 = Mul(%641, %622)
+  %645 = Mul(%640, %642)
+  %646 = Add(%644, %645)
+  %647 = Tanh(%646)
+  %648 = Mul(%643, %647)
+  %1444 = Constant[value = <Tensor>]()
+  %1445 = Constant[value = <Tensor>]()
+  %1446 = Slice(%551, %1444, %1445)
+  %1447 = Squeeze[axes = [0]](%1446)
+  %652 = Transpose[perm = [1, 0]](%10)
+  %653 = Transpose(%652)
+  %654 = FC(%1447, %653, %12)
+  %655 = Transpose[perm = [1, 0]](%11)
+  %656 = Transpose(%655)
+  %657 = FC(%648, %656, %13)
+  %658 = Add(%654, %657)
+  %660, %661, %662, %663 = Split[split = [5, 5, 5, 5], axis = 1](%658)
+  %664 = Sigmoid(%660)
+  %665 = Sigmoid(%661)
+  %666 = Tanh(%662)
+  %667 = Sigmoid(%663)
+  %668 = Mul(%665, %646)
+  %669 = Mul(%664, %666)
+  %670 = Add(%668, %669)
+  %671 = Tanh(%670)
+  %672 = Mul(%667, %671)
+  %1448 = Constant[value = <Tensor>]()
+  %1449 = Constant[value = <Tensor>]()
+  %1450 = Slice(%551, %1448, %1449)
+  %1451 = Squeeze[axes = [0]](%1450)
+  %676 = Transpose[perm = [1, 0]](%10)
+  %677 = Transpose(%676)
+  %678 = FC(%1451, %677, %12)
+  %679 = Transpose[perm = [1, 0]](%11)
+  %680 = Transpose(%679)
+  %681 = FC(%672, %680, %13)
+  %682 = Add(%678, %681)
+  %684, %685, %686, %687 = Split[split = [5, 5, 5, 5], axis = 1](%682)
+  %688 = Sigmoid(%684)
+  %689 = Sigmoid(%685)
+  %690 = Tanh(%686)
+  %691 = Sigmoid(%687)
+  %692 = Mul(%689, %670)
+  %693 = Mul(%688, %690)
+  %694 = Add(%692, %693)
+  %695 = Tanh(%694)
+  %696 = Mul(%691, %695)
+  %1452 = Constant[value = <Tensor>]()
+  %1453 = Constant[value = <Tensor>]()
+  %1454 = Slice(%551, %1452, %1453)
+  %1455 = Squeeze[axes = [0]](%1454)
+  %700 = Transpose[perm = [1, 0]](%10)
+  %701 = Transpose(%700)
+  %702 = FC(%1455, %701, %12)
+  %703 = Transpose[perm = [1, 0]](%11)
+  %704 = Transpose(%703)
+  %705 = FC(%696, %704, %13)
+  %706 = Add(%702, %705)
+  %708, %709, %710, %711 = Split[split = [5, 5, 5, 5], axis = 1](%706)
+  %712 = Sigmoid(%708)
+  %713 = Sigmoid(%709)
+  %714 = Tanh(%710)
+  %715 = Sigmoid(%711)
+  %716 = Mul(%713, %694)
+  %717 = Mul(%712, %714)
+  %718 = Add(%716, %717)
+  %719 = Tanh(%718)
+  %720 = Mul(%715, %719)
+  %1456 = Constant[value = <Tensor>]()
+  %1457 = Constant[value = <Tensor>]()
+  %1458 = Slice(%551, %1456, %1457)
+  %1459 = Squeeze[axes = [0]](%1458)
+  %724 = Transpose[perm = [1, 0]](%10)
+  %725 = Transpose(%724)
+  %726 = FC(%1459, %725, %12)
+  %727 = Transpose[perm = [1, 0]](%11)
+  %728 = Transpose(%727)
+  %729 = FC(%720, %728, %13)
+  %730 = Add(%726, %729)
+  %732, %733, %734, %735 = Split[split = [5, 5, 5, 5], axis = 1](%730)
+  %736 = Sigmoid(%732)
+  %737 = Sigmoid(%733)
+  %738 = Tanh(%734)
+  %739 = Sigmoid(%735)
+  %740 = Mul(%737, %718)
+  %741 = Mul(%736, %738)
+  %742 = Add(%740, %741)
+  %743 = Tanh(%742)
+  %744 = Mul(%739, %743)
+  %1460 = Constant[value = <Tensor>]()
+  %1461 = Constant[value = <Tensor>]()
+  %1462 = Slice(%551, %1460, %1461)
+  %1463 = Squeeze[axes = [0]](%1462)
+  %748 = Transpose[perm = [1, 0]](%10)
+  %749 = Transpose(%748)
+  %750 = FC(%1463, %749, %12)
+  %751 = Transpose[perm = [1, 0]](%11)
+  %752 = Transpose(%751)
+  %753 = FC(%744, %752, %13)
+  %754 = Add(%750, %753)
+  %756, %757, %758, %759 = Split[split = [5, 5, 5, 5], axis = 1](%754)
+  %760 = Sigmoid(%756)
+  %761 = Sigmoid(%757)
+  %762 = Tanh(%758)
+  %763 = Sigmoid(%759)
+  %764 = Mul(%761, %742)
+  %765 = Mul(%760, %762)
+  %766 = Add(%764, %765)
+  %767 = Tanh(%766)
+  %768 = Mul(%763, %767)
+  %1464 = Constant[value = <Tensor>]()
+  %1465 = Constant[value = <Tensor>]()
+  %1466 = Slice(%551, %1464, %1465)
+  %1467 = Squeeze[axes = [0]](%1466)
+  %772 = Transpose[perm = [1, 0]](%10)
+  %773 = Transpose(%772)
+  %774 = FC(%1467, %773, %12)
+  %775 = Transpose[perm = [1, 0]](%11)
+  %776 = Transpose(%775)
+  %777 = FC(%768, %776, %13)
+  %778 = Add(%774, %777)
+  %780, %781, %782, %783 = Split[split = [5, 5, 5, 5], axis = 1](%778)
+  %784 = Sigmoid(%780)
+  %785 = Sigmoid(%781)
+  %786 = Tanh(%782)
+  %787 = Sigmoid(%783)
+  %788 = Mul(%785, %766)
+  %789 = Mul(%784, %786)
+  %790 = Add(%788, %789)
+  %791 = Tanh(%790)
+  %792 = Mul(%787, %791)
+  %1468, %1469 = Concat[axis = 0](%576, %600, %624, %648, %672, %696, %720, %744, %768, %792)
+  %794 = Reshape[shape = [10, 5, 5]](%1468)
+  %1470, %1471 = Concat[axis = 2](%794)
+  %797, %798 = Dropout[ratio = 0.20000000298, is_test = 1](%1470)
+  %1472 = Constant[value = <Tensor>]()
+  %1473 = Constant[value = <Tensor>]()
+  %1474 = Slice(%797, %1472, %1473)
+  %1475 = Squeeze[axes = [0]](%1474)
+  %802 = Transpose[perm = [1, 0]](%14)
+  %803 = Transpose(%802)
+  %804 = FC(%1475, %803, %16)
+  %805 = Transpose[perm = [1, 0]](%15)
+  %806 = Transpose(%805)
+  %807 = FC(%1327, %806, %17)
+  %808 = Add(%804, %807)
+  %810, %811, %812, %813 = Split[split = [5, 5, 5, 5], axis = 1](%808)
+  %814 = Sigmoid(%810)
+  %815 = Sigmoid(%811)
+  %816 = Tanh(%812)
+  %817 = Sigmoid(%813)
+  %818 = Mul(%815, %1331)
+  %819 = Mul(%814, %816)
+  %820 = Add(%818, %819)
+  %821 = Tanh(%820)
+  %822 = Mul(%817, %821)
+  %1476 = Constant[value = <Tensor>]()
+  %1477 = Constant[value = <Tensor>]()
+  %1478 = Slice(%797, %1476, %1477)
+  %1479 = Squeeze[axes = [0]](%1478)
+  %826 = Transpose[perm = [1, 0]](%14)
+  %827 = Transpose(%826)
+  %828 = FC(%1479, %827, %16)
+  %829 = Transpose[perm = [1, 0]](%15)
+  %830 = Transpose(%829)
+  %831 = FC(%822, %830, %17)
+  %832 = Add(%828, %831)
+  %834, %835, %836, %837 = Split[split = [5, 5, 5, 5], axis = 1](%832)
+  %838 = Sigmoid(%834)
+  %839 = Sigmoid(%835)
+  %840 = Tanh(%836)
+  %841 = Sigmoid(%837)
+  %842 = Mul(%839, %820)
+  %843 = Mul(%838, %840)
+  %844 = Add(%842, %843)
+  %845 = Tanh(%844)
+  %846 = Mul(%841, %845)
+  %1480 = Constant[value = <Tensor>]()
+  %1481 = Constant[value = <Tensor>]()
+  %1482 = Slice(%797, %1480, %1481)
+  %1483 = Squeeze[axes = [0]](%1482)
+  %850 = Transpose[perm = [1, 0]](%14)
+  %851 = Transpose(%850)
+  %852 = FC(%1483, %851, %16)
+  %853 = Transpose[perm = [1, 0]](%15)
+  %854 = Transpose(%853)
+  %855 = FC(%846, %854, %17)
+  %856 = Add(%852, %855)
+  %858, %859, %860, %861 = Split[split = [5, 5, 5, 5], axis = 1](%856)
+  %862 = Sigmoid(%858)
+  %863 = Sigmoid(%859)
+  %864 = Tanh(%860)
+  %865 = Sigmoid(%861)
+  %866 = Mul(%863, %844)
+  %867 = Mul(%862, %864)
+  %868 = Add(%866, %867)
+  %869 = Tanh(%868)
+  %870 = Mul(%865, %869)
+  %1484 = Constant[value = <Tensor>]()
+  %1485 = Constant[value = <Tensor>]()
+  %1486 = Slice(%797, %1484, %1485)
+  %1487 = Squeeze[axes = [0]](%1486)
+  %874 = Transpose[perm = [1, 0]](%14)
+  %875 = Transpose(%874)
+  %876 = FC(%1487, %875, %16)
+  %877 = Transpose[perm = [1, 0]](%15)
+  %878 = Transpose(%877)
+  %879 = FC(%870, %878, %17)
+  %880 = Add(%876, %879)
+  %882, %883, %884, %885 = Split[split = [5, 5, 5, 5], axis = 1](%880)
+  %886 = Sigmoid(%882)
+  %887 = Sigmoid(%883)
+  %888 = Tanh(%884)
+  %889 = Sigmoid(%885)
+  %890 = Mul(%887, %868)
+  %891 = Mul(%886, %888)
+  %892 = Add(%890, %891)
+  %893 = Tanh(%892)
+  %894 = Mul(%889, %893)
+  %1488 = Constant[value = <Tensor>]()
+  %1489 = Constant[value = <Tensor>]()
+  %1490 = Slice(%797, %1488, %1489)
+  %1491 = Squeeze[axes = [0]](%1490)
+  %898 = Transpose[perm = [1, 0]](%14)
+  %899 = Transpose(%898)
+  %900 = FC(%1491, %899, %16)
+  %901 = Transpose[perm = [1, 0]](%15)
+  %902 = Transpose(%901)
+  %903 = FC(%894, %902, %17)
+  %904 = Add(%900, %903)
+  %906, %907, %908, %909 = Split[split = [5, 5, 5, 5], axis = 1](%904)
+  %910 = Sigmoid(%906)
+  %911 = Sigmoid(%907)
+  %912 = Tanh(%908)
+  %913 = Sigmoid(%909)
+  %914 = Mul(%911, %892)
+  %915 = Mul(%910, %912)
+  %916 = Add(%914, %915)
+  %917 = Tanh(%916)
+  %918 = Mul(%913, %917)
+  %1492 = Constant[value = <Tensor>]()
+  %1493 = Constant[value = <Tensor>]()
+  %1494 = Slice(%797, %1492, %1493)
+  %1495 = Squeeze[axes = [0]](%1494)
+  %922 = Transpose[perm = [1, 0]](%14)
+  %923 = Transpose(%922)
+  %924 = FC(%1495, %923, %16)
+  %925 = Transpose[perm = [1, 0]](%15)
+  %926 = Transpose(%925)
+  %927 = FC(%918, %926, %17)
+  %928 = Add(%924, %927)
+  %930, %931, %932, %933 = Split[split = [5, 5, 5, 5], axis = 1](%928)
+  %934 = Sigmoid(%930)
+  %935 = Sigmoid(%931)
+  %936 = Tanh(%932)
+  %937 = Sigmoid(%933)
+  %938 = Mul(%935, %916)
+  %939 = Mul(%934, %936)
+  %940 = Add(%938, %939)
+  %941 = Tanh(%940)
+  %942 = Mul(%937, %941)
+  %1496 = Constant[value = <Tensor>]()
+  %1497 = Constant[value = <Tensor>]()
+  %1498 = Slice(%797, %1496, %1497)
+  %1499 = Squeeze[axes = [0]](%1498)
+  %946 = Transpose[perm = [1, 0]](%14)
+  %947 = Transpose(%946)
+  %948 = FC(%1499, %947, %16)
+  %949 = Transpose[perm = [1, 0]](%15)
+  %950 = Transpose(%949)
+  %951 = FC(%942, %950, %17)
+  %952 = Add(%948, %951)
+  %954, %955, %956, %957 = Split[split = [5, 5, 5, 5], axis = 1](%952)
+  %958 = Sigmoid(%954)
+  %959 = Sigmoid(%955)
+  %960 = Tanh(%956)
+  %961 = Sigmoid(%957)
+  %962 = Mul(%959, %940)
+  %963 = Mul(%958, %960)
+  %964 = Add(%962, %963)
+  %965 = Tanh(%964)
+  %966 = Mul(%961, %965)
+  %1500 = Constant[value = <Tensor>]()
+  %1501 = Constant[value = <Tensor>]()
+  %1502 = Slice(%797, %1500, %1501)
+  %1503 = Squeeze[axes = [0]](%1502)
+  %970 = Transpose[perm = [1, 0]](%14)
+  %971 = Transpose(%970)
+  %972 = FC(%1503, %971, %16)
+  %973 = Transpose[perm = [1, 0]](%15)
+  %974 = Transpose(%973)
+  %975 = FC(%966, %974, %17)
+  %976 = Add(%972, %975)
+  %978, %979, %980, %981 = Split[split = [5, 5, 5, 5], axis = 1](%976)
+  %982 = Sigmoid(%978)
+  %983 = Sigmoid(%979)
+  %984 = Tanh(%980)
+  %985 = Sigmoid(%981)
+  %986 = Mul(%983, %964)
+  %987 = Mul(%982, %984)
+  %988 = Add(%986, %987)
+  %989 = Tanh(%988)
+  %990 = Mul(%985, %989)
+  %1504 = Constant[value = <Tensor>]()
+  %1505 = Constant[value = <Tensor>]()
+  %1506 = Slice(%797, %1504, %1505)
+  %1507 = Squeeze[axes = [0]](%1506)
+  %994 = Transpose[perm = [1, 0]](%14)
+  %995 = Transpose(%994)
+  %996 = FC(%1507, %995, %16)
+  %997 = Transpose[perm = [1, 0]](%15)
+  %998 = Transpose(%997)
+  %999 = FC(%990, %998, %17)
+  %1000 = Add(%996, %999)
+  %1002, %1003, %1004, %1005 = Split[split = [5, 5, 5, 5], axis = 1](%1000)
+  %1006 = Sigmoid(%1002)
+  %1007 = Sigmoid(%1003)
+  %1008 = Tanh(%1004)
+  %1009 = Sigmoid(%1005)
+  %1010 = Mul(%1007, %988)
+  %1011 = Mul(%1006, %1008)
+  %1012 = Add(%1010, %1011)
+  %1013 = Tanh(%1012)
+  %1014 = Mul(%1009, %1013)
+  %1508 = Constant[value = <Tensor>]()
+  %1509 = Constant[value = <Tensor>]()
+  %1510 = Slice(%797, %1508, %1509)
+  %1511 = Squeeze[axes = [0]](%1510)
+  %1018 = Transpose[perm = [1, 0]](%14)
+  %1019 = Transpose(%1018)
+  %1020 = FC(%1511, %1019, %16)
+  %1021 = Transpose[perm = [1, 0]](%15)
+  %1022 = Transpose(%1021)
+  %1023 = FC(%1014, %1022, %17)
+  %1024 = Add(%1020, %1023)
+  %1026, %1027, %1028, %1029 = Split[split = [5, 5, 5, 5], axis = 1](%1024)
+  %1030 = Sigmoid(%1026)
+  %1031 = Sigmoid(%1027)
+  %1032 = Tanh(%1028)
+  %1033 = Sigmoid(%1029)
+  %1034 = Mul(%1031, %1012)
+  %1035 = Mul(%1030, %1032)
+  %1036 = Add(%1034, %1035)
+  %1037 = Tanh(%1036)
+  %1038 = Mul(%1033, %1037)
+  %1512, %1513 = Concat[axis = 0](%822, %846, %870, %894, %918, %942, %966, %990, %1014, %1038)
+  %1040 = Reshape[shape = [10, 5, 5]](%1512)
+  %1514, %1515 = Concat[axis = 2](%1040)
+  %1043, %1044 = Dropout[ratio = 0.20000000298, is_test = 1](%1514)
+  %1516 = Constant[value = <Tensor>]()
+  %1517 = Constant[value = <Tensor>]()
+  %1518 = Slice(%1043, %1516, %1517)
+  %1519 = Squeeze[axes = [0]](%1518)
+  %1048 = Transpose[perm = [1, 0]](%18)
+  %1049 = Transpose(%1048)
+  %1050 = FC(%1519, %1049, %20)
+  %1051 = Transpose[perm = [1, 0]](%19)
+  %1052 = Transpose(%1051)
+  %1053 = FC(%1335, %1052, %21)
+  %1054 = Add(%1050, %1053)
+  %1056, %1057, %1058, %1059 = Split[split = [5, 5, 5, 5], axis = 1](%1054)
+  %1060 = Sigmoid(%1056)
+  %1061 = Sigmoid(%1057)
+  %1062 = Tanh(%1058)
+  %1063 = Sigmoid(%1059)
+  %1064 = Mul(%1061, %1339)
+  %1065 = Mul(%1060, %1062)
+  %1066 = Add(%1064, %1065)
+  %1067 = Tanh(%1066)
+  %1068 = Mul(%1063, %1067)
+  %1520 = Constant[value = <Tensor>]()
+  %1521 = Constant[value = <Tensor>]()
+  %1522 = Slice(%1043, %1520, %1521)
+  %1523 = Squeeze[axes = [0]](%1522)
+  %1072 = Transpose[perm = [1, 0]](%18)
+  %1073 = Transpose(%1072)
+  %1074 = FC(%1523, %1073, %20)
+  %1075 = Transpose[perm = [1, 0]](%19)
+  %1076 = Transpose(%1075)
+  %1077 = FC(%1068, %1076, %21)
+  %1078 = Add(%1074, %1077)
+  %1080, %1081, %1082, %1083 = Split[split = [5, 5, 5, 5], axis = 1](%1078)
+  %1084 = Sigmoid(%1080)
+  %1085 = Sigmoid(%1081)
+  %1086 = Tanh(%1082)
+  %1087 = Sigmoid(%1083)
+  %1088 = Mul(%1085, %1066)
+  %1089 = Mul(%1084, %1086)
+  %1090 = Add(%1088, %1089)
+  %1091 = Tanh(%1090)
+  %1092 = Mul(%1087, %1091)
+  %1524 = Constant[value = <Tensor>]()
+  %1525 = Constant[value = <Tensor>]()
+  %1526 = Slice(%1043, %1524, %1525)
+  %1527 = Squeeze[axes = [0]](%1526)
+  %1096 = Transpose[perm = [1, 0]](%18)
+  %1097 = Transpose(%1096)
+  %1098 = FC(%1527, %1097, %20)
+  %1099 = Transpose[perm = [1, 0]](%19)
+  %1100 = Transpose(%1099)
+  %1101 = FC(%1092, %1100, %21)
+  %1102 = Add(%1098, %1101)
+  %1104, %1105, %1106, %1107 = Split[split = [5, 5, 5, 5], axis = 1](%1102)
+  %1108 = Sigmoid(%1104)
+  %1109 = Sigmoid(%1105)
+  %1110 = Tanh(%1106)
+  %1111 = Sigmoid(%1107)
+  %1112 = Mul(%1109, %1090)
+  %1113 = Mul(%1108, %1110)
+  %1114 = Add(%1112, %1113)
+  %1115 = Tanh(%1114)
+  %1116 = Mul(%1111, %1115)
+  %1528 = Constant[value = <Tensor>]()
+  %1529 = Constant[value = <Tensor>]()
+  %1530 = Slice(%1043, %1528, %1529)
+  %1531 = Squeeze[axes = [0]](%1530)
+  %1120 = Transpose[perm = [1, 0]](%18)
+  %1121 = Transpose(%1120)
+  %1122 = FC(%1531, %1121, %20)
+  %1123 = Transpose[perm = [1, 0]](%19)
+  %1124 = Transpose(%1123)
+  %1125 = FC(%1116, %1124, %21)
+  %1126 = Add(%1122, %1125)
+  %1128, %1129, %1130, %1131 = Split[split = [5, 5, 5, 5], axis = 1](%1126)
+  %1132 = Sigmoid(%1128)
+  %1133 = Sigmoid(%1129)
+  %1134 = Tanh(%1130)
+  %1135 = Sigmoid(%1131)
+  %1136 = Mul(%1133, %1114)
+  %1137 = Mul(%1132, %1134)
+  %1138 = Add(%1136, %1137)
+  %1139 = Tanh(%1138)
+  %1140 = Mul(%1135, %1139)
+  %1532 = Constant[value = <Tensor>]()
+  %1533 = Constant[value = <Tensor>]()
+  %1534 = Slice(%1043, %1532, %1533)
+  %1535 = Squeeze[axes = [0]](%1534)
+  %1144 = Transpose[perm = [1, 0]](%18)
+  %1145 = Transpose(%1144)
+  %1146 = FC(%1535, %1145, %20)
+  %1147 = Transpose[perm = [1, 0]](%19)
+  %1148 = Transpose(%1147)
+  %1149 = FC(%1140, %1148, %21)
+  %1150 = Add(%1146, %1149)
+  %1152, %1153, %1154, %1155 = Split[split = [5, 5, 5, 5], axis = 1](%1150)
+  %1156 = Sigmoid(%1152)
+  %1157 = Sigmoid(%1153)
+  %1158 = Tanh(%1154)
+  %1159 = Sigmoid(%1155)
+  %1160 = Mul(%1157, %1138)
+  %1161 = Mul(%1156, %1158)
+  %1162 = Add(%1160, %1161)
+  %1163 = Tanh(%1162)
+  %1164 = Mul(%1159, %1163)
+  %1536 = Constant[value = <Tensor>]()
+  %1537 = Constant[value = <Tensor>]()
+  %1538 = Slice(%1043, %1536, %1537)
+  %1539 = Squeeze[axes = [0]](%1538)
+  %1168 = Transpose[perm = [1, 0]](%18)
+  %1169 = Transpose(%1168)
+  %1170 = FC(%1539, %1169, %20)
+  %1171 = Transpose[perm = [1, 0]](%19)
+  %1172 = Transpose(%1171)
+  %1173 = FC(%1164, %1172, %21)
+  %1174 = Add(%1170, %1173)
+  %1176, %1177, %1178, %1179 = Split[split = [5, 5, 5, 5], axis = 1](%1174)
+  %1180 = Sigmoid(%1176)
+  %1181 = Sigmoid(%1177)
+  %1182 = Tanh(%1178)
+  %1183 = Sigmoid(%1179)
+  %1184 = Mul(%1181, %1162)
+  %1185 = Mul(%1180, %1182)
+  %1186 = Add(%1184, %1185)
+  %1187 = Tanh(%1186)
+  %1188 = Mul(%1183, %1187)
+  %1540 = Constant[value = <Tensor>]()
+  %1541 = Constant[value = <Tensor>]()
+  %1542 = Slice(%1043, %1540, %1541)
+  %1543 = Squeeze[axes = [0]](%1542)
+  %1192 = Transpose[perm = [1, 0]](%18)
+  %1193 = Transpose(%1192)
+  %1194 = FC(%1543, %1193, %20)
+  %1195 = Transpose[perm = [1, 0]](%19)
+  %1196 = Transpose(%1195)
+  %1197 = FC(%1188, %1196, %21)
+  %1198 = Add(%1194, %1197)
+  %1200, %1201, %1202, %1203 = Split[split = [5, 5, 5, 5], axis = 1](%1198)
+  %1204 = Sigmoid(%1200)
+  %1205 = Sigmoid(%1201)
+  %1206 = Tanh(%1202)
+  %1207 = Sigmoid(%1203)
+  %1208 = Mul(%1205, %1186)
+  %1209 = Mul(%1204, %1206)
+  %1210 = Add(%1208, %1209)
+  %1211 = Tanh(%1210)
+  %1212 = Mul(%1207, %1211)
+  %1544 = Constant[value = <Tensor>]()
+  %1545 = Constant[value = <Tensor>]()
+  %1546 = Slice(%1043, %1544, %1545)
+  %1547 = Squeeze[axes = [0]](%1546)
+  %1216 = Transpose[perm = [1, 0]](%18)
+  %1217 = Transpose(%1216)
+  %1218 = FC(%1547, %1217, %20)
+  %1219 = Transpose[perm = [1, 0]](%19)
+  %1220 = Transpose(%1219)
+  %1221 = FC(%1212, %1220, %21)
+  %1222 = Add(%1218, %1221)
+  %1224, %1225, %1226, %1227 = Split[split = [5, 5, 5, 5], axis = 1](%1222)
+  %1228 = Sigmoid(%1224)
+  %1229 = Sigmoid(%1225)
+  %1230 = Tanh(%1226)
+  %1231 = Sigmoid(%1227)
+  %1232 = Mul(%1229, %1210)
+  %1233 = Mul(%1228, %1230)
+  %1234 = Add(%1232, %1233)
+  %1235 = Tanh(%1234)
+  %1236 = Mul(%1231, %1235)
+  %1548 = Constant[value = <Tensor>]()
+  %1549 = Constant[value = <Tensor>]()
+  %1550 = Slice(%1043, %1548, %1549)
+  %1551 = Squeeze[axes = [0]](%1550)
+  %1240 = Transpose[perm = [1, 0]](%18)
+  %1241 = Transpose(%1240)
+  %1242 = FC(%1551, %1241, %20)
+  %1243 = Transpose[perm = [1, 0]](%19)
+  %1244 = Transpose(%1243)
+  %1245 = FC(%1236, %1244, %21)
+  %1246 = Add(%1242, %1245)
+  %1248, %1249, %1250, %1251 = Split[split = [5, 5, 5, 5], axis = 1](%1246)
+  %1252 = Sigmoid(%1248)
+  %1253 = Sigmoid(%1249)
+  %1254 = Tanh(%1250)
+  %1255 = Sigmoid(%1251)
+  %1256 = Mul(%1253, %1234)
+  %1257 = Mul(%1252, %1254)
+  %1258 = Add(%1256, %1257)
+  %1259 = Tanh(%1258)
+  %1260 = Mul(%1255, %1259)
+  %1552 = Constant[value = <Tensor>]()
+  %1553 = Constant[value = <Tensor>]()
+  %1554 = Slice(%1043, %1552, %1553)
+  %1555 = Squeeze[axes = [0]](%1554)
+  %1264 = Transpose[perm = [1, 0]](%18)
+  %1265 = Transpose(%1264)
+  %1266 = FC(%1555, %1265, %20)
+  %1267 = Transpose[perm = [1, 0]](%19)
+  %1268 = Transpose(%1267)
+  %1269 = FC(%1260, %1268, %21)
+  %1270 = Add(%1266, %1269)
+  %1272, %1273, %1274, %1275 = Split[split = [5, 5, 5, 5], axis = 1](%1270)
+  %1276 = Sigmoid(%1272)
+  %1277 = Sigmoid(%1273)
+  %1278 = Tanh(%1274)
+  %1279 = Sigmoid(%1275)
+  %1280 = Mul(%1277, %1258)
+  %1281 = Mul(%1276, %1278)
+  %1282 = Add(%1280, %1281)
+  %1283 = Tanh(%1282)
+  %1284 = Mul(%1279, %1283)
+  %1556, %1557 = Concat[axis = 0](%1068, %1092, %1116, %1140, %1164, %1188, %1212, %1236, %1260, %1284)
+  %1286 = Reshape[shape = [10, 5, 5]](%1556)
+  %1558, %1559 = Concat[axis = 2](%1286)
+  %1560, %1561 = Concat[axis = 0](%300, %546, %792, %1038, %1284)
+  %1289 = Reshape[shape = [5, 5, 5]](%1560)
+  %1562, %1563 = Concat[axis = 0](%298, %544, %790, %1036, %1282)
+  %1291 = Reshape[shape = [5, 5, 5]](%1562)
+  %1293, %1294 = Dropout[ratio = 0.20000000298, is_test = 1](%1558)
+  %1295 = Reshape[shape = [50, 5]](%1293)
+  %1296 = Transpose[perm = [1, 0]](%22)
+  %1297 = Transpose(%1296)
+  %1298 = FC(%1295, %1297, %23)
+  %1299 = Reshape[shape = [10, 5, 10]](%1298)
+  return %1299
 }

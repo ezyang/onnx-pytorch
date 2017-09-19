@@ -1,5 +1,4 @@
-graph(%1 : Float(2, 3)
-      %2 : Float(2, 3)) {
-  %4 : Float(2, 6), %5 : Handle = ^Concat(1)(%1, %2), uses = [[%0.i0], []];
-  return (%4);
+graph torch-jit-export (%1, %2) {
+  %4, %5 = Concat[axis = 1](%1, %2)
+  return %4
 }

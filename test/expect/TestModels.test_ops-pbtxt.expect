@@ -14,14 +14,10 @@ node {
   input: "3"
   input: "4"
   output: "8"
-  output: "9"
-  output: "10"
-  output: "batch_norm_dead_output_11"
-  output: "batch_norm_dead_output_12"
   op_type: "SpatialBN"
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
   attribute {
     name: "epsilon"
@@ -42,7 +38,7 @@ node {
 }
 node {
   input: "8"
-  output: "13"
+  output: "9"
   op_type: "AveragePool"
   attribute {
     name: "kernel_shape"
@@ -58,13 +54,11 @@ node {
     name: "pads"
     ints: 1
     ints: 1
-    ints: 1
-    ints: 1
   }
 }
 node {
-  input: "13"
-  output: "14"
+  input: "9"
+  output: "10"
   op_type: "Reshape"
   attribute {
     name: "shape"
@@ -73,8 +67,8 @@ node {
   }
 }
 node {
-  input: "14"
-  output: "15"
+  input: "10"
+  output: "11"
   op_type: "Squeeze"
   attribute {
     name: "axes"

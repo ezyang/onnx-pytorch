@@ -987,7 +987,7 @@ node {
   }
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
 }
 node {
@@ -1028,7 +1028,7 @@ node {
   }
   attribute {
     name: "is_test"
-    i: 0
+    i: 1
   }
 }
 node {
