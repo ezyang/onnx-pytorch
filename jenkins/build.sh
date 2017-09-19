@@ -159,10 +159,15 @@ fi
 (cd pytorch && pip install -r requirements.txt || true)
 (cd pytorch && time python setup.py install)
 
+echo "Installing onnx-pytorch"
+python setup.py install
+python -c "import onnx_pytorch"
+
 echo "Testing"
 time python pytorch/test/test_onnx.py
 time python pytorch/test/test_jit.py
 time python test/test_models.py
 time python test/test_caffe2.py
+time python test/test_verify.py
 
 echo "ALL CHECKS PASSED"
