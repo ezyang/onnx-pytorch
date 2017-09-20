@@ -18,10 +18,12 @@ We most heavily tested on Python 2, but hypothetically Python 3 should work too.
 (cd onnx && python setup.py develop)
 (cd onnx-caffe2 && python setup.py develop)
 (cd pytorch && python setup.py build develop)
+python setup.py develop
 
 # Run tests
 python pytorch/test/test_onnx.py
 python pytorch/test/test_jit.py
 python test/test_models.py
 python test/test_caffe2.py
+python test/test_verify.py
 ```
