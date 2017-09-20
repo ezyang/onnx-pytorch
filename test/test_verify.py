@@ -52,7 +52,8 @@ class TestVerify(TestCase):
                 return y
 
         x = Variable(torch.Tensor([1,2]))
-        self.assertVerifyExpectFail(MyModel(), x, backend)
+        with self.assertRaisesRegex(RuntimeError, "state_dict changed"):
+            verify(MyModel(), x, backend)
 
 
     def test_modifying_params(self):
