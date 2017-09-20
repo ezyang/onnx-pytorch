@@ -79,6 +79,7 @@ class TestModels(TestCase):
         x = Variable(torch.randn(BATCH_SIZE, 3, 10, 12), volatile=True)
         self.exportTest(PermuteNet(), x)
 
+    @unittest.skip("This model takes too much memory")
     def test_srresnet(self):
         x = Variable(torch.randn(1, 3, 224, 224).fill_(1.0),
                      volatile=True)
