@@ -241,6 +241,7 @@ class TestCaffe2Backend(unittest.TestCase):
 
     # @skip('takes long to run, LAPACK needed for gpu')
     @skipIfNoLapack
+    @unittest.skip("This model takes too much memory")
     def test_srresnet(self):
         super_resolution_net = SRResNet(
             rescale_factor=4, n_filters=64, n_blocks=8)
