@@ -8,8 +8,6 @@ exporting models to Caffe2.
 To run the Caffe2 tests, you'll need a working install of Caffe2.
 If you're on a devgpu, consider getting a copy via `conda install -c ezyang/label/devgpu caffe2`
 
-We most heavily tested on Python 2, but hypothetically Python 3 should work too.
-
 ```
 # Only needs to be done once
 ./install-deps.sh
