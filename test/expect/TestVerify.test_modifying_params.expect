@@ -1,7 +1,7 @@
 When I exported your model with different inputs, the result was different.
 (To get more information, run torch.onnx.verify(..., verbose=True))
 ----------------------------------------------------------------------
-ERROR: In embedded parameter '1': Arrays are not equal
+ERROR: In embedded parameter '2': Arrays are not equal
 
 (mismatch 100.0%)
  x: array([ 3.], dtype=float32)

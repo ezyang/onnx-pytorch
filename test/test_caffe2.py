@@ -43,9 +43,9 @@ def import_model(proto, input, workspace=None, use_gpu=True):
         workspace = {}
     if isinstance(input, tuple):
         for i in range(len(input)):
-            workspace[graph_def.input[-len(input) + i]] = input[i]
+            workspace[graph_def.input[i]] = input[i]
     else:
-        workspace[graph_def.input[-1]] = input
+        workspace[graph_def.input[0]] = input
 
     caffe2_out_workspace = c2.run_graph(
         init_graph=None,
@@ -158,7 +158,7 @@ class TestCaffe2Backend(unittest.TestCase):
             model, input = self.convert_cuda(model, input)
 
         # Verify the model runs the same in Caffe2
-        onnx_pytorch.verify.verify(model, input, onnx_caffe2.backend)
+        onnx_pytorch.verify.verify(model, input, onnx_caffe2.backend, verbose=True)
 
     def run_model_test(self, model, train, batch_size, state_dict=None,
                        input=None, use_gpu=True):

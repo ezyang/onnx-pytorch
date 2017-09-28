@@ -11,8 +11,8 @@ node {
   }
 }
 node {
-  input: "22"
   input: "1"
+  input: "2"
   input: "25"
   output: "24"
   op_type: "Caffe2ConvTranspose"
@@ -45,10 +45,10 @@ node {
 }
 node {
   input: "24"
-  input: "2"
   input: "3"
   input: "4"
   input: "5"
+  input: "6"
   output: "27"
   op_type: "SpatialBN"
   attribute {
@@ -91,7 +91,7 @@ node {
 }
 node {
   input: "28"
-  input: "6"
+  input: "7"
   input: "31"
   output: "30"
   op_type: "Caffe2ConvTranspose"
@@ -124,10 +124,10 @@ node {
 }
 node {
   input: "30"
-  input: "7"
   input: "8"
   input: "9"
   input: "10"
+  input: "11"
   output: "33"
   op_type: "SpatialBN"
   attribute {
@@ -170,7 +170,7 @@ node {
 }
 node {
   input: "34"
-  input: "11"
+  input: "12"
   input: "37"
   output: "36"
   op_type: "Caffe2ConvTranspose"
@@ -203,10 +203,10 @@ node {
 }
 node {
   input: "36"
-  input: "12"
   input: "13"
   input: "14"
   input: "15"
+  input: "16"
   output: "39"
   op_type: "SpatialBN"
   attribute {
@@ -249,7 +249,7 @@ node {
 }
 node {
   input: "40"
-  input: "16"
+  input: "17"
   input: "43"
   output: "42"
   op_type: "Caffe2ConvTranspose"
@@ -282,10 +282,10 @@ node {
 }
 node {
   input: "42"
-  input: "17"
   input: "18"
   input: "19"
   input: "20"
+  input: "21"
   output: "45"
   op_type: "SpatialBN"
   attribute {
@@ -328,7 +328,7 @@ node {
 }
 node {
   input: "46"
-  input: "21"
+  input: "22"
   input: "49"
   output: "48"
   op_type: "Caffe2ConvTranspose"
