@@ -158,7 +158,7 @@ class TestCaffe2Backend(unittest.TestCase):
             model, input = self.convert_cuda(model, input)
 
         # Verify the model runs the same in Caffe2
-        onnx_pytorch.verify.verify(model, input, onnx_caffe2.backend, verbose=True)
+        onnx_pytorch.verify.verify(model, input, onnx_caffe2.backend)
 
     def run_model_test(self, model, train, batch_size, state_dict=None,
                        input=None, use_gpu=True):
