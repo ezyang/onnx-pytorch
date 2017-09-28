@@ -1,4 +1,4 @@
 graph torch-jit-export (%1, %2) {
-  %3 = PRelu(%2, %1)
+  %3 = PRelu(%1, %2)
   return %3
 }

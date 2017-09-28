@@ -1,6 +1,6 @@
 node {
-  input: "18"
   input: "1"
+  input: "2"
   output: "20"
   op_type: "Conv"
   attribute {
@@ -41,7 +41,7 @@ node {
 }
 node {
   input: "21"
-  input: "2"
+  input: "3"
   output: "23"
   op_type: "Conv"
   attribute {
@@ -73,10 +73,10 @@ node {
 }
 node {
   input: "23"
-  input: "3"
   input: "4"
   input: "5"
   input: "6"
+  input: "7"
   output: "25"
   op_type: "SpatialBN"
   attribute {
@@ -111,7 +111,7 @@ node {
 }
 node {
   input: "26"
-  input: "7"
+  input: "8"
   output: "28"
   op_type: "Conv"
   attribute {
@@ -143,10 +143,10 @@ node {
 }
 node {
   input: "28"
-  input: "8"
   input: "9"
   input: "10"
   input: "11"
+  input: "12"
   output: "30"
   op_type: "SpatialBN"
   attribute {
@@ -181,7 +181,7 @@ node {
 }
 node {
   input: "31"
-  input: "12"
+  input: "13"
   output: "33"
   op_type: "Conv"
   attribute {
@@ -213,10 +213,10 @@ node {
 }
 node {
   input: "33"
-  input: "13"
   input: "14"
   input: "15"
   input: "16"
+  input: "17"
   output: "35"
   op_type: "SpatialBN"
   attribute {
@@ -251,7 +251,7 @@ node {
 }
 node {
   input: "36"
-  input: "17"
+  input: "18"
   output: "38"
   op_type: "Conv"
   attribute {

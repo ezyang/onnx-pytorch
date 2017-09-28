@@ -42,8 +42,7 @@ def test_embed_params(proto, model, input, state_dict=None, use_gpu=True):
     else:
         parameters = model.state_dict().values()
 
-    for k, v in zip(graph_def.input, itertools.chain(parameters,
-                                                     list(torch.jit.flatten(input)))):
+    for k, v in zip(graph_def.input, torch.jit._flatten(input, parameters)[0]):
         if isinstance(v, Variable):
             W[k] = v.data.cpu().numpy()
         else:
