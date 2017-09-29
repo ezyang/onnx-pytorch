@@ -148,7 +148,7 @@ git diff
 (cd pytorch && git remote add ezyang https://github.com/ezyang/pytorch.git)
 (cd pytorch && git fetch ezyang)
 # Do the real submodule update
-git submodule update --recursive
+git submodule update --init --recursive
 
 echo "Installing onnx"
 conda install -y -c ezyang/label/gcc5 -c conda-forge protobuf scipy
