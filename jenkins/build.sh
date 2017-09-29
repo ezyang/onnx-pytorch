@@ -138,6 +138,18 @@ gcc --version
 
 cd $WORKSPACE
 
+git submodule init
+# Initially use the *remote* status to initialize the submodules
+git submodule update --remote
+# Print out any differences for ease of debugging
+git diff
+# Add all of the forks where we might need to find commits (you can
+# add things here)
+(cd pytorch && git remote add ezyang https://github.com/ezyang/pytorch.git)
+(cd pytorch && git fetch ezyang)
+# Do the real submodule update
+git submodule update --init --recursive
+
 echo "Installing onnx"
 conda install -y -c ezyang/label/gcc5 -c conda-forge protobuf scipy
 (cd onnx && time python setup.py install)
