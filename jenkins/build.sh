@@ -138,6 +138,11 @@ gcc --version
 
 cd $WORKSPACE
 
+git submodule init
+(cd pytorch && git remote add ezyang https://github.com/ezyang/pytorch.git)
+(cd pytorch && git fetch ezyang)
+git submodule update --recursive
+
 echo "Installing onnx"
 conda install -y -c ezyang/label/gcc5 -c conda-forge protobuf scipy
 (cd onnx && time python setup.py install)
