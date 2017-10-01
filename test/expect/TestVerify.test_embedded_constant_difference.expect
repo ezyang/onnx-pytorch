@@ -3,58 +3,61 @@ When I exported your model with different inputs, the result was different.
 ----------------------------------------------------------------------
 ERROR: Strings are not equal:
 
-  node {
-    output: "5"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 2
-        data_type: INT32
--       raw_data: "\000\000\000\000\000\000\000\000"
-?                     ^
-+       raw_data: "\001\000\000\000\000\000\000\000"
-?                     ^
-      }
-    }
-  }
-  node {
-    output: "6"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 2
-        data_type: INT32
--       raw_data: "\001\000\000\000\002\000\000\000"
-?                     ^
-+       raw_data: "\002\000\000\000\002\000\000\000"
-?                     ^
-      }
-    }
-  }
-  node {
-    input: "1"
-    input: "5"
-    input: "6"
-    output: "7"
-    op_type: "Slice"
-  }
-  node {
-    input: "7"
-    output: "8"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  name: "torch-jit-export"
-  input: "1"
-  output: "8"
   ir_version: 1
-  producer_version: 20000
-  producer_tag: "pytorch"
+  producer_name: "pytorch"
+  producer_version: "0.2"
+  domain: "com.facebook"
+  graph {
+    node {
+      output: "5"
+      op_type: "Constant"
+      attribute {
+        name: "value"
+        t {
+          dims: 2
+          data_type: INT32
+-         raw_data: "\000\000\000\000\000\000\000\000"
+?                       ^
++         raw_data: "\001\000\000\000\000\000\000\000"
+?                       ^
+        }
+      }
+    }
+    node {
+      output: "6"
+      op_type: "Constant"
+      attribute {
+        name: "value"
+        t {
+          dims: 2
+          data_type: INT32
+-         raw_data: "\001\000\000\000\002\000\000\000"
+?                       ^
++         raw_data: "\002\000\000\000\002\000\000\000"
+?                       ^
+        }
+      }
+    }
+    node {
+      input: "1"
+      input: "5"
+      input: "6"
+      output: "7"
+      op_type: "Slice"
+    }
+    node {
+      input: "7"
+      output: "8"
+      op_type: "Squeeze"
+      attribute {
+        name: "axes"
+        ints: 0
+      }
+    }
+    name: "torch-jit-export"
+    input: "1"
+    output: "8"
+  }
 
 
   * A difference in model structure usually means that

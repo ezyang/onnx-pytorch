@@ -47,15 +47,15 @@ class TestModels(TestCase):
 
     def exportTest(self, model, inputs, subname=None):
         binary_pb = export_to_string(model, inputs, export_params=False)
-        graph_def = onnx.GraphProto.FromString(binary_pb)
-        # NB: We prefer to look at printable_graph, but it doesn't print
+        model_def = onnx.ModelProto.FromString(binary_pb)
+        # NB: We prefer to look at printable_model, but it doesn't print
         # all information.  The pbtxt is the *source of truth*.
-        self.assertExpected(onnx.helper.printable_graph(graph_def), subname)
+        self.assertExpected(onnx.helper.printable_graph(model_def.graph), subname)
         if subname is None:
             pbtxt_subname = "pbtxt"
         else:
             pbtxt_subname = "{}-pbtxt".format(subname)
-        self.assertExpected(google.protobuf.text_format.MessageToString(graph_def, float_format='.15g'), pbtxt_subname)
+        self.assertExpected(google.protobuf.text_format.MessageToString(model_def, float_format='.15g'), pbtxt_subname)
 
     def test_ops(self):
         x = Variable(

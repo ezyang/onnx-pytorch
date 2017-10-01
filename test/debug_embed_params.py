@@ -27,31 +27,30 @@ def test_embed_params(proto, model, input, state_dict=None, use_gpu=True):
     case as well on pytorch front
     This should likely be removed from the release version of the code
     """
-    graph_def = onnx.GraphProto.FromString(proto)
-    onnx.checker.check_graph(graph_def)
+    device = 'CPU'
+    if use_gpu:
+      device = 'CUDA'
+    model_def = onnx.ModelProto.FromString(proto)
+    onnx.checker.check_model(model_def)
+    prepared = c2.prepare(predict_model=model_def, device=device)
 
-    # Translate the parameters into Caffe2 form
-    W = {}
     if state_dict:
-        parameters = []
-        # Passed in state_dict may have a different order.  Make
-        # sure our order is consistent with the model's order.
-        # TODO: Even better: keyword arguments!
-        for k in model.state_dict():
-            parameters.append(state_dict[k])
+      parameters = []
+      # Passed in state_dict may have a different order.  Make
+      # sure our order is consistent with the model's order.
+      # TODO: Even better: keyword arguments!
+      for k in model.state_dict():
+        parameters.append(state_dict[k])
     else:
-        parameters = model.state_dict().values()
+      parameters = model.state_dict().values()
 
-    for k, v in zip(graph_def.input, torch.jit._flatten(input, parameters)[0]):
-        if isinstance(v, Variable):
-            W[k] = v.data.cpu().numpy()
-        else:
-            W[k] = v.cpu().numpy()
+    W = {}
+    for k, v in zip(model_def.graph.input, torch.jit._flatten(input, parameters)[0]):
+      if isinstance(v, Variable):
+        W[k] = v.data.cpu().numpy()
+      else:
+        W[k] = v.cpu().numpy()
 
-    caffe2_out_workspace = c2.run_graph(
-        init_graph=None,
-        predict_graph=graph_def,
-        inputs=W,
-        use_gpu=use_gpu)
-    caffe2_out = caffe2_out_workspace[0]
+    caffe2_out = prepared.run(inputs=W)
+
     return caffe2_out

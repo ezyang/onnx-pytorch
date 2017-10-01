@@ -35,25 +35,25 @@ import onnx_caffe2.backend as c2
 skip = unittest.skip
 
 
-def import_model(proto, input, workspace=None, use_gpu=True):
-    graph_def = onnx.GraphProto.FromString(proto)
-    onnx.checker.check_graph(graph_def)
-
-    if workspace is None:
-        workspace = {}
-    if isinstance(input, tuple):
-        for i in range(len(input)):
-            workspace[graph_def.input[i]] = input[i]
-    else:
-        workspace[graph_def.input[0]] = input
-
-    caffe2_out_workspace = c2.run_graph(
-        init_graph=None,
-        predict_graph=graph_def,
-        inputs=workspace,
-        use_gpu=use_gpu)
-    caffe2_out = caffe2_out_workspace[0]
-    return caffe2_out
+#def import_model(proto, input, workspace=None, use_gpu=True):
+#    model_def = onnx.ModelProto.FromString(proto)
+#    onnx.checker.check_model(model_def)
+#
+#    if workspace is None:
+#        workspace = {}
+#    if isinstance(input, tuple):
+#        for i in range(len(input)):
+#            workspace[model_def.graph.input[i]] = input[i]
+#    else:
+#        workspace[model_def.graph.input[0]] = input
+#
+#    caffe2_out_workspace = c2.run_model(
+#        init_graph=None,
+#        predict_graph=graph_def,
+#        inputs=workspace,
+#        use_gpu=use_gpu)
+#    caffe2_out = caffe2_out_workspace[0]
+#    return caffe2_out
 
 
 def do_export(model, inputs, *args, **kwargs):
@@ -133,10 +133,12 @@ class TestCaffe2Backend(unittest.TestCase):
             model, input = self.convert_cuda(model, input)
 
         onnxir, torch_out = do_export(model, input, export_params=self.embed_params, verbose=False)
-        caffe2_out = test_embed_params(onnxir, model, input, state_dict,
-                                       use_gpu=use_gpu)
-        np.testing.assert_almost_equal(torch_out.data.cpu().numpy(),
-                                       caffe2_out, decimal=3)
+        if isinstance(torch_out, torch.autograd.Variable):
+          torch_out = (torch_out,)
+
+        caffe2_out = test_embed_params(onnxir, model, input, state_dict, use_gpu)
+        for i, (x, y) in enumerate(zip(torch_out, caffe2_out)):
+          np.testing.assert_almost_equal(x.data.cpu().numpy(), y, decimal=3)
 
     def run_actual_test(self, model, train, batch_size, state_dict=None,
                         input=None, use_gpu=True):
@@ -158,7 +160,7 @@ class TestCaffe2Backend(unittest.TestCase):
             model, input = self.convert_cuda(model, input)
 
         # Verify the model runs the same in Caffe2
-        onnx_pytorch.verify.verify(model, input, onnx_caffe2.backend)
+        onnx_pytorch.verify.verify(model, input, c2)
 
     def run_model_test(self, model, train, batch_size, state_dict=None,
                        input=None, use_gpu=True):
@@ -173,10 +175,7 @@ class TestCaffe2Backend(unittest.TestCase):
     def test_linear(self):
         model = nn.Linear(1, 1)
         input = Variable(torch.randn(1, 1), requires_grad=True)
-        onnxir, torch_out = do_export(model, input, export_params=False)
-        caffe2_out = test_embed_params(onnxir, model, input)
-        np.testing.assert_almost_equal(torch_out.data.cpu().numpy(),
-                                       caffe2_out, decimal=3)
+        self.run_model_test(model, train=False, batch_size=0, input=input)
 
     def test_alexnet(self):
         alexnet = AlexNet()

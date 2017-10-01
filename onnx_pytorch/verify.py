@@ -326,8 +326,8 @@ def verify(model, args, backend, verbose=False, training=False, decimal=3, test_
                                               "it had a different set of parameters.  Are you assigning Parameters\n"
                                               "in the forward() of your model definition?")
                     with errs.addErrCtxt(initializer_order_hint):
-                        errs.requireEqual(list(map(lambda x: x.name, proto.initializer)),
-                                          list(map(lambda x: x.name, alt_proto.initializer)),
+                        errs.requireEqual(list(map(lambda x: x.name, proto.graph.initializer)),
+                                          list(map(lambda x: x.name, alt_proto.graph.initializer)),
                                           msg="Parameters list differs")
 
                     # Now check if the embedded parameters are actually the same
@@ -335,7 +335,7 @@ def verify(model, args, backend, verbose=False, training=False, decimal=3, test_
                                         "your model is updating parameters/buffers even in inference\n"
                                         "mode.  Look for a buggy nn.Module which isn't respecting train().\n")
                     with errs.recover(), errs.addErrCtxt(initializer_hint):
-                        for x, y in zip(proto.initializer, alt_proto.initializer):
+                        for x, y in zip(proto.graph.initializer, alt_proto.graph.initializer):
                             errs.checkEqual(x, y)
 
                     # Next, check if the model structure lines up.
@@ -344,17 +344,17 @@ def verify(model, args, backend, verbose=False, training=False, decimal=3, test_
                                       "currently supported by the exporter.")
                     with errs.recover(), errs.addErrCtxt(structure_hint):
                         # Delete initializers since we already tested them
-                        stripped_proto = onnx.GraphProto()
+                        stripped_proto = onnx.ModelProto()
                         stripped_proto.CopyFrom(proto)
-                        del stripped_proto.initializer[:]
+                        del stripped_proto.graph.initializer[:]
 
-                        stripped_alt_proto = onnx.GraphProto()
+                        stripped_alt_proto = onnx.ModelProto()
                         stripped_alt_proto.CopyFrom(alt_proto)
-                        del stripped_alt_proto.initializer[:]
+                        del stripped_alt_proto.graph.initializer[:]
 
                         # Compare the printable graph representations first
-                        errs.requireMultiLineEqual(onnx.helper.printable_graph(stripped_proto),
-                                                   onnx.helper.printable_graph(stripped_alt_proto))
+                        errs.requireMultiLineEqual(onnx.helper.printable_graph(stripped_proto.graph),
+                                                   onnx.helper.printable_graph(stripped_alt_proto.graph))
 
                         # Compare the actual protobuf text formats now (not
                         # very user-friendly!)
