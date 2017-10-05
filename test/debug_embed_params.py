@@ -47,9 +47,9 @@ def test_embed_params(proto, model, input, state_dict=None, use_gpu=True):
     W = {}
     for k, v in zip(model_def.graph.input, torch.jit._flatten(input, parameters)[0]):
       if isinstance(v, Variable):
-        W[k] = v.data.cpu().numpy()
+        W[k.name] = v.data.cpu().numpy()
       else:
-        W[k] = v.cpu().numpy()
+        W[k.name] = v.cpu().numpy()
 
     caffe2_out = prepared.run(inputs=W)
 
