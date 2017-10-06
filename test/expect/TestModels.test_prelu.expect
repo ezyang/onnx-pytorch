@@ -1,4 +1,55 @@
-graph torch-jit-export (%1, %2) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+) {
   %3 = PRelu(%1, %2)
-  return %3
+  return %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+
 }

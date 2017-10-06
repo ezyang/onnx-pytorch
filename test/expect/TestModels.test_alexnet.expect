@@ -1,4 +1,254 @@
-graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 11
+      }
+      dim {
+        dim_value: 11
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 192
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 192
+      }
+    }
+  }
+}
+, %name: "6"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 384
+      }
+      dim {
+        dim_value: 192
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "7"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 384
+      }
+    }
+  }
+}
+, %name: "8"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 384
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "9"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "10"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "11"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "12"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+      dim {
+        dim_value: 9216
+      }
+    }
+  }
+}
+, %name: "13"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "14"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "15"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "16"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1000
+      }
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "17"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1000
+      }
+    }
+  }
+}
+) {
   %19 = Conv[kernel_shape = [11, 11], strides = [4, 4], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%1, %2)
   %20 = Add[broadcast = 1, axis = 1](%19, %3)
   %21 = Relu(%20)
@@ -20,16 +270,27 @@ graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, 
   %41 = Reshape[shape = [2, 9216]](%40)
   %43, %44 = Dropout[ratio = 0.5, is_test = 1](%41)
   %45 = Transpose[perm = [1, 0]](%12)
-  %46 = Transpose(%45)
-  %47 = FC(%43, %46, %13)
-  %48 = Relu(%47)
-  %50, %51 = Dropout[ratio = 0.5, is_test = 1](%48)
-  %52 = Transpose[perm = [1, 0]](%14)
-  %53 = Transpose(%52)
-  %54 = FC(%50, %53, %15)
-  %55 = Relu(%54)
-  %56 = Transpose[perm = [1, 0]](%16)
-  %57 = Transpose(%56)
-  %58 = FC(%55, %57, %17)
-  return %58
+  %46 = Gemm[alpha = 1, beta = 1, broadcast = 1](%43, %45, %13)
+  %47 = Relu(%46)
+  %49, %50 = Dropout[ratio = 0.5, is_test = 1](%47)
+  %51 = Transpose[perm = [1, 0]](%14)
+  %52 = Gemm[alpha = 1, beta = 1, broadcast = 1](%49, %51, %15)
+  %53 = Relu(%52)
+  %54 = Transpose[perm = [1, 0]](%16)
+  %55 = Gemm[alpha = 1, beta = 1, broadcast = 1](%53, %54, %17)
+  return %name: "55"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 1000
+      }
+    }
+  }
+}
+
 }

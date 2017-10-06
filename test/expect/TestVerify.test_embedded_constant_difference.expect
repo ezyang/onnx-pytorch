@@ -55,8 +55,35 @@ ERROR: Strings are not equal:
       }
     }
     name: "torch-jit-export"
-    input: "1"
-    output: "8"
+    input {
+      name: "1"
+      type {
+        tensor_type {
+          elem_type: DOUBLE
+          shape {
+            dim {
+              dim_value: 2
+            }
+            dim {
+              dim_value: 2
+            }
+          }
+        }
+      }
+    }
+    output {
+      name: "8"
+      type {
+        tensor_type {
+          elem_type: DOUBLE
+          shape {
+            dim {
+              dim_value: 2
+            }
+          }
+        }
+      }
+    }
   }
 
 

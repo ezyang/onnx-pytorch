@@ -1,8 +1,92 @@
-graph torch-jit-export (%1, %2, %3, %4, %5) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+) {
   %6 = LeakyRelu[alpha = 0.0199999995529652](%1)
   %8 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%6, %2, %3, %4, %5)
   %9 = AveragePool[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1]](%8)
   %10 = Reshape[shape = [-1, 1]](%9)
   %11 = Squeeze[axes = [1]](%10)
-  return %1
+  return %name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+
 }

@@ -1,4 +1,256 @@
-graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17, %18) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "6"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "7"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "8"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
+    }
+  }
+}
+, %name: "9"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "10"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "11"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "12"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "13"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
+    }
+  }
+}
+, %name: "14"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "15"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "16"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "17"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "18"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
+    }
+  }
+}
+) {
   %20 = Conv[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%1, %2)
   %21 = LeakyRelu[alpha = 0.200000002980232](%20)
   %23 = Conv[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%21, %3)
@@ -13,5 +265,19 @@ graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, 
   %38 = Conv[kernel_shape = [4, 4], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%36, %18)
   %39 = Sigmoid(%38)
   %40 = Reshape[shape = [-1, 1]](%39)
-  return %40
+  return %name: "40"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+    }
+  }
+}
+
 }

@@ -1,4 +1,148 @@
-graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "6"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 32
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "7"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 32
+      }
+    }
+  }
+}
+, %name: "8"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 9
+      }
+      dim {
+        dim_value: 32
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "9"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 9
+      }
+    }
+  }
+}
+) {
   %11 = Conv[kernel_shape = [5, 5], strides = [1, 1], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%1, %2)
   %12 = Add[broadcast = 1, axis = 1](%11, %3)
   %13 = Relu(%12)
@@ -13,5 +157,25 @@ graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9) {
   %25 = Reshape[shape = [2, 1, 3, 3, 224, 224]](%24)
   %26 = Transpose[perm = [0, 1, 4, 2, 5, 3]](%25)
   %27 = Reshape[shape = [2, 1, 672, 672]](%26)
-  return %27
+  return %name: "27"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 672
+      }
+      dim {
+        dim_value: 672
+      }
+    }
+  }
+}
+
 }
