@@ -1,4 +1,502 @@
-graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17, %18, %19, %20, %21, %22, %23, %24, %25, %26, %27, %28, %29, %30, %31, %32, %33) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "6"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "7"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "8"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "9"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "10"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "11"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "12"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "13"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "14"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "15"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "16"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "17"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "18"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "19"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "20"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "21"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "22"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "23"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "24"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "25"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "26"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "27"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "28"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+      dim {
+        dim_value: 25088
+      }
+    }
+  }
+}
+, %name: "29"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "30"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "31"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "32"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1000
+      }
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "33"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1000
+      }
+    }
+  }
+}
+) {
   %35 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%1, %2)
   %36 = Add[broadcast = 1, axis = 1](%35, %3)
   %37 = Relu(%36)
@@ -45,17 +543,28 @@ graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, 
   %90 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], dilations = [1, 1], strides = [2, 2]](%89)
   %91 = Reshape[shape = [2, -1]](%90)
   %92 = Transpose[perm = [1, 0]](%28)
-  %93 = Transpose(%92)
-  %94 = FC(%91, %93, %29)
-  %95 = Relu(%94)
-  %97, %98 = Dropout[ratio = 0.5, is_test = 1](%95)
-  %99 = Transpose[perm = [1, 0]](%30)
-  %100 = Transpose(%99)
-  %101 = FC(%97, %100, %31)
-  %102 = Relu(%101)
-  %104, %105 = Dropout[ratio = 0.5, is_test = 1](%102)
-  %106 = Transpose[perm = [1, 0]](%32)
-  %107 = Transpose(%106)
-  %108 = FC(%104, %107, %33)
-  return %108
+  %93 = Gemm[alpha = 1, beta = 1, broadcast = 1](%91, %92, %29)
+  %94 = Relu(%93)
+  %96, %97 = Dropout[ratio = 0.5, is_test = 1](%94)
+  %98 = Transpose[perm = [1, 0]](%30)
+  %99 = Gemm[alpha = 1, beta = 1, broadcast = 1](%96, %98, %31)
+  %100 = Relu(%99)
+  %102, %103 = Dropout[ratio = 0.5, is_test = 1](%100)
+  %104 = Transpose[perm = [1, 0]](%32)
+  %105 = Gemm[alpha = 1, beta = 1, broadcast = 1](%102, %104, %33)
+  return %name: "105"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 1000
+      }
+    }
+  }
+}
+
 }

@@ -1,652 +1,888 @@
-graph torch-jit-export (%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14, %15, %16, %17, %18, %19, %20, %21, %22, %23, %24, %25) {
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: INT64
+    shape {
+      dim {
+        dim_value: 10
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 10
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "6"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "7"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "8"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "9"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "10"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "11"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "12"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "13"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "14"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "15"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "16"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "17"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "18"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "19"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "20"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "21"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "22"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "23"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "24"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 10
+      }
+      dim {
+        dim_value: 5
+      }
+    }
+  }
+}
+, %name: "25"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 10
+      }
+    }
+  }
+}
+) {
   %26 = Gather(%3, %1)
   %28, %29 = Dropout[ratio = 0.200000002980232, is_test = 1](%26)
-  %632 = Constant[value = <Tensor>]()
-  %633 = Constant[value = <Tensor>]()
-  %634 = Slice(%2, %632, %633)
-  %635 = Squeeze[axes = [0]](%634)
-  %636 = Constant[value = <Tensor>]()
-  %637 = Constant[value = <Tensor>]()
-  %638 = Slice(%28, %636, %637)
-  %639 = Squeeze[axes = [0]](%638)
+  %531 = Constant[value = <Tensor>]()
+  %532 = Constant[value = <Tensor>]()
+  %533 = Slice(%2, %531, %532)
+  %534 = Squeeze[axes = [0]](%533)
+  %535 = Constant[value = <Tensor>]()
+  %536 = Constant[value = <Tensor>]()
+  %537 = Slice(%28, %535, %536)
+  %538 = Squeeze[axes = [0]](%537)
   %36 = Transpose[perm = [1, 0]](%4)
-  %37 = Transpose(%36)
-  %38 = FC(%639, %37, %6)
-  %39 = Transpose[perm = [1, 0]](%5)
-  %40 = Transpose(%39)
-  %41 = FC(%635, %40, %7)
-  %42 = Add(%38, %41)
-  %43 = Relu(%42)
-  %640 = Constant[value = <Tensor>]()
-  %641 = Constant[value = <Tensor>]()
-  %642 = Slice(%28, %640, %641)
-  %643 = Squeeze[axes = [0]](%642)
-  %47 = Transpose[perm = [1, 0]](%4)
-  %48 = Transpose(%47)
-  %49 = FC(%643, %48, %6)
-  %50 = Transpose[perm = [1, 0]](%5)
-  %51 = Transpose(%50)
-  %52 = FC(%43, %51, %7)
-  %53 = Add(%49, %52)
-  %54 = Relu(%53)
-  %644 = Constant[value = <Tensor>]()
-  %645 = Constant[value = <Tensor>]()
-  %646 = Slice(%28, %644, %645)
-  %647 = Squeeze[axes = [0]](%646)
-  %58 = Transpose[perm = [1, 0]](%4)
-  %59 = Transpose(%58)
-  %60 = FC(%647, %59, %6)
-  %61 = Transpose[perm = [1, 0]](%5)
-  %62 = Transpose(%61)
-  %63 = FC(%54, %62, %7)
-  %64 = Add(%60, %63)
-  %65 = Relu(%64)
-  %648 = Constant[value = <Tensor>]()
-  %649 = Constant[value = <Tensor>]()
-  %650 = Slice(%28, %648, %649)
-  %651 = Squeeze[axes = [0]](%650)
-  %69 = Transpose[perm = [1, 0]](%4)
-  %70 = Transpose(%69)
-  %71 = FC(%651, %70, %6)
-  %72 = Transpose[perm = [1, 0]](%5)
-  %73 = Transpose(%72)
-  %74 = FC(%65, %73, %7)
-  %75 = Add(%71, %74)
-  %76 = Relu(%75)
-  %652 = Constant[value = <Tensor>]()
-  %653 = Constant[value = <Tensor>]()
-  %654 = Slice(%28, %652, %653)
-  %655 = Squeeze[axes = [0]](%654)
-  %80 = Transpose[perm = [1, 0]](%4)
-  %81 = Transpose(%80)
-  %82 = FC(%655, %81, %6)
+  %37 = Gemm[alpha = 1, beta = 1, broadcast = 1](%538, %36, %6)
+  %38 = Transpose[perm = [1, 0]](%5)
+  %39 = Gemm[alpha = 1, beta = 1, broadcast = 1](%534, %38, %7)
+  %40 = Add(%37, %39)
+  %41 = Relu(%40)
+  %539 = Constant[value = <Tensor>]()
+  %540 = Constant[value = <Tensor>]()
+  %541 = Slice(%28, %539, %540)
+  %542 = Squeeze[axes = [0]](%541)
+  %45 = Transpose[perm = [1, 0]](%4)
+  %46 = Gemm[alpha = 1, beta = 1, broadcast = 1](%542, %45, %6)
+  %47 = Transpose[perm = [1, 0]](%5)
+  %48 = Gemm[alpha = 1, beta = 1, broadcast = 1](%41, %47, %7)
+  %49 = Add(%46, %48)
+  %50 = Relu(%49)
+  %543 = Constant[value = <Tensor>]()
+  %544 = Constant[value = <Tensor>]()
+  %545 = Slice(%28, %543, %544)
+  %546 = Squeeze[axes = [0]](%545)
+  %54 = Transpose[perm = [1, 0]](%4)
+  %55 = Gemm[alpha = 1, beta = 1, broadcast = 1](%546, %54, %6)
+  %56 = Transpose[perm = [1, 0]](%5)
+  %57 = Gemm[alpha = 1, beta = 1, broadcast = 1](%50, %56, %7)
+  %58 = Add(%55, %57)
+  %59 = Relu(%58)
+  %547 = Constant[value = <Tensor>]()
+  %548 = Constant[value = <Tensor>]()
+  %549 = Slice(%28, %547, %548)
+  %550 = Squeeze[axes = [0]](%549)
+  %63 = Transpose[perm = [1, 0]](%4)
+  %64 = Gemm[alpha = 1, beta = 1, broadcast = 1](%550, %63, %6)
+  %65 = Transpose[perm = [1, 0]](%5)
+  %66 = Gemm[alpha = 1, beta = 1, broadcast = 1](%59, %65, %7)
+  %67 = Add(%64, %66)
+  %68 = Relu(%67)
+  %551 = Constant[value = <Tensor>]()
+  %552 = Constant[value = <Tensor>]()
+  %553 = Slice(%28, %551, %552)
+  %554 = Squeeze[axes = [0]](%553)
+  %72 = Transpose[perm = [1, 0]](%4)
+  %73 = Gemm[alpha = 1, beta = 1, broadcast = 1](%554, %72, %6)
+  %74 = Transpose[perm = [1, 0]](%5)
+  %75 = Gemm[alpha = 1, beta = 1, broadcast = 1](%68, %74, %7)
+  %76 = Add(%73, %75)
+  %77 = Relu(%76)
+  %555 = Constant[value = <Tensor>]()
+  %556 = Constant[value = <Tensor>]()
+  %557 = Slice(%28, %555, %556)
+  %558 = Squeeze[axes = [0]](%557)
+  %81 = Transpose[perm = [1, 0]](%4)
+  %82 = Gemm[alpha = 1, beta = 1, broadcast = 1](%558, %81, %6)
   %83 = Transpose[perm = [1, 0]](%5)
-  %84 = Transpose(%83)
-  %85 = FC(%76, %84, %7)
-  %86 = Add(%82, %85)
-  %87 = Relu(%86)
-  %656 = Constant[value = <Tensor>]()
-  %657 = Constant[value = <Tensor>]()
-  %658 = Slice(%28, %656, %657)
-  %659 = Squeeze[axes = [0]](%658)
-  %91 = Transpose[perm = [1, 0]](%4)
-  %92 = Transpose(%91)
-  %93 = FC(%659, %92, %6)
-  %94 = Transpose[perm = [1, 0]](%5)
-  %95 = Transpose(%94)
-  %96 = FC(%87, %95, %7)
-  %97 = Add(%93, %96)
-  %98 = Relu(%97)
-  %660 = Constant[value = <Tensor>]()
-  %661 = Constant[value = <Tensor>]()
-  %662 = Slice(%28, %660, %661)
-  %663 = Squeeze[axes = [0]](%662)
-  %102 = Transpose[perm = [1, 0]](%4)
-  %103 = Transpose(%102)
-  %104 = FC(%663, %103, %6)
-  %105 = Transpose[perm = [1, 0]](%5)
-  %106 = Transpose(%105)
-  %107 = FC(%98, %106, %7)
-  %108 = Add(%104, %107)
-  %109 = Relu(%108)
-  %664 = Constant[value = <Tensor>]()
-  %665 = Constant[value = <Tensor>]()
-  %666 = Slice(%28, %664, %665)
-  %667 = Squeeze[axes = [0]](%666)
-  %113 = Transpose[perm = [1, 0]](%4)
-  %114 = Transpose(%113)
-  %115 = FC(%667, %114, %6)
-  %116 = Transpose[perm = [1, 0]](%5)
-  %117 = Transpose(%116)
-  %118 = FC(%109, %117, %7)
-  %119 = Add(%115, %118)
-  %120 = Relu(%119)
-  %668 = Constant[value = <Tensor>]()
-  %669 = Constant[value = <Tensor>]()
-  %670 = Slice(%28, %668, %669)
-  %671 = Squeeze[axes = [0]](%670)
-  %124 = Transpose[perm = [1, 0]](%4)
-  %125 = Transpose(%124)
-  %126 = FC(%671, %125, %6)
-  %127 = Transpose[perm = [1, 0]](%5)
-  %128 = Transpose(%127)
-  %129 = FC(%120, %128, %7)
-  %130 = Add(%126, %129)
-  %131 = Relu(%130)
-  %672 = Constant[value = <Tensor>]()
-  %673 = Constant[value = <Tensor>]()
-  %674 = Slice(%28, %672, %673)
-  %675 = Squeeze[axes = [0]](%674)
-  %135 = Transpose[perm = [1, 0]](%4)
-  %136 = Transpose(%135)
-  %137 = FC(%675, %136, %6)
-  %138 = Transpose[perm = [1, 0]](%5)
-  %139 = Transpose(%138)
-  %140 = FC(%131, %139, %7)
-  %141 = Add(%137, %140)
-  %142 = Relu(%141)
-  %676, %677 = Concat[axis = 0](%43, %54, %65, %76, %87, %98, %109, %120, %131, %142)
-  %144 = Reshape[shape = [10, 5, 5]](%676)
-  %678, %679 = Concat[axis = 2](%144)
-  %147, %148 = Dropout[ratio = 0.200000002980232, is_test = 1](%678)
-  %680 = Constant[value = <Tensor>]()
-  %681 = Constant[value = <Tensor>]()
-  %682 = Slice(%2, %680, %681)
-  %683 = Squeeze[axes = [0]](%682)
-  %684 = Constant[value = <Tensor>]()
-  %685 = Constant[value = <Tensor>]()
-  %686 = Slice(%147, %684, %685)
-  %687 = Squeeze[axes = [0]](%686)
-  %155 = Transpose[perm = [1, 0]](%8)
-  %156 = Transpose(%155)
-  %157 = FC(%687, %156, %10)
-  %158 = Transpose[perm = [1, 0]](%9)
-  %159 = Transpose(%158)
-  %160 = FC(%683, %159, %11)
-  %161 = Add(%157, %160)
-  %162 = Relu(%161)
-  %688 = Constant[value = <Tensor>]()
-  %689 = Constant[value = <Tensor>]()
-  %690 = Slice(%147, %688, %689)
-  %691 = Squeeze[axes = [0]](%690)
-  %166 = Transpose[perm = [1, 0]](%8)
-  %167 = Transpose(%166)
-  %168 = FC(%691, %167, %10)
-  %169 = Transpose[perm = [1, 0]](%9)
-  %170 = Transpose(%169)
-  %171 = FC(%162, %170, %11)
-  %172 = Add(%168, %171)
-  %173 = Relu(%172)
-  %692 = Constant[value = <Tensor>]()
-  %693 = Constant[value = <Tensor>]()
-  %694 = Slice(%147, %692, %693)
-  %695 = Squeeze[axes = [0]](%694)
-  %177 = Transpose[perm = [1, 0]](%8)
-  %178 = Transpose(%177)
-  %179 = FC(%695, %178, %10)
-  %180 = Transpose[perm = [1, 0]](%9)
-  %181 = Transpose(%180)
-  %182 = FC(%173, %181, %11)
-  %183 = Add(%179, %182)
-  %184 = Relu(%183)
-  %696 = Constant[value = <Tensor>]()
-  %697 = Constant[value = <Tensor>]()
-  %698 = Slice(%147, %696, %697)
-  %699 = Squeeze[axes = [0]](%698)
-  %188 = Transpose[perm = [1, 0]](%8)
-  %189 = Transpose(%188)
-  %190 = FC(%699, %189, %10)
+  %84 = Gemm[alpha = 1, beta = 1, broadcast = 1](%77, %83, %7)
+  %85 = Add(%82, %84)
+  %86 = Relu(%85)
+  %559 = Constant[value = <Tensor>]()
+  %560 = Constant[value = <Tensor>]()
+  %561 = Slice(%28, %559, %560)
+  %562 = Squeeze[axes = [0]](%561)
+  %90 = Transpose[perm = [1, 0]](%4)
+  %91 = Gemm[alpha = 1, beta = 1, broadcast = 1](%562, %90, %6)
+  %92 = Transpose[perm = [1, 0]](%5)
+  %93 = Gemm[alpha = 1, beta = 1, broadcast = 1](%86, %92, %7)
+  %94 = Add(%91, %93)
+  %95 = Relu(%94)
+  %563 = Constant[value = <Tensor>]()
+  %564 = Constant[value = <Tensor>]()
+  %565 = Slice(%28, %563, %564)
+  %566 = Squeeze[axes = [0]](%565)
+  %99 = Transpose[perm = [1, 0]](%4)
+  %100 = Gemm[alpha = 1, beta = 1, broadcast = 1](%566, %99, %6)
+  %101 = Transpose[perm = [1, 0]](%5)
+  %102 = Gemm[alpha = 1, beta = 1, broadcast = 1](%95, %101, %7)
+  %103 = Add(%100, %102)
+  %104 = Relu(%103)
+  %567 = Constant[value = <Tensor>]()
+  %568 = Constant[value = <Tensor>]()
+  %569 = Slice(%28, %567, %568)
+  %570 = Squeeze[axes = [0]](%569)
+  %108 = Transpose[perm = [1, 0]](%4)
+  %109 = Gemm[alpha = 1, beta = 1, broadcast = 1](%570, %108, %6)
+  %110 = Transpose[perm = [1, 0]](%5)
+  %111 = Gemm[alpha = 1, beta = 1, broadcast = 1](%104, %110, %7)
+  %112 = Add(%109, %111)
+  %113 = Relu(%112)
+  %571 = Constant[value = <Tensor>]()
+  %572 = Constant[value = <Tensor>]()
+  %573 = Slice(%28, %571, %572)
+  %574 = Squeeze[axes = [0]](%573)
+  %117 = Transpose[perm = [1, 0]](%4)
+  %118 = Gemm[alpha = 1, beta = 1, broadcast = 1](%574, %117, %6)
+  %119 = Transpose[perm = [1, 0]](%5)
+  %120 = Gemm[alpha = 1, beta = 1, broadcast = 1](%113, %119, %7)
+  %121 = Add(%118, %120)
+  %122 = Relu(%121)
+  %575, %576 = Concat[axis = 0](%41, %50, %59, %68, %77, %86, %95, %104, %113, %122)
+  %124 = Reshape[shape = [10, 5, 5]](%575)
+  %577, %578 = Concat[axis = 2](%124)
+  %127, %128 = Dropout[ratio = 0.200000002980232, is_test = 1](%577)
+  %579 = Constant[value = <Tensor>]()
+  %580 = Constant[value = <Tensor>]()
+  %581 = Slice(%2, %579, %580)
+  %582 = Squeeze[axes = [0]](%581)
+  %583 = Constant[value = <Tensor>]()
+  %584 = Constant[value = <Tensor>]()
+  %585 = Slice(%127, %583, %584)
+  %586 = Squeeze[axes = [0]](%585)
+  %135 = Transpose[perm = [1, 0]](%8)
+  %136 = Gemm[alpha = 1, beta = 1, broadcast = 1](%586, %135, %10)
+  %137 = Transpose[perm = [1, 0]](%9)
+  %138 = Gemm[alpha = 1, beta = 1, broadcast = 1](%582, %137, %11)
+  %139 = Add(%136, %138)
+  %140 = Relu(%139)
+  %587 = Constant[value = <Tensor>]()
+  %588 = Constant[value = <Tensor>]()
+  %589 = Slice(%127, %587, %588)
+  %590 = Squeeze[axes = [0]](%589)
+  %144 = Transpose[perm = [1, 0]](%8)
+  %145 = Gemm[alpha = 1, beta = 1, broadcast = 1](%590, %144, %10)
+  %146 = Transpose[perm = [1, 0]](%9)
+  %147 = Gemm[alpha = 1, beta = 1, broadcast = 1](%140, %146, %11)
+  %148 = Add(%145, %147)
+  %149 = Relu(%148)
+  %591 = Constant[value = <Tensor>]()
+  %592 = Constant[value = <Tensor>]()
+  %593 = Slice(%127, %591, %592)
+  %594 = Squeeze[axes = [0]](%593)
+  %153 = Transpose[perm = [1, 0]](%8)
+  %154 = Gemm[alpha = 1, beta = 1, broadcast = 1](%594, %153, %10)
+  %155 = Transpose[perm = [1, 0]](%9)
+  %156 = Gemm[alpha = 1, beta = 1, broadcast = 1](%149, %155, %11)
+  %157 = Add(%154, %156)
+  %158 = Relu(%157)
+  %595 = Constant[value = <Tensor>]()
+  %596 = Constant[value = <Tensor>]()
+  %597 = Slice(%127, %595, %596)
+  %598 = Squeeze[axes = [0]](%597)
+  %162 = Transpose[perm = [1, 0]](%8)
+  %163 = Gemm[alpha = 1, beta = 1, broadcast = 1](%598, %162, %10)
+  %164 = Transpose[perm = [1, 0]](%9)
+  %165 = Gemm[alpha = 1, beta = 1, broadcast = 1](%158, %164, %11)
+  %166 = Add(%163, %165)
+  %167 = Relu(%166)
+  %599 = Constant[value = <Tensor>]()
+  %600 = Constant[value = <Tensor>]()
+  %601 = Slice(%127, %599, %600)
+  %602 = Squeeze[axes = [0]](%601)
+  %171 = Transpose[perm = [1, 0]](%8)
+  %172 = Gemm[alpha = 1, beta = 1, broadcast = 1](%602, %171, %10)
+  %173 = Transpose[perm = [1, 0]](%9)
+  %174 = Gemm[alpha = 1, beta = 1, broadcast = 1](%167, %173, %11)
+  %175 = Add(%172, %174)
+  %176 = Relu(%175)
+  %603 = Constant[value = <Tensor>]()
+  %604 = Constant[value = <Tensor>]()
+  %605 = Slice(%127, %603, %604)
+  %606 = Squeeze[axes = [0]](%605)
+  %180 = Transpose[perm = [1, 0]](%8)
+  %181 = Gemm[alpha = 1, beta = 1, broadcast = 1](%606, %180, %10)
+  %182 = Transpose[perm = [1, 0]](%9)
+  %183 = Gemm[alpha = 1, beta = 1, broadcast = 1](%176, %182, %11)
+  %184 = Add(%181, %183)
+  %185 = Relu(%184)
+  %607 = Constant[value = <Tensor>]()
+  %608 = Constant[value = <Tensor>]()
+  %609 = Slice(%127, %607, %608)
+  %610 = Squeeze[axes = [0]](%609)
+  %189 = Transpose[perm = [1, 0]](%8)
+  %190 = Gemm[alpha = 1, beta = 1, broadcast = 1](%610, %189, %10)
   %191 = Transpose[perm = [1, 0]](%9)
-  %192 = Transpose(%191)
-  %193 = FC(%184, %192, %11)
-  %194 = Add(%190, %193)
-  %195 = Relu(%194)
-  %700 = Constant[value = <Tensor>]()
-  %701 = Constant[value = <Tensor>]()
-  %702 = Slice(%147, %700, %701)
-  %703 = Squeeze[axes = [0]](%702)
-  %199 = Transpose[perm = [1, 0]](%8)
-  %200 = Transpose(%199)
-  %201 = FC(%703, %200, %10)
-  %202 = Transpose[perm = [1, 0]](%9)
-  %203 = Transpose(%202)
-  %204 = FC(%195, %203, %11)
-  %205 = Add(%201, %204)
-  %206 = Relu(%205)
-  %704 = Constant[value = <Tensor>]()
-  %705 = Constant[value = <Tensor>]()
-  %706 = Slice(%147, %704, %705)
-  %707 = Squeeze[axes = [0]](%706)
-  %210 = Transpose[perm = [1, 0]](%8)
-  %211 = Transpose(%210)
-  %212 = FC(%707, %211, %10)
-  %213 = Transpose[perm = [1, 0]](%9)
-  %214 = Transpose(%213)
-  %215 = FC(%206, %214, %11)
-  %216 = Add(%212, %215)
-  %217 = Relu(%216)
-  %708 = Constant[value = <Tensor>]()
-  %709 = Constant[value = <Tensor>]()
-  %710 = Slice(%147, %708, %709)
-  %711 = Squeeze[axes = [0]](%710)
-  %221 = Transpose[perm = [1, 0]](%8)
-  %222 = Transpose(%221)
-  %223 = FC(%711, %222, %10)
-  %224 = Transpose[perm = [1, 0]](%9)
-  %225 = Transpose(%224)
-  %226 = FC(%217, %225, %11)
-  %227 = Add(%223, %226)
-  %228 = Relu(%227)
-  %712 = Constant[value = <Tensor>]()
-  %713 = Constant[value = <Tensor>]()
-  %714 = Slice(%147, %712, %713)
-  %715 = Squeeze[axes = [0]](%714)
-  %232 = Transpose[perm = [1, 0]](%8)
-  %233 = Transpose(%232)
-  %234 = FC(%715, %233, %10)
-  %235 = Transpose[perm = [1, 0]](%9)
-  %236 = Transpose(%235)
-  %237 = FC(%228, %236, %11)
-  %238 = Add(%234, %237)
+  %192 = Gemm[alpha = 1, beta = 1, broadcast = 1](%185, %191, %11)
+  %193 = Add(%190, %192)
+  %194 = Relu(%193)
+  %611 = Constant[value = <Tensor>]()
+  %612 = Constant[value = <Tensor>]()
+  %613 = Slice(%127, %611, %612)
+  %614 = Squeeze[axes = [0]](%613)
+  %198 = Transpose[perm = [1, 0]](%8)
+  %199 = Gemm[alpha = 1, beta = 1, broadcast = 1](%614, %198, %10)
+  %200 = Transpose[perm = [1, 0]](%9)
+  %201 = Gemm[alpha = 1, beta = 1, broadcast = 1](%194, %200, %11)
+  %202 = Add(%199, %201)
+  %203 = Relu(%202)
+  %615 = Constant[value = <Tensor>]()
+  %616 = Constant[value = <Tensor>]()
+  %617 = Slice(%127, %615, %616)
+  %618 = Squeeze[axes = [0]](%617)
+  %207 = Transpose[perm = [1, 0]](%8)
+  %208 = Gemm[alpha = 1, beta = 1, broadcast = 1](%618, %207, %10)
+  %209 = Transpose[perm = [1, 0]](%9)
+  %210 = Gemm[alpha = 1, beta = 1, broadcast = 1](%203, %209, %11)
+  %211 = Add(%208, %210)
+  %212 = Relu(%211)
+  %619 = Constant[value = <Tensor>]()
+  %620 = Constant[value = <Tensor>]()
+  %621 = Slice(%127, %619, %620)
+  %622 = Squeeze[axes = [0]](%621)
+  %216 = Transpose[perm = [1, 0]](%8)
+  %217 = Gemm[alpha = 1, beta = 1, broadcast = 1](%622, %216, %10)
+  %218 = Transpose[perm = [1, 0]](%9)
+  %219 = Gemm[alpha = 1, beta = 1, broadcast = 1](%212, %218, %11)
+  %220 = Add(%217, %219)
+  %221 = Relu(%220)
+  %623, %624 = Concat[axis = 0](%140, %149, %158, %167, %176, %185, %194, %203, %212, %221)
+  %223 = Reshape[shape = [10, 5, 5]](%623)
+  %625, %626 = Concat[axis = 2](%223)
+  %226, %227 = Dropout[ratio = 0.200000002980232, is_test = 1](%625)
+  %627 = Constant[value = <Tensor>]()
+  %628 = Constant[value = <Tensor>]()
+  %629 = Slice(%2, %627, %628)
+  %630 = Squeeze[axes = [0]](%629)
+  %631 = Constant[value = <Tensor>]()
+  %632 = Constant[value = <Tensor>]()
+  %633 = Slice(%226, %631, %632)
+  %634 = Squeeze[axes = [0]](%633)
+  %234 = Transpose[perm = [1, 0]](%12)
+  %235 = Gemm[alpha = 1, beta = 1, broadcast = 1](%634, %234, %14)
+  %236 = Transpose[perm = [1, 0]](%13)
+  %237 = Gemm[alpha = 1, beta = 1, broadcast = 1](%630, %236, %15)
+  %238 = Add(%235, %237)
   %239 = Relu(%238)
-  %716 = Constant[value = <Tensor>]()
-  %717 = Constant[value = <Tensor>]()
-  %718 = Slice(%147, %716, %717)
-  %719 = Squeeze[axes = [0]](%718)
-  %243 = Transpose[perm = [1, 0]](%8)
-  %244 = Transpose(%243)
-  %245 = FC(%719, %244, %10)
-  %246 = Transpose[perm = [1, 0]](%9)
-  %247 = Transpose(%246)
-  %248 = FC(%239, %247, %11)
-  %249 = Add(%245, %248)
-  %250 = Relu(%249)
-  %720 = Constant[value = <Tensor>]()
-  %721 = Constant[value = <Tensor>]()
-  %722 = Slice(%147, %720, %721)
-  %723 = Squeeze[axes = [0]](%722)
-  %254 = Transpose[perm = [1, 0]](%8)
-  %255 = Transpose(%254)
-  %256 = FC(%723, %255, %10)
-  %257 = Transpose[perm = [1, 0]](%9)
-  %258 = Transpose(%257)
-  %259 = FC(%250, %258, %11)
-  %260 = Add(%256, %259)
-  %261 = Relu(%260)
-  %724, %725 = Concat[axis = 0](%162, %173, %184, %195, %206, %217, %228, %239, %250, %261)
-  %263 = Reshape[shape = [10, 5, 5]](%724)
-  %726, %727 = Concat[axis = 2](%263)
-  %266, %267 = Dropout[ratio = 0.200000002980232, is_test = 1](%726)
-  %728 = Constant[value = <Tensor>]()
-  %729 = Constant[value = <Tensor>]()
-  %730 = Slice(%2, %728, %729)
-  %731 = Squeeze[axes = [0]](%730)
-  %732 = Constant[value = <Tensor>]()
-  %733 = Constant[value = <Tensor>]()
-  %734 = Slice(%266, %732, %733)
-  %735 = Squeeze[axes = [0]](%734)
-  %274 = Transpose[perm = [1, 0]](%12)
-  %275 = Transpose(%274)
-  %276 = FC(%735, %275, %14)
-  %277 = Transpose[perm = [1, 0]](%13)
-  %278 = Transpose(%277)
-  %279 = FC(%731, %278, %15)
-  %280 = Add(%276, %279)
-  %281 = Relu(%280)
-  %736 = Constant[value = <Tensor>]()
-  %737 = Constant[value = <Tensor>]()
-  %738 = Slice(%266, %736, %737)
-  %739 = Squeeze[axes = [0]](%738)
-  %285 = Transpose[perm = [1, 0]](%12)
-  %286 = Transpose(%285)
-  %287 = FC(%739, %286, %14)
-  %288 = Transpose[perm = [1, 0]](%13)
-  %289 = Transpose(%288)
-  %290 = FC(%281, %289, %15)
-  %291 = Add(%287, %290)
-  %292 = Relu(%291)
-  %740 = Constant[value = <Tensor>]()
-  %741 = Constant[value = <Tensor>]()
-  %742 = Slice(%266, %740, %741)
-  %743 = Squeeze[axes = [0]](%742)
-  %296 = Transpose[perm = [1, 0]](%12)
-  %297 = Transpose(%296)
-  %298 = FC(%743, %297, %14)
+  %635 = Constant[value = <Tensor>]()
+  %636 = Constant[value = <Tensor>]()
+  %637 = Slice(%226, %635, %636)
+  %638 = Squeeze[axes = [0]](%637)
+  %243 = Transpose[perm = [1, 0]](%12)
+  %244 = Gemm[alpha = 1, beta = 1, broadcast = 1](%638, %243, %14)
+  %245 = Transpose[perm = [1, 0]](%13)
+  %246 = Gemm[alpha = 1, beta = 1, broadcast = 1](%239, %245, %15)
+  %247 = Add(%244, %246)
+  %248 = Relu(%247)
+  %639 = Constant[value = <Tensor>]()
+  %640 = Constant[value = <Tensor>]()
+  %641 = Slice(%226, %639, %640)
+  %642 = Squeeze[axes = [0]](%641)
+  %252 = Transpose[perm = [1, 0]](%12)
+  %253 = Gemm[alpha = 1, beta = 1, broadcast = 1](%642, %252, %14)
+  %254 = Transpose[perm = [1, 0]](%13)
+  %255 = Gemm[alpha = 1, beta = 1, broadcast = 1](%248, %254, %15)
+  %256 = Add(%253, %255)
+  %257 = Relu(%256)
+  %643 = Constant[value = <Tensor>]()
+  %644 = Constant[value = <Tensor>]()
+  %645 = Slice(%226, %643, %644)
+  %646 = Squeeze[axes = [0]](%645)
+  %261 = Transpose[perm = [1, 0]](%12)
+  %262 = Gemm[alpha = 1, beta = 1, broadcast = 1](%646, %261, %14)
+  %263 = Transpose[perm = [1, 0]](%13)
+  %264 = Gemm[alpha = 1, beta = 1, broadcast = 1](%257, %263, %15)
+  %265 = Add(%262, %264)
+  %266 = Relu(%265)
+  %647 = Constant[value = <Tensor>]()
+  %648 = Constant[value = <Tensor>]()
+  %649 = Slice(%226, %647, %648)
+  %650 = Squeeze[axes = [0]](%649)
+  %270 = Transpose[perm = [1, 0]](%12)
+  %271 = Gemm[alpha = 1, beta = 1, broadcast = 1](%650, %270, %14)
+  %272 = Transpose[perm = [1, 0]](%13)
+  %273 = Gemm[alpha = 1, beta = 1, broadcast = 1](%266, %272, %15)
+  %274 = Add(%271, %273)
+  %275 = Relu(%274)
+  %651 = Constant[value = <Tensor>]()
+  %652 = Constant[value = <Tensor>]()
+  %653 = Slice(%226, %651, %652)
+  %654 = Squeeze[axes = [0]](%653)
+  %279 = Transpose[perm = [1, 0]](%12)
+  %280 = Gemm[alpha = 1, beta = 1, broadcast = 1](%654, %279, %14)
+  %281 = Transpose[perm = [1, 0]](%13)
+  %282 = Gemm[alpha = 1, beta = 1, broadcast = 1](%275, %281, %15)
+  %283 = Add(%280, %282)
+  %284 = Relu(%283)
+  %655 = Constant[value = <Tensor>]()
+  %656 = Constant[value = <Tensor>]()
+  %657 = Slice(%226, %655, %656)
+  %658 = Squeeze[axes = [0]](%657)
+  %288 = Transpose[perm = [1, 0]](%12)
+  %289 = Gemm[alpha = 1, beta = 1, broadcast = 1](%658, %288, %14)
+  %290 = Transpose[perm = [1, 0]](%13)
+  %291 = Gemm[alpha = 1, beta = 1, broadcast = 1](%284, %290, %15)
+  %292 = Add(%289, %291)
+  %293 = Relu(%292)
+  %659 = Constant[value = <Tensor>]()
+  %660 = Constant[value = <Tensor>]()
+  %661 = Slice(%226, %659, %660)
+  %662 = Squeeze[axes = [0]](%661)
+  %297 = Transpose[perm = [1, 0]](%12)
+  %298 = Gemm[alpha = 1, beta = 1, broadcast = 1](%662, %297, %14)
   %299 = Transpose[perm = [1, 0]](%13)
-  %300 = Transpose(%299)
-  %301 = FC(%292, %300, %15)
-  %302 = Add(%298, %301)
-  %303 = Relu(%302)
-  %744 = Constant[value = <Tensor>]()
-  %745 = Constant[value = <Tensor>]()
-  %746 = Slice(%266, %744, %745)
-  %747 = Squeeze[axes = [0]](%746)
-  %307 = Transpose[perm = [1, 0]](%12)
-  %308 = Transpose(%307)
-  %309 = FC(%747, %308, %14)
-  %310 = Transpose[perm = [1, 0]](%13)
-  %311 = Transpose(%310)
-  %312 = FC(%303, %311, %15)
-  %313 = Add(%309, %312)
-  %314 = Relu(%313)
-  %748 = Constant[value = <Tensor>]()
-  %749 = Constant[value = <Tensor>]()
-  %750 = Slice(%266, %748, %749)
-  %751 = Squeeze[axes = [0]](%750)
-  %318 = Transpose[perm = [1, 0]](%12)
-  %319 = Transpose(%318)
-  %320 = FC(%751, %319, %14)
-  %321 = Transpose[perm = [1, 0]](%13)
-  %322 = Transpose(%321)
-  %323 = FC(%314, %322, %15)
-  %324 = Add(%320, %323)
-  %325 = Relu(%324)
-  %752 = Constant[value = <Tensor>]()
-  %753 = Constant[value = <Tensor>]()
-  %754 = Slice(%266, %752, %753)
-  %755 = Squeeze[axes = [0]](%754)
-  %329 = Transpose[perm = [1, 0]](%12)
-  %330 = Transpose(%329)
-  %331 = FC(%755, %330, %14)
-  %332 = Transpose[perm = [1, 0]](%13)
-  %333 = Transpose(%332)
-  %334 = FC(%325, %333, %15)
-  %335 = Add(%331, %334)
-  %336 = Relu(%335)
-  %756 = Constant[value = <Tensor>]()
-  %757 = Constant[value = <Tensor>]()
-  %758 = Slice(%266, %756, %757)
-  %759 = Squeeze[axes = [0]](%758)
-  %340 = Transpose[perm = [1, 0]](%12)
-  %341 = Transpose(%340)
-  %342 = FC(%759, %341, %14)
-  %343 = Transpose[perm = [1, 0]](%13)
-  %344 = Transpose(%343)
-  %345 = FC(%336, %344, %15)
-  %346 = Add(%342, %345)
+  %300 = Gemm[alpha = 1, beta = 1, broadcast = 1](%293, %299, %15)
+  %301 = Add(%298, %300)
+  %302 = Relu(%301)
+  %663 = Constant[value = <Tensor>]()
+  %664 = Constant[value = <Tensor>]()
+  %665 = Slice(%226, %663, %664)
+  %666 = Squeeze[axes = [0]](%665)
+  %306 = Transpose[perm = [1, 0]](%12)
+  %307 = Gemm[alpha = 1, beta = 1, broadcast = 1](%666, %306, %14)
+  %308 = Transpose[perm = [1, 0]](%13)
+  %309 = Gemm[alpha = 1, beta = 1, broadcast = 1](%302, %308, %15)
+  %310 = Add(%307, %309)
+  %311 = Relu(%310)
+  %667 = Constant[value = <Tensor>]()
+  %668 = Constant[value = <Tensor>]()
+  %669 = Slice(%226, %667, %668)
+  %670 = Squeeze[axes = [0]](%669)
+  %315 = Transpose[perm = [1, 0]](%12)
+  %316 = Gemm[alpha = 1, beta = 1, broadcast = 1](%670, %315, %14)
+  %317 = Transpose[perm = [1, 0]](%13)
+  %318 = Gemm[alpha = 1, beta = 1, broadcast = 1](%311, %317, %15)
+  %319 = Add(%316, %318)
+  %320 = Relu(%319)
+  %671, %672 = Concat[axis = 0](%239, %248, %257, %266, %275, %284, %293, %302, %311, %320)
+  %322 = Reshape[shape = [10, 5, 5]](%671)
+  %673, %674 = Concat[axis = 2](%322)
+  %325, %326 = Dropout[ratio = 0.200000002980232, is_test = 1](%673)
+  %675 = Constant[value = <Tensor>]()
+  %676 = Constant[value = <Tensor>]()
+  %677 = Slice(%2, %675, %676)
+  %678 = Squeeze[axes = [0]](%677)
+  %679 = Constant[value = <Tensor>]()
+  %680 = Constant[value = <Tensor>]()
+  %681 = Slice(%325, %679, %680)
+  %682 = Squeeze[axes = [0]](%681)
+  %333 = Transpose[perm = [1, 0]](%16)
+  %334 = Gemm[alpha = 1, beta = 1, broadcast = 1](%682, %333, %18)
+  %335 = Transpose[perm = [1, 0]](%17)
+  %336 = Gemm[alpha = 1, beta = 1, broadcast = 1](%678, %335, %19)
+  %337 = Add(%334, %336)
+  %338 = Relu(%337)
+  %683 = Constant[value = <Tensor>]()
+  %684 = Constant[value = <Tensor>]()
+  %685 = Slice(%325, %683, %684)
+  %686 = Squeeze[axes = [0]](%685)
+  %342 = Transpose[perm = [1, 0]](%16)
+  %343 = Gemm[alpha = 1, beta = 1, broadcast = 1](%686, %342, %18)
+  %344 = Transpose[perm = [1, 0]](%17)
+  %345 = Gemm[alpha = 1, beta = 1, broadcast = 1](%338, %344, %19)
+  %346 = Add(%343, %345)
   %347 = Relu(%346)
-  %760 = Constant[value = <Tensor>]()
-  %761 = Constant[value = <Tensor>]()
-  %762 = Slice(%266, %760, %761)
-  %763 = Squeeze[axes = [0]](%762)
-  %351 = Transpose[perm = [1, 0]](%12)
-  %352 = Transpose(%351)
-  %353 = FC(%763, %352, %14)
-  %354 = Transpose[perm = [1, 0]](%13)
-  %355 = Transpose(%354)
-  %356 = FC(%347, %355, %15)
-  %357 = Add(%353, %356)
-  %358 = Relu(%357)
-  %764 = Constant[value = <Tensor>]()
-  %765 = Constant[value = <Tensor>]()
-  %766 = Slice(%266, %764, %765)
-  %767 = Squeeze[axes = [0]](%766)
-  %362 = Transpose[perm = [1, 0]](%12)
-  %363 = Transpose(%362)
-  %364 = FC(%767, %363, %14)
-  %365 = Transpose[perm = [1, 0]](%13)
-  %366 = Transpose(%365)
-  %367 = FC(%358, %366, %15)
-  %368 = Add(%364, %367)
-  %369 = Relu(%368)
-  %768 = Constant[value = <Tensor>]()
-  %769 = Constant[value = <Tensor>]()
-  %770 = Slice(%266, %768, %769)
-  %771 = Squeeze[axes = [0]](%770)
-  %373 = Transpose[perm = [1, 0]](%12)
-  %374 = Transpose(%373)
-  %375 = FC(%771, %374, %14)
-  %376 = Transpose[perm = [1, 0]](%13)
-  %377 = Transpose(%376)
-  %378 = FC(%369, %377, %15)
-  %379 = Add(%375, %378)
-  %380 = Relu(%379)
-  %772, %773 = Concat[axis = 0](%281, %292, %303, %314, %325, %336, %347, %358, %369, %380)
-  %382 = Reshape[shape = [10, 5, 5]](%772)
-  %774, %775 = Concat[axis = 2](%382)
-  %385, %386 = Dropout[ratio = 0.200000002980232, is_test = 1](%774)
-  %776 = Constant[value = <Tensor>]()
-  %777 = Constant[value = <Tensor>]()
-  %778 = Slice(%2, %776, %777)
-  %779 = Squeeze[axes = [0]](%778)
-  %780 = Constant[value = <Tensor>]()
-  %781 = Constant[value = <Tensor>]()
-  %782 = Slice(%385, %780, %781)
-  %783 = Squeeze[axes = [0]](%782)
-  %393 = Transpose[perm = [1, 0]](%16)
-  %394 = Transpose(%393)
-  %395 = FC(%783, %394, %18)
-  %396 = Transpose[perm = [1, 0]](%17)
-  %397 = Transpose(%396)
-  %398 = FC(%779, %397, %19)
-  %399 = Add(%395, %398)
-  %400 = Relu(%399)
-  %784 = Constant[value = <Tensor>]()
-  %785 = Constant[value = <Tensor>]()
-  %786 = Slice(%385, %784, %785)
-  %787 = Squeeze[axes = [0]](%786)
-  %404 = Transpose[perm = [1, 0]](%16)
-  %405 = Transpose(%404)
-  %406 = FC(%787, %405, %18)
+  %687 = Constant[value = <Tensor>]()
+  %688 = Constant[value = <Tensor>]()
+  %689 = Slice(%325, %687, %688)
+  %690 = Squeeze[axes = [0]](%689)
+  %351 = Transpose[perm = [1, 0]](%16)
+  %352 = Gemm[alpha = 1, beta = 1, broadcast = 1](%690, %351, %18)
+  %353 = Transpose[perm = [1, 0]](%17)
+  %354 = Gemm[alpha = 1, beta = 1, broadcast = 1](%347, %353, %19)
+  %355 = Add(%352, %354)
+  %356 = Relu(%355)
+  %691 = Constant[value = <Tensor>]()
+  %692 = Constant[value = <Tensor>]()
+  %693 = Slice(%325, %691, %692)
+  %694 = Squeeze[axes = [0]](%693)
+  %360 = Transpose[perm = [1, 0]](%16)
+  %361 = Gemm[alpha = 1, beta = 1, broadcast = 1](%694, %360, %18)
+  %362 = Transpose[perm = [1, 0]](%17)
+  %363 = Gemm[alpha = 1, beta = 1, broadcast = 1](%356, %362, %19)
+  %364 = Add(%361, %363)
+  %365 = Relu(%364)
+  %695 = Constant[value = <Tensor>]()
+  %696 = Constant[value = <Tensor>]()
+  %697 = Slice(%325, %695, %696)
+  %698 = Squeeze[axes = [0]](%697)
+  %369 = Transpose[perm = [1, 0]](%16)
+  %370 = Gemm[alpha = 1, beta = 1, broadcast = 1](%698, %369, %18)
+  %371 = Transpose[perm = [1, 0]](%17)
+  %372 = Gemm[alpha = 1, beta = 1, broadcast = 1](%365, %371, %19)
+  %373 = Add(%370, %372)
+  %374 = Relu(%373)
+  %699 = Constant[value = <Tensor>]()
+  %700 = Constant[value = <Tensor>]()
+  %701 = Slice(%325, %699, %700)
+  %702 = Squeeze[axes = [0]](%701)
+  %378 = Transpose[perm = [1, 0]](%16)
+  %379 = Gemm[alpha = 1, beta = 1, broadcast = 1](%702, %378, %18)
+  %380 = Transpose[perm = [1, 0]](%17)
+  %381 = Gemm[alpha = 1, beta = 1, broadcast = 1](%374, %380, %19)
+  %382 = Add(%379, %381)
+  %383 = Relu(%382)
+  %703 = Constant[value = <Tensor>]()
+  %704 = Constant[value = <Tensor>]()
+  %705 = Slice(%325, %703, %704)
+  %706 = Squeeze[axes = [0]](%705)
+  %387 = Transpose[perm = [1, 0]](%16)
+  %388 = Gemm[alpha = 1, beta = 1, broadcast = 1](%706, %387, %18)
+  %389 = Transpose[perm = [1, 0]](%17)
+  %390 = Gemm[alpha = 1, beta = 1, broadcast = 1](%383, %389, %19)
+  %391 = Add(%388, %390)
+  %392 = Relu(%391)
+  %707 = Constant[value = <Tensor>]()
+  %708 = Constant[value = <Tensor>]()
+  %709 = Slice(%325, %707, %708)
+  %710 = Squeeze[axes = [0]](%709)
+  %396 = Transpose[perm = [1, 0]](%16)
+  %397 = Gemm[alpha = 1, beta = 1, broadcast = 1](%710, %396, %18)
+  %398 = Transpose[perm = [1, 0]](%17)
+  %399 = Gemm[alpha = 1, beta = 1, broadcast = 1](%392, %398, %19)
+  %400 = Add(%397, %399)
+  %401 = Relu(%400)
+  %711 = Constant[value = <Tensor>]()
+  %712 = Constant[value = <Tensor>]()
+  %713 = Slice(%325, %711, %712)
+  %714 = Squeeze[axes = [0]](%713)
+  %405 = Transpose[perm = [1, 0]](%16)
+  %406 = Gemm[alpha = 1, beta = 1, broadcast = 1](%714, %405, %18)
   %407 = Transpose[perm = [1, 0]](%17)
-  %408 = Transpose(%407)
-  %409 = FC(%400, %408, %19)
-  %410 = Add(%406, %409)
-  %411 = Relu(%410)
-  %788 = Constant[value = <Tensor>]()
-  %789 = Constant[value = <Tensor>]()
-  %790 = Slice(%385, %788, %789)
-  %791 = Squeeze[axes = [0]](%790)
-  %415 = Transpose[perm = [1, 0]](%16)
-  %416 = Transpose(%415)
-  %417 = FC(%791, %416, %18)
-  %418 = Transpose[perm = [1, 0]](%17)
-  %419 = Transpose(%418)
-  %420 = FC(%411, %419, %19)
-  %421 = Add(%417, %420)
-  %422 = Relu(%421)
-  %792 = Constant[value = <Tensor>]()
-  %793 = Constant[value = <Tensor>]()
-  %794 = Slice(%385, %792, %793)
-  %795 = Squeeze[axes = [0]](%794)
-  %426 = Transpose[perm = [1, 0]](%16)
-  %427 = Transpose(%426)
-  %428 = FC(%795, %427, %18)
-  %429 = Transpose[perm = [1, 0]](%17)
-  %430 = Transpose(%429)
-  %431 = FC(%422, %430, %19)
-  %432 = Add(%428, %431)
-  %433 = Relu(%432)
-  %796 = Constant[value = <Tensor>]()
-  %797 = Constant[value = <Tensor>]()
-  %798 = Slice(%385, %796, %797)
-  %799 = Squeeze[axes = [0]](%798)
-  %437 = Transpose[perm = [1, 0]](%16)
-  %438 = Transpose(%437)
-  %439 = FC(%799, %438, %18)
-  %440 = Transpose[perm = [1, 0]](%17)
-  %441 = Transpose(%440)
-  %442 = FC(%433, %441, %19)
-  %443 = Add(%439, %442)
-  %444 = Relu(%443)
-  %800 = Constant[value = <Tensor>]()
-  %801 = Constant[value = <Tensor>]()
-  %802 = Slice(%385, %800, %801)
-  %803 = Squeeze[axes = [0]](%802)
-  %448 = Transpose[perm = [1, 0]](%16)
-  %449 = Transpose(%448)
-  %450 = FC(%803, %449, %18)
-  %451 = Transpose[perm = [1, 0]](%17)
-  %452 = Transpose(%451)
-  %453 = FC(%444, %452, %19)
-  %454 = Add(%450, %453)
+  %408 = Gemm[alpha = 1, beta = 1, broadcast = 1](%401, %407, %19)
+  %409 = Add(%406, %408)
+  %410 = Relu(%409)
+  %715 = Constant[value = <Tensor>]()
+  %716 = Constant[value = <Tensor>]()
+  %717 = Slice(%325, %715, %716)
+  %718 = Squeeze[axes = [0]](%717)
+  %414 = Transpose[perm = [1, 0]](%16)
+  %415 = Gemm[alpha = 1, beta = 1, broadcast = 1](%718, %414, %18)
+  %416 = Transpose[perm = [1, 0]](%17)
+  %417 = Gemm[alpha = 1, beta = 1, broadcast = 1](%410, %416, %19)
+  %418 = Add(%415, %417)
+  %419 = Relu(%418)
+  %719, %720 = Concat[axis = 0](%338, %347, %356, %365, %374, %383, %392, %401, %410, %419)
+  %421 = Reshape[shape = [10, 5, 5]](%719)
+  %721, %722 = Concat[axis = 2](%421)
+  %424, %425 = Dropout[ratio = 0.200000002980232, is_test = 1](%721)
+  %723 = Constant[value = <Tensor>]()
+  %724 = Constant[value = <Tensor>]()
+  %725 = Slice(%2, %723, %724)
+  %726 = Squeeze[axes = [0]](%725)
+  %727 = Constant[value = <Tensor>]()
+  %728 = Constant[value = <Tensor>]()
+  %729 = Slice(%424, %727, %728)
+  %730 = Squeeze[axes = [0]](%729)
+  %432 = Transpose[perm = [1, 0]](%20)
+  %433 = Gemm[alpha = 1, beta = 1, broadcast = 1](%730, %432, %22)
+  %434 = Transpose[perm = [1, 0]](%21)
+  %435 = Gemm[alpha = 1, beta = 1, broadcast = 1](%726, %434, %23)
+  %436 = Add(%433, %435)
+  %437 = Relu(%436)
+  %731 = Constant[value = <Tensor>]()
+  %732 = Constant[value = <Tensor>]()
+  %733 = Slice(%424, %731, %732)
+  %734 = Squeeze[axes = [0]](%733)
+  %441 = Transpose[perm = [1, 0]](%20)
+  %442 = Gemm[alpha = 1, beta = 1, broadcast = 1](%734, %441, %22)
+  %443 = Transpose[perm = [1, 0]](%21)
+  %444 = Gemm[alpha = 1, beta = 1, broadcast = 1](%437, %443, %23)
+  %445 = Add(%442, %444)
+  %446 = Relu(%445)
+  %735 = Constant[value = <Tensor>]()
+  %736 = Constant[value = <Tensor>]()
+  %737 = Slice(%424, %735, %736)
+  %738 = Squeeze[axes = [0]](%737)
+  %450 = Transpose[perm = [1, 0]](%20)
+  %451 = Gemm[alpha = 1, beta = 1, broadcast = 1](%738, %450, %22)
+  %452 = Transpose[perm = [1, 0]](%21)
+  %453 = Gemm[alpha = 1, beta = 1, broadcast = 1](%446, %452, %23)
+  %454 = Add(%451, %453)
   %455 = Relu(%454)
-  %804 = Constant[value = <Tensor>]()
-  %805 = Constant[value = <Tensor>]()
-  %806 = Slice(%385, %804, %805)
-  %807 = Squeeze[axes = [0]](%806)
-  %459 = Transpose[perm = [1, 0]](%16)
-  %460 = Transpose(%459)
-  %461 = FC(%807, %460, %18)
-  %462 = Transpose[perm = [1, 0]](%17)
-  %463 = Transpose(%462)
-  %464 = FC(%455, %463, %19)
-  %465 = Add(%461, %464)
-  %466 = Relu(%465)
-  %808 = Constant[value = <Tensor>]()
-  %809 = Constant[value = <Tensor>]()
-  %810 = Slice(%385, %808, %809)
-  %811 = Squeeze[axes = [0]](%810)
-  %470 = Transpose[perm = [1, 0]](%16)
-  %471 = Transpose(%470)
-  %472 = FC(%811, %471, %18)
-  %473 = Transpose[perm = [1, 0]](%17)
-  %474 = Transpose(%473)
-  %475 = FC(%466, %474, %19)
-  %476 = Add(%472, %475)
-  %477 = Relu(%476)
-  %812 = Constant[value = <Tensor>]()
-  %813 = Constant[value = <Tensor>]()
-  %814 = Slice(%385, %812, %813)
-  %815 = Squeeze[axes = [0]](%814)
-  %481 = Transpose[perm = [1, 0]](%16)
-  %482 = Transpose(%481)
-  %483 = FC(%815, %482, %18)
-  %484 = Transpose[perm = [1, 0]](%17)
-  %485 = Transpose(%484)
-  %486 = FC(%477, %485, %19)
-  %487 = Add(%483, %486)
-  %488 = Relu(%487)
-  %816 = Constant[value = <Tensor>]()
-  %817 = Constant[value = <Tensor>]()
-  %818 = Slice(%385, %816, %817)
-  %819 = Squeeze[axes = [0]](%818)
-  %492 = Transpose[perm = [1, 0]](%16)
-  %493 = Transpose(%492)
-  %494 = FC(%819, %493, %18)
-  %495 = Transpose[perm = [1, 0]](%17)
-  %496 = Transpose(%495)
-  %497 = FC(%488, %496, %19)
-  %498 = Add(%494, %497)
-  %499 = Relu(%498)
-  %820, %821 = Concat[axis = 0](%400, %411, %422, %433, %444, %455, %466, %477, %488, %499)
-  %501 = Reshape[shape = [10, 5, 5]](%820)
-  %822, %823 = Concat[axis = 2](%501)
-  %504, %505 = Dropout[ratio = 0.200000002980232, is_test = 1](%822)
-  %824 = Constant[value = <Tensor>]()
-  %825 = Constant[value = <Tensor>]()
-  %826 = Slice(%2, %824, %825)
-  %827 = Squeeze[axes = [0]](%826)
-  %828 = Constant[value = <Tensor>]()
-  %829 = Constant[value = <Tensor>]()
-  %830 = Slice(%504, %828, %829)
-  %831 = Squeeze[axes = [0]](%830)
-  %512 = Transpose[perm = [1, 0]](%20)
-  %513 = Transpose(%512)
-  %514 = FC(%831, %513, %22)
+  %739 = Constant[value = <Tensor>]()
+  %740 = Constant[value = <Tensor>]()
+  %741 = Slice(%424, %739, %740)
+  %742 = Squeeze[axes = [0]](%741)
+  %459 = Transpose[perm = [1, 0]](%20)
+  %460 = Gemm[alpha = 1, beta = 1, broadcast = 1](%742, %459, %22)
+  %461 = Transpose[perm = [1, 0]](%21)
+  %462 = Gemm[alpha = 1, beta = 1, broadcast = 1](%455, %461, %23)
+  %463 = Add(%460, %462)
+  %464 = Relu(%463)
+  %743 = Constant[value = <Tensor>]()
+  %744 = Constant[value = <Tensor>]()
+  %745 = Slice(%424, %743, %744)
+  %746 = Squeeze[axes = [0]](%745)
+  %468 = Transpose[perm = [1, 0]](%20)
+  %469 = Gemm[alpha = 1, beta = 1, broadcast = 1](%746, %468, %22)
+  %470 = Transpose[perm = [1, 0]](%21)
+  %471 = Gemm[alpha = 1, beta = 1, broadcast = 1](%464, %470, %23)
+  %472 = Add(%469, %471)
+  %473 = Relu(%472)
+  %747 = Constant[value = <Tensor>]()
+  %748 = Constant[value = <Tensor>]()
+  %749 = Slice(%424, %747, %748)
+  %750 = Squeeze[axes = [0]](%749)
+  %477 = Transpose[perm = [1, 0]](%20)
+  %478 = Gemm[alpha = 1, beta = 1, broadcast = 1](%750, %477, %22)
+  %479 = Transpose[perm = [1, 0]](%21)
+  %480 = Gemm[alpha = 1, beta = 1, broadcast = 1](%473, %479, %23)
+  %481 = Add(%478, %480)
+  %482 = Relu(%481)
+  %751 = Constant[value = <Tensor>]()
+  %752 = Constant[value = <Tensor>]()
+  %753 = Slice(%424, %751, %752)
+  %754 = Squeeze[axes = [0]](%753)
+  %486 = Transpose[perm = [1, 0]](%20)
+  %487 = Gemm[alpha = 1, beta = 1, broadcast = 1](%754, %486, %22)
+  %488 = Transpose[perm = [1, 0]](%21)
+  %489 = Gemm[alpha = 1, beta = 1, broadcast = 1](%482, %488, %23)
+  %490 = Add(%487, %489)
+  %491 = Relu(%490)
+  %755 = Constant[value = <Tensor>]()
+  %756 = Constant[value = <Tensor>]()
+  %757 = Slice(%424, %755, %756)
+  %758 = Squeeze[axes = [0]](%757)
+  %495 = Transpose[perm = [1, 0]](%20)
+  %496 = Gemm[alpha = 1, beta = 1, broadcast = 1](%758, %495, %22)
+  %497 = Transpose[perm = [1, 0]](%21)
+  %498 = Gemm[alpha = 1, beta = 1, broadcast = 1](%491, %497, %23)
+  %499 = Add(%496, %498)
+  %500 = Relu(%499)
+  %759 = Constant[value = <Tensor>]()
+  %760 = Constant[value = <Tensor>]()
+  %761 = Slice(%424, %759, %760)
+  %762 = Squeeze[axes = [0]](%761)
+  %504 = Transpose[perm = [1, 0]](%20)
+  %505 = Gemm[alpha = 1, beta = 1, broadcast = 1](%762, %504, %22)
+  %506 = Transpose[perm = [1, 0]](%21)
+  %507 = Gemm[alpha = 1, beta = 1, broadcast = 1](%500, %506, %23)
+  %508 = Add(%505, %507)
+  %509 = Relu(%508)
+  %763 = Constant[value = <Tensor>]()
+  %764 = Constant[value = <Tensor>]()
+  %765 = Slice(%424, %763, %764)
+  %766 = Squeeze[axes = [0]](%765)
+  %513 = Transpose[perm = [1, 0]](%20)
+  %514 = Gemm[alpha = 1, beta = 1, broadcast = 1](%766, %513, %22)
   %515 = Transpose[perm = [1, 0]](%21)
-  %516 = Transpose(%515)
-  %517 = FC(%827, %516, %23)
-  %518 = Add(%514, %517)
-  %519 = Relu(%518)
-  %832 = Constant[value = <Tensor>]()
-  %833 = Constant[value = <Tensor>]()
-  %834 = Slice(%504, %832, %833)
-  %835 = Squeeze[axes = [0]](%834)
-  %523 = Transpose[perm = [1, 0]](%20)
-  %524 = Transpose(%523)
-  %525 = FC(%835, %524, %22)
-  %526 = Transpose[perm = [1, 0]](%21)
-  %527 = Transpose(%526)
-  %528 = FC(%519, %527, %23)
-  %529 = Add(%525, %528)
-  %530 = Relu(%529)
-  %836 = Constant[value = <Tensor>]()
-  %837 = Constant[value = <Tensor>]()
-  %838 = Slice(%504, %836, %837)
-  %839 = Squeeze[axes = [0]](%838)
-  %534 = Transpose[perm = [1, 0]](%20)
-  %535 = Transpose(%534)
-  %536 = FC(%839, %535, %22)
-  %537 = Transpose[perm = [1, 0]](%21)
-  %538 = Transpose(%537)
-  %539 = FC(%530, %538, %23)
-  %540 = Add(%536, %539)
-  %541 = Relu(%540)
-  %840 = Constant[value = <Tensor>]()
-  %841 = Constant[value = <Tensor>]()
-  %842 = Slice(%504, %840, %841)
-  %843 = Squeeze[axes = [0]](%842)
-  %545 = Transpose[perm = [1, 0]](%20)
-  %546 = Transpose(%545)
-  %547 = FC(%843, %546, %22)
-  %548 = Transpose[perm = [1, 0]](%21)
-  %549 = Transpose(%548)
-  %550 = FC(%541, %549, %23)
-  %551 = Add(%547, %550)
-  %552 = Relu(%551)
-  %844 = Constant[value = <Tensor>]()
-  %845 = Constant[value = <Tensor>]()
-  %846 = Slice(%504, %844, %845)
-  %847 = Squeeze[axes = [0]](%846)
-  %556 = Transpose[perm = [1, 0]](%20)
-  %557 = Transpose(%556)
-  %558 = FC(%847, %557, %22)
-  %559 = Transpose[perm = [1, 0]](%21)
-  %560 = Transpose(%559)
-  %561 = FC(%552, %560, %23)
-  %562 = Add(%558, %561)
-  %563 = Relu(%562)
-  %848 = Constant[value = <Tensor>]()
-  %849 = Constant[value = <Tensor>]()
-  %850 = Slice(%504, %848, %849)
-  %851 = Squeeze[axes = [0]](%850)
-  %567 = Transpose[perm = [1, 0]](%20)
-  %568 = Transpose(%567)
-  %569 = FC(%851, %568, %22)
-  %570 = Transpose[perm = [1, 0]](%21)
-  %571 = Transpose(%570)
-  %572 = FC(%563, %571, %23)
-  %573 = Add(%569, %572)
-  %574 = Relu(%573)
-  %852 = Constant[value = <Tensor>]()
-  %853 = Constant[value = <Tensor>]()
-  %854 = Slice(%504, %852, %853)
-  %855 = Squeeze[axes = [0]](%854)
-  %578 = Transpose[perm = [1, 0]](%20)
-  %579 = Transpose(%578)
-  %580 = FC(%855, %579, %22)
-  %581 = Transpose[perm = [1, 0]](%21)
-  %582 = Transpose(%581)
-  %583 = FC(%574, %582, %23)
-  %584 = Add(%580, %583)
-  %585 = Relu(%584)
-  %856 = Constant[value = <Tensor>]()
-  %857 = Constant[value = <Tensor>]()
-  %858 = Slice(%504, %856, %857)
-  %859 = Squeeze[axes = [0]](%858)
-  %589 = Transpose[perm = [1, 0]](%20)
-  %590 = Transpose(%589)
-  %591 = FC(%859, %590, %22)
-  %592 = Transpose[perm = [1, 0]](%21)
-  %593 = Transpose(%592)
-  %594 = FC(%585, %593, %23)
-  %595 = Add(%591, %594)
-  %596 = Relu(%595)
-  %860 = Constant[value = <Tensor>]()
-  %861 = Constant[value = <Tensor>]()
-  %862 = Slice(%504, %860, %861)
-  %863 = Squeeze[axes = [0]](%862)
-  %600 = Transpose[perm = [1, 0]](%20)
-  %601 = Transpose(%600)
-  %602 = FC(%863, %601, %22)
-  %603 = Transpose[perm = [1, 0]](%21)
-  %604 = Transpose(%603)
-  %605 = FC(%596, %604, %23)
-  %606 = Add(%602, %605)
-  %607 = Relu(%606)
-  %864 = Constant[value = <Tensor>]()
-  %865 = Constant[value = <Tensor>]()
-  %866 = Slice(%504, %864, %865)
-  %867 = Squeeze[axes = [0]](%866)
-  %611 = Transpose[perm = [1, 0]](%20)
-  %612 = Transpose(%611)
-  %613 = FC(%867, %612, %22)
-  %614 = Transpose[perm = [1, 0]](%21)
-  %615 = Transpose(%614)
-  %616 = FC(%607, %615, %23)
-  %617 = Add(%613, %616)
-  %618 = Relu(%617)
-  %868, %869 = Concat[axis = 0](%519, %530, %541, %552, %563, %574, %585, %596, %607, %618)
-  %620 = Reshape[shape = [10, 5, 5]](%868)
-  %870, %871 = Concat[axis = 2](%620)
-  %872, %873 = Concat[axis = 0](%142, %261, %380, %499, %618)
-  %623 = Reshape[shape = [5, 5, 5]](%872)
-  %625, %626 = Dropout[ratio = 0.200000002980232, is_test = 1](%870)
-  %627 = Reshape[shape = [50, 5]](%625)
-  %628 = Transpose[perm = [1, 0]](%24)
-  %629 = Transpose(%628)
-  %630 = FC(%627, %629, %25)
-  %631 = Reshape[shape = [10, 5, 10]](%630)
-  return %631
+  %516 = Gemm[alpha = 1, beta = 1, broadcast = 1](%509, %515, %23)
+  %517 = Add(%514, %516)
+  %518 = Relu(%517)
+  %767, %768 = Concat[axis = 0](%437, %446, %455, %464, %473, %482, %491, %500, %509, %518)
+  %520 = Reshape[shape = [10, 5, 5]](%767)
+  %769, %770 = Concat[axis = 2](%520)
+  %771, %772 = Concat[axis = 0](%122, %221, %320, %419, %518)
+  %523 = Reshape[shape = [5, 5, 5]](%771)
+  %525, %526 = Dropout[ratio = 0.200000002980232, is_test = 1](%769)
+  %527 = Reshape[shape = [50, 5]](%525)
+  %528 = Transpose[perm = [1, 0]](%24)
+  %529 = Gemm[alpha = 1, beta = 1, broadcast = 1](%527, %528, %25)
+  %530 = Reshape[shape = [10, 5, 10]](%529)
+  return %name: "530"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 10
+      }
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 10
+      }
+    }
+  }
+}
+
 }
