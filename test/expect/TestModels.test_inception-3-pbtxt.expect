@@ -870,8 +870,7 @@ graph {
     input: "527"
     input: "542"
     input: "548"
-    output: "991"
-    output: "992"
+    output: "549"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -879,7 +878,7 @@ graph {
     }
   }
   node {
-    input: "991"
+    input: "549"
     input: "62"
     output: "551"
     op_type: "Conv"
@@ -945,7 +944,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "991"
+    input: "549"
     input: "67"
     output: "556"
     op_type: "Conv"
@@ -1077,7 +1076,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "991"
+    input: "549"
     input: "77"
     output: "566"
     op_type: "Conv"
@@ -1275,7 +1274,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "991"
+    input: "549"
     output: "580"
     op_type: "AveragePool"
     attribute {
@@ -1365,8 +1364,7 @@ graph {
     input: "564"
     input: "579"
     input: "585"
-    output: "993"
-    output: "994"
+    output: "586"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -1374,7 +1372,7 @@ graph {
     }
   }
   node {
-    input: "993"
+    input: "586"
     input: "97"
     output: "588"
     op_type: "Conv"
@@ -1440,7 +1438,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "993"
+    input: "586"
     input: "102"
     output: "593"
     op_type: "Conv"
@@ -1572,7 +1570,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "993"
+    input: "586"
     input: "112"
     output: "603"
     op_type: "Conv"
@@ -1770,7 +1768,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "993"
+    input: "586"
     output: "617"
     op_type: "AveragePool"
     attribute {
@@ -1860,8 +1858,7 @@ graph {
     input: "601"
     input: "616"
     input: "622"
-    output: "995"
-    output: "996"
+    output: "623"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -1869,7 +1866,7 @@ graph {
     }
   }
   node {
-    input: "995"
+    input: "623"
     input: "132"
     output: "625"
     op_type: "Conv"
@@ -1935,7 +1932,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "995"
+    input: "623"
     input: "137"
     output: "630"
     op_type: "Conv"
@@ -2133,7 +2130,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "995"
+    input: "623"
     output: "644"
     op_type: "MaxPool"
     attribute {
@@ -2161,8 +2158,7 @@ graph {
     input: "628"
     input: "643"
     input: "644"
-    output: "997"
-    output: "998"
+    output: "645"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -2170,7 +2166,7 @@ graph {
     }
   }
   node {
-    input: "997"
+    input: "645"
     input: "152"
     output: "647"
     op_type: "Conv"
@@ -2236,7 +2232,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "997"
+    input: "645"
     input: "157"
     output: "652"
     op_type: "Conv"
@@ -2434,7 +2430,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "997"
+    input: "645"
     input: "172"
     output: "667"
     op_type: "Conv"
@@ -2764,7 +2760,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "997"
+    input: "645"
     output: "691"
     op_type: "AveragePool"
     attribute {
@@ -2854,8 +2850,7 @@ graph {
     input: "665"
     input: "690"
     input: "696"
-    output: "999"
-    output: "1000"
+    output: "697"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -2863,7 +2858,7 @@ graph {
     }
   }
   node {
-    input: "999"
+    input: "697"
     input: "202"
     output: "699"
     op_type: "Conv"
@@ -2929,7 +2924,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "999"
+    input: "697"
     input: "207"
     output: "704"
     op_type: "Conv"
@@ -3127,7 +3122,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "999"
+    input: "697"
     input: "222"
     output: "719"
     op_type: "Conv"
@@ -3457,7 +3452,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "999"
+    input: "697"
     output: "743"
     op_type: "AveragePool"
     attribute {
@@ -3547,8 +3542,7 @@ graph {
     input: "717"
     input: "742"
     input: "748"
-    output: "1001"
-    output: "1002"
+    output: "749"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -3556,7 +3550,7 @@ graph {
     }
   }
   node {
-    input: "1001"
+    input: "749"
     input: "252"
     output: "751"
     op_type: "Conv"
@@ -3622,7 +3616,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1001"
+    input: "749"
     input: "257"
     output: "756"
     op_type: "Conv"
@@ -3820,7 +3814,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1001"
+    input: "749"
     input: "272"
     output: "771"
     op_type: "Conv"
@@ -4150,7 +4144,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1001"
+    input: "749"
     output: "795"
     op_type: "AveragePool"
     attribute {
@@ -4240,8 +4234,7 @@ graph {
     input: "769"
     input: "794"
     input: "800"
-    output: "1003"
-    output: "1004"
+    output: "801"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -4249,7 +4242,7 @@ graph {
     }
   }
   node {
-    input: "1003"
+    input: "801"
     input: "302"
     output: "803"
     op_type: "Conv"
@@ -4315,7 +4308,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1003"
+    input: "801"
     input: "307"
     output: "808"
     op_type: "Conv"
@@ -4513,7 +4506,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1003"
+    input: "801"
     input: "322"
     output: "823"
     op_type: "Conv"
@@ -4843,7 +4836,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1003"
+    input: "801"
     output: "847"
     op_type: "AveragePool"
     attribute {
@@ -4933,8 +4926,7 @@ graph {
     input: "821"
     input: "846"
     input: "852"
-    output: "1005"
-    output: "1006"
+    output: "853"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -4942,7 +4934,7 @@ graph {
     }
   }
   node {
-    input: "1005"
+    input: "853"
     input: "364"
     output: "855"
     op_type: "Conv"
@@ -5074,7 +5066,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1005"
+    input: "853"
     input: "374"
     output: "865"
     op_type: "Conv"
@@ -5338,7 +5330,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1005"
+    input: "853"
     output: "884"
     op_type: "MaxPool"
     attribute {
@@ -5366,8 +5358,7 @@ graph {
     input: "863"
     input: "883"
     input: "884"
-    output: "1007"
-    output: "1008"
+    output: "885"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -5375,7 +5366,7 @@ graph {
     }
   }
   node {
-    input: "1007"
+    input: "885"
     input: "394"
     output: "887"
     op_type: "Conv"
@@ -5441,7 +5432,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1007"
+    input: "885"
     input: "399"
     output: "892"
     op_type: "Conv"
@@ -5641,8 +5632,7 @@ graph {
   node {
     input: "900"
     input: "905"
-    output: "1009"
-    output: "1010"
+    output: "906"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -5650,7 +5640,7 @@ graph {
     }
   }
   node {
-    input: "1007"
+    input: "885"
     input: "414"
     output: "908"
     op_type: "Conv"
@@ -5916,8 +5906,7 @@ graph {
   node {
     input: "921"
     input: "926"
-    output: "1011"
-    output: "1012"
+    output: "927"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -5925,7 +5914,7 @@ graph {
     }
   }
   node {
-    input: "1007"
+    input: "885"
     output: "928"
     op_type: "AveragePool"
     attribute {
@@ -6012,11 +6001,10 @@ graph {
   }
   node {
     input: "890"
-    input: "1009"
-    input: "1011"
+    input: "906"
+    input: "927"
     input: "933"
-    output: "1013"
-    output: "1014"
+    output: "934"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -6024,7 +6012,7 @@ graph {
     }
   }
   node {
-    input: "1013"
+    input: "934"
     input: "439"
     output: "936"
     op_type: "Conv"
@@ -6090,7 +6078,7 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "1013"
+    input: "934"
     input: "444"
     output: "941"
     op_type: "Conv"
@@ -6290,8 +6278,7 @@ graph {
   node {
     input: "949"
     input: "954"
-    output: "1015"
-    output: "1016"
+    output: "955"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -6299,7 +6286,7 @@ graph {
     }
   }
   node {
-    input: "1013"
+    input: "934"
     input: "459"
     output: "957"
     op_type: "Conv"
@@ -6565,8 +6552,7 @@ graph {
   node {
     input: "970"
     input: "975"
-    output: "1017"
-    output: "1018"
+    output: "976"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -6574,7 +6560,7 @@ graph {
     }
   }
   node {
-    input: "1013"
+    input: "934"
     output: "977"
     op_type: "AveragePool"
     attribute {
@@ -6661,11 +6647,10 @@ graph {
   }
   node {
     input: "939"
-    input: "1015"
-    input: "1017"
+    input: "955"
+    input: "976"
     input: "982"
-    output: "1019"
-    output: "1020"
+    output: "983"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -6673,7 +6658,7 @@ graph {
     }
   }
   node {
-    input: "1019"
+    input: "983"
     output: "984"
     op_type: "AveragePool"
     attribute {

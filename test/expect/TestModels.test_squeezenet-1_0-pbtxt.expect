@@ -235,8 +235,7 @@ graph {
   node {
     input: "66"
     input: "70"
-    output: "174"
-    output: "175"
+    output: "71"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -244,7 +243,7 @@ graph {
     }
   }
   node {
-    input: "174"
+    input: "71"
     input: "10"
     output: "73"
     op_type: "Conv"
@@ -399,8 +398,7 @@ graph {
   node {
     input: "79"
     input: "83"
-    output: "176"
-    output: "177"
+    output: "84"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -408,7 +406,7 @@ graph {
     }
   }
   node {
-    input: "176"
+    input: "84"
     output: "85"
     op_type: "MaxPool"
     attribute {
@@ -588,8 +586,7 @@ graph {
   node {
     input: "93"
     input: "97"
-    output: "178"
-    output: "179"
+    output: "98"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -597,7 +594,7 @@ graph {
     }
   }
   node {
-    input: "178"
+    input: "98"
     input: "22"
     output: "100"
     op_type: "Conv"
@@ -752,8 +749,7 @@ graph {
   node {
     input: "106"
     input: "110"
-    output: "180"
-    output: "181"
+    output: "111"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -761,7 +757,7 @@ graph {
     }
   }
   node {
-    input: "180"
+    input: "111"
     output: "112"
     op_type: "MaxPool"
     attribute {
@@ -941,8 +937,7 @@ graph {
   node {
     input: "120"
     input: "124"
-    output: "182"
-    output: "183"
+    output: "125"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -950,7 +945,7 @@ graph {
     }
   }
   node {
-    input: "182"
+    input: "125"
     input: "34"
     output: "127"
     op_type: "Conv"
@@ -1105,8 +1100,7 @@ graph {
   node {
     input: "133"
     input: "137"
-    output: "184"
-    output: "185"
+    output: "138"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -1114,7 +1108,7 @@ graph {
     }
   }
   node {
-    input: "184"
+    input: "138"
     input: "40"
     output: "140"
     op_type: "Conv"
@@ -1269,8 +1263,7 @@ graph {
   node {
     input: "146"
     input: "150"
-    output: "186"
-    output: "187"
+    output: "151"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -1278,7 +1271,7 @@ graph {
     }
   }
   node {
-    input: "186"
+    input: "151"
     input: "46"
     output: "153"
     op_type: "Conv"
@@ -1433,8 +1426,7 @@ graph {
   node {
     input: "159"
     input: "163"
-    output: "188"
-    output: "189"
+    output: "164"
     op_type: "Concat"
     attribute {
       name: "axis"
@@ -1442,7 +1434,7 @@ graph {
     }
   }
   node {
-    input: "188"
+    input: "164"
     output: "166"
     output: "167"
     op_type: "Dropout"
