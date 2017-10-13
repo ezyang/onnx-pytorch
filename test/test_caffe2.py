@@ -28,6 +28,7 @@ from model_defs.super_resolution import SuperResolutionNet
 from model_defs.srresnet import SRResNet
 import model_defs.dcgan as dcgan
 import model_defs.word_language_model as word_language_model
+from model_defs.mnist import MNIST
 
 import onnx
 import onnx_caffe2.backend as c2
@@ -349,11 +350,67 @@ class TestCaffe2Backend(unittest.TestCase):
                 return input.chunk(20, dim=2)[-1]
         self.run_model_test(MyModel(), train=False, batch_size=BATCH_SIZE)
 
+    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3084")
+    def test_addconstant(self):
+        class MyModel(torch.nn.Module):
+            def __init__(self):
+                super(MyModel, self).__init__()
+
+            def forward(self, input):
+                # TODO: Why index? This returns a tuple and test runner doesn't
+                # support tuple comparison.
+                return input + 1
+        self.run_model_test(MyModel(), train=False, batch_size=BATCH_SIZE)
+
+    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3084")
+    def test_subconstant(self):
+        class MyModel(torch.nn.Module):
+            def __init__(self):
+                super(MyModel, self).__init__()
+
+            def forward(self, input):
+                # TODO: Why index? This returns a tuple and test runner doesn't
+                # support tuple comparison.
+                return input - 1
+        self.run_model_test(MyModel(), train=False, batch_size=BATCH_SIZE)
+
     def test_embedding(self):
         model = nn.Embedding(10, 3, padding_idx=-1)
         input = Variable(torch.LongTensor(list(range(10))[::-1]))
         self.run_model_test(model, train=False, input=input, batch_size=BATCH_SIZE)
 
+    def test_constantpad2d(self):
+        model = nn.ConstantPad2d((1, 2, 3, 4), 3.5)
+        self.run_model_test(model, train=False, batch_size=BATCH_SIZE)
+
+    def test_reflectionpad2d(self):
+        model = nn.ReflectionPad2d((1, 2, 3, 4))
+        self.run_model_test(model, train=False, batch_size=BATCH_SIZE)
+
+    def test_replicationpad2d(self):
+        model = nn.ReplicationPad2d((1, 2, 3, 4))
+        self.run_model_test(model, train=False, batch_size=BATCH_SIZE)
+
+    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3100")
+    def test_mnist(self):
+        model = MNIST()
+        input = Variable(torch.randn(BATCH_SIZE, 1, 28, 28),
+                     volatile=True)
+        state_dict = None
+        # TODO: test with state_dict
+        self.run_model_test(model, train=False, input=input, batch_size=BATCH_SIZE,
+                            state_dict=state_dict)
+
+    def test_addmm(self):
+        class MyModel(torch.nn.Module):
+            def __init__(self):
+                super(MyModel, self).__init__()
+            def forward(self, ma, m1, m2):
+                return torch.addmm(ma, m1, m2)
+        ma = Variable(torch.randn(1, 1))
+        m1 = Variable(torch.randn(3, 4))
+        m2 = Variable(torch.randn(4, 5))
+        self.run_model_test(MyModel(), train=False, input=(ma, m1, m2), batch_size=BATCH_SIZE, use_gpu=False)
 
 # add the same test suite as above, but switch embed_params=False
 # to embed_params=True
