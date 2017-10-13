@@ -178,7 +178,6 @@ python setup.py install
 python -c "import onnx_pytorch"
 
 echo "Testing"
-time python pytorch/test/test_onnx.py
 time python pytorch/test/test_jit.py
 time python test/test_models.py
 time python test/test_caffe2.py
