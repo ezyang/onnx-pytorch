@@ -350,7 +350,6 @@ class TestCaffe2Backend(unittest.TestCase):
                 return input.chunk(20, dim=2)[-1]
         self.run_model_test(MyModel(), train=False, batch_size=BATCH_SIZE)
 
-    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3084")
     def test_addconstant(self):
         class MyModel(torch.nn.Module):
             def __init__(self):
@@ -362,7 +361,6 @@ class TestCaffe2Backend(unittest.TestCase):
                 return input + 1
         self.run_model_test(MyModel(), train=False, batch_size=BATCH_SIZE)
 
-    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3084")
     def test_subconstant(self):
         class MyModel(torch.nn.Module):
             def __init__(self):
@@ -391,7 +389,6 @@ class TestCaffe2Backend(unittest.TestCase):
         model = nn.ReplicationPad2d((1, 2, 3, 4))
         self.run_model_test(model, train=False, batch_size=BATCH_SIZE)
 
-    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3100")
     def test_mnist(self):
         model = MNIST()
         input = Variable(torch.randn(BATCH_SIZE, 1, 28, 28),
