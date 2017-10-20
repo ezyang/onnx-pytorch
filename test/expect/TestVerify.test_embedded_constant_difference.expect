@@ -59,7 +59,7 @@ ERROR: Strings are not equal:
       name: "1"
       type {
         tensor_type {
-          elem_type: DOUBLE
+          elem_type: FLOAT
           shape {
             dim {
               dim_value: 2
@@ -75,7 +75,7 @@ ERROR: Strings are not equal:
       name: "8"
       type {
         tensor_type {
-          elem_type: DOUBLE
+          elem_type: FLOAT
           shape {
             dim {
               dim_value: 2

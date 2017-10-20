@@ -51,14 +51,14 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
-      ints: 2
-      ints: 2
-    }
-    attribute {
       name: "pads"
       ints: 1
       ints: 1
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
     }
   }
   node {

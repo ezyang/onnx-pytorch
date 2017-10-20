@@ -206,6 +206,11 @@ graph {
     output: "501"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -214,11 +219,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -363,6 +363,11 @@ graph {
     output: "512"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -371,11 +376,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -789,12 +789,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -1283,12 +1283,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -1777,12 +1777,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -2134,6 +2134,11 @@ graph {
     output: "644"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -2142,11 +2147,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -2769,12 +2769,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -3461,12 +3461,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -4153,12 +4153,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -4845,12 +4845,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -5334,6 +5334,11 @@ graph {
     output: "884"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -5342,11 +5347,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -5923,12 +5923,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -6569,12 +6569,12 @@ graph {
       ints: 3
     }
     attribute {
-      name: "strides"
+      name: "pads"
       ints: 1
       ints: 1
     }
     attribute {
-      name: "pads"
+      name: "strides"
       ints: 1
       ints: 1
     }
@@ -6667,14 +6667,14 @@ graph {
       ints: 8
     }
     attribute {
-      name: "strides"
-      ints: 8
-      ints: 8
-    }
-    attribute {
       name: "pads"
       ints: 0
       ints: 0
+    }
+    attribute {
+      name: "strides"
+      ints: 8
+      ints: 8
     }
   }
   node {

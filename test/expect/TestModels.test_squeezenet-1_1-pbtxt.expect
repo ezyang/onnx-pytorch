@@ -59,6 +59,11 @@ graph {
     output: "58"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -67,11 +72,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -410,6 +410,11 @@ graph {
     output: "85"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -418,11 +423,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -761,6 +761,11 @@ graph {
     output: "112"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
@@ -769,11 +774,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -1508,14 +1508,14 @@ graph {
       ints: 13
     }
     attribute {
-      name: "strides"
-      ints: 13
-      ints: 13
-    }
-    attribute {
       name: "pads"
       ints: 0
       ints: 0
+    }
+    attribute {
+      name: "strides"
+      ints: 13
+      ints: 13
     }
   }
   node {
