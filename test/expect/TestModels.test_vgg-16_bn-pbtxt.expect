@@ -168,6 +168,11 @@ graph {
     output: "98"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 2
       ints: 2
@@ -176,11 +181,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -353,6 +353,11 @@ graph {
     output: "111"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 2
       ints: 2
@@ -361,11 +366,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -618,6 +618,11 @@ graph {
     output: "130"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 2
       ints: 2
@@ -626,11 +631,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -883,6 +883,11 @@ graph {
     output: "149"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 2
       ints: 2
@@ -891,11 +896,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"
@@ -1148,6 +1148,11 @@ graph {
     output: "168"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 2
       ints: 2
@@ -1156,11 +1161,6 @@ graph {
       name: "pads"
       ints: 0
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
     }
     attribute {
       name: "strides"

@@ -6,7 +6,7 @@ ERROR: Strings are not equal:
   graph torch-jit-export (%name: "1"
   type {
     tensor_type {
-      elem_type: DOUBLE
+      elem_type: FLOAT
       shape {
         dim {
           dim_value: 1
@@ -25,7 +25,7 @@ ERROR: Strings are not equal:
     return %name: "2"
   type {
     tensor_type {
-      elem_type: DOUBLE
+      elem_type: FLOAT
       shape {
         dim {
           dim_value: 1
