@@ -146,8 +146,10 @@ git diff
 # Add all of the forks where we might need to find commits (you can
 # add things here)
 (cd pytorch && git remote add ezyang https://github.com/ezyang/pytorch.git)
+(cd pytorch && git remote add ezyang1 https://github.com/ezyang/pytorch-1.git)
 (cd pytorch && git remote add lu https://github.com/houseroad/pytorch.git)
 (cd pytorch && git fetch ezyang)
+(cd pytorch && git fetch ezyang1)
 (cd pytorch && git fetch lu)
 # Do the real submodule update
 git submodule update --init --recursive
