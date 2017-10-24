@@ -51,7 +51,6 @@ class TestOperators(TestCase):
         torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export())
 
-    @unittest.skip("Waiting for https://github.com/pytorch/pytorch/pull/3084")
     def test_addconstant(self):
         x = Variable(torch.DoubleTensor(2, 3), requires_grad=True)
         self.assertONNXExpected(export_to_string(FuncModule(lambda x: x + 1), (x, )))
@@ -59,6 +58,12 @@ class TestOperators(TestCase):
     def test_transpose(self):
         x = Variable(torch.Tensor([[0, 1], [2, 3]]), requires_grad=True)
         trace, _ = torch.jit.trace(lambda x: x.transpose(0, 1).transpose(1, 0), x)
+        torch._C._jit_pass_onnx(trace)
+        self.assertONNXExpected(trace.export())
+
+    def test_chunk(self):
+        x = Variable(torch.Tensor([0,1,2]), requires_grad=True)
+        trace, _ = torch.jit.trace(lambda x: x.chunk(2), x)
         torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export())
 
