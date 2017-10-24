@@ -32,7 +32,7 @@ def test_embed_params(proto, model, input, state_dict=None, use_gpu=True):
       device = 'CUDA'
     model_def = onnx.ModelProto.FromString(proto)
     onnx.checker.check_model(model_def)
-    prepared = c2.prepare(predict_model=model_def, device=device)
+    prepared = c2.prepare(model_def, device=device)
 
     if state_dict:
       parameters = []
