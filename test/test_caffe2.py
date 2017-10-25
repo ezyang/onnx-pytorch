@@ -402,6 +402,16 @@ class TestCaffe2Backend(unittest.TestCase):
         self.run_model_test(model, train=False, input=input, batch_size=BATCH_SIZE,
                             state_dict=state_dict)
 
+    def test_mm(self):
+        class MyModel(torch.nn.Module):
+            def __init__(self):
+                super(MyModel, self).__init__()
+            def forward(self, m1, m2):
+                return torch.mm(m1, m2)
+        m1 = Variable(torch.randn(3, 4))
+        m2 = Variable(torch.randn(4, 5))
+        self.run_model_test(MyModel(), train=False, input=(m1, m2), batch_size=BATCH_SIZE, use_gpu=False)
+
     def test_addmm(self):
         class MyModel(torch.nn.Module):
             def __init__(self):

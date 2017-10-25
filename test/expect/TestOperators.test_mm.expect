@@ -1,0 +1,86 @@
+ir_version: 1
+producer_name: "pytorch"
+producer_version: "0.2"
+domain: "com.facebook"
+graph {
+  node {
+    output: "3"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: FLOAT
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "1"
+    input: "2"
+    input: "3"
+    output: "4"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 0
+    }
+    attribute {
+      name: "broadcast"
+      i: 1
+    }
+  }
+  name: "torch-jit-export"
+  input {
+    name: "1"
+    type {
+      tensor_type {
+        elem_type: FLOAT
+        shape {
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "2"
+    type {
+      tensor_type {
+        elem_type: FLOAT
+        shape {
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  output {
+    name: "4"
+    type {
+      tensor_type {
+        elem_type: FLOAT
+        shape {
+          dim {
+            dim_value: 2
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+}
