@@ -334,14 +334,39 @@ class TestCaffe2Backend(unittest.TestCase):
         underlying = nn.BatchNorm2d(3)
         self.run_model_test(underlying, train=True, batch_size=BATCH_SIZE)
 
-    def test_index(self):
+    def _test_index_generic(self, fn):
         class MyModel(torch.nn.Module):
             def __init__(self):
                 super(MyModel, self).__init__()
 
             def forward(self, input):
-                return input[1]
-        self.run_model_test(MyModel(), train=False, batch_size=BATCH_SIZE)
+                return fn(input)
+
+        m1 = Variable(torch.randn(3, 4))
+        self.run_model_test(MyModel(), input=m1, train=False, batch_size=BATCH_SIZE)
+
+    def test_index_1d(self):
+        self._test_index_generic(lambda input: input[0])
+
+    def test_index_2d_1dimslice(self):
+        self._test_index_generic(lambda input: input[0:1, :])
+
+    def test_index_2d_sliceint(self):
+        self._test_index_generic(lambda input: input[1, :])
+
+    def test_index_2d_neg_slice(self):
+        self._test_index_generic(lambda input: input[0:-1, :])
+
+    # TODO: Slicing along two dimensions is currently unsupported by the caffe2
+    # backend. Revisit if this becomes supported in the future.
+    """
+    def test_index_2d_2dimslice(self):
+        self._test_index_generic(lambda input: input[0:1, 0:1])
+    """
+    """
+    def test_index_2d_neg_slice2dim(self):
+        self._test_index_generic(lambda input: input[0:-1, 0:-1])
+    """
 
     def test_chunk(self):
         class MyModel(torch.nn.Module):
