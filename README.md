@@ -16,3 +16,13 @@ If you're on a devgpu, consider getting a copy via
 make
 make test
 ```
+
+## Troubleshooting
+
+#### `ImportError: libATen.so.1: undefined symbol` after update.
+
+Sometimes after update C++ libraries don't get rebuilt correctly in PyTorch. Try `cd pytorch && python setup.py clean` or `rm -rf pytorch/torch/lib/build/ pytorch/build`.
+
+#### Pending changes with submodules after update
+
+Try doing `git submodule sync && git submodule update --init --recursive` to refresh everything.
