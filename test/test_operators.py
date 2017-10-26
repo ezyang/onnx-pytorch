@@ -68,6 +68,13 @@ class TestOperators(TestCase):
         y = Variable(torch.randn(2, 3), volatile=True)
         self.assertONNXExpected(export_to_string(FuncModule(lambda inputs: torch.cat(inputs, 1)), ((x, y),)))
 
+    def test_bmm(self):
+        m1 = Variable(torch.randn(9, 2, 3), requires_grad=True)
+        m2 = Variable(torch.randn(9, 3, 4), requires_grad=True)
+        trace, _ = torch.jit.trace(lambda x, y: m1.bmm(m2), (m1, m2))
+        torch._C._jit_pass_onnx(trace)
+        self.assertONNXExpected(trace.export())
+
     def test_addmm(self):
         m1 = Variable(torch.randn(2, 3), requires_grad=True)
         m2 = Variable(torch.randn(3, 4), requires_grad=True)
