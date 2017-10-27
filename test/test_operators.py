@@ -61,18 +61,19 @@ class TestOperators(TestCase):
         torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export())
 
-    def test_chunk(self):
-        x = Variable(torch.Tensor([0,1,2]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x: x.chunk(2), x)
-        torch._C._jit_pass_onnx(trace)
-        self.assertONNXExpected(trace.export())
-
     def test_concat2(self):
         # volatile is of particular interest; it caused a segfault
         # with the exporter
         x = Variable(torch.randn(2, 3), volatile=True)
         y = Variable(torch.randn(2, 3), volatile=True)
         self.assertONNXExpected(export_to_string(FuncModule(lambda inputs: torch.cat(inputs, 1)), ((x, y),)))
+
+    def test_bmm(self):
+        m1 = Variable(torch.randn(9, 2, 3), requires_grad=True)
+        m2 = Variable(torch.randn(9, 3, 4), requires_grad=True)
+        trace, _ = torch.jit.trace(lambda x, y: m1.bmm(m2), (m1, m2))
+        torch._C._jit_pass_onnx(trace)
+        self.assertONNXExpected(trace.export())
 
     def test_addmm(self):
         m1 = Variable(torch.randn(2, 3), requires_grad=True)

@@ -6,12 +6,8 @@ graph {
   node {
     input: "1"
     input: "2"
-    output: "4"
-    op_type: "cat"
-    attribute {
-      name: "dim"
-      i: 1
-    }
+    output: "3"
+    op_type: "BatchMatMul"
   }
   name: "torch-jit-export"
   input {
@@ -20,6 +16,9 @@ graph {
       tensor_type {
         elem_type: FLOAT
         shape {
+          dim {
+            dim_value: 9
+          }
           dim {
             dim_value: 2
           }
@@ -37,26 +36,32 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
-            dim_value: 2
+            dim_value: 9
           }
           dim {
             dim_value: 3
+          }
+          dim {
+            dim_value: 4
           }
         }
       }
     }
   }
   output {
-    name: "4"
+    name: "3"
     type {
       tensor_type {
         elem_type: FLOAT
         shape {
           dim {
+            dim_value: 9
+          }
+          dim {
             dim_value: 2
           }
           dim {
-            dim_value: 6
+            dim_value: 4
           }
         }
       }
