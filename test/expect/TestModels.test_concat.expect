@@ -27,8 +27,8 @@ type {
   }
 }
 ) {
-  %3 = Concat[axis = 1](%1, %2)
-  return %name: "3"
+  %4 = cat[dim = 1](%1, %2)
+  return %name: "4"
 type {
   tensor_type {
     elem_type: FLOAT

@@ -270,15 +270,18 @@ type {
   %41 = Reshape[shape = [2, 9216]](%40)
   %43, %44 = Dropout[ratio = 0.5, is_test = 1](%41)
   %45 = Transpose[perm = [1, 0]](%12)
-  %46 = Gemm[alpha = 1, beta = 1, broadcast = 1](%43, %45, %13)
-  %47 = Relu(%46)
-  %49, %50 = Dropout[ratio = 0.5, is_test = 1](%47)
-  %51 = Transpose[perm = [1, 0]](%14)
-  %52 = Gemm[alpha = 1, beta = 1, broadcast = 1](%49, %51, %15)
-  %53 = Relu(%52)
-  %54 = Transpose[perm = [1, 0]](%16)
-  %55 = Gemm[alpha = 1, beta = 1, broadcast = 1](%53, %54, %17)
-  return %name: "55"
+  %47 = expand[size = [2, 4096]](%13)
+  %48 = Gemm[alpha = 1, beta = 1](%43, %45, %47)
+  %49 = Relu(%48)
+  %51, %52 = Dropout[ratio = 0.5, is_test = 1](%49)
+  %53 = Transpose[perm = [1, 0]](%14)
+  %55 = expand[size = [2, 4096]](%15)
+  %56 = Gemm[alpha = 1, beta = 1](%51, %53, %55)
+  %57 = Relu(%56)
+  %58 = Transpose[perm = [1, 0]](%16)
+  %60 = expand[size = [2, 1000]](%17)
+  %61 = Gemm[alpha = 1, beta = 1](%57, %58, %60)
+  return %name: "61"
 type {
   tensor_type {
     elem_type: FLOAT
