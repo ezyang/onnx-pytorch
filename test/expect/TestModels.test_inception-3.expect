@@ -6524,11 +6524,11 @@ type {
   %982 = Relu(%981)
   %983 = Concat[axis = 1](%939, %955, %976, %982)
   %984 = AveragePool[kernel_shape = [8, 8], pads = [0, 0], strides = [8, 8]](%983)
-  %986, %987 = Dropout[ratio = 0.5, is_test = 1](%984)
+  %986, %987 = Dropout[is_test = 1, ratio = 0.5](%984)
   %988 = Reshape[shape = [2, -1]](%986)
   %989 = Transpose[perm = [1, 0]](%484)
-  %990 = Gemm[alpha = 1, beta = 1, broadcast = 1](%988, %989, %485)
-  return %name: "990"
+  %992 = Gemm[alpha = 1, beta = 1, broadcast = 1](%988, %989, %485)
+  return %name: "992"
 type {
   tensor_type {
     elem_type: FLOAT

@@ -8,16 +8,16 @@ graph {
     output: "2"
     op_type: "MaxPool"
     attribute {
+      name: "dilations"
+      ints: 1
+    }
+    attribute {
       name: "kernel_shape"
       ints: 3
     }
     attribute {
       name: "pads"
       ints: 0
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
     }
     attribute {
       name: "strides"

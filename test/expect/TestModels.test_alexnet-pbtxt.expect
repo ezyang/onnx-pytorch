@@ -349,12 +349,12 @@ graph {
     output: "44"
     op_type: "Dropout"
     attribute {
-      name: "ratio"
-      f: 0.5
-    }
-    attribute {
       name: "is_test"
       i: 1
+    }
+    attribute {
+      name: "ratio"
+      f: 0.5
     }
   }
   node {
@@ -371,7 +371,7 @@ graph {
     input: "43"
     input: "45"
     input: "13"
-    output: "46"
+    output: "59"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -387,27 +387,27 @@ graph {
     }
   }
   node {
-    input: "46"
-    output: "47"
+    input: "59"
+    output: "48"
     op_type: "Relu"
   }
   node {
-    input: "47"
-    output: "49"
+    input: "48"
     output: "50"
+    output: "51"
     op_type: "Dropout"
-    attribute {
-      name: "ratio"
-      f: 0.5
-    }
     attribute {
       name: "is_test"
       i: 1
     }
+    attribute {
+      name: "ratio"
+      f: 0.5
+    }
   }
   node {
     input: "14"
-    output: "51"
+    output: "52"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -416,10 +416,10 @@ graph {
     }
   }
   node {
-    input: "49"
-    input: "51"
+    input: "50"
+    input: "52"
     input: "15"
-    output: "52"
+    output: "60"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -435,13 +435,13 @@ graph {
     }
   }
   node {
-    input: "52"
-    output: "53"
+    input: "60"
+    output: "55"
     op_type: "Relu"
   }
   node {
     input: "16"
-    output: "54"
+    output: "56"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -450,10 +450,10 @@ graph {
     }
   }
   node {
-    input: "53"
-    input: "54"
+    input: "55"
+    input: "56"
     input: "17"
-    output: "55"
+    output: "61"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -754,7 +754,7 @@ graph {
     }
   }
   output {
-    name: "55"
+    name: "61"
     type {
       tensor_type {
         elem_type: FLOAT

@@ -6683,12 +6683,12 @@ graph {
     output: "987"
     op_type: "Dropout"
     attribute {
-      name: "ratio"
-      f: 0.5
-    }
-    attribute {
       name: "is_test"
       i: 1
+    }
+    attribute {
+      name: "ratio"
+      f: 0.5
     }
   }
   node {
@@ -6715,7 +6715,7 @@ graph {
     input: "988"
     input: "989"
     input: "485"
-    output: "990"
+    output: "992"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -13916,7 +13916,7 @@ graph {
     }
   }
   output {
-    name: "990"
+    name: "992"
     type {
       tensor_type {
         elem_type: FLOAT

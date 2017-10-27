@@ -68,22 +68,13 @@ type {
   %9 = AveragePool[kernel_shape = [3, 3], pads = [1, 1], strides = [2, 2]](%8)
   %10 = Reshape[shape = [-1, 1]](%9)
   %11 = Squeeze[axes = [1]](%10)
-  return %name: "1"
+  return %name: "11"
 type {
   tensor_type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 2
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 224
-      }
-      dim {
-        dim_value: 224
+        dim_value: 75264
       }
     }
   }

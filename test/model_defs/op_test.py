@@ -14,8 +14,7 @@ class DummyNet(nn.Module):
 
     def forward(self, x):
         output = self.features(x)
-        output.view(-1, 1).squeeze(1)
-        return x
+        return output.view(-1, 1).squeeze(1)
 
 
 class ConcatNet(nn.Module):

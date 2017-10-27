@@ -404,7 +404,7 @@ class TestCaffe2Backend(unittest.TestCase):
                 super(MyModel, self).__init__()
             def forward(self, ma, m1, m2):
                 return torch.addmm(ma, m1, m2)
-        ma = Variable(torch.randn(1, 1))
+        ma = Variable(torch.randn(5))
         m1 = Variable(torch.randn(3, 4))
         m2 = Variable(torch.randn(4, 5))
         self.run_model_test(MyModel(), train=False, input=(ma, m1, m2), batch_size=BATCH_SIZE, use_gpu=False)
