@@ -965,10 +965,20 @@ graph {
     }
   }
   node {
+    input: "35"
+    output: "112"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 2
+      ints: 4096
+    }
+  }
+  node {
     input: "109"
     input: "110"
-    input: "35"
-    output: "111"
+    input: "112"
+    output: "113"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -978,20 +988,16 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "111"
-    output: "112"
+    input: "113"
+    output: "114"
     op_type: "Relu"
   }
   node {
-    input: "112"
-    output: "114"
-    output: "115"
+    input: "114"
+    output: "116"
+    output: "117"
     op_type: "Dropout"
     attribute {
       name: "ratio"
@@ -1004,7 +1010,7 @@ graph {
   }
   node {
     input: "36"
-    output: "116"
+    output: "118"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1013,10 +1019,20 @@ graph {
     }
   }
   node {
-    input: "114"
-    input: "116"
     input: "37"
-    output: "117"
+    output: "120"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 2
+      ints: 4096
+    }
+  }
+  node {
+    input: "116"
+    input: "118"
+    input: "120"
+    output: "121"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1026,20 +1042,16 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "117"
-    output: "118"
+    input: "121"
+    output: "122"
     op_type: "Relu"
   }
   node {
-    input: "118"
-    output: "120"
-    output: "121"
+    input: "122"
+    output: "124"
+    output: "125"
     op_type: "Dropout"
     attribute {
       name: "ratio"
@@ -1052,7 +1064,7 @@ graph {
   }
   node {
     input: "38"
-    output: "122"
+    output: "126"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1061,10 +1073,20 @@ graph {
     }
   }
   node {
-    input: "120"
-    input: "122"
     input: "39"
-    output: "123"
+    output: "128"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 2
+      ints: 1000
+    }
+  }
+  node {
+    input: "124"
+    input: "126"
+    input: "128"
+    output: "129"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1073,10 +1095,6 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   name: "torch-jit-export"
@@ -1750,7 +1768,7 @@ graph {
     }
   }
   output {
-    name: "123"
+    name: "129"
     type {
       tensor_type {
         elem_type: FLOAT

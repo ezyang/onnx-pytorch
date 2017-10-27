@@ -19,6 +19,7 @@ from torch.autograd import Variable, Function
 from torch.nn import Module
 
 import onnx
+import onnx.helper
 
 import google.protobuf.text_format
 

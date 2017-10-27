@@ -3643,10 +3643,20 @@ graph {
     }
   }
   node {
+    input: "268"
+    output: "551"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 2
+      ints: 1000
+    }
+  }
+  node {
     input: "548"
     input: "549"
-    input: "268"
-    output: "550"
+    input: "551"
+    output: "552"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -3655,10 +3665,6 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   name: "torch-jit-export"
@@ -7636,7 +7642,7 @@ graph {
     }
   }
   output {
-    name: "550"
+    name: "552"
     type {
       tensor_type {
         elem_type: FLOAT

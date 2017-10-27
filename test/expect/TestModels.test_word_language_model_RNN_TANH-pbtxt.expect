@@ -140,38 +140,19 @@ graph {
     }
   }
   node {
+    input: "6"
+    output: "42"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
     input: "39"
     input: "40"
-    input: "6"
-    output: "41"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "5"
-    output: "42"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "34"
     input: "42"
-    input: "7"
     output: "43"
     op_type: "Gemm"
     attribute {
@@ -182,24 +163,55 @@ graph {
       name: "beta"
       f: 1
     }
+  }
+  node {
+    input: "5"
+    output: "44"
+    op_type: "Transpose"
     attribute {
-      name: "broadcast"
-      i: 1
+      name: "perm"
+      ints: 1
+      ints: 0
     }
   }
   node {
-    input: "41"
+    input: "7"
+    output: "46"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "34"
+    input: "44"
+    input: "46"
+    output: "47"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
     input: "43"
-    output: "44"
+    input: "47"
+    output: "48"
     op_type: "Add"
   }
   node {
-    input: "44"
-    output: "45"
+    input: "48"
+    output: "49"
     op_type: "Tanh"
   }
   node {
-    output: "46"
+    output: "50"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -211,7 +223,7 @@ graph {
     }
   }
   node {
-    output: "47"
+    output: "51"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -223,7 +235,7 @@ graph {
     }
   }
   node {
-    output: "48"
+    output: "52"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -236,36 +248,81 @@ graph {
   }
   node {
     input: "28"
-    input: "46"
-    input: "47"
-    input: "48"
-    output: "49"
+    input: "50"
+    input: "51"
+    input: "52"
+    output: "53"
     op_type: "Slice"
+  }
+  node {
+    input: "53"
+    output: "54"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "4"
+    output: "55"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "6"
+    output: "57"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "54"
+    input: "55"
+    input: "57"
+    output: "58"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "5"
+    output: "59"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "7"
+    output: "61"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
   }
   node {
     input: "49"
-    output: "50"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "4"
-    output: "51"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "50"
-    input: "51"
-    input: "6"
-    output: "52"
+    input: "59"
+    input: "61"
+    output: "62"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -275,53 +332,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "5"
-    output: "53"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "45"
-    input: "53"
-    input: "7"
-    output: "54"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "52"
-    input: "54"
-    output: "55"
+    input: "58"
+    input: "62"
+    output: "63"
     op_type: "Add"
   }
   node {
-    input: "55"
-    output: "56"
+    input: "63"
+    output: "64"
     op_type: "Tanh"
   }
   node {
-    output: "57"
+    output: "65"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -333,7 +357,7 @@ graph {
     }
   }
   node {
-    output: "58"
+    output: "66"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -345,7 +369,7 @@ graph {
     }
   }
   node {
-    output: "59"
+    output: "67"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -358,15 +382,15 @@ graph {
   }
   node {
     input: "28"
-    input: "57"
-    input: "58"
-    input: "59"
-    output: "60"
+    input: "65"
+    input: "66"
+    input: "67"
+    output: "68"
     op_type: "Slice"
   }
   node {
-    input: "60"
-    output: "61"
+    input: "68"
+    output: "69"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -375,141 +399,29 @@ graph {
   }
   node {
     input: "4"
-    output: "62"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "61"
-    input: "62"
-    input: "6"
-    output: "63"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "5"
-    output: "64"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "56"
-    input: "64"
-    input: "7"
-    output: "65"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "63"
-    input: "65"
-    output: "66"
-    op_type: "Add"
-  }
-  node {
-    input: "66"
-    output: "67"
-    op_type: "Tanh"
-  }
-  node {
-    output: "68"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "69"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
     output: "70"
-    op_type: "Constant"
+    op_type: "Transpose"
     attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
+      name: "perm"
+      ints: 1
+      ints: 0
     }
   }
   node {
-    input: "28"
-    input: "68"
+    input: "6"
+    output: "72"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
     input: "69"
     input: "70"
-    output: "71"
-    op_type: "Slice"
-  }
-  node {
-    input: "71"
-    output: "72"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "4"
-    output: "73"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
     input: "72"
-    input: "73"
-    input: "6"
-    output: "74"
+    output: "73"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -518,15 +430,11 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   node {
     input: "5"
-    output: "75"
+    output: "74"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -535,46 +443,40 @@ graph {
     }
   }
   node {
-    input: "67"
-    input: "75"
     input: "7"
     output: "76"
-    op_type: "Gemm"
+    op_type: "expand"
     attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
+      name: "size"
+      ints: 5
+      ints: 5
     }
   }
   node {
+    input: "64"
     input: "74"
     input: "76"
     output: "77"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "73"
+    input: "77"
+    output: "78"
     op_type: "Add"
   }
   node {
-    input: "77"
-    output: "78"
-    op_type: "Tanh"
-  }
-  node {
+    input: "78"
     output: "79"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
+    op_type: "Tanh"
   }
   node {
     output: "80"
@@ -583,8 +485,8 @@ graph {
       name: "value"
       t {
         dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
+        data_type: INT32
+        raw_data: "\000\000\000\000"
       }
     }
   }
@@ -596,21 +498,33 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "82"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
       }
     }
   }
   node {
     input: "28"
-    input: "79"
     input: "80"
     input: "81"
-    output: "82"
+    input: "82"
+    output: "83"
     op_type: "Slice"
   }
   node {
-    input: "82"
-    output: "83"
+    input: "83"
+    output: "84"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -619,7 +533,7 @@ graph {
   }
   node {
     input: "4"
-    output: "84"
+    output: "85"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -628,10 +542,20 @@ graph {
     }
   }
   node {
-    input: "83"
-    input: "84"
     input: "6"
-    output: "85"
+    output: "87"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "84"
+    input: "85"
+    input: "87"
+    output: "88"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -640,15 +564,11 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   node {
     input: "5"
-    output: "86"
+    output: "89"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -657,10 +577,20 @@ graph {
     }
   }
   node {
-    input: "78"
-    input: "86"
     input: "7"
-    output: "87"
+    output: "91"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "79"
+    input: "89"
+    input: "91"
+    output: "92"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -670,146 +600,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "85"
-    input: "87"
-    output: "88"
-    op_type: "Add"
   }
   node {
     input: "88"
-    output: "89"
-    op_type: "Tanh"
-  }
-  node {
-    output: "90"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "91"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "92"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "28"
-    input: "90"
-    input: "91"
     input: "92"
     output: "93"
-    op_type: "Slice"
+    op_type: "Add"
   }
   node {
     input: "93"
     output: "94"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "4"
-    output: "95"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "94"
-    input: "95"
-    input: "6"
-    output: "96"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "5"
-    output: "97"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "89"
-    input: "97"
-    input: "7"
-    output: "98"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "96"
-    input: "98"
-    output: "99"
-    op_type: "Add"
-  }
-  node {
-    input: "99"
-    output: "100"
     op_type: "Tanh"
   }
   node {
-    output: "101"
+    output: "95"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -821,40 +625,40 @@ graph {
     }
   }
   node {
-    output: "102"
+    output: "96"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
+        raw_data: "\004\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    output: "103"
+    output: "97"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
+        raw_data: "\005\000\000\000\000\000\000\000"
       }
     }
   }
   node {
     input: "28"
-    input: "101"
-    input: "102"
-    input: "103"
-    output: "104"
+    input: "95"
+    input: "96"
+    input: "97"
+    output: "98"
     op_type: "Slice"
   }
   node {
-    input: "104"
-    output: "105"
+    input: "98"
+    output: "99"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -863,7 +667,7 @@ graph {
   }
   node {
     input: "4"
-    output: "106"
+    output: "100"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -872,9 +676,54 @@ graph {
     }
   }
   node {
-    input: "105"
-    input: "106"
     input: "6"
+    output: "102"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "99"
+    input: "100"
+    input: "102"
+    output: "103"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "5"
+    output: "104"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "7"
+    output: "106"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "94"
+    input: "104"
+    input: "106"
     output: "107"
     op_type: "Gemm"
     attribute {
@@ -885,53 +734,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "5"
-    output: "108"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "100"
-    input: "108"
-    input: "7"
-    output: "109"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
+    input: "103"
     input: "107"
-    input: "109"
-    output: "110"
+    output: "108"
     op_type: "Add"
   }
   node {
-    input: "110"
-    output: "111"
+    input: "108"
+    output: "109"
     op_type: "Tanh"
   }
   node {
-    output: "112"
+    output: "110"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -943,40 +759,40 @@ graph {
     }
   }
   node {
-    output: "113"
+    output: "111"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
+        raw_data: "\005\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    output: "114"
+    output: "112"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
+        raw_data: "\006\000\000\000\000\000\000\000"
       }
     }
   }
   node {
     input: "28"
+    input: "110"
+    input: "111"
     input: "112"
-    input: "113"
-    input: "114"
-    output: "115"
+    output: "113"
     op_type: "Slice"
   }
   node {
-    input: "115"
-    output: "116"
+    input: "113"
+    output: "114"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -985,7 +801,7 @@ graph {
   }
   node {
     input: "4"
-    output: "117"
+    output: "115"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -994,9 +810,19 @@ graph {
     }
   }
   node {
-    input: "116"
-    input: "117"
     input: "6"
+    output: "117"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "114"
+    input: "115"
+    input: "117"
     output: "118"
     op_type: "Gemm"
     attribute {
@@ -1006,10 +832,6 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   node {
@@ -1023,10 +845,20 @@ graph {
     }
   }
   node {
-    input: "111"
-    input: "119"
     input: "7"
-    output: "120"
+    output: "121"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "109"
+    input: "119"
+    input: "121"
+    output: "122"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1036,24 +868,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
     input: "118"
-    input: "120"
-    output: "121"
+    input: "122"
+    output: "123"
     op_type: "Add"
   }
   node {
-    input: "121"
-    output: "122"
+    input: "123"
+    output: "124"
     op_type: "Tanh"
   }
   node {
-    output: "123"
+    output: "125"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1065,7 +893,153 @@ graph {
     }
   }
   node {
-    output: "124"
+    output: "126"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\006\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "127"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\007\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "28"
+    input: "125"
+    input: "126"
+    input: "127"
+    output: "128"
+    op_type: "Slice"
+  }
+  node {
+    input: "128"
+    output: "129"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "4"
+    output: "130"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "6"
+    output: "132"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "129"
+    input: "130"
+    input: "132"
+    output: "133"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "5"
+    output: "134"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "7"
+    output: "136"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "124"
+    input: "134"
+    input: "136"
+    output: "137"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "133"
+    input: "137"
+    output: "138"
+    op_type: "Add"
+  }
+  node {
+    input: "138"
+    output: "139"
+    op_type: "Tanh"
+  }
+  node {
+    output: "140"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "141"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\007\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "142"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1077,7 +1051,129 @@ graph {
     }
   }
   node {
-    output: "125"
+    input: "28"
+    input: "140"
+    input: "141"
+    input: "142"
+    output: "143"
+    op_type: "Slice"
+  }
+  node {
+    input: "143"
+    output: "144"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "4"
+    output: "145"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "6"
+    output: "147"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "144"
+    input: "145"
+    input: "147"
+    output: "148"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "5"
+    output: "149"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "7"
+    output: "151"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "139"
+    input: "149"
+    input: "151"
+    output: "152"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "148"
+    input: "152"
+    output: "153"
+    op_type: "Add"
+  }
+  node {
+    input: "153"
+    output: "154"
+    op_type: "Tanh"
+  }
+  node {
+    output: "155"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "156"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "157"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1090,15 +1186,15 @@ graph {
   }
   node {
     input: "28"
-    input: "123"
-    input: "124"
-    input: "125"
-    output: "126"
+    input: "155"
+    input: "156"
+    input: "157"
+    output: "158"
     op_type: "Slice"
   }
   node {
-    input: "126"
-    output: "127"
+    input: "158"
+    output: "159"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -1107,7 +1203,7 @@ graph {
   }
   node {
     input: "4"
-    output: "128"
+    output: "160"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1116,10 +1212,20 @@ graph {
     }
   }
   node {
-    input: "127"
-    input: "128"
     input: "6"
-    output: "129"
+    output: "162"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "159"
+    input: "160"
+    input: "162"
+    output: "163"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1128,15 +1234,11 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   node {
     input: "5"
-    output: "130"
+    output: "164"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1145,10 +1247,20 @@ graph {
     }
   }
   node {
-    input: "122"
-    input: "130"
     input: "7"
-    output: "131"
+    output: "166"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "154"
+    input: "164"
+    input: "166"
+    output: "167"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1158,24 +1270,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "129"
-    input: "131"
-    output: "132"
+    input: "163"
+    input: "167"
+    output: "168"
     op_type: "Add"
   }
   node {
-    input: "132"
-    output: "133"
+    input: "168"
+    output: "169"
     op_type: "Tanh"
   }
   node {
-    output: "134"
+    output: "170"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1187,7 +1295,7 @@ graph {
     }
   }
   node {
-    output: "135"
+    output: "171"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1199,7 +1307,7 @@ graph {
     }
   }
   node {
-    output: "136"
+    output: "172"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1212,15 +1320,15 @@ graph {
   }
   node {
     input: "28"
-    input: "134"
-    input: "135"
-    input: "136"
-    output: "137"
+    input: "170"
+    input: "171"
+    input: "172"
+    output: "173"
     op_type: "Slice"
   }
   node {
-    input: "137"
-    output: "138"
+    input: "173"
+    output: "174"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -1229,7 +1337,7 @@ graph {
   }
   node {
     input: "4"
-    output: "139"
+    output: "175"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1238,10 +1346,20 @@ graph {
     }
   }
   node {
-    input: "138"
-    input: "139"
     input: "6"
-    output: "140"
+    output: "177"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "174"
+    input: "175"
+    input: "177"
+    output: "178"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1250,15 +1368,11 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   node {
     input: "5"
-    output: "141"
+    output: "179"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1267,10 +1381,20 @@ graph {
     }
   }
   node {
-    input: "133"
-    input: "141"
     input: "7"
-    output: "142"
+    output: "181"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "169"
+    input: "179"
+    input: "181"
+    output: "182"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1280,43 +1404,39 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "140"
-    input: "142"
-    output: "143"
+    input: "178"
+    input: "182"
+    output: "183"
     op_type: "Add"
   }
   node {
-    input: "143"
-    output: "144"
+    input: "183"
+    output: "184"
     op_type: "Tanh"
   }
   node {
-    input: "45"
-    input: "56"
-    input: "67"
-    input: "78"
-    input: "89"
-    input: "100"
-    input: "111"
-    input: "122"
-    input: "133"
-    input: "144"
-    output: "145"
-    op_type: "Concat"
+    input: "49"
+    input: "64"
+    input: "79"
+    input: "94"
+    input: "109"
+    input: "124"
+    input: "139"
+    input: "154"
+    input: "169"
+    input: "184"
+    output: "186"
+    op_type: "cat"
     attribute {
-      name: "axis"
+      name: "dim"
       i: 0
     }
   }
   node {
-    input: "145"
-    output: "146"
+    input: "186"
+    output: "187"
     op_type: "Reshape"
     attribute {
       name: "shape"
@@ -1326,18 +1446,18 @@ graph {
     }
   }
   node {
-    input: "146"
-    output: "147"
-    op_type: "Concat"
+    input: "187"
+    output: "189"
+    op_type: "cat"
     attribute {
-      name: "axis"
+      name: "dim"
       i: 2
     }
   }
   node {
-    input: "147"
-    output: "149"
-    output: "150"
+    input: "189"
+    output: "191"
+    output: "192"
     op_type: "Dropout"
     attribute {
       name: "ratio"
@@ -1349,7 +1469,7 @@ graph {
     }
   }
   node {
-    output: "151"
+    output: "193"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1361,7 +1481,7 @@ graph {
     }
   }
   node {
-    output: "152"
+    output: "194"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1373,7 +1493,7 @@ graph {
     }
   }
   node {
-    output: "153"
+    output: "195"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1386,15 +1506,15 @@ graph {
   }
   node {
     input: "2"
-    input: "151"
-    input: "152"
-    input: "153"
-    output: "154"
+    input: "193"
+    input: "194"
+    input: "195"
+    output: "196"
     op_type: "Slice"
   }
   node {
-    input: "154"
-    output: "155"
+    input: "196"
+    output: "197"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -1402,7 +1522,7 @@ graph {
     }
   }
   node {
-    output: "156"
+    output: "198"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1414,7 +1534,7 @@ graph {
     }
   }
   node {
-    output: "157"
+    output: "199"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -1426,516 +1546,28 @@ graph {
     }
   }
   node {
-    output: "158"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\001\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "156"
-    input: "157"
-    input: "158"
-    output: "159"
-    op_type: "Slice"
-  }
-  node {
-    input: "159"
-    output: "160"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "161"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "160"
-    input: "161"
-    input: "10"
-    output: "162"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "163"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "155"
-    input: "163"
-    input: "11"
-    output: "164"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "162"
-    input: "164"
-    output: "165"
-    op_type: "Add"
-  }
-  node {
-    input: "165"
-    output: "166"
-    op_type: "Tanh"
-  }
-  node {
-    output: "167"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "168"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\001\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "169"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "167"
-    input: "168"
-    input: "169"
-    output: "170"
-    op_type: "Slice"
-  }
-  node {
-    input: "170"
-    output: "171"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "172"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "171"
-    input: "172"
-    input: "10"
-    output: "173"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "174"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "166"
-    input: "174"
-    input: "11"
-    output: "175"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "173"
-    input: "175"
-    output: "176"
-    op_type: "Add"
-  }
-  node {
-    input: "176"
-    output: "177"
-    op_type: "Tanh"
-  }
-  node {
-    output: "178"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "179"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "180"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "178"
-    input: "179"
-    input: "180"
-    output: "181"
-    op_type: "Slice"
-  }
-  node {
-    input: "181"
-    output: "182"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "183"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "182"
-    input: "183"
-    input: "10"
-    output: "184"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "185"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "177"
-    input: "185"
-    input: "11"
-    output: "186"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "184"
-    input: "186"
-    output: "187"
-    op_type: "Add"
-  }
-  node {
-    input: "187"
-    output: "188"
-    op_type: "Tanh"
-  }
-  node {
-    output: "189"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "190"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "191"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "189"
-    input: "190"
-    input: "191"
-    output: "192"
-    op_type: "Slice"
-  }
-  node {
-    input: "192"
-    output: "193"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "194"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "193"
-    input: "194"
-    input: "10"
-    output: "195"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "196"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "188"
-    input: "196"
-    input: "11"
-    output: "197"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "195"
-    input: "197"
-    output: "198"
-    op_type: "Add"
-  }
-  node {
-    input: "198"
-    output: "199"
-    op_type: "Tanh"
-  }
-  node {
     output: "200"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "201"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
         data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
+        raw_data: "\001\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    output: "202"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
+    input: "191"
+    input: "198"
+    input: "199"
     input: "200"
-    input: "201"
-    input: "202"
-    output: "203"
+    output: "201"
     op_type: "Slice"
   }
   node {
-    input: "203"
-    output: "204"
+    input: "201"
+    output: "202"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -1944,7 +1576,7 @@ graph {
   }
   node {
     input: "8"
-    output: "205"
+    output: "203"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1953,9 +1585,19 @@ graph {
     }
   }
   node {
-    input: "204"
-    input: "205"
     input: "10"
+    output: "205"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "202"
+    input: "203"
+    input: "205"
     output: "206"
     op_type: "Gemm"
     attribute {
@@ -1965,10 +1607,6 @@ graph {
     attribute {
       name: "beta"
       f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
     }
   }
   node {
@@ -1982,10 +1620,20 @@ graph {
     }
   }
   node {
-    input: "199"
-    input: "207"
     input: "11"
-    output: "208"
+    output: "209"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "197"
+    input: "207"
+    input: "209"
+    output: "210"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1995,45 +1643,17 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
     input: "206"
-    input: "208"
-    output: "209"
+    input: "210"
+    output: "211"
     op_type: "Add"
   }
   node {
-    input: "209"
-    output: "210"
-    op_type: "Tanh"
-  }
-  node {
-    output: "211"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
+    input: "211"
     output: "212"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
+    op_type: "Tanh"
   }
   node {
     output: "213"
@@ -2042,716 +1662,13 @@ graph {
       name: "value"
       t {
         dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
+        data_type: INT32
+        raw_data: "\000\000\000\000"
       }
     }
   }
   node {
-    input: "149"
-    input: "211"
-    input: "212"
-    input: "213"
     output: "214"
-    op_type: "Slice"
-  }
-  node {
-    input: "214"
-    output: "215"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "216"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "215"
-    input: "216"
-    input: "10"
-    output: "217"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "218"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "210"
-    input: "218"
-    input: "11"
-    output: "219"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "217"
-    input: "219"
-    output: "220"
-    op_type: "Add"
-  }
-  node {
-    input: "220"
-    output: "221"
-    op_type: "Tanh"
-  }
-  node {
-    output: "222"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "223"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "224"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "222"
-    input: "223"
-    input: "224"
-    output: "225"
-    op_type: "Slice"
-  }
-  node {
-    input: "225"
-    output: "226"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "227"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "226"
-    input: "227"
-    input: "10"
-    output: "228"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "229"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "221"
-    input: "229"
-    input: "11"
-    output: "230"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "228"
-    input: "230"
-    output: "231"
-    op_type: "Add"
-  }
-  node {
-    input: "231"
-    output: "232"
-    op_type: "Tanh"
-  }
-  node {
-    output: "233"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "234"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "235"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "233"
-    input: "234"
-    input: "235"
-    output: "236"
-    op_type: "Slice"
-  }
-  node {
-    input: "236"
-    output: "237"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "238"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "237"
-    input: "238"
-    input: "10"
-    output: "239"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "240"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "232"
-    input: "240"
-    input: "11"
-    output: "241"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "239"
-    input: "241"
-    output: "242"
-    op_type: "Add"
-  }
-  node {
-    input: "242"
-    output: "243"
-    op_type: "Tanh"
-  }
-  node {
-    output: "244"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "245"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "246"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\t\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "244"
-    input: "245"
-    input: "246"
-    output: "247"
-    op_type: "Slice"
-  }
-  node {
-    input: "247"
-    output: "248"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "249"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "248"
-    input: "249"
-    input: "10"
-    output: "250"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "251"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "243"
-    input: "251"
-    input: "11"
-    output: "252"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "250"
-    input: "252"
-    output: "253"
-    op_type: "Add"
-  }
-  node {
-    input: "253"
-    output: "254"
-    op_type: "Tanh"
-  }
-  node {
-    output: "255"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "256"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\t\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "257"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\n\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "149"
-    input: "255"
-    input: "256"
-    input: "257"
-    output: "258"
-    op_type: "Slice"
-  }
-  node {
-    input: "258"
-    output: "259"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "8"
-    output: "260"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "259"
-    input: "260"
-    input: "10"
-    output: "261"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "9"
-    output: "262"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "254"
-    input: "262"
-    input: "11"
-    output: "263"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "261"
-    input: "263"
-    output: "264"
-    op_type: "Add"
-  }
-  node {
-    input: "264"
-    output: "265"
-    op_type: "Tanh"
-  }
-  node {
-    input: "166"
-    input: "177"
-    input: "188"
-    input: "199"
-    input: "210"
-    input: "221"
-    input: "232"
-    input: "243"
-    input: "254"
-    input: "265"
-    output: "266"
-    op_type: "Concat"
-    attribute {
-      name: "axis"
-      i: 0
-    }
-  }
-  node {
-    input: "266"
-    output: "267"
-    op_type: "Reshape"
-    attribute {
-      name: "shape"
-      ints: 10
-      ints: 5
-      ints: 5
-    }
-  }
-  node {
-    input: "267"
-    output: "268"
-    op_type: "Concat"
-    attribute {
-      name: "axis"
-      i: 2
-    }
-  }
-  node {
-    input: "268"
-    output: "270"
-    output: "271"
-    op_type: "Dropout"
-    attribute {
-      name: "ratio"
-      f: 0.200000002980232
-    }
-    attribute {
-      name: "is_test"
-      i: 1
-    }
-  }
-  node {
-    output: "272"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "273"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "274"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "2"
-    input: "272"
-    input: "273"
-    input: "274"
-    output: "275"
-    op_type: "Slice"
-  }
-  node {
-    input: "275"
-    output: "276"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    output: "277"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "278"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\000\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "279"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -2763,16 +1680,28 @@ graph {
     }
   }
   node {
-    input: "270"
-    input: "277"
-    input: "278"
-    input: "279"
-    output: "280"
+    output: "215"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "191"
+    input: "213"
+    input: "214"
+    input: "215"
+    output: "216"
     op_type: "Slice"
   }
   node {
-    input: "280"
-    output: "281"
+    input: "216"
+    output: "217"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -2780,8 +1709,8 @@ graph {
     }
   }
   node {
-    input: "12"
-    output: "282"
+    input: "8"
+    output: "218"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -2790,10 +1719,20 @@ graph {
     }
   }
   node {
-    input: "281"
-    input: "282"
-    input: "14"
-    output: "283"
+    input: "10"
+    output: "220"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "217"
+    input: "218"
+    input: "220"
+    output: "221"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -2803,14 +1742,10 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "13"
-    output: "284"
+    input: "9"
+    output: "222"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -2819,9 +1754,555 @@ graph {
     }
   }
   node {
+    input: "11"
+    output: "224"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "212"
+    input: "222"
+    input: "224"
+    output: "225"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "221"
+    input: "225"
+    output: "226"
+    op_type: "Add"
+  }
+  node {
+    input: "226"
+    output: "227"
+    op_type: "Tanh"
+  }
+  node {
+    output: "228"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "229"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "230"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "191"
+    input: "228"
+    input: "229"
+    input: "230"
+    output: "231"
+    op_type: "Slice"
+  }
+  node {
+    input: "231"
+    output: "232"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "8"
+    output: "233"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "10"
+    output: "235"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "232"
+    input: "233"
+    input: "235"
+    output: "236"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "9"
+    output: "237"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "11"
+    output: "239"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "227"
+    input: "237"
+    input: "239"
+    output: "240"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "236"
+    input: "240"
+    output: "241"
+    op_type: "Add"
+  }
+  node {
+    input: "241"
+    output: "242"
+    op_type: "Tanh"
+  }
+  node {
+    output: "243"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "244"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "245"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "191"
+    input: "243"
+    input: "244"
+    input: "245"
+    output: "246"
+    op_type: "Slice"
+  }
+  node {
+    input: "246"
+    output: "247"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "8"
+    output: "248"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "10"
+    output: "250"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "247"
+    input: "248"
+    input: "250"
+    output: "251"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "9"
+    output: "252"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "11"
+    output: "254"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "242"
+    input: "252"
+    input: "254"
+    output: "255"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "251"
+    input: "255"
+    output: "256"
+    op_type: "Add"
+  }
+  node {
+    input: "256"
+    output: "257"
+    op_type: "Tanh"
+  }
+  node {
+    output: "258"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "259"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "260"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "191"
+    input: "258"
+    input: "259"
+    input: "260"
+    output: "261"
+    op_type: "Slice"
+  }
+  node {
+    input: "261"
+    output: "262"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "8"
+    output: "263"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "10"
+    output: "265"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "262"
+    input: "263"
+    input: "265"
+    output: "266"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "9"
+    output: "267"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "11"
+    output: "269"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "257"
+    input: "267"
+    input: "269"
+    output: "270"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "266"
+    input: "270"
+    output: "271"
+    op_type: "Add"
+  }
+  node {
+    input: "271"
+    output: "272"
+    op_type: "Tanh"
+  }
+  node {
+    output: "273"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "274"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "275"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\006\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "191"
+    input: "273"
+    input: "274"
+    input: "275"
+    output: "276"
+    op_type: "Slice"
+  }
+  node {
     input: "276"
+    output: "277"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "8"
+    output: "278"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "10"
+    output: "280"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "277"
+    input: "278"
+    input: "280"
+    output: "281"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "9"
+    output: "282"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "11"
+    output: "284"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "272"
+    input: "282"
     input: "284"
-    input: "15"
     output: "285"
     op_type: "Gemm"
     attribute {
@@ -2832,13 +2313,9 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "283"
+    input: "281"
     input: "285"
     output: "286"
     op_type: "Add"
@@ -2868,7 +2345,7 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\001\000\000\000\000\000\000\000"
+        raw_data: "\006\000\000\000\000\000\000\000"
       }
     }
   }
@@ -2880,12 +2357,12 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
+        raw_data: "\007\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "270"
+    input: "191"
     input: "288"
     input: "289"
     input: "290"
@@ -2902,7 +2379,7 @@ graph {
     }
   }
   node {
-    input: "12"
+    input: "8"
     output: "293"
     op_type: "Transpose"
     attribute {
@@ -2912,38 +2389,19 @@ graph {
     }
   }
   node {
+    input: "10"
+    output: "295"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
     input: "292"
     input: "293"
-    input: "14"
-    output: "294"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "295"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "287"
     input: "295"
-    input: "15"
     output: "296"
     op_type: "Gemm"
     attribute {
@@ -2954,24 +2412,55 @@ graph {
       name: "beta"
       f: 1
     }
+  }
+  node {
+    input: "9"
+    output: "297"
+    op_type: "Transpose"
     attribute {
-      name: "broadcast"
-      i: 1
+      name: "perm"
+      ints: 1
+      ints: 0
     }
   }
   node {
-    input: "294"
+    input: "11"
+    output: "299"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "287"
+    input: "297"
+    input: "299"
+    output: "300"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
     input: "296"
-    output: "297"
+    input: "300"
+    output: "301"
     op_type: "Add"
   }
   node {
-    input: "297"
-    output: "298"
+    input: "301"
+    output: "302"
     op_type: "Tanh"
   }
   node {
-    output: "299"
+    output: "303"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -2983,751 +2472,153 @@ graph {
     }
   }
   node {
-    output: "300"
+    output: "304"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
+        raw_data: "\007\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    output: "301"
+    output: "305"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
+        raw_data: "\010\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "270"
-    input: "299"
-    input: "300"
-    input: "301"
-    output: "302"
+    input: "191"
+    input: "303"
+    input: "304"
+    input: "305"
+    output: "306"
     op_type: "Slice"
+  }
+  node {
+    input: "306"
+    output: "307"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "8"
+    output: "308"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "10"
+    output: "310"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "307"
+    input: "308"
+    input: "310"
+    output: "311"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "9"
+    output: "312"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "11"
+    output: "314"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
   }
   node {
     input: "302"
-    output: "303"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "12"
-    output: "304"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "303"
-    input: "304"
-    input: "14"
-    output: "305"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "306"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "298"
-    input: "306"
-    input: "15"
-    output: "307"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "305"
-    input: "307"
-    output: "308"
-    op_type: "Add"
-  }
-  node {
-    input: "308"
-    output: "309"
-    op_type: "Tanh"
-  }
-  node {
-    output: "310"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "311"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "312"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "270"
-    input: "310"
-    input: "311"
     input: "312"
-    output: "313"
-    op_type: "Slice"
-  }
-  node {
-    input: "313"
-    output: "314"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "12"
-    output: "315"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
     input: "314"
+    output: "315"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "311"
     input: "315"
-    input: "14"
     output: "316"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "317"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "309"
-    input: "317"
-    input: "15"
-    output: "318"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
+    op_type: "Add"
   }
   node {
     input: "316"
-    input: "318"
+    output: "317"
+    op_type: "Tanh"
+  }
+  node {
+    output: "318"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
     output: "319"
-    op_type: "Add"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
   }
   node {
-    input: "319"
     output: "320"
-    op_type: "Tanh"
-  }
-  node {
-    output: "321"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "322"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "323"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "270"
-    input: "321"
-    input: "322"
-    input: "323"
-    output: "324"
-    op_type: "Slice"
-  }
-  node {
-    input: "324"
-    output: "325"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "12"
-    output: "326"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "325"
-    input: "326"
-    input: "14"
-    output: "327"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "328"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "320"
-    input: "328"
-    input: "15"
-    output: "329"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "327"
-    input: "329"
-    output: "330"
-    op_type: "Add"
-  }
-  node {
-    input: "330"
-    output: "331"
-    op_type: "Tanh"
-  }
-  node {
-    output: "332"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "333"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "334"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "270"
-    input: "332"
-    input: "333"
-    input: "334"
-    output: "335"
-    op_type: "Slice"
-  }
-  node {
-    input: "335"
-    output: "336"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "12"
-    output: "337"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "336"
-    input: "337"
-    input: "14"
-    output: "338"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "339"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "331"
-    input: "339"
-    input: "15"
-    output: "340"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "338"
-    input: "340"
-    output: "341"
-    op_type: "Add"
-  }
-  node {
-    input: "341"
-    output: "342"
-    op_type: "Tanh"
-  }
-  node {
-    output: "343"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "344"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "345"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "270"
-    input: "343"
-    input: "344"
-    input: "345"
-    output: "346"
-    op_type: "Slice"
-  }
-  node {
-    input: "346"
-    output: "347"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "12"
-    output: "348"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "347"
-    input: "348"
-    input: "14"
-    output: "349"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "350"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "342"
-    input: "350"
-    input: "15"
-    output: "351"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "349"
-    input: "351"
-    output: "352"
-    op_type: "Add"
-  }
-  node {
-    input: "352"
-    output: "353"
-    op_type: "Tanh"
-  }
-  node {
-    output: "354"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "355"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "356"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "270"
-    input: "354"
-    input: "355"
-    input: "356"
-    output: "357"
-    op_type: "Slice"
-  }
-  node {
-    input: "357"
-    output: "358"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "12"
-    output: "359"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "358"
-    input: "359"
-    input: "14"
-    output: "360"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "361"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "353"
-    input: "361"
-    input: "15"
-    output: "362"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "360"
-    input: "362"
-    output: "363"
-    op_type: "Add"
-  }
-  node {
-    input: "363"
-    output: "364"
-    op_type: "Tanh"
-  }
-  node {
-    output: "365"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "366"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "367"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -3739,16 +2630,16 @@ graph {
     }
   }
   node {
-    input: "270"
-    input: "365"
-    input: "366"
-    input: "367"
-    output: "368"
+    input: "191"
+    input: "318"
+    input: "319"
+    input: "320"
+    output: "321"
     op_type: "Slice"
   }
   node {
-    input: "368"
-    output: "369"
+    input: "321"
+    output: "322"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -3756,8 +2647,8 @@ graph {
     }
   }
   node {
-    input: "12"
-    output: "370"
+    input: "8"
+    output: "323"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -3766,10 +2657,20 @@ graph {
     }
   }
   node {
-    input: "369"
-    input: "370"
-    input: "14"
-    output: "371"
+    input: "10"
+    output: "325"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "322"
+    input: "323"
+    input: "325"
+    output: "326"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -3779,14 +2680,10 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "13"
-    output: "372"
+    input: "9"
+    output: "327"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -3795,9 +2692,392 @@ graph {
     }
   }
   node {
+    input: "11"
+    output: "329"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "317"
+    input: "327"
+    input: "329"
+    output: "330"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "326"
+    input: "330"
+    output: "331"
+    op_type: "Add"
+  }
+  node {
+    input: "331"
+    output: "332"
+    op_type: "Tanh"
+  }
+  node {
+    output: "333"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "334"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\t\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "335"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\n\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "191"
+    input: "333"
+    input: "334"
+    input: "335"
+    output: "336"
+    op_type: "Slice"
+  }
+  node {
+    input: "336"
+    output: "337"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "8"
+    output: "338"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "10"
+    output: "340"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "337"
+    input: "338"
+    input: "340"
+    output: "341"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "9"
+    output: "342"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "11"
+    output: "344"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "332"
+    input: "342"
+    input: "344"
+    output: "345"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "341"
+    input: "345"
+    output: "346"
+    op_type: "Add"
+  }
+  node {
+    input: "346"
+    output: "347"
+    op_type: "Tanh"
+  }
+  node {
+    input: "212"
+    input: "227"
+    input: "242"
+    input: "257"
+    input: "272"
+    input: "287"
+    input: "302"
+    input: "317"
+    input: "332"
+    input: "347"
+    output: "349"
+    op_type: "cat"
+    attribute {
+      name: "dim"
+      i: 0
+    }
+  }
+  node {
+    input: "349"
+    output: "350"
+    op_type: "Reshape"
+    attribute {
+      name: "shape"
+      ints: 10
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "350"
+    output: "352"
+    op_type: "cat"
+    attribute {
+      name: "dim"
+      i: 2
+    }
+  }
+  node {
+    input: "352"
+    output: "354"
+    output: "355"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.200000002980232
+    }
+    attribute {
+      name: "is_test"
+      i: 1
+    }
+  }
+  node {
+    output: "356"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "357"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "358"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "2"
+    input: "356"
+    input: "357"
+    input: "358"
+    output: "359"
+    op_type: "Slice"
+  }
+  node {
+    input: "359"
+    output: "360"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    output: "361"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "362"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "363"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\001\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "354"
+    input: "361"
+    input: "362"
+    input: "363"
+    output: "364"
+    op_type: "Slice"
+  }
+  node {
     input: "364"
-    input: "372"
+    output: "365"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "12"
+    output: "366"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "14"
+    output: "368"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "365"
+    input: "366"
+    input: "368"
+    output: "369"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "13"
+    output: "370"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
     input: "15"
+    output: "372"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "360"
+    input: "370"
+    input: "372"
     output: "373"
     op_type: "Gemm"
     attribute {
@@ -3808,13 +3088,9 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "371"
+    input: "369"
     input: "373"
     output: "374"
     op_type: "Add"
@@ -3844,7 +3120,7 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\t\000\000\000\000\000\000\000"
+        raw_data: "\001\000\000\000\000\000\000\000"
       }
     }
   }
@@ -3856,12 +3132,12 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\n\000\000\000\000\000\000\000"
+        raw_data: "\002\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "270"
+    input: "354"
     input: "376"
     input: "377"
     input: "378"
@@ -3888,38 +3164,19 @@ graph {
     }
   }
   node {
+    input: "14"
+    output: "383"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
     input: "380"
     input: "381"
-    input: "14"
-    output: "382"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "13"
-    output: "383"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "375"
     input: "383"
-    input: "15"
     output: "384"
     op_type: "Gemm"
     attribute {
@@ -3930,76 +3187,55 @@ graph {
       name: "beta"
       f: 1
     }
+  }
+  node {
+    input: "13"
+    output: "385"
+    op_type: "Transpose"
     attribute {
-      name: "broadcast"
-      i: 1
+      name: "perm"
+      ints: 1
+      ints: 0
     }
   }
   node {
-    input: "382"
+    input: "15"
+    output: "387"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "375"
+    input: "385"
+    input: "387"
+    output: "388"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
     input: "384"
-    output: "385"
+    input: "388"
+    output: "389"
     op_type: "Add"
   }
   node {
-    input: "385"
-    output: "386"
+    input: "389"
+    output: "390"
     op_type: "Tanh"
   }
   node {
-    input: "287"
-    input: "298"
-    input: "309"
-    input: "320"
-    input: "331"
-    input: "342"
-    input: "353"
-    input: "364"
-    input: "375"
-    input: "386"
-    output: "387"
-    op_type: "Concat"
-    attribute {
-      name: "axis"
-      i: 0
-    }
-  }
-  node {
-    input: "387"
-    output: "388"
-    op_type: "Reshape"
-    attribute {
-      name: "shape"
-      ints: 10
-      ints: 5
-      ints: 5
-    }
-  }
-  node {
-    input: "388"
-    output: "389"
-    op_type: "Concat"
-    attribute {
-      name: "axis"
-      i: 2
-    }
-  }
-  node {
-    input: "389"
     output: "391"
-    output: "392"
-    op_type: "Dropout"
-    attribute {
-      name: "ratio"
-      f: 0.200000002980232
-    }
-    attribute {
-      name: "is_test"
-      i: 1
-    }
-  }
-  node {
-    output: "393"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4011,7 +3247,19 @@ graph {
     }
   }
   node {
-    output: "394"
+    output: "392"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "393"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4023,7 +3271,129 @@ graph {
     }
   }
   node {
+    input: "354"
+    input: "391"
+    input: "392"
+    input: "393"
+    output: "394"
+    op_type: "Slice"
+  }
+  node {
+    input: "394"
     output: "395"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "12"
+    output: "396"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "14"
+    output: "398"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "395"
+    input: "396"
+    input: "398"
+    output: "399"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "13"
+    output: "400"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "15"
+    output: "402"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "390"
+    input: "400"
+    input: "402"
+    output: "403"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "399"
+    input: "403"
+    output: "404"
+    op_type: "Add"
+  }
+  node {
+    input: "404"
+    output: "405"
+    op_type: "Tanh"
+  }
+  node {
+    output: "406"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "407"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "408"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4035,212 +3405,47 @@ graph {
     }
   }
   node {
-    input: "2"
-    input: "393"
-    input: "394"
-    input: "395"
-    output: "396"
-    op_type: "Slice"
-  }
-  node {
-    input: "396"
-    output: "397"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    output: "398"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "399"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\000\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "400"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\001\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "391"
-    input: "398"
-    input: "399"
-    input: "400"
-    output: "401"
-    op_type: "Slice"
-  }
-  node {
-    input: "401"
-    output: "402"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "16"
-    output: "403"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "402"
-    input: "403"
-    input: "18"
-    output: "404"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "17"
-    output: "405"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "397"
-    input: "405"
-    input: "19"
-    output: "406"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "404"
+    input: "354"
     input: "406"
-    output: "407"
-    op_type: "Add"
-  }
-  node {
     input: "407"
-    output: "408"
-    op_type: "Tanh"
-  }
-  node {
+    input: "408"
     output: "409"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
+    op_type: "Slice"
   }
   node {
-    output: "410"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\001\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "411"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "391"
     input: "409"
+    output: "410"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "12"
+    output: "411"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "14"
+    output: "413"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
     input: "410"
     input: "411"
-    output: "412"
-    op_type: "Slice"
-  }
-  node {
-    input: "412"
-    output: "413"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "16"
-    output: "414"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
     input: "413"
-    input: "414"
-    input: "18"
-    output: "415"
+    output: "414"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -4250,14 +3455,10 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "17"
-    output: "416"
+    input: "13"
+    output: "415"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -4266,46 +3467,40 @@ graph {
     }
   }
   node {
-    input: "408"
-    input: "416"
-    input: "19"
+    input: "15"
     output: "417"
-    op_type: "Gemm"
+    op_type: "expand"
     attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
+      name: "size"
+      ints: 5
+      ints: 5
     }
   }
   node {
+    input: "405"
     input: "415"
     input: "417"
     output: "418"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "414"
+    input: "418"
+    output: "419"
     op_type: "Add"
   }
   node {
-    input: "418"
-    output: "419"
-    op_type: "Tanh"
-  }
-  node {
+    input: "419"
     output: "420"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
+    op_type: "Tanh"
   }
   node {
     output: "421"
@@ -4314,8 +3509,8 @@ graph {
       name: "value"
       t {
         dims: 1
-        data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
+        data_type: INT32
+        raw_data: "\000\000\000\000"
       }
     }
   }
@@ -4327,244 +3522,12 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
+        raw_data: "\004\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "391"
-    input: "420"
-    input: "421"
-    input: "422"
     output: "423"
-    op_type: "Slice"
-  }
-  node {
-    input: "423"
-    output: "424"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "16"
-    output: "425"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "424"
-    input: "425"
-    input: "18"
-    output: "426"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "17"
-    output: "427"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "419"
-    input: "427"
-    input: "19"
-    output: "428"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "426"
-    input: "428"
-    output: "429"
-    op_type: "Add"
-  }
-  node {
-    input: "429"
-    output: "430"
-    op_type: "Tanh"
-  }
-  node {
-    output: "431"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "432"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "433"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "391"
-    input: "431"
-    input: "432"
-    input: "433"
-    output: "434"
-    op_type: "Slice"
-  }
-  node {
-    input: "434"
-    output: "435"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "16"
-    output: "436"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "435"
-    input: "436"
-    input: "18"
-    output: "437"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "17"
-    output: "438"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "430"
-    input: "438"
-    input: "19"
-    output: "439"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "437"
-    input: "439"
-    output: "440"
-    op_type: "Add"
-  }
-  node {
-    input: "440"
-    output: "441"
-    op_type: "Tanh"
-  }
-  node {
-    output: "442"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "443"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "444"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4576,16 +3539,16 @@ graph {
     }
   }
   node {
-    input: "391"
-    input: "442"
-    input: "443"
-    input: "444"
-    output: "445"
+    input: "354"
+    input: "421"
+    input: "422"
+    input: "423"
+    output: "424"
     op_type: "Slice"
   }
   node {
-    input: "445"
-    output: "446"
+    input: "424"
+    output: "425"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -4593,8 +3556,8 @@ graph {
     }
   }
   node {
-    input: "16"
-    output: "447"
+    input: "12"
+    output: "426"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -4603,9 +3566,188 @@ graph {
     }
   }
   node {
-    input: "446"
+    input: "14"
+    output: "428"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "425"
+    input: "426"
+    input: "428"
+    output: "429"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "13"
+    output: "430"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "15"
+    output: "432"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "420"
+    input: "430"
+    input: "432"
+    output: "433"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "429"
+    input: "433"
+    output: "434"
+    op_type: "Add"
+  }
+  node {
+    input: "434"
+    output: "435"
+    op_type: "Tanh"
+  }
+  node {
+    output: "436"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "437"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "438"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\006\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "354"
+    input: "436"
+    input: "437"
+    input: "438"
+    output: "439"
+    op_type: "Slice"
+  }
+  node {
+    input: "439"
+    output: "440"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "12"
+    output: "441"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "14"
+    output: "443"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "440"
+    input: "441"
+    input: "443"
+    output: "444"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "13"
+    output: "445"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "15"
+    output: "447"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "435"
+    input: "445"
     input: "447"
-    input: "18"
     output: "448"
     op_type: "Gemm"
     attribute {
@@ -4616,53 +3758,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "17"
-    output: "449"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "441"
-    input: "449"
-    input: "19"
-    output: "450"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
+    input: "444"
     input: "448"
-    input: "450"
-    output: "451"
+    output: "449"
     op_type: "Add"
   }
   node {
-    input: "451"
-    output: "452"
+    input: "449"
+    output: "450"
     op_type: "Tanh"
   }
   node {
-    output: "453"
+    output: "451"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4674,19 +3783,7 @@ graph {
     }
   }
   node {
-    output: "454"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "455"
+    output: "452"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4698,16 +3795,28 @@ graph {
     }
   }
   node {
-    input: "391"
+    output: "453"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\007\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "354"
+    input: "451"
+    input: "452"
     input: "453"
-    input: "454"
-    input: "455"
-    output: "456"
+    output: "454"
     op_type: "Slice"
   }
   node {
-    input: "456"
-    output: "457"
+    input: "454"
+    output: "455"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -4715,8 +3824,8 @@ graph {
     }
   }
   node {
-    input: "16"
-    output: "458"
+    input: "12"
+    output: "456"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -4725,9 +3834,19 @@ graph {
     }
   }
   node {
-    input: "457"
+    input: "14"
+    output: "458"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "455"
+    input: "456"
     input: "458"
-    input: "18"
     output: "459"
     op_type: "Gemm"
     attribute {
@@ -4738,13 +3857,9 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "17"
+    input: "13"
     output: "460"
     op_type: "Transpose"
     attribute {
@@ -4754,10 +3869,20 @@ graph {
     }
   }
   node {
-    input: "452"
+    input: "15"
+    output: "462"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "450"
     input: "460"
-    input: "19"
-    output: "461"
+    input: "462"
+    output: "463"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -4767,24 +3892,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
     input: "459"
-    input: "461"
-    output: "462"
+    input: "463"
+    output: "464"
     op_type: "Add"
   }
   node {
-    input: "462"
-    output: "463"
+    input: "464"
+    output: "465"
     op_type: "Tanh"
   }
   node {
-    output: "464"
+    output: "466"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4796,19 +3917,7 @@ graph {
     }
   }
   node {
-    output: "465"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "466"
+    output: "467"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -4820,16 +3929,28 @@ graph {
     }
   }
   node {
-    input: "391"
-    input: "464"
-    input: "465"
+    output: "468"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "354"
     input: "466"
-    output: "467"
+    input: "467"
+    input: "468"
+    output: "469"
     op_type: "Slice"
   }
   node {
-    input: "467"
-    output: "468"
+    input: "469"
+    output: "470"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -4837,36 +3958,7 @@ graph {
     }
   }
   node {
-    input: "16"
-    output: "469"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "468"
-    input: "469"
-    input: "18"
-    output: "470"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "17"
+    input: "12"
     output: "471"
     op_type: "Transpose"
     attribute {
@@ -4876,103 +3968,20 @@ graph {
     }
   }
   node {
-    input: "463"
-    input: "471"
-    input: "19"
-    output: "472"
-    op_type: "Gemm"
+    input: "14"
+    output: "473"
+    op_type: "expand"
     attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
+      name: "size"
+      ints: 5
+      ints: 5
     }
   }
   node {
     input: "470"
-    input: "472"
-    output: "473"
-    op_type: "Add"
-  }
-  node {
+    input: "471"
     input: "473"
     output: "474"
-    op_type: "Tanh"
-  }
-  node {
-    output: "475"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "476"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "477"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "391"
-    input: "475"
-    input: "476"
-    input: "477"
-    output: "478"
-    op_type: "Slice"
-  }
-  node {
-    input: "478"
-    output: "479"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "16"
-    output: "480"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "479"
-    input: "480"
-    input: "18"
-    output: "481"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -4982,53 +3991,55 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "17"
-    output: "482"
+    input: "13"
+    output: "475"
     op_type: "Transpose"
     attribute {
       name: "perm"
       ints: 1
       ints: 0
+    }
+  }
+  node {
+    input: "15"
+    output: "477"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "465"
+    input: "475"
+    input: "477"
+    output: "478"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
     }
   }
   node {
     input: "474"
-    input: "482"
-    input: "19"
-    output: "483"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "481"
-    input: "483"
-    output: "484"
+    input: "478"
+    output: "479"
     op_type: "Add"
   }
   node {
-    input: "484"
-    output: "485"
+    input: "479"
+    output: "480"
     op_type: "Tanh"
   }
   node {
-    output: "486"
+    output: "481"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5040,7 +4051,7 @@ graph {
     }
   }
   node {
-    output: "487"
+    output: "482"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5052,7 +4063,7 @@ graph {
     }
   }
   node {
-    output: "488"
+    output: "483"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5064,16 +4075,16 @@ graph {
     }
   }
   node {
-    input: "391"
-    input: "486"
-    input: "487"
-    input: "488"
-    output: "489"
+    input: "354"
+    input: "481"
+    input: "482"
+    input: "483"
+    output: "484"
     op_type: "Slice"
   }
   node {
-    input: "489"
-    output: "490"
+    input: "484"
+    output: "485"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -5081,8 +4092,8 @@ graph {
     }
   }
   node {
-    input: "16"
-    output: "491"
+    input: "12"
+    output: "486"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -5091,39 +4102,20 @@ graph {
     }
   }
   node {
-    input: "490"
-    input: "491"
-    input: "18"
-    output: "492"
-    op_type: "Gemm"
+    input: "14"
+    output: "488"
+    op_type: "expand"
     attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "17"
-    output: "493"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
+      name: "size"
+      ints: 5
+      ints: 5
     }
   }
   node {
     input: "485"
-    input: "493"
-    input: "19"
-    output: "494"
+    input: "486"
+    input: "488"
+    output: "489"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -5133,21 +4125,64 @@ graph {
       name: "beta"
       f: 1
     }
+  }
+  node {
+    input: "13"
+    output: "490"
+    op_type: "Transpose"
     attribute {
-      name: "broadcast"
-      i: 1
+      name: "perm"
+      ints: 1
+      ints: 0
     }
   }
   node {
+    input: "15"
+    output: "492"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "480"
+    input: "490"
     input: "492"
-    input: "494"
-    output: "495"
+    output: "493"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "489"
+    input: "493"
+    output: "494"
     op_type: "Add"
   }
   node {
-    input: "495"
-    output: "496"
+    input: "494"
+    output: "495"
     op_type: "Tanh"
+  }
+  node {
+    output: "496"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
   }
   node {
     output: "497"
@@ -5156,8 +4191,8 @@ graph {
       name: "value"
       t {
         dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
+        data_type: INT64
+        raw_data: "\t\000\000\000\000\000\000\000"
       }
     }
   }
@@ -5169,33 +4204,21 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\t\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "499"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
         raw_data: "\n\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "391"
+    input: "354"
+    input: "496"
     input: "497"
     input: "498"
-    input: "499"
-    output: "500"
+    output: "499"
     op_type: "Slice"
   }
   node {
-    input: "500"
-    output: "501"
+    input: "499"
+    output: "500"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -5203,8 +4226,8 @@ graph {
     }
   }
   node {
-    input: "16"
-    output: "502"
+    input: "12"
+    output: "501"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -5213,10 +4236,20 @@ graph {
     }
   }
   node {
-    input: "501"
-    input: "502"
-    input: "18"
+    input: "14"
     output: "503"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "500"
+    input: "501"
+    input: "503"
+    output: "504"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -5226,14 +4259,10 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "17"
-    output: "504"
+    input: "13"
+    output: "505"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -5242,10 +4271,20 @@ graph {
     }
   }
   node {
-    input: "496"
-    input: "504"
-    input: "19"
-    output: "505"
+    input: "15"
+    output: "507"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "495"
+    input: "505"
+    input: "507"
+    output: "508"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -5255,43 +4294,39 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "503"
-    input: "505"
-    output: "506"
+    input: "504"
+    input: "508"
+    output: "509"
     op_type: "Add"
   }
   node {
-    input: "506"
-    output: "507"
+    input: "509"
+    output: "510"
     op_type: "Tanh"
   }
   node {
-    input: "408"
-    input: "419"
-    input: "430"
-    input: "441"
-    input: "452"
-    input: "463"
-    input: "474"
-    input: "485"
-    input: "496"
-    input: "507"
-    output: "508"
-    op_type: "Concat"
+    input: "375"
+    input: "390"
+    input: "405"
+    input: "420"
+    input: "435"
+    input: "450"
+    input: "465"
+    input: "480"
+    input: "495"
+    input: "510"
+    output: "512"
+    op_type: "cat"
     attribute {
-      name: "axis"
+      name: "dim"
       i: 0
     }
   }
   node {
-    input: "508"
-    output: "509"
+    input: "512"
+    output: "513"
     op_type: "Reshape"
     attribute {
       name: "shape"
@@ -5301,18 +4336,18 @@ graph {
     }
   }
   node {
-    input: "509"
-    output: "510"
-    op_type: "Concat"
+    input: "513"
+    output: "515"
+    op_type: "cat"
     attribute {
-      name: "axis"
+      name: "dim"
       i: 2
     }
   }
   node {
-    input: "510"
-    output: "512"
-    output: "513"
+    input: "515"
+    output: "517"
+    output: "518"
     op_type: "Dropout"
     attribute {
       name: "ratio"
@@ -5321,59 +4356,6 @@ graph {
     attribute {
       name: "is_test"
       i: 1
-    }
-  }
-  node {
-    output: "514"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "515"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "516"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "2"
-    input: "514"
-    input: "515"
-    input: "516"
-    output: "517"
-    op_type: "Slice"
-  }
-  node {
-    input: "517"
-    output: "518"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
     }
   }
   node {
@@ -5396,7 +4378,7 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\000\000\000\000\000\000\000\000"
+        raw_data: "\003\000\000\000\000\000\000\000"
       }
     }
   }
@@ -5408,12 +4390,12 @@ graph {
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\001\000\000\000\000\000\000\000"
+        raw_data: "\004\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "512"
+    input: "2"
     input: "519"
     input: "520"
     input: "521"
@@ -5430,76 +4412,7 @@ graph {
     }
   }
   node {
-    input: "20"
     output: "524"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "523"
-    input: "524"
-    input: "22"
-    output: "525"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "21"
-    output: "526"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "518"
-    input: "526"
-    input: "23"
-    output: "527"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "525"
-    input: "527"
-    output: "528"
-    op_type: "Add"
-  }
-  node {
-    input: "528"
-    output: "529"
-    op_type: "Tanh"
-  }
-  node {
-    output: "530"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5511,7 +4424,19 @@ graph {
     }
   }
   node {
-    output: "531"
+    output: "525"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "526"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5523,28 +4448,16 @@ graph {
     }
   }
   node {
-    output: "532"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\002\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
-    input: "530"
-    input: "531"
-    input: "532"
-    output: "533"
+    input: "517"
+    input: "524"
+    input: "525"
+    input: "526"
+    output: "527"
     op_type: "Slice"
   }
   node {
-    input: "533"
-    output: "534"
+    input: "527"
+    output: "528"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -5552,8 +4465,8 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "535"
+    input: "16"
+    output: "529"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -5562,9 +4475,54 @@ graph {
     }
   }
   node {
-    input: "534"
+    input: "18"
+    output: "531"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "528"
+    input: "529"
+    input: "531"
+    output: "532"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "17"
+    output: "533"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "19"
+    output: "535"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "523"
+    input: "533"
     input: "535"
-    input: "22"
     output: "536"
     op_type: "Gemm"
     attribute {
@@ -5575,53 +4533,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "21"
-    output: "537"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "529"
-    input: "537"
-    input: "23"
-    output: "538"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
+    input: "532"
     input: "536"
-    input: "538"
-    output: "539"
+    output: "537"
     op_type: "Add"
   }
   node {
-    input: "539"
-    output: "540"
+    input: "537"
+    output: "538"
     op_type: "Tanh"
   }
   node {
-    output: "541"
+    output: "539"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5633,7 +4558,19 @@ graph {
     }
   }
   node {
-    output: "542"
+    output: "540"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\001\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "541"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5645,28 +4582,16 @@ graph {
     }
   }
   node {
-    output: "543"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\003\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
+    input: "517"
+    input: "539"
+    input: "540"
     input: "541"
-    input: "542"
-    input: "543"
-    output: "544"
+    output: "542"
     op_type: "Slice"
   }
   node {
-    input: "544"
-    output: "545"
+    input: "542"
+    output: "543"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -5674,8 +4599,8 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "546"
+    input: "16"
+    output: "544"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -5684,9 +4609,19 @@ graph {
     }
   }
   node {
-    input: "545"
+    input: "18"
+    output: "546"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "543"
+    input: "544"
     input: "546"
-    input: "22"
     output: "547"
     op_type: "Gemm"
     attribute {
@@ -5697,13 +4632,9 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "21"
+    input: "17"
     output: "548"
     op_type: "Transpose"
     attribute {
@@ -5713,10 +4644,20 @@ graph {
     }
   }
   node {
-    input: "540"
+    input: "19"
+    output: "550"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "538"
     input: "548"
-    input: "23"
-    output: "549"
+    input: "550"
+    output: "551"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -5726,24 +4667,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
     input: "547"
-    input: "549"
-    output: "550"
+    input: "551"
+    output: "552"
     op_type: "Add"
   }
   node {
-    input: "550"
-    output: "551"
+    input: "552"
+    output: "553"
     op_type: "Tanh"
   }
   node {
-    output: "552"
+    output: "554"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5755,7 +4692,19 @@ graph {
     }
   }
   node {
-    output: "553"
+    output: "555"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "556"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5767,28 +4716,16 @@ graph {
     }
   }
   node {
-    output: "554"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\004\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
-    input: "552"
-    input: "553"
+    input: "517"
     input: "554"
-    output: "555"
+    input: "555"
+    input: "556"
+    output: "557"
     op_type: "Slice"
   }
   node {
-    input: "555"
-    output: "556"
+    input: "557"
+    output: "558"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -5796,36 +4733,7 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "557"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "556"
-    input: "557"
-    input: "22"
-    output: "558"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "21"
+    input: "16"
     output: "559"
     op_type: "Transpose"
     attribute {
@@ -5835,10 +4743,20 @@ graph {
     }
   }
   node {
-    input: "551"
+    input: "18"
+    output: "561"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "558"
     input: "559"
-    input: "23"
-    output: "560"
+    input: "561"
+    output: "562"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -5848,24 +4766,55 @@ graph {
       name: "beta"
       f: 1
     }
+  }
+  node {
+    input: "17"
+    output: "563"
+    op_type: "Transpose"
     attribute {
-      name: "broadcast"
-      i: 1
+      name: "perm"
+      ints: 1
+      ints: 0
     }
   }
   node {
-    input: "558"
-    input: "560"
-    output: "561"
+    input: "19"
+    output: "565"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "553"
+    input: "563"
+    input: "565"
+    output: "566"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "562"
+    input: "566"
+    output: "567"
     op_type: "Add"
   }
   node {
-    input: "561"
-    output: "562"
+    input: "567"
+    output: "568"
     op_type: "Tanh"
   }
   node {
-    output: "563"
+    output: "569"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5877,7 +4826,19 @@ graph {
     }
   }
   node {
-    output: "564"
+    output: "570"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "571"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5889,28 +4850,16 @@ graph {
     }
   }
   node {
-    output: "565"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
-    input: "563"
-    input: "564"
-    input: "565"
-    output: "566"
+    input: "517"
+    input: "569"
+    input: "570"
+    input: "571"
+    output: "572"
     op_type: "Slice"
   }
   node {
-    input: "566"
-    output: "567"
+    input: "572"
+    output: "573"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -5918,8 +4867,8 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "568"
+    input: "16"
+    output: "574"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -5928,10 +4877,55 @@ graph {
     }
   }
   node {
-    input: "567"
+    input: "18"
+    output: "576"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "573"
+    input: "574"
+    input: "576"
+    output: "577"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "17"
+    output: "578"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "19"
+    output: "580"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
     input: "568"
-    input: "22"
-    output: "569"
+    input: "578"
+    input: "580"
+    output: "581"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -5941,53 +4935,20 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "21"
-    output: "570"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "562"
-    input: "570"
-    input: "23"
-    output: "571"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "569"
-    input: "571"
-    output: "572"
+    input: "577"
+    input: "581"
+    output: "582"
     op_type: "Add"
   }
   node {
-    input: "572"
-    output: "573"
+    input: "582"
+    output: "583"
     op_type: "Tanh"
   }
   node {
-    output: "574"
+    output: "584"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -5997,116 +4958,6 @@ graph {
         raw_data: "\000\000\000\000"
       }
     }
-  }
-  node {
-    output: "575"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\005\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "576"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\006\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
-    input: "574"
-    input: "575"
-    input: "576"
-    output: "577"
-    op_type: "Slice"
-  }
-  node {
-    input: "577"
-    output: "578"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "20"
-    output: "579"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "578"
-    input: "579"
-    input: "22"
-    output: "580"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "21"
-    output: "581"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "573"
-    input: "581"
-    input: "23"
-    output: "582"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "580"
-    input: "582"
-    output: "583"
-    op_type: "Add"
-  }
-  node {
-    input: "583"
-    output: "584"
-    op_type: "Tanh"
   }
   node {
     output: "585"
@@ -6115,8 +4966,8 @@ graph {
       name: "value"
       t {
         dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
       }
     }
   }
@@ -6128,232 +4979,244 @@ graph {
       t {
         dims: 1
         data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "517"
+    input: "584"
+    input: "585"
+    input: "586"
+    output: "587"
+    op_type: "Slice"
+  }
+  node {
+    input: "587"
+    output: "588"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "16"
+    output: "589"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "18"
+    output: "591"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "588"
+    input: "589"
+    input: "591"
+    output: "592"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "17"
+    output: "593"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "19"
+    output: "595"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "583"
+    input: "593"
+    input: "595"
+    output: "596"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "592"
+    input: "596"
+    output: "597"
+    op_type: "Add"
+  }
+  node {
+    input: "597"
+    output: "598"
+    op_type: "Tanh"
+  }
+  node {
+    output: "599"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "600"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "601"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
         raw_data: "\006\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    output: "587"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
-    input: "585"
-    input: "586"
-    input: "587"
-    output: "588"
-    op_type: "Slice"
-  }
-  node {
-    input: "588"
-    output: "589"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "20"
-    output: "590"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "589"
-    input: "590"
-    input: "22"
-    output: "591"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "21"
-    output: "592"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "584"
-    input: "592"
-    input: "23"
-    output: "593"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "591"
-    input: "593"
-    output: "594"
-    op_type: "Add"
-  }
-  node {
-    input: "594"
-    output: "595"
-    op_type: "Tanh"
-  }
-  node {
-    output: "596"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT32
-        raw_data: "\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "597"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\007\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    output: "598"
-    op_type: "Constant"
-    attribute {
-      name: "value"
-      t {
-        dims: 1
-        data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
-      }
-    }
-  }
-  node {
-    input: "512"
-    input: "596"
-    input: "597"
-    input: "598"
-    output: "599"
-    op_type: "Slice"
-  }
-  node {
+    input: "517"
     input: "599"
-    output: "600"
-    op_type: "Squeeze"
-    attribute {
-      name: "axes"
-      ints: 0
-    }
-  }
-  node {
-    input: "20"
-    output: "601"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
     input: "600"
     input: "601"
-    input: "22"
     output: "602"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
-  }
-  node {
-    input: "21"
-    output: "603"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-    }
-  }
-  node {
-    input: "595"
-    input: "603"
-    input: "23"
-    output: "604"
-    op_type: "Gemm"
-    attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
+    op_type: "Slice"
   }
   node {
     input: "602"
+    output: "603"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "16"
+    output: "604"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "18"
+    output: "606"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "603"
     input: "604"
-    output: "605"
+    input: "606"
+    output: "607"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "17"
+    output: "608"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "19"
+    output: "610"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "598"
+    input: "608"
+    input: "610"
+    output: "611"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "607"
+    input: "611"
+    output: "612"
     op_type: "Add"
   }
   node {
-    input: "605"
-    output: "606"
+    input: "612"
+    output: "613"
     op_type: "Tanh"
   }
   node {
-    output: "607"
+    output: "614"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -6365,40 +5228,40 @@ graph {
     }
   }
   node {
-    output: "608"
+    output: "615"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\010\000\000\000\000\000\000\000"
+        raw_data: "\006\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    output: "609"
+    output: "616"
     op_type: "Constant"
     attribute {
       name: "value"
       t {
         dims: 1
         data_type: INT64
-        raw_data: "\t\000\000\000\000\000\000\000"
+        raw_data: "\007\000\000\000\000\000\000\000"
       }
     }
   }
   node {
-    input: "512"
-    input: "607"
-    input: "608"
-    input: "609"
-    output: "610"
+    input: "517"
+    input: "614"
+    input: "615"
+    input: "616"
+    output: "617"
     op_type: "Slice"
   }
   node {
-    input: "610"
-    output: "611"
+    input: "617"
+    output: "618"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -6406,8 +5269,8 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "612"
+    input: "16"
+    output: "619"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -6416,10 +5279,20 @@ graph {
     }
   }
   node {
-    input: "611"
-    input: "612"
-    input: "22"
-    output: "613"
+    input: "18"
+    output: "621"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "618"
+    input: "619"
+    input: "621"
+    output: "622"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -6429,14 +5302,10 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "21"
-    output: "614"
+    input: "17"
+    output: "623"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -6445,37 +5314,43 @@ graph {
     }
   }
   node {
-    input: "606"
-    input: "614"
-    input: "23"
-    output: "615"
-    op_type: "Gemm"
+    input: "19"
+    output: "625"
+    op_type: "expand"
     attribute {
-      name: "alpha"
-      f: 1
-    }
-    attribute {
-      name: "beta"
-      f: 1
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
+      name: "size"
+      ints: 5
+      ints: 5
     }
   }
   node {
     input: "613"
-    input: "615"
-    output: "616"
+    input: "623"
+    input: "625"
+    output: "626"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "622"
+    input: "626"
+    output: "627"
     op_type: "Add"
   }
   node {
-    input: "616"
-    output: "617"
+    input: "627"
+    output: "628"
     op_type: "Tanh"
   }
   node {
-    output: "618"
+    output: "629"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -6487,7 +5362,153 @@ graph {
     }
   }
   node {
-    output: "619"
+    output: "630"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\007\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "631"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "517"
+    input: "629"
+    input: "630"
+    input: "631"
+    output: "632"
+    op_type: "Slice"
+  }
+  node {
+    input: "632"
+    output: "633"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "16"
+    output: "634"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "18"
+    output: "636"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "633"
+    input: "634"
+    input: "636"
+    output: "637"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "17"
+    output: "638"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "19"
+    output: "640"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "628"
+    input: "638"
+    input: "640"
+    output: "641"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "637"
+    input: "641"
+    output: "642"
+    op_type: "Add"
+  }
+  node {
+    input: "642"
+    output: "643"
+    op_type: "Tanh"
+  }
+  node {
+    output: "644"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "645"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "646"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -6499,7 +5520,129 @@ graph {
     }
   }
   node {
-    output: "620"
+    input: "517"
+    input: "644"
+    input: "645"
+    input: "646"
+    output: "647"
+    op_type: "Slice"
+  }
+  node {
+    input: "647"
+    output: "648"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "16"
+    output: "649"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "18"
+    output: "651"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "648"
+    input: "649"
+    input: "651"
+    output: "652"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "17"
+    output: "653"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "19"
+    output: "655"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "643"
+    input: "653"
+    input: "655"
+    output: "656"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "652"
+    input: "656"
+    output: "657"
+    op_type: "Add"
+  }
+  node {
+    input: "657"
+    output: "658"
+    op_type: "Tanh"
+  }
+  node {
+    output: "659"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "660"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\t\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "661"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -6511,16 +5654,16 @@ graph {
     }
   }
   node {
-    input: "512"
-    input: "618"
-    input: "619"
-    input: "620"
-    output: "621"
+    input: "517"
+    input: "659"
+    input: "660"
+    input: "661"
+    output: "662"
     op_type: "Slice"
   }
   node {
-    input: "621"
-    output: "622"
+    input: "662"
+    output: "663"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -6528,8 +5671,8 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "623"
+    input: "16"
+    output: "664"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -6538,10 +5681,20 @@ graph {
     }
   }
   node {
-    input: "622"
-    input: "623"
-    input: "22"
-    output: "624"
+    input: "18"
+    output: "666"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "663"
+    input: "664"
+    input: "666"
+    output: "667"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -6551,14 +5704,10 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "21"
-    output: "625"
+    input: "17"
+    output: "668"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -6567,10 +5716,20 @@ graph {
     }
   }
   node {
-    input: "617"
-    input: "625"
-    input: "23"
-    output: "626"
+    input: "19"
+    output: "670"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "658"
+    input: "668"
+    input: "670"
+    output: "671"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -6580,43 +5739,39 @@ graph {
       name: "beta"
       f: 1
     }
-    attribute {
-      name: "broadcast"
-      i: 1
-    }
   }
   node {
-    input: "624"
-    input: "626"
-    output: "627"
+    input: "667"
+    input: "671"
+    output: "672"
     op_type: "Add"
   }
   node {
-    input: "627"
-    output: "628"
+    input: "672"
+    output: "673"
     op_type: "Tanh"
   }
   node {
-    input: "529"
-    input: "540"
-    input: "551"
-    input: "562"
-    input: "573"
-    input: "584"
-    input: "595"
-    input: "606"
-    input: "617"
+    input: "538"
+    input: "553"
+    input: "568"
+    input: "583"
+    input: "598"
+    input: "613"
     input: "628"
-    output: "629"
-    op_type: "Concat"
+    input: "643"
+    input: "658"
+    input: "673"
+    output: "675"
+    op_type: "cat"
     attribute {
-      name: "axis"
+      name: "dim"
       i: 0
     }
   }
   node {
-    input: "629"
-    output: "630"
+    input: "675"
+    output: "676"
     op_type: "Reshape"
     attribute {
       name: "shape"
@@ -6626,42 +5781,18 @@ graph {
     }
   }
   node {
-    input: "630"
-    output: "631"
-    op_type: "Concat"
+    input: "676"
+    output: "678"
+    op_type: "cat"
     attribute {
-      name: "axis"
+      name: "dim"
       i: 2
     }
   }
   node {
-    input: "144"
-    input: "265"
-    input: "386"
-    input: "507"
-    input: "628"
-    output: "632"
-    op_type: "Concat"
-    attribute {
-      name: "axis"
-      i: 0
-    }
-  }
-  node {
-    input: "632"
-    output: "633"
-    op_type: "Reshape"
-    attribute {
-      name: "shape"
-      ints: 5
-      ints: 5
-      ints: 5
-    }
-  }
-  node {
-    input: "631"
-    output: "635"
-    output: "636"
+    input: "678"
+    output: "680"
+    output: "681"
     op_type: "Dropout"
     attribute {
       name: "ratio"
@@ -6673,18 +5804,114 @@ graph {
     }
   }
   node {
-    input: "635"
-    output: "637"
-    op_type: "Reshape"
+    output: "682"
+    op_type: "Constant"
     attribute {
-      name: "shape"
-      ints: 50
-      ints: 5
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
     }
   }
   node {
-    input: "24"
-    output: "638"
+    output: "683"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "684"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "2"
+    input: "682"
+    input: "683"
+    input: "684"
+    output: "685"
+    op_type: "Slice"
+  }
+  node {
+    input: "685"
+    output: "686"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    output: "687"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "688"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\000\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "689"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\001\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "687"
+    input: "688"
+    input: "689"
+    output: "690"
+    op_type: "Slice"
+  }
+  node {
+    input: "690"
+    output: "691"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "692"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -6693,10 +5920,20 @@ graph {
     }
   }
   node {
-    input: "637"
-    input: "638"
-    input: "25"
-    output: "639"
+    input: "22"
+    output: "694"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "691"
+    input: "692"
+    input: "694"
+    output: "695"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -6706,14 +5943,1383 @@ graph {
       name: "beta"
       f: 1
     }
+  }
+  node {
+    input: "21"
+    output: "696"
+    op_type: "Transpose"
     attribute {
-      name: "broadcast"
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "698"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "686"
+    input: "696"
+    input: "698"
+    output: "699"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "695"
+    input: "699"
+    output: "700"
+    op_type: "Add"
+  }
+  node {
+    input: "700"
+    output: "701"
+    op_type: "Tanh"
+  }
+  node {
+    output: "702"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "703"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\001\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "704"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "702"
+    input: "703"
+    input: "704"
+    output: "705"
+    op_type: "Slice"
+  }
+  node {
+    input: "705"
+    output: "706"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "707"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "709"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "706"
+    input: "707"
+    input: "709"
+    output: "710"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "711"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "713"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "701"
+    input: "711"
+    input: "713"
+    output: "714"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "710"
+    input: "714"
+    output: "715"
+    op_type: "Add"
+  }
+  node {
+    input: "715"
+    output: "716"
+    op_type: "Tanh"
+  }
+  node {
+    output: "717"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "718"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\002\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "719"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "717"
+    input: "718"
+    input: "719"
+    output: "720"
+    op_type: "Slice"
+  }
+  node {
+    input: "720"
+    output: "721"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "722"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "724"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "721"
+    input: "722"
+    input: "724"
+    output: "725"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "726"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "728"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "716"
+    input: "726"
+    input: "728"
+    output: "729"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "725"
+    input: "729"
+    output: "730"
+    op_type: "Add"
+  }
+  node {
+    input: "730"
+    output: "731"
+    op_type: "Tanh"
+  }
+  node {
+    output: "732"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "733"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\003\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "734"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "732"
+    input: "733"
+    input: "734"
+    output: "735"
+    op_type: "Slice"
+  }
+  node {
+    input: "735"
+    output: "736"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "737"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "739"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "736"
+    input: "737"
+    input: "739"
+    output: "740"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "741"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "743"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "731"
+    input: "741"
+    input: "743"
+    output: "744"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "740"
+    input: "744"
+    output: "745"
+    op_type: "Add"
+  }
+  node {
+    input: "745"
+    output: "746"
+    op_type: "Tanh"
+  }
+  node {
+    output: "747"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "748"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\004\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "749"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "747"
+    input: "748"
+    input: "749"
+    output: "750"
+    op_type: "Slice"
+  }
+  node {
+    input: "750"
+    output: "751"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "752"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "754"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "751"
+    input: "752"
+    input: "754"
+    output: "755"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "756"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "758"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "746"
+    input: "756"
+    input: "758"
+    output: "759"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "755"
+    input: "759"
+    output: "760"
+    op_type: "Add"
+  }
+  node {
+    input: "760"
+    output: "761"
+    op_type: "Tanh"
+  }
+  node {
+    output: "762"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "763"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\005\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "764"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\006\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "762"
+    input: "763"
+    input: "764"
+    output: "765"
+    op_type: "Slice"
+  }
+  node {
+    input: "765"
+    output: "766"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "767"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "769"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "766"
+    input: "767"
+    input: "769"
+    output: "770"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "771"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "773"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "761"
+    input: "771"
+    input: "773"
+    output: "774"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "770"
+    input: "774"
+    output: "775"
+    op_type: "Add"
+  }
+  node {
+    input: "775"
+    output: "776"
+    op_type: "Tanh"
+  }
+  node {
+    output: "777"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "778"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\006\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "779"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\007\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "777"
+    input: "778"
+    input: "779"
+    output: "780"
+    op_type: "Slice"
+  }
+  node {
+    input: "780"
+    output: "781"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "782"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "784"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "781"
+    input: "782"
+    input: "784"
+    output: "785"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "786"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "788"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "776"
+    input: "786"
+    input: "788"
+    output: "789"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "785"
+    input: "789"
+    output: "790"
+    op_type: "Add"
+  }
+  node {
+    input: "790"
+    output: "791"
+    op_type: "Tanh"
+  }
+  node {
+    output: "792"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "793"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\007\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "794"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "792"
+    input: "793"
+    input: "794"
+    output: "795"
+    op_type: "Slice"
+  }
+  node {
+    input: "795"
+    output: "796"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "797"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "799"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "796"
+    input: "797"
+    input: "799"
+    output: "800"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "801"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "803"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "791"
+    input: "801"
+    input: "803"
+    output: "804"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "800"
+    input: "804"
+    output: "805"
+    op_type: "Add"
+  }
+  node {
+    input: "805"
+    output: "806"
+    op_type: "Tanh"
+  }
+  node {
+    output: "807"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "808"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\010\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "809"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\t\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "807"
+    input: "808"
+    input: "809"
+    output: "810"
+    op_type: "Slice"
+  }
+  node {
+    input: "810"
+    output: "811"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "812"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "814"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "811"
+    input: "812"
+    input: "814"
+    output: "815"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "816"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "818"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "806"
+    input: "816"
+    input: "818"
+    output: "819"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "815"
+    input: "819"
+    output: "820"
+    op_type: "Add"
+  }
+  node {
+    input: "820"
+    output: "821"
+    op_type: "Tanh"
+  }
+  node {
+    output: "822"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT32
+        raw_data: "\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "823"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\t\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    output: "824"
+    op_type: "Constant"
+    attribute {
+      name: "value"
+      t {
+        dims: 1
+        data_type: INT64
+        raw_data: "\n\000\000\000\000\000\000\000"
+      }
+    }
+  }
+  node {
+    input: "680"
+    input: "822"
+    input: "823"
+    input: "824"
+    output: "825"
+    op_type: "Slice"
+  }
+  node {
+    input: "825"
+    output: "826"
+    op_type: "Squeeze"
+    attribute {
+      name: "axes"
+      ints: 0
+    }
+  }
+  node {
+    input: "20"
+    output: "827"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "22"
+    output: "829"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "826"
+    input: "827"
+    input: "829"
+    output: "830"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "21"
+    output: "831"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "23"
+    output: "833"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "821"
+    input: "831"
+    input: "833"
+    output: "834"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "830"
+    input: "834"
+    output: "835"
+    op_type: "Add"
+  }
+  node {
+    input: "835"
+    output: "836"
+    op_type: "Tanh"
+  }
+  node {
+    input: "701"
+    input: "716"
+    input: "731"
+    input: "746"
+    input: "761"
+    input: "776"
+    input: "791"
+    input: "806"
+    input: "821"
+    input: "836"
+    output: "838"
+    op_type: "cat"
+    attribute {
+      name: "dim"
+      i: 0
+    }
+  }
+  node {
+    input: "838"
+    output: "839"
+    op_type: "Reshape"
+    attribute {
+      name: "shape"
+      ints: 10
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "839"
+    output: "841"
+    op_type: "cat"
+    attribute {
+      name: "dim"
+      i: 2
+    }
+  }
+  node {
+    input: "184"
+    input: "347"
+    input: "510"
+    input: "673"
+    input: "836"
+    output: "843"
+    op_type: "cat"
+    attribute {
+      name: "dim"
+      i: 0
+    }
+  }
+  node {
+    input: "843"
+    output: "844"
+    op_type: "Reshape"
+    attribute {
+      name: "shape"
+      ints: 5
+      ints: 5
+      ints: 5
+    }
+  }
+  node {
+    input: "841"
+    output: "846"
+    output: "847"
+    op_type: "Dropout"
+    attribute {
+      name: "ratio"
+      f: 0.200000002980232
+    }
+    attribute {
+      name: "is_test"
       i: 1
     }
   }
   node {
-    input: "639"
-    output: "640"
+    input: "846"
+    output: "848"
+    op_type: "Reshape"
+    attribute {
+      name: "shape"
+      ints: 50
+      ints: 5
+    }
+  }
+  node {
+    input: "24"
+    output: "849"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+    }
+  }
+  node {
+    input: "25"
+    output: "851"
+    op_type: "expand"
+    attribute {
+      name: "size"
+      ints: 50
+      ints: 10
+    }
+  }
+  node {
+    input: "848"
+    input: "849"
+    input: "851"
+    output: "852"
+    op_type: "Gemm"
+    attribute {
+      name: "alpha"
+      f: 1
+    }
+    attribute {
+      name: "beta"
+      f: 1
+    }
+  }
+  node {
+    input: "852"
+    output: "853"
     op_type: "Reshape"
     attribute {
       name: "shape"
@@ -7094,7 +7700,7 @@ graph {
     }
   }
   output {
-    name: "640"
+    name: "853"
     type {
       tensor_type {
         elem_type: FLOAT
