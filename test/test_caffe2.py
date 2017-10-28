@@ -413,6 +413,16 @@ class TestCaffe2Backend(unittest.TestCase):
         m2 = Variable(torch.randn(4, 5))
         self.run_model_test(MyModel(), train=False, input=(ma, m1, m2), batch_size=BATCH_SIZE, use_gpu=False)
 
+    def test_unfold(self):
+        print(torch.__file__)
+        class MyModel(torch.nn.Module):
+            def __init__(self):
+                super(MyModel, self).__init__()
+            def forward(self, x):
+                return x.unfold(0, 1, 2)
+        x = Variable(torch.randn(3, 4, 2))
+        self.run_model_test(MyModel(), train=False, input=(x,), batch_size=BATCH_SIZE, use_gpu=False)
+
 # add the same test suite as above, but switch embed_params=False
 # to embed_params=True
 TestCaffe2BackendEmbed = type(str("TestCaffe2BackendEmbed"),

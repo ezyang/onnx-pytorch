@@ -174,6 +174,11 @@ class TestOperators(TestCase):
 
         self.assertONNXExpected(export_to_string(MyModule(), x))
 
+    def test_unfold(self):
+        m1 = Variable(torch.randn(2, 3), requires_grad=True)
+        trace, _ = torch.jit.trace(lambda x: x.unfold(0, 1, 2), (m1,))
+        torch._C._jit_pass_onnx(trace)
+        self.assertONNXExpected(trace.export())
 
 if __name__ == '__main__':
     run_tests()
