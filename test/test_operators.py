@@ -7,6 +7,7 @@ from torch.nn import Module
 import torch.nn as nn
 
 import onnx
+import onnx.checker
 
 import google.protobuf.text_format
 
@@ -32,6 +33,7 @@ class FuncModule(Module):
 class TestOperators(TestCase):
     def assertONNXExpected(self, binary_pb, subname=None):
         model_def = onnx.ModelProto.FromString(binary_pb)
+        onnx.checker.check_model(model_def)
         self.assertExpected(google.protobuf.text_format.MessageToString(model_def, float_format='.15g'), subname)
 
     def test_basic(self):
@@ -48,6 +50,12 @@ class TestOperators(TestCase):
     def test_view(self):
         x = Variable(torch.Tensor([0]), requires_grad=True)
         trace, _ = torch.jit.trace(lambda x: x.view(1, 1), x)
+        torch._C._jit_pass_onnx(trace)
+        self.assertONNXExpected(trace.export())
+
+    def test_index(self):
+        x = Variable(torch.Tensor([[0]]), requires_grad=True)
+        trace, _ = torch.jit.trace(lambda x: x[0], x)
         torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export())
 
