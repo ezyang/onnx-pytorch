@@ -1439,12 +1439,12 @@ graph {
     output: "167"
     op_type: "Dropout"
     attribute {
-      name: "ratio"
-      f: 0.5
-    }
-    attribute {
       name: "is_test"
       i: 1
+    }
+    attribute {
+      name: "ratio"
+      f: 0.5
     }
   }
   node {

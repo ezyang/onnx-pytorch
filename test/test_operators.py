@@ -7,6 +7,7 @@ from torch.nn import Module
 import torch.nn as nn
 
 import onnx
+import onnx.checker
 
 import google.protobuf.text_format
 
@@ -32,6 +33,7 @@ class FuncModule(Module):
 class TestOperators(TestCase):
     def assertONNXExpected(self, binary_pb, subname=None):
         model_def = onnx.ModelProto.FromString(binary_pb)
+        onnx.checker.check_model(model_def)
         self.assertExpected(google.protobuf.text_format.MessageToString(model_def, float_format='.15g'), subname)
 
     def test_basic(self):
@@ -51,9 +53,25 @@ class TestOperators(TestCase):
         torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export())
 
+    def test_index(self):
+        x = Variable(torch.Tensor([[0]]), requires_grad=True)
+        trace, _ = torch.jit.trace(lambda x: x[0], x)
+        torch._C._jit_pass_onnx(trace)
+        self.assertONNXExpected(trace.export())
+
     def test_addconstant(self):
         x = Variable(torch.DoubleTensor(2, 3), requires_grad=True)
         self.assertONNXExpected(export_to_string(FuncModule(lambda x: x + 1), (x, )))
+
+    def test_add_broadcast(self):
+        x = Variable(torch.DoubleTensor(2, 3), requires_grad=True)
+        y = Variable(torch.DoubleTensor(3), requires_grad=True)
+        self.assertONNXExpected(export_to_string(FuncModule(lambda x, y: x + y), (x, y)))
+
+    def test_add_size1_broadcast(self):
+        x = Variable(torch.DoubleTensor(2, 3), requires_grad=True)
+        y = Variable(torch.DoubleTensor(2, 1), requires_grad=True)
+        self.assertExpectedRaises(RuntimeError, lambda: export_to_string(FuncModule(lambda x, y: x + y), (x, y)))
 
     def test_transpose(self):
         x = Variable(torch.Tensor([[0, 1], [2, 3]]), requires_grad=True)
@@ -77,7 +95,7 @@ class TestOperators(TestCase):
     def test_addmm(self):
         m1 = Variable(torch.randn(2, 3), requires_grad=True)
         m2 = Variable(torch.randn(3, 4), requires_grad=True)
-        m3 = Variable(torch.randn(1, 1), requires_grad=True)
+        m3 = Variable(torch.randn(4), requires_grad=True)
         trace, _ = torch.jit.trace(lambda x, y, z: torch.addmm(torch.addmm(z, x, y), x, y), (m1, m2, m3))
         torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export())

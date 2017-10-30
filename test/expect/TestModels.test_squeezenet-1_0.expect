@@ -911,7 +911,7 @@ type {
   %162 = Add[broadcast = 1, axis = 1](%161, %51)
   %163 = Relu(%162)
   %164 = Concat[axis = 1](%159, %163)
-  %166, %167 = Dropout[ratio = 0.5, is_test = 1](%164)
+  %166, %167 = Dropout[is_test = 1, ratio = 0.5](%164)
   %169 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%166, %52)
   %170 = Add[broadcast = 1, axis = 1](%169, %53)
   %171 = Relu(%170)

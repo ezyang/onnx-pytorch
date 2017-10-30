@@ -815,7 +815,7 @@ graph {
     input: "91"
     input: "92"
     input: "29"
-    output: "93"
+    output: "109"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -831,27 +831,27 @@ graph {
     }
   }
   node {
-    input: "93"
-    output: "94"
+    input: "109"
+    output: "95"
     op_type: "Relu"
   }
   node {
-    input: "94"
-    output: "96"
+    input: "95"
     output: "97"
+    output: "98"
     op_type: "Dropout"
-    attribute {
-      name: "ratio"
-      f: 0.5
-    }
     attribute {
       name: "is_test"
       i: 1
+    }
+    attribute {
+      name: "ratio"
+      f: 0.5
     }
   }
   node {
     input: "30"
-    output: "98"
+    output: "99"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -860,10 +860,10 @@ graph {
     }
   }
   node {
-    input: "96"
-    input: "98"
+    input: "97"
+    input: "99"
     input: "31"
-    output: "99"
+    output: "110"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -879,27 +879,27 @@ graph {
     }
   }
   node {
-    input: "99"
-    output: "100"
+    input: "110"
+    output: "102"
     op_type: "Relu"
   }
   node {
-    input: "100"
-    output: "102"
-    output: "103"
+    input: "102"
+    output: "104"
+    output: "105"
     op_type: "Dropout"
-    attribute {
-      name: "ratio"
-      f: 0.5
-    }
     attribute {
       name: "is_test"
       i: 1
     }
+    attribute {
+      name: "ratio"
+      f: 0.5
+    }
   }
   node {
     input: "32"
-    output: "104"
+    output: "106"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -908,10 +908,10 @@ graph {
     }
   }
   node {
-    input: "102"
     input: "104"
+    input: "106"
     input: "33"
-    output: "105"
+    output: "111"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1492,7 +1492,7 @@ graph {
     }
   }
   output {
-    name: "105"
+    name: "111"
     type {
       tensor_type {
         elem_type: FLOAT

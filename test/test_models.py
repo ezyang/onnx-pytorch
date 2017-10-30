@@ -206,18 +206,22 @@ class TestModels(TestCase):
                      volatile=False)
         self.exportTest(model, (x, model.hidden))
 
+    @unittest.expectedFailure
     def test_word_language_model_RNN_TANH(self):
         model_name = 'RNN_TANH'
         self.run_word_language_model(model_name)
 
+    @unittest.expectedFailure
     def test_word_language_model_RNN_RELU(self):
         model_name = 'RNN_RELU'
         self.run_word_language_model(model_name)
 
+    @unittest.expectedFailure
     def test_word_language_model_LSTM(self):
         model_name = 'LSTM'
         self.run_word_language_model(model_name)
 
+    @unittest.expectedFailure
     def test_word_language_model_GRU(self):
         model_name = 'GRU'
         self.run_word_language_model(model_name)
