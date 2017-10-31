@@ -28,11 +28,7 @@ graph {
   node {
     input: "6"
     output: "7"
-    op_type: "Scale"
-    attribute {
-      name: "scale"
-      f: -1
-    }
+    op_type: "Neg"
   }
   name: "torch-jit-export"
   input {

@@ -1192,7 +1192,7 @@ graph {
     input: "169"
     input: "170"
     input: "81"
-    output: "187"
+    output: "172"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1208,7 +1208,7 @@ graph {
     }
   }
   node {
-    input: "187"
+    input: "172"
     output: "173"
     op_type: "Relu"
   }
@@ -1240,7 +1240,7 @@ graph {
     input: "175"
     input: "177"
     input: "83"
-    output: "188"
+    output: "179"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1256,7 +1256,7 @@ graph {
     }
   }
   node {
-    input: "188"
+    input: "179"
     output: "180"
     op_type: "Relu"
   }
@@ -1288,7 +1288,7 @@ graph {
     input: "182"
     input: "184"
     input: "85"
-    output: "189"
+    output: "186"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -2545,7 +2545,7 @@ graph {
     }
   }
   output {
-    name: "189"
+    name: "186"
     type {
       tensor_type {
         elem_type: FLOAT
