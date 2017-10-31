@@ -6715,7 +6715,7 @@ graph {
     input: "988"
     input: "989"
     input: "485"
-    output: "992"
+    output: "991"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -13916,7 +13916,7 @@ graph {
     }
   }
   output {
-    name: "992"
+    name: "991"
     type {
       tensor_type {
         elem_type: FLOAT

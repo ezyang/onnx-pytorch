@@ -6527,8 +6527,8 @@ type {
   %986, %987 = Dropout[is_test = 1, ratio = 0.5](%984)
   %988 = Reshape[shape = [2, -1]](%986)
   %989 = Transpose[perm = [1, 0]](%484)
-  %992 = Gemm[alpha = 1, beta = 1, broadcast = 1](%988, %989, %485)
-  return %name: "992"
+  %991 = Gemm[alpha = 1, beta = 1, broadcast = 1](%988, %989, %485)
+  return %name: "991"
 type {
   tensor_type {
     elem_type: FLOAT

@@ -8195,8 +8195,8 @@ type {
   %1273 = AveragePool[kernel_shape = [7, 7], pads = [0, 0], strides = [7, 7]](%1272)
   %1274 = Reshape[shape = [2, -1]](%1273)
   %1275 = Transpose[perm = [1, 0]](%606)
-  %1278 = Gemm[alpha = 1, beta = 1, broadcast = 1](%1274, %1275, %607)
-  return %name: "1278"
+  %1277 = Gemm[alpha = 1, beta = 1, broadcast = 1](%1274, %1275, %607)
+  return %name: "1277"
 type {
   tensor_type {
     elem_type: FLOAT

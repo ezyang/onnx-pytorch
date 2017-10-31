@@ -1128,16 +1128,16 @@ type {
   %168 = MaxPool[dilations = [1, 1], kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%167)
   %169 = Reshape[shape = [2, -1]](%168)
   %170 = Transpose[perm = [1, 0]](%80)
-  %187 = Gemm[alpha = 1, beta = 1, broadcast = 1](%169, %170, %81)
-  %173 = Relu(%187)
+  %172 = Gemm[alpha = 1, beta = 1, broadcast = 1](%169, %170, %81)
+  %173 = Relu(%172)
   %175, %176 = Dropout[is_test = 1, ratio = 0.5](%173)
   %177 = Transpose[perm = [1, 0]](%82)
-  %188 = Gemm[alpha = 1, beta = 1, broadcast = 1](%175, %177, %83)
-  %180 = Relu(%188)
+  %179 = Gemm[alpha = 1, beta = 1, broadcast = 1](%175, %177, %83)
+  %180 = Relu(%179)
   %182, %183 = Dropout[is_test = 1, ratio = 0.5](%180)
   %184 = Transpose[perm = [1, 0]](%84)
-  %189 = Gemm[alpha = 1, beta = 1, broadcast = 1](%182, %184, %85)
-  return %name: "189"
+  %186 = Gemm[alpha = 1, beta = 1, broadcast = 1](%182, %184, %85)
+  return %name: "186"
 type {
   tensor_type {
     elem_type: FLOAT
