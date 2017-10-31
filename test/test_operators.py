@@ -71,7 +71,7 @@ class TestOperators(TestCase):
     def test_add_size1_broadcast(self):
         x = Variable(torch.DoubleTensor(2, 3), requires_grad=True)
         y = Variable(torch.DoubleTensor(2, 1), requires_grad=True)
-        self.assertExpectedRaises(RuntimeError, lambda: export_to_string(FuncModule(lambda x, y: x + y), (x, y)))
+        self.assertONNXExpected(export_to_string(FuncModule(lambda x, y: x + y), (x, y)))
 
     def test_transpose(self):
         x = Variable(torch.Tensor([[0, 1], [2, 3]]), requires_grad=True)
@@ -178,6 +178,15 @@ class TestOperators(TestCase):
 
             def forward(self, x):
                 return MyFun.apply(x)
+
+        self.assertONNXExpected(export_to_string(MyModule(), x))
+
+    def test_expand(self):
+        x = Variable(torch.randn(1, 2, 3))
+
+        class MyModule(Module):
+            def forward(self, x):
+                return x.expand(3, 2, 3)
 
         self.assertONNXExpected(export_to_string(MyModule(), x))
 
