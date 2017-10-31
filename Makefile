@@ -16,3 +16,4 @@ test:
 	python test/test_models.py
 	python test/test_caffe2.py
 	python test/test_verify.py
+	python test/test_pytorch_helper.py
