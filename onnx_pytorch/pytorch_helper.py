@@ -22,7 +22,7 @@ class _FakeDict(object):
 def PyTorchModule(helper, model, sample_arguments, caffe2_inputs, prefix_name=None):
     """
     Embed an ONNX-exportable PyTorch Model into a Caffe2 model being built.
-    
+
     Arguments:
         helper (caffe2.python.core.ModelHelder): the model helper where
             this imported network should be inserted
@@ -40,7 +40,7 @@ def PyTorchModule(helper, model, sample_arguments, caffe2_inputs, prefix_name=No
            caffe2 Blobs that should be inputs to this network. Must be
            the same length as sample_arguments
         prefix_name: prefix name to add to each member of the blob, if None then
-           a freesh prefix pytorch_input_N/ is used
+           a fresh prefix pytorch_input_N/ is used
     Returns:
         A tuple of caffe2.python.core.BlobReference objects referring to the
         models outputs, or a single BlobReference when the model returns a single
@@ -82,6 +82,4 @@ def PyTorchModule(helper, model, sample_arguments, caffe2_inputs, prefix_name=No
 
     results = tuple([BlobReference(remap_blob_name(x.name), helper.net)
                      for x in onnx_model.graph.output])
-    if len(results) == 1:
-        results, = results
     return results

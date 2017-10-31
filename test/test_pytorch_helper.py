@@ -48,7 +48,7 @@ class TestCaffe2Backend(unittest.TestCase):
         helper = ModelHelper(name="test_model")
         start = helper.Sigmoid(['the_input'])
         # Embed the ONNX-converted pytorch net inside it
-        toutput = PyTorchModule(helper, torch_model, (fake_input,), [start])
+        toutput, = PyTorchModule(helper, torch_model, (fake_input,), [start])
         output = helper.Sigmoid(toutput)
 
 
