@@ -1,0 +1,1158 @@
+graph torch-jit-export (%name: "1"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 224
+      }
+      dim {
+        dim_value: 224
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "4"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "5"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "6"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "7"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "8"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "9"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "10"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "11"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "12"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "13"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
+      }
+    }
+  }
+}
+, %name: "14"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "15"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "16"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "17"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "18"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "19"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "20"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "21"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "22"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "23"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "24"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "25"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 128
+      }
+    }
+  }
+}
+, %name: "26"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "27"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "28"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "29"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "30"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "31"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "32"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "33"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "34"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "35"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "36"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "37"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "38"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "39"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "40"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "41"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "42"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "43"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+    }
+  }
+}
+, %name: "44"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "45"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "46"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "47"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "48"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "49"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "50"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "51"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "52"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "53"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "54"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "55"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "56"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "57"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "58"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "59"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "60"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "61"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "62"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "63"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "64"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "65"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "66"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "67"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "68"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "69"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "70"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "71"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "72"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "73"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "74"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
+    }
+  }
+}
+, %name: "75"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "76"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "77"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "78"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "79"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
+      }
+    }
+  }
+}
+, %name: "80"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+      dim {
+        dim_value: 25088
+      }
+    }
+  }
+}
+, %name: "81"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "82"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "83"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "84"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1000
+      }
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
+, %name: "85"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 1000
+      }
+    }
+  }
+}
+) {
+  %87 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%1, %2)
+  %88 = Add[broadcast = 1, axis = 1](%87, %3)
+  %90 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%88, %4, %5, %6, %7)
+  %91 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%90)
+  %93 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%91, %8)
+  %94 = Add[broadcast = 1, axis = 1](%93, %9)
+  %96 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%94, %10, %11, %12, %13)
+  %97 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%96)
+  %98 = ATen[ceil_mode = 0, dilation = [1, 1], kernel_size = [2, 2], operator = u'max_pool2d', padding = [0, 0], stride = [2, 2]](%97)
+  %100 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%98, %14)
+  %101 = Add[broadcast = 1, axis = 1](%100, %15)
+  %103 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%101, %16, %17, %18, %19)
+  %104 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%103)
+  %106 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%104, %20)
+  %107 = Add[broadcast = 1, axis = 1](%106, %21)
+  %109 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%107, %22, %23, %24, %25)
+  %110 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%109)
+  %111 = ATen[ceil_mode = 0, dilation = [1, 1], kernel_size = [2, 2], operator = u'max_pool2d', padding = [0, 0], stride = [2, 2]](%110)
+  %113 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%111, %26)
+  %114 = Add[broadcast = 1, axis = 1](%113, %27)
+  %116 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%114, %28, %29, %30, %31)
+  %117 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%116)
+  %119 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%117, %32)
+  %120 = Add[broadcast = 1, axis = 1](%119, %33)
+  %122 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%120, %34, %35, %36, %37)
+  %123 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%122)
+  %125 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%123, %38)
+  %126 = Add[broadcast = 1, axis = 1](%125, %39)
+  %128 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%126, %40, %41, %42, %43)
+  %129 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%128)
+  %130 = ATen[ceil_mode = 0, dilation = [1, 1], kernel_size = [2, 2], operator = u'max_pool2d', padding = [0, 0], stride = [2, 2]](%129)
+  %132 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%130, %44)
+  %133 = Add[broadcast = 1, axis = 1](%132, %45)
+  %135 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%133, %46, %47, %48, %49)
+  %136 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%135)
+  %138 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%136, %50)
+  %139 = Add[broadcast = 1, axis = 1](%138, %51)
+  %141 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%139, %52, %53, %54, %55)
+  %142 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%141)
+  %144 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%142, %56)
+  %145 = Add[broadcast = 1, axis = 1](%144, %57)
+  %147 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%145, %58, %59, %60, %61)
+  %148 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%147)
+  %149 = ATen[ceil_mode = 0, dilation = [1, 1], kernel_size = [2, 2], operator = u'max_pool2d', padding = [0, 0], stride = [2, 2]](%148)
+  %151 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%149, %62)
+  %152 = Add[broadcast = 1, axis = 1](%151, %63)
+  %154 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%152, %64, %65, %66, %67)
+  %155 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%154)
+  %157 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%155, %68)
+  %158 = Add[broadcast = 1, axis = 1](%157, %69)
+  %160 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%158, %70, %71, %72, %73)
+  %161 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%160)
+  %163 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%161, %74)
+  %164 = Add[broadcast = 1, axis = 1](%163, %75)
+  %166 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%164, %76, %77, %78, %79)
+  %167 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%166)
+  %168 = ATen[ceil_mode = 0, dilation = [1, 1], kernel_size = [2, 2], operator = u'max_pool2d', padding = [0, 0], stride = [2, 2]](%167)
+  %169 = ATen[operator = u'view', size = [2, -1]](%168)
+  %170 = ATen[operator = u't'](%80)
+  %171 = ATen[operator = u'expand', size = [2, 4096]](%81)
+  %172 = ATen[alpha = <Tensor>, beta = <Tensor>, operator = u'addmm'](%171, %169, %170)
+  %173 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%172)
+  %175, %176 = Dropout[is_test = 1, ratio = 0.5](%173)
+  %177 = ATen[operator = u't'](%82)
+  %178 = ATen[operator = u'expand', size = [2, 4096]](%83)
+  %179 = ATen[alpha = <Tensor>, beta = <Tensor>, operator = u'addmm'](%178, %175, %177)
+  %180 = ATen[inplace = 1, operator = u'threshold', threshold = <Tensor>, value = <Tensor>](%179)
+  %182, %183 = Dropout[is_test = 1, ratio = 0.5](%180)
+  %184 = ATen[operator = u't'](%84)
+  %185 = ATen[operator = u'expand', size = [2, 1000]](%85)
+  %186 = ATen[alpha = <Tensor>, beta = <Tensor>, operator = u'addmm'](%185, %182, %184)
+  return %name: "186"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 2
+      }
+      dim {
+        dim_value: 1000
+      }
+    }
+  }
+}
+
+}
