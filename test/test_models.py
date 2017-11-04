@@ -42,8 +42,8 @@ def export_to_string(model, inputs, *args, **kwargs):
 
 
 class TestModels(TestCase):
-    def exportTest(self, model, inputs, subname=None):
-        binary_pb = export_to_string(model, inputs, export_params=False)
+    def exportTest(self, model, inputs, subname=None, aten=False):
+        binary_pb = export_to_string(model, inputs, export_params=False, aten=aten)
         model_def = onnx.ModelProto.FromString(binary_pb)
         # NB: We prefer to look at printable_model, but it doesn't print
         # all information.  The pbtxt is the *source of truth*.
@@ -225,6 +225,12 @@ class TestModels(TestCase):
     def test_word_language_model_GRU(self):
         model_name = 'GRU'
         self.run_word_language_model(model_name)
+
+    def test_aten_mode(self):
+        x = Variable(
+            torch.randn(BATCH_SIZE, 3, 224, 224).fill_(1.0), volatile=True
+        )
+        self.exportTest(toC(make_vgg16_bn()), toC(x), aten=True)
 
 
 if __name__ == '__main__':
