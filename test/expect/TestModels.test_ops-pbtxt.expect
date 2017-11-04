@@ -1,7 +1,6 @@
-ir_version: 1
+ir_version: 2
 producer_name: "pytorch"
 producer_version: "0.2"
-domain: "com.facebook"
 graph {
   node {
     input: "1"
@@ -10,6 +9,7 @@ graph {
     attribute {
       name: "alpha"
       f: 0.0199999995529652
+      type: FLOAT
     }
   }
   node {
@@ -23,14 +23,17 @@ graph {
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 9.99999974737875e-06
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -39,6 +42,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -49,16 +53,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -69,6 +76,7 @@ graph {
       name: "shape"
       ints: -1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -78,6 +86,7 @@ graph {
     attribute {
       name: "axes"
       ints: 1
+      type: INTS
     }
   }
   name: "torch-jit-export"
@@ -168,4 +177,7 @@ graph {
       }
     }
   }
+}
+opset_import {
+  version: 1
 }
