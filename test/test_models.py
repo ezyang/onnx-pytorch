@@ -16,7 +16,7 @@ from test_common import TestCase, run_tests, skipIfNoLapack
 import torch
 import torch.onnx
 from torch.autograd import Variable, Function
-from torch.nn import Module
+from torch.nn import Module, functional
 
 import onnx
 import onnx.checker
@@ -230,6 +230,13 @@ class TestModels(TestCase):
         model_name = 'GRU'
         self.run_word_language_model(model_name)
 
+    def test_fused_transpose(self):
+        class MyLinear(torch.nn.Linear):
+            def forward(self, input):
+                return functional.linear(input, self.weight.t(), self.bias)
+        model = MyLinear(5, 5)
+        x = Variable(torch.rand(10, 5))
+        self.exportTest(model, x)
 
 if __name__ == '__main__':
     run_tests()
