@@ -10,18 +10,21 @@ graph {
     input: "4"
     input: "5"
     output: "7"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 9.99999974737875e-06
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -30,6 +33,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   name: "torch-jit-export"
@@ -37,7 +41,7 @@ graph {
     dims: 2
     data_type: FLOAT
     name: "2"
-    raw_data: "\277Kh>\324\3350?"
+    raw_data: "Ly<>j\3709?"
   }
   initializer {
     dims: 2

@@ -12,6 +12,7 @@ graph {
         data_type: DOUBLE
         raw_data: "\000\000\000\000\000\000\360?"
       }
+      type: TENSOR
     }
   }
   node {
@@ -22,6 +23,7 @@ graph {
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   name: "torch-jit-export"

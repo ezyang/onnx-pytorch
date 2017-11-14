@@ -11,6 +11,7 @@ graph {
       name: "shape"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   name: "torch-jit-export"

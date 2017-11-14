@@ -8,20 +8,19 @@ graph {
     output: "2"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
+      type: INTS
     }
   }
   name: "torch-jit-export"

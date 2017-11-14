@@ -11,11 +11,13 @@ graph {
     attribute {
       name: "axis"
       i: 0
+      type: INT
     }
     attribute {
       name: "split"
       ints: 2
       ints: 1
+      type: INTS
     }
   }
   name: "torch-jit-export"
