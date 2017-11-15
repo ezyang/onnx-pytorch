@@ -19,6 +19,8 @@ from torch.autograd import Variable, Function
 from torch.nn import Module
 
 import onnx
+import onnx.checker
+import onnx.helper
 
 import google.protobuf.text_format
 
@@ -45,6 +47,8 @@ class TestModels(TestCase):
     def exportTest(self, model, inputs, subname=None):
         binary_pb = export_to_string(model, inputs, export_params=False)
         model_def = onnx.ModelProto.FromString(binary_pb)
+        onnx.checker.check_model(model_def)
+        onnx.helper.strip_doc_string(model_def)
         # NB: We prefer to look at printable_model, but it doesn't print
         # all information.  The pbtxt is the *source of truth*.
         self.assertExpected(onnx.helper.printable_graph(model_def.graph), subname)

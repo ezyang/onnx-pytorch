@@ -8,6 +8,7 @@ import torch.nn as nn
 
 import onnx
 import onnx.checker
+import onnx.helper
 
 import google.protobuf.text_format
 
@@ -34,6 +35,8 @@ class TestOperators(TestCase):
     def assertONNXExpected(self, binary_pb, subname=None):
         model_def = onnx.ModelProto.FromString(binary_pb)
         onnx.checker.check_model(model_def)
+        # doc_string contains stack trace in it, strip it
+        onnx.helper.strip_doc_string(model_def)
         self.assertExpected(google.protobuf.text_format.MessageToString(model_def, float_format='.15g'), subname)
 
     def test_basic(self):
@@ -49,14 +52,12 @@ class TestOperators(TestCase):
 
     def test_view(self):
         x = Variable(torch.Tensor([0]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x: x.view(1, 1), x)
-        torch._C._jit_pass_onnx(trace)
+        trace = torch.onnx._trace(lambda x: x.view(1, 1), x)
         self.assertONNXExpected(trace.export())
 
     def test_index(self):
         x = Variable(torch.Tensor([[0]]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x: x[0], x)
-        torch._C._jit_pass_onnx(trace)
+        trace = torch.onnx._trace(lambda x: x[0], x)
         self.assertONNXExpected(trace.export())
 
     def test_addconstant(self):
@@ -80,14 +81,12 @@ class TestOperators(TestCase):
 
     def test_transpose(self):
         x = Variable(torch.Tensor([[0, 1], [2, 3]]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x: x.transpose(0, 1).transpose(1, 0), x)
-        torch._C._jit_pass_onnx(trace)
+        trace = torch.onnx._trace(lambda x: x.transpose(0, 1).transpose(1, 0), x)
         self.assertONNXExpected(trace.export())
 
     def test_chunk(self):
         x = Variable(torch.Tensor([0,1,2]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x: x.chunk(2), x)
-        torch._C._jit_pass_onnx(trace)
+        trace = torch.onnx._trace(lambda x: x.chunk(2), x)
         self.assertONNXExpected(trace.export())
 
     def test_concat2(self):
@@ -100,16 +99,14 @@ class TestOperators(TestCase):
     def test_mm(self):
         m1 = Variable(torch.randn(2, 3), requires_grad=True)
         m2 = Variable(torch.randn(3, 4), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x, y : torch.mm(m1, m2), (m1, m2))
-        torch._C._jit_pass_onnx(trace)
+        trace = torch.onnx._trace(lambda x, y: torch.mm(m1, m2), (m1, m2))
         self.assertONNXExpected(trace.export())
 
     def test_addmm(self):
         m1 = Variable(torch.randn(2, 3), requires_grad=True)
         m2 = Variable(torch.randn(3, 4), requires_grad=True)
         m3 = Variable(torch.randn(4), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x, y, z: torch.addmm(torch.addmm(z, x, y), x, y), (m1, m2, m3))
-        torch._C._jit_pass_onnx(trace)
+        trace = torch.onnx._trace(lambda x, y, z: torch.addmm(torch.addmm(z, x, y), x, y), (m1, m2, m3))
         self.assertONNXExpected(trace.export())
 
     def test_permute2(self):
@@ -119,17 +116,15 @@ class TestOperators(TestCase):
     def test_params(self):
         x = Variable(torch.Tensor([[1, 2], [3, 4]]), requires_grad=True)
         y = Variable(torch.Tensor([[1, 2], [3, 4]]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x, y: -torch.sigmoid(torch.tanh(x * (x + y))), (x, y))
+        trace = torch.onnx._trace(lambda x, y: -torch.sigmoid(torch.tanh(x * (x + y))), (x, y))
         initializers = [x.data]
-        torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export(initializers))
 
     def test_non_float_params(self):
         x = Variable(torch.LongTensor([[1, 2], [3, 4]]), requires_grad=True)
         y = Variable(torch.LongTensor([[1, 2], [3, 4]]), requires_grad=True)
-        trace, _ = torch.jit.trace(lambda x, y: x * y + x, (x, y))
+        trace = torch.onnx._trace(lambda x, y: x * y + x, (x, y))
         initializers = [x.data]
-        torch._C._jit_pass_onnx(trace)
         self.assertONNXExpected(trace.export(initializers))
 
     def test_symbolic_mismatch(self):

@@ -3,6 +3,7 @@ import torch.jit
 import torch.onnx
 
 import onnx
+import onnx.helper
 
 import numpy as np
 
@@ -297,7 +298,11 @@ def verify(model, args, backend, verbose=False, training=False, decimal=3, test_
 
     def load_bytes(b):
         b.seek(0)
-        return onnx.load(b)
+        x = onnx.load(b)
+        # doc_string has stack traces - let's remove them to make comparison
+        # sane
+        onnx.helper.strip_doc_string(x)
+        return x
 
     # Special case for common case of passing a single Variable
     if isinstance(args, torch.autograd.Variable):
@@ -312,14 +317,13 @@ def verify(model, args, backend, verbose=False, training=False, decimal=3, test_
         def run(args):
             alt_proto_bytes = io.BytesIO()
             torch_out = torch.onnx._export(model, args, alt_proto_bytes, verbose=verbose)
-            if proto_bytes.getvalue() != alt_proto_bytes.getvalue():
+            alt_proto = load_bytes(alt_proto_bytes)
+            if proto.SerializeToString() != alt_proto.SerializeToString():
                 # OK, let's try to figure out what happened.
                 msg = "When I exported your model with different inputs, the result was different."
                 if not verbose:
                     msg += "\n(To get more information, run torch.onnx.verify(..., verbose=True))"
                 with Errors(msg) as errs:
-                    alt_proto = load_bytes(alt_proto_bytes)
-
                     # First, check if we have the same number of parameters, and
                     # that they're the same order.  If they don't, something has *really* gone wrong.
                     initializer_order_hint = ("This is really strange! The second time I exported your model,\n"
