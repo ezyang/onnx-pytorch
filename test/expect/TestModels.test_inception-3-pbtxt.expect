@@ -12,11 +12,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -24,15 +26,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -42,18 +47,21 @@ graph {
     input: "5"
     input: "6"
     output: "489"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -62,6 +70,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -78,11 +87,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -90,15 +101,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -108,18 +122,21 @@ graph {
     input: "10"
     input: "11"
     output: "494"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -128,6 +145,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -144,11 +162,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -156,15 +176,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -174,18 +197,21 @@ graph {
     input: "15"
     input: "16"
     output: "499"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -194,6 +220,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -206,24 +233,22 @@ graph {
     output: "501"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -235,11 +260,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -247,15 +274,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -265,18 +295,21 @@ graph {
     input: "20"
     input: "21"
     output: "505"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -285,6 +318,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -301,11 +335,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -313,15 +349,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -331,18 +370,21 @@ graph {
     input: "25"
     input: "26"
     output: "510"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -351,6 +393,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -363,24 +406,22 @@ graph {
     output: "512"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -392,11 +433,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -404,15 +447,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -422,18 +468,21 @@ graph {
     input: "30"
     input: "31"
     output: "516"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -442,6 +491,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -458,11 +508,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -470,15 +522,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -488,18 +543,21 @@ graph {
     input: "35"
     input: "36"
     output: "521"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -508,6 +566,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -524,11 +583,13 @@ graph {
       name: "kernel_shape"
       ints: 5
       ints: 5
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -536,15 +597,18 @@ graph {
       ints: 2
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -554,18 +618,21 @@ graph {
     input: "40"
     input: "41"
     output: "526"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -574,6 +641,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -590,11 +658,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -602,15 +672,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -620,18 +693,21 @@ graph {
     input: "45"
     input: "46"
     output: "531"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -640,6 +716,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -656,11 +733,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -668,15 +747,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -686,18 +768,21 @@ graph {
     input: "50"
     input: "51"
     output: "536"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -706,6 +791,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -722,11 +808,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -734,15 +822,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -752,18 +843,21 @@ graph {
     input: "55"
     input: "56"
     output: "541"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -772,6 +866,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -787,16 +882,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -808,11 +906,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -820,15 +920,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -838,18 +941,21 @@ graph {
     input: "60"
     input: "61"
     output: "547"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -858,6 +964,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -875,6 +982,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -886,11 +994,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -898,15 +1008,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -916,18 +1029,21 @@ graph {
     input: "65"
     input: "66"
     output: "553"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -936,6 +1052,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -952,11 +1069,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -964,15 +1083,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -982,18 +1104,21 @@ graph {
     input: "70"
     input: "71"
     output: "558"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1002,6 +1127,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1018,11 +1144,13 @@ graph {
       name: "kernel_shape"
       ints: 5
       ints: 5
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1030,15 +1158,18 @@ graph {
       ints: 2
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1048,18 +1179,21 @@ graph {
     input: "75"
     input: "76"
     output: "563"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1068,6 +1202,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1084,11 +1219,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1096,15 +1233,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1114,18 +1254,21 @@ graph {
     input: "80"
     input: "81"
     output: "568"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1134,6 +1277,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1150,11 +1294,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1162,15 +1308,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1180,18 +1329,21 @@ graph {
     input: "85"
     input: "86"
     output: "573"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1200,6 +1352,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1216,11 +1369,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1228,15 +1383,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1246,18 +1404,21 @@ graph {
     input: "90"
     input: "91"
     output: "578"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1266,6 +1427,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1281,16 +1443,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1302,11 +1467,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1314,15 +1481,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1332,18 +1502,21 @@ graph {
     input: "95"
     input: "96"
     output: "584"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1352,6 +1525,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1369,6 +1543,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1380,11 +1555,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1392,15 +1569,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1410,18 +1590,21 @@ graph {
     input: "100"
     input: "101"
     output: "590"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1430,6 +1613,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1446,11 +1630,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1458,15 +1644,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1476,18 +1665,21 @@ graph {
     input: "105"
     input: "106"
     output: "595"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1496,6 +1688,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1512,11 +1705,13 @@ graph {
       name: "kernel_shape"
       ints: 5
       ints: 5
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1524,15 +1719,18 @@ graph {
       ints: 2
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1542,18 +1740,21 @@ graph {
     input: "110"
     input: "111"
     output: "600"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1562,6 +1763,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1578,11 +1780,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1590,15 +1794,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1608,18 +1815,21 @@ graph {
     input: "115"
     input: "116"
     output: "605"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1628,6 +1838,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1644,11 +1855,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1656,15 +1869,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1674,18 +1890,21 @@ graph {
     input: "120"
     input: "121"
     output: "610"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1694,6 +1913,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1710,11 +1930,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1722,15 +1944,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1740,18 +1965,21 @@ graph {
     input: "125"
     input: "126"
     output: "615"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1760,6 +1988,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1775,16 +2004,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1796,11 +2028,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1808,15 +2042,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1826,18 +2063,21 @@ graph {
     input: "130"
     input: "131"
     output: "621"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1846,6 +2086,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1863,6 +2104,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1874,11 +2116,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1886,15 +2130,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1904,18 +2151,21 @@ graph {
     input: "135"
     input: "136"
     output: "627"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1924,6 +2174,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -1940,11 +2191,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -1952,15 +2205,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -1970,18 +2226,21 @@ graph {
     input: "140"
     input: "141"
     output: "632"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -1990,6 +2249,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2006,11 +2266,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2018,15 +2280,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2036,18 +2301,21 @@ graph {
     input: "145"
     input: "146"
     output: "637"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2056,6 +2324,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2072,11 +2341,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2084,15 +2355,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2102,18 +2376,21 @@ graph {
     input: "150"
     input: "151"
     output: "642"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2122,6 +2399,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2134,24 +2412,22 @@ graph {
     output: "644"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -2163,6 +2439,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2174,11 +2451,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2186,15 +2465,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2204,18 +2486,21 @@ graph {
     input: "155"
     input: "156"
     output: "649"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2224,6 +2509,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2240,11 +2526,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2252,15 +2540,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2270,18 +2561,21 @@ graph {
     input: "160"
     input: "161"
     output: "654"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2290,6 +2584,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2306,11 +2601,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2318,15 +2615,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2336,18 +2636,21 @@ graph {
     input: "165"
     input: "166"
     output: "659"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2356,6 +2659,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2372,11 +2676,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2384,15 +2690,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2402,18 +2711,21 @@ graph {
     input: "170"
     input: "171"
     output: "664"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2422,6 +2734,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2438,11 +2751,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2450,15 +2765,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2468,18 +2786,21 @@ graph {
     input: "175"
     input: "176"
     output: "669"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2488,6 +2809,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2504,11 +2826,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2516,15 +2840,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2534,18 +2861,21 @@ graph {
     input: "180"
     input: "181"
     output: "674"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2554,6 +2884,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2570,11 +2901,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2582,15 +2915,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2600,18 +2936,21 @@ graph {
     input: "185"
     input: "186"
     output: "679"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2620,6 +2959,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2636,11 +2976,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2648,15 +2990,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2666,18 +3011,21 @@ graph {
     input: "190"
     input: "191"
     output: "684"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2686,6 +3034,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2702,11 +3051,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2714,15 +3065,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2732,18 +3086,21 @@ graph {
     input: "195"
     input: "196"
     output: "689"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2752,6 +3109,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2767,16 +3125,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2788,11 +3149,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2800,15 +3163,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2818,18 +3184,21 @@ graph {
     input: "200"
     input: "201"
     output: "695"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2838,6 +3207,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2855,6 +3225,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2866,11 +3237,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2878,15 +3251,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2896,18 +3272,21 @@ graph {
     input: "205"
     input: "206"
     output: "701"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2916,6 +3295,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2932,11 +3312,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -2944,15 +3326,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -2962,18 +3347,21 @@ graph {
     input: "210"
     input: "211"
     output: "706"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -2982,6 +3370,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -2998,11 +3387,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3010,15 +3401,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3028,18 +3422,21 @@ graph {
     input: "215"
     input: "216"
     output: "711"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3048,6 +3445,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3064,11 +3462,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3076,15 +3476,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3094,18 +3497,21 @@ graph {
     input: "220"
     input: "221"
     output: "716"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3114,6 +3520,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3130,11 +3537,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3142,15 +3551,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3160,18 +3572,21 @@ graph {
     input: "225"
     input: "226"
     output: "721"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3180,6 +3595,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3196,11 +3612,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3208,15 +3626,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3226,18 +3647,21 @@ graph {
     input: "230"
     input: "231"
     output: "726"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3246,6 +3670,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3262,11 +3687,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3274,15 +3701,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3292,18 +3722,21 @@ graph {
     input: "235"
     input: "236"
     output: "731"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3312,6 +3745,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3328,11 +3762,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3340,15 +3776,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3358,18 +3797,21 @@ graph {
     input: "240"
     input: "241"
     output: "736"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3378,6 +3820,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3394,11 +3837,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3406,15 +3851,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3424,18 +3872,21 @@ graph {
     input: "245"
     input: "246"
     output: "741"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3444,6 +3895,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3459,16 +3911,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3480,11 +3935,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3492,15 +3949,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3510,18 +3970,21 @@ graph {
     input: "250"
     input: "251"
     output: "747"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3530,6 +3993,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3547,6 +4011,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3558,11 +4023,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3570,15 +4037,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3588,18 +4058,21 @@ graph {
     input: "255"
     input: "256"
     output: "753"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3608,6 +4081,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3624,11 +4098,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3636,15 +4112,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3654,18 +4133,21 @@ graph {
     input: "260"
     input: "261"
     output: "758"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3674,6 +4156,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3690,11 +4173,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3702,15 +4187,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3720,18 +4208,21 @@ graph {
     input: "265"
     input: "266"
     output: "763"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3740,6 +4231,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3756,11 +4248,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3768,15 +4262,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3786,18 +4283,21 @@ graph {
     input: "270"
     input: "271"
     output: "768"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3806,6 +4306,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3822,11 +4323,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3834,15 +4337,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3852,18 +4358,21 @@ graph {
     input: "275"
     input: "276"
     output: "773"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3872,6 +4381,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3888,11 +4398,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3900,15 +4412,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3918,18 +4433,21 @@ graph {
     input: "280"
     input: "281"
     output: "778"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -3938,6 +4456,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -3954,11 +4473,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -3966,15 +4487,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -3984,18 +4508,21 @@ graph {
     input: "285"
     input: "286"
     output: "783"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4004,6 +4531,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4020,11 +4548,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4032,15 +4562,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4050,18 +4583,21 @@ graph {
     input: "290"
     input: "291"
     output: "788"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4070,6 +4606,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4086,11 +4623,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4098,15 +4637,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4116,18 +4658,21 @@ graph {
     input: "295"
     input: "296"
     output: "793"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4136,6 +4681,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4151,16 +4697,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4172,11 +4721,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4184,15 +4735,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4202,18 +4756,21 @@ graph {
     input: "300"
     input: "301"
     output: "799"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4222,6 +4779,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4239,6 +4797,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4250,11 +4809,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4262,15 +4823,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4280,18 +4844,21 @@ graph {
     input: "305"
     input: "306"
     output: "805"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4300,6 +4867,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4316,11 +4884,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4328,15 +4898,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4346,18 +4919,21 @@ graph {
     input: "310"
     input: "311"
     output: "810"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4366,6 +4942,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4382,11 +4959,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4394,15 +4973,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4412,18 +4994,21 @@ graph {
     input: "315"
     input: "316"
     output: "815"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4432,6 +5017,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4448,11 +5034,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4460,15 +5048,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4478,18 +5069,21 @@ graph {
     input: "320"
     input: "321"
     output: "820"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4498,6 +5092,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4514,11 +5109,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4526,15 +5123,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4544,18 +5144,21 @@ graph {
     input: "325"
     input: "326"
     output: "825"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4564,6 +5167,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4580,11 +5184,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4592,15 +5198,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4610,18 +5219,21 @@ graph {
     input: "330"
     input: "331"
     output: "830"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4630,6 +5242,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4646,11 +5259,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4658,15 +5273,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4676,18 +5294,21 @@ graph {
     input: "335"
     input: "336"
     output: "835"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4696,6 +5317,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4712,11 +5334,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4724,15 +5348,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4742,18 +5369,21 @@ graph {
     input: "340"
     input: "341"
     output: "840"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4762,6 +5392,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4778,11 +5409,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4790,15 +5423,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4808,18 +5444,21 @@ graph {
     input: "345"
     input: "346"
     output: "845"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4828,6 +5467,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4843,16 +5483,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4864,11 +5507,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4876,15 +5521,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4894,18 +5542,21 @@ graph {
     input: "350"
     input: "351"
     output: "851"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4914,6 +5565,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -4931,6 +5583,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4942,11 +5595,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -4954,15 +5609,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -4972,18 +5630,21 @@ graph {
     input: "367"
     input: "368"
     output: "857"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -4992,6 +5653,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5008,11 +5670,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5020,15 +5684,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5038,18 +5705,21 @@ graph {
     input: "372"
     input: "373"
     output: "862"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5058,6 +5728,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5074,11 +5745,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5086,15 +5759,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5104,18 +5780,21 @@ graph {
     input: "377"
     input: "378"
     output: "867"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5124,6 +5803,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5140,11 +5820,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 7
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5152,15 +5834,18 @@ graph {
       ints: 3
       ints: 0
       ints: 3
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5170,18 +5855,21 @@ graph {
     input: "382"
     input: "383"
     output: "872"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5190,6 +5878,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5206,11 +5895,13 @@ graph {
       name: "kernel_shape"
       ints: 7
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5218,15 +5909,18 @@ graph {
       ints: 0
       ints: 3
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5236,18 +5930,21 @@ graph {
     input: "387"
     input: "388"
     output: "877"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5256,6 +5953,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5272,11 +5970,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5284,15 +5984,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5302,18 +6005,21 @@ graph {
     input: "392"
     input: "393"
     output: "882"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5322,6 +6028,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5334,24 +6041,22 @@ graph {
     output: "884"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -5363,6 +6068,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5374,11 +6080,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5386,15 +6094,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5404,18 +6115,21 @@ graph {
     input: "397"
     input: "398"
     output: "889"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5424,6 +6138,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5440,11 +6155,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5452,15 +6169,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5470,18 +6190,21 @@ graph {
     input: "402"
     input: "403"
     output: "894"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5490,6 +6213,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5506,11 +6230,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5518,15 +6244,18 @@ graph {
       ints: 1
       ints: 0
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5536,18 +6265,21 @@ graph {
     input: "407"
     input: "408"
     output: "899"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5556,6 +6288,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5572,11 +6305,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5584,15 +6319,18 @@ graph {
       ints: 0
       ints: 1
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5602,18 +6340,21 @@ graph {
     input: "412"
     input: "413"
     output: "904"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5622,6 +6363,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5637,6 +6379,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5648,11 +6391,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5660,15 +6405,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5678,18 +6426,21 @@ graph {
     input: "417"
     input: "418"
     output: "910"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5698,6 +6449,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5714,11 +6466,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5726,15 +6480,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5744,18 +6501,21 @@ graph {
     input: "422"
     input: "423"
     output: "915"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5764,6 +6524,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5780,11 +6541,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5792,15 +6555,18 @@ graph {
       ints: 1
       ints: 0
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5810,18 +6576,21 @@ graph {
     input: "427"
     input: "428"
     output: "920"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5830,6 +6599,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5846,11 +6616,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5858,15 +6630,18 @@ graph {
       ints: 0
       ints: 1
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5876,18 +6651,21 @@ graph {
     input: "432"
     input: "433"
     output: "925"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5896,6 +6674,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5911,6 +6690,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5921,16 +6701,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -5942,11 +6725,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -5954,15 +6739,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -5972,18 +6760,21 @@ graph {
     input: "437"
     input: "438"
     output: "932"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -5992,6 +6783,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6009,6 +6801,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6020,11 +6813,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6032,15 +6827,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6050,18 +6848,21 @@ graph {
     input: "442"
     input: "443"
     output: "938"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6070,6 +6871,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6086,11 +6888,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6098,15 +6902,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6116,18 +6923,21 @@ graph {
     input: "447"
     input: "448"
     output: "943"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6136,6 +6946,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6152,11 +6963,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6164,15 +6977,18 @@ graph {
       ints: 1
       ints: 0
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6182,18 +6998,21 @@ graph {
     input: "452"
     input: "453"
     output: "948"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6202,6 +7021,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6218,11 +7038,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6230,15 +7052,18 @@ graph {
       ints: 0
       ints: 1
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6248,18 +7073,21 @@ graph {
     input: "457"
     input: "458"
     output: "953"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6268,6 +7096,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6283,6 +7112,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6294,11 +7124,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6306,15 +7138,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6324,18 +7159,21 @@ graph {
     input: "462"
     input: "463"
     output: "959"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6344,6 +7182,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6360,11 +7199,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6372,15 +7213,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6390,18 +7234,21 @@ graph {
     input: "467"
     input: "468"
     output: "964"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6410,6 +7257,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6426,11 +7274,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6438,15 +7288,18 @@ graph {
       ints: 1
       ints: 0
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6456,18 +7309,21 @@ graph {
     input: "472"
     input: "473"
     output: "969"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6476,6 +7332,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6492,11 +7349,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6504,15 +7363,18 @@ graph {
       ints: 0
       ints: 1
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6522,18 +7384,21 @@ graph {
     input: "477"
     input: "478"
     output: "974"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6542,6 +7407,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6557,6 +7423,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6567,16 +7434,19 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6588,11 +7458,13 @@ graph {
       name: "kernel_shape"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -6600,15 +7472,18 @@ graph {
       ints: 0
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6618,18 +7493,21 @@ graph {
     input: "482"
     input: "483"
     output: "981"
-    op_type: "SpatialBN"
+    op_type: "BatchNormalization"
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 0.00100000004749745
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -6638,6 +7516,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   node {
@@ -6655,6 +7534,7 @@ graph {
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -6665,16 +7545,19 @@ graph {
       name: "kernel_shape"
       ints: 8
       ints: 8
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 8
       ints: 8
+      type: INTS
     }
   }
   node {
@@ -6685,10 +7568,12 @@ graph {
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "ratio"
       f: 0.5
+      type: FLOAT
     }
   }
   node {
@@ -6699,6 +7584,7 @@ graph {
       name: "shape"
       ints: 2
       ints: -1
+      type: INTS
     }
   }
   node {
@@ -6709,6 +7595,7 @@ graph {
       name: "perm"
       ints: 1
       ints: 0
+      type: INTS
     }
   }
   node {
@@ -6720,14 +7607,17 @@ graph {
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   name: "torch-jit-export"

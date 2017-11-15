@@ -13,6 +13,7 @@ graph {
       ints: 3
       ints: 0
       ints: 1
+      type: INTS
     }
   }
   name: "torch-jit-export"

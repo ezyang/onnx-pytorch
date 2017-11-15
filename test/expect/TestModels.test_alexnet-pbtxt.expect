@@ -12,11 +12,13 @@ graph {
       name: "kernel_shape"
       ints: 11
       ints: 11
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 4
       ints: 4
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -24,15 +26,18 @@ graph {
       ints: 2
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -43,10 +48,12 @@ graph {
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -59,24 +66,22 @@ graph {
     output: "22"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -88,11 +93,13 @@ graph {
       name: "kernel_shape"
       ints: 5
       ints: 5
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -100,15 +107,18 @@ graph {
       ints: 2
       ints: 2
       ints: 2
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -119,10 +129,12 @@ graph {
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -135,24 +147,22 @@ graph {
     output: "27"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -164,11 +174,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -176,15 +188,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -195,10 +210,12 @@ graph {
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -215,11 +232,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -227,15 +246,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -246,10 +268,12 @@ graph {
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -266,11 +290,13 @@ graph {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "pads"
@@ -278,15 +304,18 @@ graph {
       ints: 1
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "dilations"
       ints: 1
       ints: 1
+      type: INTS
     }
     attribute {
       name: "group"
       i: 1
+      type: INT
     }
   }
   node {
@@ -297,10 +326,12 @@ graph {
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
     attribute {
       name: "axis"
       i: 1
+      type: INT
     }
   }
   node {
@@ -313,24 +344,22 @@ graph {
     output: "40"
     op_type: "MaxPool"
     attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-    }
-    attribute {
       name: "kernel_shape"
       ints: 3
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
       ints: 2
+      type: INTS
     }
   }
   node {
@@ -341,6 +370,7 @@ graph {
       name: "shape"
       ints: 2
       ints: 9216
+      type: INTS
     }
   }
   node {
@@ -351,10 +381,12 @@ graph {
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "ratio"
       f: 0.5
+      type: FLOAT
     }
   }
   node {
@@ -365,6 +397,7 @@ graph {
       name: "perm"
       ints: 1
       ints: 0
+      type: INTS
     }
   }
   node {
@@ -376,14 +409,17 @@ graph {
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   node {
@@ -399,10 +435,12 @@ graph {
     attribute {
       name: "is_test"
       i: 1
+      type: INT
     }
     attribute {
       name: "ratio"
       f: 0.5
+      type: FLOAT
     }
   }
   node {
@@ -413,6 +451,7 @@ graph {
       name: "perm"
       ints: 1
       ints: 0
+      type: INTS
     }
   }
   node {
@@ -424,14 +463,17 @@ graph {
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   node {
@@ -447,6 +489,7 @@ graph {
       name: "perm"
       ints: 1
       ints: 0
+      type: INTS
     }
   }
   node {
@@ -458,14 +501,17 @@ graph {
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   name: "torch-jit-export"
