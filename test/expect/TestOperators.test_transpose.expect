@@ -1,7 +1,6 @@
-ir_version: 1
+ir_version: 2
 producer_name: "pytorch"
 producer_version: "0.2"
-domain: "com.facebook"
 graph {
   node {
     input: "1"
@@ -11,6 +10,7 @@ graph {
       name: "perm"
       ints: 1
       ints: 0
+      type: INTS
     }
   }
   node {
@@ -21,6 +21,7 @@ graph {
       name: "perm"
       ints: 1
       ints: 0
+      type: INTS
     }
   }
   name: "torch-jit-export"
@@ -56,4 +57,7 @@ graph {
       }
     }
   }
+}
+opset_import {
+  version: 1
 }

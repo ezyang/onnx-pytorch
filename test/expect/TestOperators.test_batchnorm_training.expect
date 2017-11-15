@@ -1,7 +1,6 @@
-ir_version: 1
+ir_version: 2
 producer_name: "pytorch"
 producer_version: "0.2"
-domain: "com.facebook"
 graph {
   node {
     input: "1"
@@ -18,14 +17,17 @@ graph {
     attribute {
       name: "is_test"
       i: 0
+      type: INT
     }
     attribute {
       name: "epsilon"
       f: 9.99999974737875e-06
+      type: FLOAT
     }
     attribute {
       name: "momentum"
       f: 0.899999976158142
+      type: FLOAT
     }
     attribute {
       name: "consumed_inputs"
@@ -34,6 +36,7 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
     }
   }
   name: "torch-jit-export"
@@ -145,4 +148,7 @@ graph {
       }
     }
   }
+}
+opset_import {
+  version: 1
 }

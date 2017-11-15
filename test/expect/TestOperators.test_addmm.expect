@@ -1,7 +1,6 @@
-ir_version: 1
+ir_version: 2
 producer_name: "pytorch"
 producer_version: "0.2"
-domain: "com.facebook"
 graph {
   node {
     input: "1"
@@ -12,14 +11,17 @@ graph {
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   node {
@@ -31,10 +33,12 @@ graph {
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 1
+      type: FLOAT
     }
   }
   name: "torch-jit-export"
@@ -99,4 +103,7 @@ graph {
       }
     }
   }
+}
+opset_import {
+  version: 1
 }
