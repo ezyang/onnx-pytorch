@@ -1,4 +1,4 @@
-graph torch-jit-export (%name: "1"
+graph torch-jit-export (%name: "0"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -18,7 +18,7 @@ type {
     }
   }
 }
-, %name: "2"
+, %name: "1"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -38,13 +38,33 @@ type {
     }
   }
 }
-, %name: "3"
+, %name: "2"
 type {
   tensor_type {
     elem_type: FLOAT
     shape {
       dim {
         dim_value: 64
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 192
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 5
+      }
+      dim {
+        dim_value: 5
       }
     }
   }
@@ -57,15 +77,6 @@ type {
       dim {
         dim_value: 192
       }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 5
-      }
-      dim {
-        dim_value: 5
-      }
     }
   }
 }
@@ -75,7 +86,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 384
+      }
+      dim {
         dim_value: 192
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -88,15 +108,6 @@ type {
       dim {
         dim_value: 384
       }
-      dim {
-        dim_value: 192
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -106,7 +117,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 384
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -119,15 +139,6 @@ type {
       dim {
         dim_value: 256
       }
-      dim {
-        dim_value: 384
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -138,6 +149,15 @@ type {
     shape {
       dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -150,30 +170,10 @@ type {
       dim {
         dim_value: 256
       }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
 , %name: "11"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "12"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -187,11 +187,25 @@ type {
     }
   }
 }
+, %name: "12"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 4096
+      }
+    }
+  }
+}
 , %name: "13"
 type {
   tensor_type {
     elem_type: FLOAT
     shape {
+      dim {
+        dim_value: 4096
+      }
       dim {
         dim_value: 4096
       }
@@ -206,9 +220,6 @@ type {
       dim {
         dim_value: 4096
       }
-      dim {
-        dim_value: 4096
-      }
     }
   }
 }
@@ -217,6 +228,9 @@ type {
   tensor_type {
     elem_type: FLOAT
     shape {
+      dim {
+        dim_value: 1000
+      }
       dim {
         dim_value: 4096
       }
@@ -231,54 +245,40 @@ type {
       dim {
         dim_value: 1000
       }
-      dim {
-        dim_value: 4096
-      }
-    }
-  }
-}
-, %name: "17"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 1000
-      }
     }
   }
 }
 ) {
-  %19 = Conv[kernel_shape = [11, 11], strides = [4, 4], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%1, %2)
-  %20 = Add[broadcast = 1, axis = 1](%19, %3)
-  %21 = Relu(%20)
-  %22 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%21)
-  %24 = Conv[kernel_shape = [5, 5], strides = [1, 1], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%22, %4)
-  %25 = Add[broadcast = 1, axis = 1](%24, %5)
-  %26 = Relu(%25)
-  %27 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%26)
-  %29 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%27, %6)
-  %30 = Add[broadcast = 1, axis = 1](%29, %7)
-  %31 = Relu(%30)
-  %33 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%31, %8)
-  %34 = Add[broadcast = 1, axis = 1](%33, %9)
-  %35 = Relu(%34)
-  %37 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%35, %10)
-  %38 = Add[broadcast = 1, axis = 1](%37, %11)
-  %39 = Relu(%38)
-  %40 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%39)
-  %41 = Reshape[shape = [2, 9216]](%40)
-  %43, %44 = Dropout[is_test = 1, ratio = 0.5](%41)
-  %45 = Transpose[perm = [1, 0]](%12)
-  %47 = Gemm[alpha = 1, beta = 1, broadcast = 1](%43, %45, %13)
-  %48 = Relu(%47)
-  %50, %51 = Dropout[is_test = 1, ratio = 0.5](%48)
-  %52 = Transpose[perm = [1, 0]](%14)
-  %54 = Gemm[alpha = 1, beta = 1, broadcast = 1](%50, %52, %15)
-  %55 = Relu(%54)
-  %56 = Transpose[perm = [1, 0]](%16)
-  %58 = Gemm[alpha = 1, beta = 1, broadcast = 1](%55, %56, %17)
-  return %name: "58"
+  %17 = Conv[kernel_shape = [11, 11], strides = [4, 4], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%0, %1)
+  %18 = Add[broadcast = 1, axis = 1](%17, %2)
+  %19 = Relu(%18)
+  %20 = MaxPool[kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%19)
+  %21 = Conv[kernel_shape = [5, 5], strides = [1, 1], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%20, %3)
+  %22 = Add[broadcast = 1, axis = 1](%21, %4)
+  %23 = Relu(%22)
+  %24 = MaxPool[kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%23)
+  %25 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%24, %5)
+  %26 = Add[broadcast = 1, axis = 1](%25, %6)
+  %27 = Relu(%26)
+  %28 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%27, %7)
+  %29 = Add[broadcast = 1, axis = 1](%28, %8)
+  %30 = Relu(%29)
+  %31 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%30, %9)
+  %32 = Add[broadcast = 1, axis = 1](%31, %10)
+  %33 = Relu(%32)
+  %34 = MaxPool[kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%33)
+  %35 = Reshape[shape = [2, 9216]](%34)
+  %36, %37 = Dropout[is_test = 1, ratio = 0.5](%35)
+  %38 = Transpose[perm = [1, 0]](%11)
+  %40 = Gemm[alpha = 1, beta = 1, broadcast = 1](%36, %38, %12)
+  %41 = Relu(%40)
+  %42, %43 = Dropout[is_test = 1, ratio = 0.5](%41)
+  %44 = Transpose[perm = [1, 0]](%13)
+  %46 = Gemm[alpha = 1, beta = 1, broadcast = 1](%42, %44, %14)
+  %47 = Relu(%46)
+  %48 = Transpose[perm = [1, 0]](%15)
+  %50 = Gemm[alpha = 1, beta = 1, broadcast = 1](%47, %48, %16)
+  return %name: "50"
 type {
   tensor_type {
     elem_type: FLOAT

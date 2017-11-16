@@ -1,4 +1,4 @@
-graph torch-jit-export (%name: "1"
+graph torch-jit-export (%name: "0"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -18,7 +18,7 @@ type {
     }
   }
 }
-, %name: "2"
+, %name: "1"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -34,6 +34,17 @@ type {
       }
       dim {
         dim_value: 4
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 512
       }
     }
   }
@@ -79,6 +90,15 @@ type {
       dim {
         dim_value: 512
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
     }
   }
 }
@@ -88,16 +108,7 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 512
-      }
-      dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 4
-      }
-      dim {
-        dim_value: 4
       }
     }
   }
@@ -143,6 +154,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
     }
   }
 }
@@ -152,16 +172,7 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 256
-      }
-      dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 4
-      }
-      dim {
-        dim_value: 4
       }
     }
   }
@@ -207,6 +218,15 @@ type {
       dim {
         dim_value: 128
       }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 4
+      }
+      dim {
+        dim_value: 4
+      }
     }
   }
 }
@@ -216,16 +236,7 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 128
-      }
-      dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 4
-      }
-      dim {
-        dim_value: 4
       }
     }
   }
@@ -271,17 +282,6 @@ type {
       dim {
         dim_value: 64
       }
-    }
-  }
-}
-, %name: "22"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
       dim {
         dim_value: 3
       }
@@ -295,26 +295,26 @@ type {
   }
 }
 ) {
-  %25 = Constant[value = <Tensor>]()
-  %24 = Caffe2ConvTranspose[kernel_shape = [4, 4], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%1, %2, %25)
-  %27 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%24, %3, %4, %5, %6)
-  %28 = Relu(%27)
-  %31 = Constant[value = <Tensor>]()
-  %30 = Caffe2ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%28, %7, %31)
-  %33 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%30, %8, %9, %10, %11)
-  %34 = Relu(%33)
-  %37 = Constant[value = <Tensor>]()
-  %36 = Caffe2ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%34, %12, %37)
-  %39 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%36, %13, %14, %15, %16)
-  %40 = Relu(%39)
-  %43 = Constant[value = <Tensor>]()
-  %42 = Caffe2ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%40, %17, %43)
-  %45 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%42, %18, %19, %20, %21)
-  %46 = Relu(%45)
-  %49 = Constant[value = <Tensor>]()
-  %48 = Caffe2ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%46, %22, %49)
-  %50 = Tanh(%48)
-  return %name: "50"
+  %24 = Constant[value = <Tensor>]()
+  %23 = ConvTranspose[kernel_shape = [4, 4], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%0, %1, %24)
+  %25 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%23, %2, %3, %4, %5)
+  %26 = Relu(%25)
+  %29 = Constant[value = <Tensor>]()
+  %28 = ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%26, %6, %29)
+  %30 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%28, %7, %8, %9, %10)
+  %31 = Relu(%30)
+  %34 = Constant[value = <Tensor>]()
+  %33 = ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%31, %11, %34)
+  %35 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%33, %12, %13, %14, %15)
+  %36 = Relu(%35)
+  %39 = Constant[value = <Tensor>]()
+  %38 = ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%36, %16, %39)
+  %40 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%38, %17, %18, %19, %20)
+  %41 = Relu(%40)
+  %44 = Constant[value = <Tensor>]()
+  %43 = ConvTranspose[kernel_shape = [4, 4], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%41, %21, %44)
+  %45 = Tanh(%43)
+  return %name: "45"
 type {
   tensor_type {
     elem_type: FLOAT

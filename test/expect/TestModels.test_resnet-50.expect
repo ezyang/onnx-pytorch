@@ -1,4 +1,4 @@
-graph torch-jit-export (%name: "1"
+graph torch-jit-export (%name: "0"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -18,7 +18,7 @@ type {
     }
   }
 }
-, %name: "2"
+, %name: "1"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -34,6 +34,17 @@ type {
       }
       dim {
         dim_value: 7
+      }
+    }
+  }
+}
+, %name: "2"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 64
       }
     }
   }
@@ -79,6 +90,15 @@ type {
       dim {
         dim_value: 64
       }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
+      }
     }
   }
 }
@@ -89,15 +109,6 @@ type {
     shape {
       dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -143,6 +154,15 @@ type {
       dim {
         dim_value: 64
       }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -153,15 +173,6 @@ type {
     shape {
       dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -205,7 +216,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -217,15 +237,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -271,6 +282,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
+      }
     }
   }
 }
@@ -281,15 +301,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -333,7 +344,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 64
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -345,15 +365,6 @@ type {
     shape {
       dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -399,6 +410,15 @@ type {
       dim {
         dim_value: 64
       }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -409,15 +429,6 @@ type {
     shape {
       dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -461,7 +472,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -473,15 +493,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -525,7 +536,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 64
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -537,15 +557,6 @@ type {
     shape {
       dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -591,6 +602,15 @@ type {
       dim {
         dim_value: 64
       }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -601,15 +621,6 @@ type {
     shape {
       dim {
         dim_value: 64
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -653,7 +664,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -665,15 +685,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -717,7 +728,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 128
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -729,15 +749,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -783,6 +794,15 @@ type {
       dim {
         dim_value: 128
       }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -793,15 +813,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -845,7 +856,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 128
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -857,15 +877,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -911,6 +922,15 @@ type {
       dim {
         dim_value: 512
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
+      }
     }
   }
 }
@@ -921,15 +941,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -973,7 +984,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 128
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -985,15 +1005,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1039,6 +1050,15 @@ type {
       dim {
         dim_value: 128
       }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -1049,15 +1069,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -1101,7 +1112,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 128
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1113,15 +1133,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1165,7 +1176,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 128
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1177,15 +1197,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1231,6 +1242,15 @@ type {
       dim {
         dim_value: 128
       }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -1241,15 +1261,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -1293,7 +1304,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 128
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1305,15 +1325,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1357,7 +1368,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 128
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1369,15 +1389,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1423,6 +1434,15 @@ type {
       dim {
         dim_value: 128
       }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -1433,15 +1453,6 @@ type {
     shape {
       dim {
         dim_value: 128
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -1485,7 +1496,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 128
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1497,15 +1517,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1549,7 +1560,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1561,15 +1581,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1615,6 +1626,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -1625,15 +1645,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -1677,7 +1688,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1024
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1689,15 +1709,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1743,6 +1754,15 @@ type {
       dim {
         dim_value: 1024
       }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
+      }
     }
   }
 }
@@ -1753,15 +1773,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1805,7 +1816,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1817,15 +1837,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1871,6 +1882,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -1881,15 +1901,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -1933,7 +1944,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1024
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -1945,15 +1965,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -1997,7 +2008,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2009,15 +2029,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2063,6 +2074,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -2073,15 +2093,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -2125,7 +2136,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1024
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2137,15 +2157,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2189,7 +2200,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2201,15 +2221,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2255,6 +2266,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -2265,15 +2285,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -2317,7 +2328,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1024
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2329,15 +2349,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2381,7 +2392,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2393,15 +2413,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2447,6 +2458,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -2457,15 +2477,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -2509,7 +2520,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1024
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2521,15 +2541,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2573,7 +2584,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2585,15 +2605,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2639,6 +2650,15 @@ type {
       dim {
         dim_value: 256
       }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -2649,15 +2669,6 @@ type {
     shape {
       dim {
         dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -2701,7 +2712,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1024
+      }
+      dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2713,15 +2733,6 @@ type {
     shape {
       dim {
         dim_value: 1024
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2765,7 +2776,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2777,15 +2797,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2831,6 +2842,15 @@ type {
       dim {
         dim_value: 512
       }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -2841,15 +2861,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -2893,7 +2904,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 2048
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -2905,15 +2925,6 @@ type {
     shape {
       dim {
         dim_value: 2048
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -2959,6 +2970,15 @@ type {
       dim {
         dim_value: 2048
       }
+      dim {
+        dim_value: 1024
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
+      }
     }
   }
 }
@@ -2969,15 +2989,6 @@ type {
     shape {
       dim {
         dim_value: 2048
-      }
-      dim {
-        dim_value: 1024
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -3021,7 +3032,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 2048
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -3033,15 +3053,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 2048
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -3087,6 +3098,15 @@ type {
       dim {
         dim_value: 512
       }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -3097,15 +3117,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -3149,7 +3160,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 2048
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -3161,15 +3181,6 @@ type {
     shape {
       dim {
         dim_value: 2048
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -3213,7 +3224,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 512
+      }
+      dim {
         dim_value: 2048
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -3225,15 +3245,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 2048
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -3279,6 +3290,15 @@ type {
       dim {
         dim_value: 512
       }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
+      }
     }
   }
 }
@@ -3289,15 +3309,6 @@ type {
     shape {
       dim {
         dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
       }
     }
   }
@@ -3341,7 +3352,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 2048
+      }
+      dim {
         dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -3353,15 +3373,6 @@ type {
     shape {
       dim {
         dim_value: 2048
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
       }
     }
   }
@@ -3405,6 +3416,9 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 1000
+      }
+      dim {
         dim_value: 2048
       }
     }
@@ -3418,201 +3432,187 @@ type {
       dim {
         dim_value: 1000
       }
-      dim {
-        dim_value: 2048
-      }
-    }
-  }
-}
-, %name: "268"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 1000
-      }
     }
   }
 }
 ) {
-  %270 = Conv[kernel_shape = [7, 7], strides = [2, 2], pads = [3, 3, 3, 3], dilations = [1, 1], group = 1](%1, %2)
-  %272 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%270, %3, %4, %5, %6)
-  %273 = Relu(%272)
-  %274 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [1, 1], strides = [2, 2]](%273)
-  %276 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%274, %7)
-  %278 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%276, %8, %9, %10, %11)
-  %279 = Relu(%278)
-  %281 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%279, %12)
-  %283 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%281, %13, %14, %15, %16)
-  %284 = Relu(%283)
-  %286 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%284, %17)
-  %288 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%286, %18, %19, %20, %21)
-  %290 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%274, %22)
-  %292 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%290, %23, %24, %25, %26)
-  %293 = Add(%288, %292)
-  %294 = Relu(%293)
-  %296 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%294, %27)
-  %298 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%296, %28, %29, %30, %31)
-  %299 = Relu(%298)
-  %301 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%299, %32)
-  %303 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%301, %33, %34, %35, %36)
-  %304 = Relu(%303)
-  %306 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%304, %37)
-  %308 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%306, %38, %39, %40, %41)
-  %309 = Add(%308, %294)
-  %310 = Relu(%309)
-  %312 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%310, %42)
-  %314 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%312, %43, %44, %45, %46)
-  %315 = Relu(%314)
-  %317 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%315, %47)
-  %319 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%317, %48, %49, %50, %51)
-  %320 = Relu(%319)
-  %322 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%320, %52)
-  %324 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%322, %53, %54, %55, %56)
-  %325 = Add(%324, %310)
-  %326 = Relu(%325)
-  %328 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%326, %57)
-  %330 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%328, %58, %59, %60, %61)
-  %331 = Relu(%330)
-  %333 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%331, %62)
-  %335 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%333, %63, %64, %65, %66)
-  %336 = Relu(%335)
-  %338 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%336, %67)
-  %340 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%338, %68, %69, %70, %71)
-  %342 = Conv[kernel_shape = [1, 1], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%326, %72)
-  %344 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%342, %73, %74, %75, %76)
-  %345 = Add(%340, %344)
-  %346 = Relu(%345)
-  %348 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%346, %77)
-  %350 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%348, %78, %79, %80, %81)
+  %269 = Conv[kernel_shape = [7, 7], strides = [2, 2], pads = [3, 3, 3, 3], dilations = [1, 1], group = 1](%0, %1)
+  %270 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%269, %2, %3, %4, %5)
+  %271 = Relu(%270)
+  %272 = MaxPool[kernel_shape = [3, 3], pads = [1, 1], strides = [2, 2]](%271)
+  %274 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%272, %6)
+  %275 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%274, %7, %8, %9, %10)
+  %276 = Relu(%275)
+  %278 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%276, %11)
+  %279 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%278, %12, %13, %14, %15)
+  %280 = Relu(%279)
+  %282 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%280, %16)
+  %283 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%282, %17, %18, %19, %20)
+  %285 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%272, %21)
+  %286 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%285, %22, %23, %24, %25)
+  %287 = Add(%283, %286)
+  %288 = Relu(%287)
+  %290 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%288, %26)
+  %291 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%290, %27, %28, %29, %30)
+  %292 = Relu(%291)
+  %294 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%292, %31)
+  %295 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%294, %32, %33, %34, %35)
+  %296 = Relu(%295)
+  %298 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%296, %36)
+  %299 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%298, %37, %38, %39, %40)
+  %300 = Add(%299, %288)
+  %301 = Relu(%300)
+  %303 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%301, %41)
+  %304 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%303, %42, %43, %44, %45)
+  %305 = Relu(%304)
+  %307 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%305, %46)
+  %308 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%307, %47, %48, %49, %50)
+  %309 = Relu(%308)
+  %311 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%309, %51)
+  %312 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%311, %52, %53, %54, %55)
+  %313 = Add(%312, %301)
+  %314 = Relu(%313)
+  %316 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%314, %56)
+  %317 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%316, %57, %58, %59, %60)
+  %318 = Relu(%317)
+  %320 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%318, %61)
+  %321 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%320, %62, %63, %64, %65)
+  %322 = Relu(%321)
+  %324 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%322, %66)
+  %325 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%324, %67, %68, %69, %70)
+  %327 = Conv[kernel_shape = [1, 1], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%314, %71)
+  %328 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%327, %72, %73, %74, %75)
+  %329 = Add(%325, %328)
+  %330 = Relu(%329)
+  %332 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%330, %76)
+  %333 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%332, %77, %78, %79, %80)
+  %334 = Relu(%333)
+  %336 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%334, %81)
+  %337 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%336, %82, %83, %84, %85)
+  %338 = Relu(%337)
+  %340 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%338, %86)
+  %341 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%340, %87, %88, %89, %90)
+  %342 = Add(%341, %330)
+  %343 = Relu(%342)
+  %345 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%343, %91)
+  %346 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%345, %92, %93, %94, %95)
+  %347 = Relu(%346)
+  %349 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%347, %96)
+  %350 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%349, %97, %98, %99, %100)
   %351 = Relu(%350)
-  %353 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%351, %82)
-  %355 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%353, %83, %84, %85, %86)
+  %353 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%351, %101)
+  %354 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%353, %102, %103, %104, %105)
+  %355 = Add(%354, %343)
   %356 = Relu(%355)
-  %358 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%356, %87)
-  %360 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%358, %88, %89, %90, %91)
-  %361 = Add(%360, %346)
-  %362 = Relu(%361)
-  %364 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%362, %92)
-  %366 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%364, %93, %94, %95, %96)
-  %367 = Relu(%366)
-  %369 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%367, %97)
-  %371 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%369, %98, %99, %100, %101)
-  %372 = Relu(%371)
-  %374 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%372, %102)
-  %376 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%374, %103, %104, %105, %106)
-  %377 = Add(%376, %362)
-  %378 = Relu(%377)
-  %380 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%378, %107)
-  %382 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%380, %108, %109, %110, %111)
-  %383 = Relu(%382)
-  %385 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%383, %112)
-  %387 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%385, %113, %114, %115, %116)
-  %388 = Relu(%387)
-  %390 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%388, %117)
-  %392 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%390, %118, %119, %120, %121)
-  %393 = Add(%392, %378)
-  %394 = Relu(%393)
-  %396 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%394, %122)
-  %398 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%396, %123, %124, %125, %126)
-  %399 = Relu(%398)
-  %401 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%399, %127)
-  %403 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%401, %128, %129, %130, %131)
-  %404 = Relu(%403)
-  %406 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%404, %132)
-  %408 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%406, %133, %134, %135, %136)
-  %410 = Conv[kernel_shape = [1, 1], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%394, %137)
-  %412 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%410, %138, %139, %140, %141)
-  %413 = Add(%408, %412)
-  %414 = Relu(%413)
-  %416 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%414, %142)
-  %418 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%416, %143, %144, %145, %146)
+  %358 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%356, %106)
+  %359 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%358, %107, %108, %109, %110)
+  %360 = Relu(%359)
+  %362 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%360, %111)
+  %363 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%362, %112, %113, %114, %115)
+  %364 = Relu(%363)
+  %366 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%364, %116)
+  %367 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%366, %117, %118, %119, %120)
+  %368 = Add(%367, %356)
+  %369 = Relu(%368)
+  %371 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%369, %121)
+  %372 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%371, %122, %123, %124, %125)
+  %373 = Relu(%372)
+  %375 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%373, %126)
+  %376 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%375, %127, %128, %129, %130)
+  %377 = Relu(%376)
+  %379 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%377, %131)
+  %380 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%379, %132, %133, %134, %135)
+  %382 = Conv[kernel_shape = [1, 1], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%369, %136)
+  %383 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%382, %137, %138, %139, %140)
+  %384 = Add(%380, %383)
+  %385 = Relu(%384)
+  %387 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%385, %141)
+  %388 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%387, %142, %143, %144, %145)
+  %389 = Relu(%388)
+  %391 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%389, %146)
+  %392 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%391, %147, %148, %149, %150)
+  %393 = Relu(%392)
+  %395 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%393, %151)
+  %396 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%395, %152, %153, %154, %155)
+  %397 = Add(%396, %385)
+  %398 = Relu(%397)
+  %400 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%398, %156)
+  %401 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%400, %157, %158, %159, %160)
+  %402 = Relu(%401)
+  %404 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%402, %161)
+  %405 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%404, %162, %163, %164, %165)
+  %406 = Relu(%405)
+  %408 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%406, %166)
+  %409 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%408, %167, %168, %169, %170)
+  %410 = Add(%409, %398)
+  %411 = Relu(%410)
+  %413 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%411, %171)
+  %414 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%413, %172, %173, %174, %175)
+  %415 = Relu(%414)
+  %417 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%415, %176)
+  %418 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%417, %177, %178, %179, %180)
   %419 = Relu(%418)
-  %421 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%419, %147)
-  %423 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%421, %148, %149, %150, %151)
+  %421 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%419, %181)
+  %422 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%421, %182, %183, %184, %185)
+  %423 = Add(%422, %411)
   %424 = Relu(%423)
-  %426 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%424, %152)
-  %428 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%426, %153, %154, %155, %156)
-  %429 = Add(%428, %414)
-  %430 = Relu(%429)
-  %432 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%430, %157)
-  %434 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%432, %158, %159, %160, %161)
-  %435 = Relu(%434)
-  %437 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%435, %162)
-  %439 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%437, %163, %164, %165, %166)
-  %440 = Relu(%439)
-  %442 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%440, %167)
-  %444 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%442, %168, %169, %170, %171)
-  %445 = Add(%444, %430)
-  %446 = Relu(%445)
-  %448 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%446, %172)
-  %450 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%448, %173, %174, %175, %176)
-  %451 = Relu(%450)
-  %453 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%451, %177)
-  %455 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%453, %178, %179, %180, %181)
-  %456 = Relu(%455)
-  %458 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%456, %182)
-  %460 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%458, %183, %184, %185, %186)
-  %461 = Add(%460, %446)
-  %462 = Relu(%461)
-  %464 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%462, %187)
-  %466 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%464, %188, %189, %190, %191)
-  %467 = Relu(%466)
-  %469 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%467, %192)
-  %471 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%469, %193, %194, %195, %196)
-  %472 = Relu(%471)
-  %474 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%472, %197)
-  %476 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%474, %198, %199, %200, %201)
-  %477 = Add(%476, %462)
-  %478 = Relu(%477)
-  %480 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%478, %202)
-  %482 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%480, %203, %204, %205, %206)
+  %426 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%424, %186)
+  %427 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%426, %187, %188, %189, %190)
+  %428 = Relu(%427)
+  %430 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%428, %191)
+  %431 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%430, %192, %193, %194, %195)
+  %432 = Relu(%431)
+  %434 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%432, %196)
+  %435 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%434, %197, %198, %199, %200)
+  %436 = Add(%435, %424)
+  %437 = Relu(%436)
+  %439 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%437, %201)
+  %440 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%439, %202, %203, %204, %205)
+  %441 = Relu(%440)
+  %443 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%441, %206)
+  %444 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%443, %207, %208, %209, %210)
+  %445 = Relu(%444)
+  %447 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%445, %211)
+  %448 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%447, %212, %213, %214, %215)
+  %449 = Add(%448, %437)
+  %450 = Relu(%449)
+  %452 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%450, %216)
+  %453 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%452, %217, %218, %219, %220)
+  %454 = Relu(%453)
+  %456 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%454, %221)
+  %457 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%456, %222, %223, %224, %225)
+  %458 = Relu(%457)
+  %460 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%458, %226)
+  %461 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%460, %227, %228, %229, %230)
+  %463 = Conv[kernel_shape = [1, 1], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%450, %231)
+  %464 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%463, %232, %233, %234, %235)
+  %465 = Add(%461, %464)
+  %466 = Relu(%465)
+  %468 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%466, %236)
+  %469 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%468, %237, %238, %239, %240)
+  %470 = Relu(%469)
+  %472 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%470, %241)
+  %473 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%472, %242, %243, %244, %245)
+  %474 = Relu(%473)
+  %476 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%474, %246)
+  %477 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%476, %247, %248, %249, %250)
+  %478 = Add(%477, %466)
+  %479 = Relu(%478)
+  %481 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%479, %251)
+  %482 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%481, %252, %253, %254, %255)
   %483 = Relu(%482)
-  %485 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%483, %207)
-  %487 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%485, %208, %209, %210, %211)
-  %488 = Relu(%487)
-  %490 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%488, %212)
-  %492 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%490, %213, %214, %215, %216)
-  %493 = Add(%492, %478)
-  %494 = Relu(%493)
-  %496 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%494, %217)
-  %498 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%496, %218, %219, %220, %221)
-  %499 = Relu(%498)
-  %501 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%499, %222)
-  %503 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%501, %223, %224, %225, %226)
-  %504 = Relu(%503)
-  %506 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%504, %227)
-  %508 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%506, %228, %229, %230, %231)
-  %510 = Conv[kernel_shape = [1, 1], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%494, %232)
-  %512 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%510, %233, %234, %235, %236)
-  %513 = Add(%508, %512)
-  %514 = Relu(%513)
-  %516 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%514, %237)
-  %518 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%516, %238, %239, %240, %241)
-  %519 = Relu(%518)
-  %521 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%519, %242)
-  %523 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%521, %243, %244, %245, %246)
-  %524 = Relu(%523)
-  %526 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%524, %247)
-  %528 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%526, %248, %249, %250, %251)
-  %529 = Add(%528, %514)
-  %530 = Relu(%529)
-  %532 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%530, %252)
-  %534 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%532, %253, %254, %255, %256)
-  %535 = Relu(%534)
-  %537 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%535, %257)
-  %539 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%537, %258, %259, %260, %261)
-  %540 = Relu(%539)
-  %542 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%540, %262)
-  %544 = SpatialBN[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%542, %263, %264, %265, %266)
-  %545 = Add(%544, %530)
-  %546 = Relu(%545)
-  %547 = AveragePool[kernel_shape = [7, 7], pads = [0, 0], strides = [7, 7]](%546)
-  %548 = Reshape[shape = [2, -1]](%547)
-  %549 = Transpose[perm = [1, 0]](%267)
-  %551 = Gemm[alpha = 1, beta = 1, broadcast = 1](%548, %549, %268)
-  return %name: "551"
+  %485 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%483, %256)
+  %486 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%485, %257, %258, %259, %260)
+  %487 = Relu(%486)
+  %489 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%487, %261)
+  %490 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%489, %262, %263, %264, %265)
+  %491 = Add(%490, %479)
+  %492 = Relu(%491)
+  %493 = AveragePool[kernel_shape = [7, 7], pads = [0, 0], strides = [7, 7]](%492)
+  %494 = Reshape[shape = [2, -1]](%493)
+  %495 = Transpose[perm = [1, 0]](%266)
+  %497 = Gemm[alpha = 1, beta = 1, broadcast = 1](%494, %495, %267)
+  return %name: "497"
 type {
   tensor_type {
     elem_type: FLOAT

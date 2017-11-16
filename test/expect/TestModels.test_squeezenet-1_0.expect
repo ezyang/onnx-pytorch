@@ -1,4 +1,4 @@
-graph torch-jit-export (%name: "1"
+graph torch-jit-export (%name: "0"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -18,7 +18,7 @@ type {
     }
   }
 }
-, %name: "2"
+, %name: "1"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -38,13 +38,33 @@ type {
     }
   }
 }
-, %name: "3"
+, %name: "2"
 type {
   tensor_type {
     elem_type: FLOAT
     shape {
       dim {
         dim_value: 64
+      }
+    }
+  }
+}
+, %name: "3"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 16
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -57,15 +77,6 @@ type {
       dim {
         dim_value: 16
       }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -75,7 +86,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 64
+      }
+      dim {
         dim_value: 16
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -88,15 +108,6 @@ type {
       dim {
         dim_value: 64
       }
-      dim {
-        dim_value: 16
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -107,6 +118,15 @@ type {
     shape {
       dim {
         dim_value: 64
+      }
+      dim {
+        dim_value: 16
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -119,15 +139,6 @@ type {
       dim {
         dim_value: 64
       }
-      dim {
-        dim_value: 16
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -137,7 +148,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 64
+        dim_value: 16
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -150,15 +170,6 @@ type {
       dim {
         dim_value: 16
       }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -168,7 +179,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 64
+      }
+      dim {
         dim_value: 16
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -181,15 +201,6 @@ type {
       dim {
         dim_value: 64
       }
-      dim {
-        dim_value: 16
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -200,6 +211,15 @@ type {
     shape {
       dim {
         dim_value: 64
+      }
+      dim {
+        dim_value: 16
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -212,15 +232,6 @@ type {
       dim {
         dim_value: 64
       }
-      dim {
-        dim_value: 16
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -230,7 +241,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 64
+        dim_value: 32
+      }
+      dim {
+        dim_value: 128
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -243,15 +263,6 @@ type {
       dim {
         dim_value: 32
       }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -261,7 +272,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 128
+      }
+      dim {
         dim_value: 32
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -274,15 +294,6 @@ type {
       dim {
         dim_value: 128
       }
-      dim {
-        dim_value: 32
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -293,6 +304,15 @@ type {
     shape {
       dim {
         dim_value: 128
+      }
+      dim {
+        dim_value: 32
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -305,15 +325,6 @@ type {
       dim {
         dim_value: 128
       }
-      dim {
-        dim_value: 32
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -323,7 +334,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 128
+        dim_value: 32
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -336,15 +356,6 @@ type {
       dim {
         dim_value: 32
       }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -354,7 +365,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 128
+      }
+      dim {
         dim_value: 32
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -367,15 +387,6 @@ type {
       dim {
         dim_value: 128
       }
-      dim {
-        dim_value: 32
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -386,6 +397,15 @@ type {
     shape {
       dim {
         dim_value: 128
+      }
+      dim {
+        dim_value: 32
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -398,15 +418,6 @@ type {
       dim {
         dim_value: 128
       }
-      dim {
-        dim_value: 32
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -416,7 +427,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 128
+        dim_value: 48
+      }
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -429,15 +449,6 @@ type {
       dim {
         dim_value: 48
       }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -447,7 +458,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 192
+      }
+      dim {
         dim_value: 48
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -460,15 +480,6 @@ type {
       dim {
         dim_value: 192
       }
-      dim {
-        dim_value: 48
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -479,6 +490,15 @@ type {
     shape {
       dim {
         dim_value: 192
+      }
+      dim {
+        dim_value: 48
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -491,15 +511,6 @@ type {
       dim {
         dim_value: 192
       }
-      dim {
-        dim_value: 48
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -509,7 +520,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 192
+        dim_value: 48
+      }
+      dim {
+        dim_value: 384
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -522,15 +542,6 @@ type {
       dim {
         dim_value: 48
       }
-      dim {
-        dim_value: 384
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -540,7 +551,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 192
+      }
+      dim {
         dim_value: 48
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -553,15 +573,6 @@ type {
       dim {
         dim_value: 192
       }
-      dim {
-        dim_value: 48
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -572,6 +583,15 @@ type {
     shape {
       dim {
         dim_value: 192
+      }
+      dim {
+        dim_value: 48
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -584,30 +604,10 @@ type {
       dim {
         dim_value: 192
       }
-      dim {
-        dim_value: 48
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
 , %name: "39"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 192
-      }
-    }
-  }
-}
-, %name: "40"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -627,13 +627,33 @@ type {
     }
   }
 }
-, %name: "41"
+, %name: "40"
 type {
   tensor_type {
     elem_type: FLOAT
     shape {
       dim {
         dim_value: 64
+      }
+    }
+  }
+}
+, %name: "41"
+type {
+  tensor_type {
+    elem_type: FLOAT
+    shape {
+      dim {
+        dim_value: 256
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -646,15 +666,6 @@ type {
       dim {
         dim_value: 256
       }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -665,6 +676,15 @@ type {
     shape {
       dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -677,15 +697,6 @@ type {
       dim {
         dim_value: 256
       }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
@@ -695,7 +706,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
-        dim_value: 256
+        dim_value: 64
+      }
+      dim {
+        dim_value: 512
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -708,15 +728,6 @@ type {
       dim {
         dim_value: 64
       }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -726,7 +737,16 @@ type {
     elem_type: FLOAT
     shape {
       dim {
+        dim_value: 256
+      }
+      dim {
         dim_value: 64
+      }
+      dim {
+        dim_value: 1
+      }
+      dim {
+        dim_value: 1
       }
     }
   }
@@ -739,15 +759,6 @@ type {
       dim {
         dim_value: 256
       }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 1
-      }
     }
   }
 }
@@ -758,6 +769,15 @@ type {
     shape {
       dim {
         dim_value: 256
+      }
+      dim {
+        dim_value: 64
+      }
+      dim {
+        dim_value: 3
+      }
+      dim {
+        dim_value: 3
       }
     }
   }
@@ -770,30 +790,10 @@ type {
       dim {
         dim_value: 256
       }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
     }
   }
 }
 , %name: "51"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "52"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -813,7 +813,7 @@ type {
     }
   }
 }
-, %name: "53"
+, %name: "52"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -825,99 +825,99 @@ type {
   }
 }
 ) {
-  %55 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%1, %2)
-  %56 = Add[broadcast = 1, axis = 1](%55, %3)
-  %57 = Relu(%56)
-  %58 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%57)
-  %60 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%58, %4)
-  %61 = Add[broadcast = 1, axis = 1](%60, %5)
+  %53 = Conv[kernel_shape = [3, 3], strides = [2, 2], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%0, %1)
+  %54 = Add[broadcast = 1, axis = 1](%53, %2)
+  %55 = Relu(%54)
+  %56 = MaxPool[kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%55)
+  %57 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%56, %3)
+  %58 = Add[broadcast = 1, axis = 1](%57, %4)
+  %59 = Relu(%58)
+  %60 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%59, %5)
+  %61 = Add[broadcast = 1, axis = 1](%60, %6)
   %62 = Relu(%61)
-  %64 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%62, %6)
-  %65 = Add[broadcast = 1, axis = 1](%64, %7)
-  %66 = Relu(%65)
-  %68 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%62, %8)
-  %69 = Add[broadcast = 1, axis = 1](%68, %9)
-  %70 = Relu(%69)
-  %71 = Concat[axis = 1](%66, %70)
-  %73 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%71, %10)
-  %74 = Add[broadcast = 1, axis = 1](%73, %11)
+  %63 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%59, %7)
+  %64 = Add[broadcast = 1, axis = 1](%63, %8)
+  %65 = Relu(%64)
+  %66 = Concat[axis = 1](%62, %65)
+  %67 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%66, %9)
+  %68 = Add[broadcast = 1, axis = 1](%67, %10)
+  %69 = Relu(%68)
+  %70 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%69, %11)
+  %71 = Add[broadcast = 1, axis = 1](%70, %12)
+  %72 = Relu(%71)
+  %73 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%69, %13)
+  %74 = Add[broadcast = 1, axis = 1](%73, %14)
   %75 = Relu(%74)
-  %77 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%75, %12)
-  %78 = Add[broadcast = 1, axis = 1](%77, %13)
-  %79 = Relu(%78)
-  %81 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%75, %14)
-  %82 = Add[broadcast = 1, axis = 1](%81, %15)
+  %76 = Concat[axis = 1](%72, %75)
+  %77 = MaxPool[kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%76)
+  %78 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%77, %15)
+  %79 = Add[broadcast = 1, axis = 1](%78, %16)
+  %80 = Relu(%79)
+  %81 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%80, %17)
+  %82 = Add[broadcast = 1, axis = 1](%81, %18)
   %83 = Relu(%82)
-  %84 = Concat[axis = 1](%79, %83)
-  %85 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%84)
-  %87 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%85, %16)
-  %88 = Add[broadcast = 1, axis = 1](%87, %17)
-  %89 = Relu(%88)
-  %91 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%89, %18)
-  %92 = Add[broadcast = 1, axis = 1](%91, %19)
+  %84 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%80, %19)
+  %85 = Add[broadcast = 1, axis = 1](%84, %20)
+  %86 = Relu(%85)
+  %87 = Concat[axis = 1](%83, %86)
+  %88 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%87, %21)
+  %89 = Add[broadcast = 1, axis = 1](%88, %22)
+  %90 = Relu(%89)
+  %91 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%90, %23)
+  %92 = Add[broadcast = 1, axis = 1](%91, %24)
   %93 = Relu(%92)
-  %95 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%89, %20)
-  %96 = Add[broadcast = 1, axis = 1](%95, %21)
-  %97 = Relu(%96)
-  %98 = Concat[axis = 1](%93, %97)
-  %100 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%98, %22)
-  %101 = Add[broadcast = 1, axis = 1](%100, %23)
-  %102 = Relu(%101)
-  %104 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%102, %24)
-  %105 = Add[broadcast = 1, axis = 1](%104, %25)
-  %106 = Relu(%105)
-  %108 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%102, %26)
-  %109 = Add[broadcast = 1, axis = 1](%108, %27)
-  %110 = Relu(%109)
-  %111 = Concat[axis = 1](%106, %110)
-  %112 = MaxPool[dilations = [1, 1], kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%111)
-  %114 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%112, %28)
-  %115 = Add[broadcast = 1, axis = 1](%114, %29)
-  %116 = Relu(%115)
-  %118 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%116, %30)
-  %119 = Add[broadcast = 1, axis = 1](%118, %31)
-  %120 = Relu(%119)
-  %122 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%116, %32)
-  %123 = Add[broadcast = 1, axis = 1](%122, %33)
+  %94 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%90, %25)
+  %95 = Add[broadcast = 1, axis = 1](%94, %26)
+  %96 = Relu(%95)
+  %97 = Concat[axis = 1](%93, %96)
+  %98 = MaxPool[kernel_shape = [3, 3], pads = [0, 0], strides = [2, 2]](%97)
+  %99 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%98, %27)
+  %100 = Add[broadcast = 1, axis = 1](%99, %28)
+  %101 = Relu(%100)
+  %102 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%101, %29)
+  %103 = Add[broadcast = 1, axis = 1](%102, %30)
+  %104 = Relu(%103)
+  %105 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%101, %31)
+  %106 = Add[broadcast = 1, axis = 1](%105, %32)
+  %107 = Relu(%106)
+  %108 = Concat[axis = 1](%104, %107)
+  %109 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%108, %33)
+  %110 = Add[broadcast = 1, axis = 1](%109, %34)
+  %111 = Relu(%110)
+  %112 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%111, %35)
+  %113 = Add[broadcast = 1, axis = 1](%112, %36)
+  %114 = Relu(%113)
+  %115 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%111, %37)
+  %116 = Add[broadcast = 1, axis = 1](%115, %38)
+  %117 = Relu(%116)
+  %118 = Concat[axis = 1](%114, %117)
+  %119 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%118, %39)
+  %120 = Add[broadcast = 1, axis = 1](%119, %40)
+  %121 = Relu(%120)
+  %122 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%121, %41)
+  %123 = Add[broadcast = 1, axis = 1](%122, %42)
   %124 = Relu(%123)
-  %125 = Concat[axis = 1](%120, %124)
-  %127 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%125, %34)
-  %128 = Add[broadcast = 1, axis = 1](%127, %35)
-  %129 = Relu(%128)
-  %131 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%129, %36)
-  %132 = Add[broadcast = 1, axis = 1](%131, %37)
-  %133 = Relu(%132)
-  %135 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%129, %38)
-  %136 = Add[broadcast = 1, axis = 1](%135, %39)
+  %125 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%121, %43)
+  %126 = Add[broadcast = 1, axis = 1](%125, %44)
+  %127 = Relu(%126)
+  %128 = Concat[axis = 1](%124, %127)
+  %129 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%128, %45)
+  %130 = Add[broadcast = 1, axis = 1](%129, %46)
+  %131 = Relu(%130)
+  %132 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%131, %47)
+  %133 = Add[broadcast = 1, axis = 1](%132, %48)
+  %134 = Relu(%133)
+  %135 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%131, %49)
+  %136 = Add[broadcast = 1, axis = 1](%135, %50)
   %137 = Relu(%136)
-  %138 = Concat[axis = 1](%133, %137)
-  %140 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%138, %40)
-  %141 = Add[broadcast = 1, axis = 1](%140, %41)
-  %142 = Relu(%141)
-  %144 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%142, %42)
-  %145 = Add[broadcast = 1, axis = 1](%144, %43)
-  %146 = Relu(%145)
-  %148 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%142, %44)
-  %149 = Add[broadcast = 1, axis = 1](%148, %45)
-  %150 = Relu(%149)
-  %151 = Concat[axis = 1](%146, %150)
-  %153 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%151, %46)
-  %154 = Add[broadcast = 1, axis = 1](%153, %47)
-  %155 = Relu(%154)
-  %157 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%155, %48)
-  %158 = Add[broadcast = 1, axis = 1](%157, %49)
-  %159 = Relu(%158)
-  %161 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%155, %50)
-  %162 = Add[broadcast = 1, axis = 1](%161, %51)
-  %163 = Relu(%162)
-  %164 = Concat[axis = 1](%159, %163)
-  %166, %167 = Dropout[is_test = 1, ratio = 0.5](%164)
-  %169 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%166, %52)
-  %170 = Add[broadcast = 1, axis = 1](%169, %53)
-  %171 = Relu(%170)
-  %172 = AveragePool[kernel_shape = [13, 13], pads = [0, 0], strides = [13, 13]](%171)
-  %173 = Reshape[shape = [2, 1000]](%172)
-  return %name: "173"
+  %138 = Concat[axis = 1](%134, %137)
+  %139, %140 = Dropout[is_test = 1, ratio = 0.5](%138)
+  %141 = Conv[kernel_shape = [1, 1], strides = [1, 1], pads = [0, 0, 0, 0], dilations = [1, 1], group = 1](%139, %51)
+  %142 = Add[broadcast = 1, axis = 1](%141, %52)
+  %143 = Relu(%142)
+  %144 = AveragePool[kernel_shape = [13, 13], pads = [0, 0], strides = [13, 13]](%143)
+  %145 = Reshape[shape = [2, 1000]](%144)
+  return %name: "145"
 type {
   tensor_type {
     elem_type: FLOAT

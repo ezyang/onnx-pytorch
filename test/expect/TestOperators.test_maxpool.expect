@@ -4,29 +4,28 @@ producer_version: "0.2"
 domain: "com.facebook"
 graph {
   node {
-    input: "1"
-    output: "2"
+    input: "0"
+    output: "1"
     op_type: "MaxPool"
-    attribute {
-      name: "dilations"
-      ints: 1
-    }
     attribute {
       name: "kernel_shape"
       ints: 3
+      type: INTS
     }
     attribute {
       name: "pads"
       ints: 0
+      type: INTS
     }
     attribute {
       name: "strides"
       ints: 2
+      type: INTS
     }
   }
   name: "torch-jit-export"
   input {
-    name: "1"
+    name: "0"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -45,7 +44,7 @@ graph {
     }
   }
   output {
-    name: "2"
+    name: "1"
     type {
       tensor_type {
         elem_type: FLOAT

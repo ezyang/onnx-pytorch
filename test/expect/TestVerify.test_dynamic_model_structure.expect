@@ -3,7 +3,7 @@ When I exported your model with different inputs, the result was different.
 ----------------------------------------------------------------------
 ERROR: Strings are not equal:
 
-  graph torch-jit-export (%name: "1"
+  graph torch-jit-export (%name: "0"
   type {
     tensor_type {
       elem_type: FLOAT
@@ -15,11 +15,11 @@ ERROR: Strings are not equal:
     }
   }
   ) {
--   %2 = Mul(%1, %1)
+-   %1 = Mul(%0, %0)
 ?        ^^^
-+   %2 = Add(%1, %1)
++   %1 = Add(%0, %0)
 ?        ^^^
-    return %name: "2"
+    return %name: "1"
   type {
     tensor_type {
       elem_type: FLOAT

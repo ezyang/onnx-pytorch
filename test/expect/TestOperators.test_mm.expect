@@ -4,7 +4,7 @@ producer_version: "0.2"
 domain: "com.facebook"
 graph {
   node {
-    output: "3"
+    output: "2"
     op_type: "Constant"
     attribute {
       name: "value"
@@ -13,30 +13,34 @@ graph {
         data_type: FLOAT
         raw_data: "\000\000\000\000"
       }
+      type: TENSOR
     }
   }
   node {
+    input: "0"
     input: "1"
     input: "2"
-    input: "3"
-    output: "4"
+    output: "3"
     op_type: "Gemm"
     attribute {
       name: "alpha"
       f: 1
+      type: FLOAT
     }
     attribute {
       name: "beta"
       f: 0
+      type: FLOAT
     }
     attribute {
       name: "broadcast"
       i: 1
+      type: INT
     }
   }
   name: "torch-jit-export"
   input {
-    name: "1"
+    name: "0"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -52,7 +56,7 @@ graph {
     }
   }
   input {
-    name: "2"
+    name: "1"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -68,7 +72,7 @@ graph {
     }
   }
   output {
-    name: "4"
+    name: "3"
     type {
       tensor_type {
         elem_type: FLOAT
