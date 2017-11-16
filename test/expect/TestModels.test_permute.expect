@@ -1,4 +1,4 @@
-graph torch-jit-export (%name: "1"
+graph torch-jit-export (%name: "0"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -19,8 +19,8 @@ type {
   }
 }
 ) {
-  %2 = Transpose[perm = [2, 3, 0, 1]](%1)
-  return %name: "2"
+  %1 = Transpose[perm = [2, 3, 0, 1]](%0)
+  return %name: "1"
 type {
   tensor_type {
     elem_type: FLOAT

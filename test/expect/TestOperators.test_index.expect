@@ -4,8 +4,8 @@ producer_version: "0.2"
 domain: "com.facebook"
 graph {
   node {
-    input: "1"
-    output: "2"
+    input: "0"
+    output: "1"
     op_type: "Slice"
     attribute {
       name: "axes"
@@ -24,8 +24,8 @@ graph {
     }
   }
   node {
-    input: "2"
-    output: "3"
+    input: "1"
+    output: "2"
     op_type: "Squeeze"
     attribute {
       name: "axes"
@@ -35,7 +35,7 @@ graph {
   }
   name: "torch-jit-export"
   input {
-    name: "1"
+    name: "0"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -51,7 +51,7 @@ graph {
     }
   }
   output {
-    name: "3"
+    name: "2"
     type {
       tensor_type {
         elem_type: FLOAT

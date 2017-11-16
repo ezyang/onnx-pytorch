@@ -4,9 +4,9 @@ producer_version: "0.2"
 domain: "com.facebook"
 graph {
   node {
+    input: "0"
     input: "1"
-    input: "2"
-    output: "4"
+    output: "3"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -16,7 +16,7 @@ graph {
   }
   name: "torch-jit-export"
   input {
-    name: "1"
+    name: "0"
     type {
       tensor_type {
         elem_type: DOUBLE
@@ -32,7 +32,7 @@ graph {
     }
   }
   input {
-    name: "2"
+    name: "1"
     type {
       tensor_type {
         elem_type: DOUBLE
@@ -45,7 +45,7 @@ graph {
     }
   }
   output {
-    name: "4"
+    name: "3"
     type {
       tensor_type {
         elem_type: DOUBLE

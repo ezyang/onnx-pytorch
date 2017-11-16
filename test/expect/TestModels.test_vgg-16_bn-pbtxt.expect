@@ -4,9 +4,9 @@ producer_version: "0.2"
 domain: "com.facebook"
 graph {
   node {
+    input: "0"
     input: "1"
-    input: "2"
-    output: "87"
+    output: "85"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -41,9 +41,9 @@ graph {
     }
   }
   node {
-    input: "87"
-    input: "3"
-    output: "88"
+    input: "85"
+    input: "2"
+    output: "86"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -57,12 +57,12 @@ graph {
     }
   }
   node {
-    input: "88"
+    input: "86"
+    input: "3"
     input: "4"
     input: "5"
     input: "6"
-    input: "7"
-    output: "90"
+    output: "87"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -90,14 +90,14 @@ graph {
     }
   }
   node {
-    input: "90"
-    output: "91"
+    input: "87"
+    output: "88"
     op_type: "Relu"
   }
   node {
-    input: "91"
-    input: "8"
-    output: "93"
+    input: "88"
+    input: "7"
+    output: "89"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -132,9 +132,9 @@ graph {
     }
   }
   node {
-    input: "93"
-    input: "9"
-    output: "94"
+    input: "89"
+    input: "8"
+    output: "90"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -148,11 +148,125 @@ graph {
     }
   }
   node {
-    input: "94"
+    input: "90"
+    input: "9"
     input: "10"
     input: "11"
     input: "12"
+    output: "91"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "is_test"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "epsilon"
+      f: 9.99999974737875e-06
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.899999976158142
+      type: FLOAT
+    }
+    attribute {
+      name: "consumed_inputs"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "91"
+    output: "92"
+    op_type: "Relu"
+  }
+  node {
+    input: "92"
+    output: "93"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "93"
     input: "13"
+    output: "94"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "94"
+    input: "14"
+    output: "95"
+    op_type: "Add"
+    attribute {
+      name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "95"
+    input: "15"
+    input: "16"
+    input: "17"
+    input: "18"
     output: "96"
     op_type: "BatchNormalization"
     attribute {
@@ -187,31 +301,8 @@ graph {
   }
   node {
     input: "97"
+    input: "19"
     output: "98"
-    op_type: "MaxPool"
-    attribute {
-      name: "kernel_shape"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 0
-      ints: 0
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-  }
-  node {
-    input: "98"
-    input: "14"
-    output: "100"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -246,9 +337,9 @@ graph {
     }
   }
   node {
-    input: "100"
-    input: "15"
-    output: "101"
+    input: "98"
+    input: "20"
+    output: "99"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -262,12 +353,12 @@ graph {
     }
   }
   node {
-    input: "101"
-    input: "16"
-    input: "17"
-    input: "18"
-    input: "19"
-    output: "103"
+    input: "99"
+    input: "21"
+    input: "22"
+    input: "23"
+    input: "24"
+    output: "100"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -295,14 +386,37 @@ graph {
     }
   }
   node {
-    input: "103"
-    output: "104"
+    input: "100"
+    output: "101"
     op_type: "Relu"
   }
   node {
-    input: "104"
-    input: "20"
-    output: "106"
+    input: "101"
+    output: "102"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "102"
+    input: "25"
+    output: "103"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -337,9 +451,9 @@ graph {
     }
   }
   node {
-    input: "106"
-    input: "21"
-    output: "107"
+    input: "103"
+    input: "26"
+    output: "104"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -353,11 +467,102 @@ graph {
     }
   }
   node {
+    input: "104"
+    input: "27"
+    input: "28"
+    input: "29"
+    input: "30"
+    output: "105"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "is_test"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "epsilon"
+      f: 9.99999974737875e-06
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.899999976158142
+      type: FLOAT
+    }
+    attribute {
+      name: "consumed_inputs"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "105"
+    output: "106"
+    op_type: "Relu"
+  }
+  node {
+    input: "106"
+    input: "31"
+    output: "107"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+  }
+  node {
     input: "107"
-    input: "22"
-    input: "23"
-    input: "24"
-    input: "25"
+    input: "32"
+    output: "108"
+    op_type: "Add"
+    attribute {
+      name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "108"
+    input: "33"
+    input: "34"
+    input: "35"
+    input: "36"
     output: "109"
     op_type: "BatchNormalization"
     attribute {
@@ -392,31 +597,8 @@ graph {
   }
   node {
     input: "110"
+    input: "37"
     output: "111"
-    op_type: "MaxPool"
-    attribute {
-      name: "kernel_shape"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 0
-      ints: 0
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-  }
-  node {
-    input: "111"
-    input: "26"
-    output: "113"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -451,9 +633,9 @@ graph {
     }
   }
   node {
-    input: "113"
-    input: "27"
-    output: "114"
+    input: "111"
+    input: "38"
+    output: "112"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -467,12 +649,12 @@ graph {
     }
   }
   node {
-    input: "114"
-    input: "28"
-    input: "29"
-    input: "30"
-    input: "31"
-    output: "116"
+    input: "112"
+    input: "39"
+    input: "40"
+    input: "41"
+    input: "42"
+    output: "113"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -500,14 +682,37 @@ graph {
     }
   }
   node {
-    input: "116"
-    output: "117"
+    input: "113"
+    output: "114"
     op_type: "Relu"
   }
   node {
-    input: "117"
-    input: "32"
-    output: "119"
+    input: "114"
+    output: "115"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+  }
+  node {
+    input: "115"
+    input: "43"
+    output: "116"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -542,9 +747,9 @@ graph {
     }
   }
   node {
-    input: "119"
-    input: "33"
-    output: "120"
+    input: "116"
+    input: "44"
+    output: "117"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -558,11 +763,102 @@ graph {
     }
   }
   node {
+    input: "117"
+    input: "45"
+    input: "46"
+    input: "47"
+    input: "48"
+    output: "118"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "is_test"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "epsilon"
+      f: 9.99999974737875e-06
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.899999976158142
+      type: FLOAT
+    }
+    attribute {
+      name: "consumed_inputs"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "118"
+    output: "119"
+    op_type: "Relu"
+  }
+  node {
+    input: "119"
+    input: "49"
+    output: "120"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+  }
+  node {
     input: "120"
-    input: "34"
-    input: "35"
-    input: "36"
-    input: "37"
+    input: "50"
+    output: "121"
+    op_type: "Add"
+    attribute {
+      name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "121"
+    input: "51"
+    input: "52"
+    input: "53"
+    input: "54"
     output: "122"
     op_type: "BatchNormalization"
     attribute {
@@ -597,8 +893,8 @@ graph {
   }
   node {
     input: "123"
-    input: "38"
-    output: "125"
+    input: "55"
+    output: "124"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -633,9 +929,9 @@ graph {
     }
   }
   node {
-    input: "125"
-    input: "39"
-    output: "126"
+    input: "124"
+    input: "56"
+    output: "125"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -649,12 +945,12 @@ graph {
     }
   }
   node {
-    input: "126"
-    input: "40"
-    input: "41"
-    input: "42"
-    input: "43"
-    output: "128"
+    input: "125"
+    input: "57"
+    input: "58"
+    input: "59"
+    input: "60"
+    output: "126"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -682,13 +978,13 @@ graph {
     }
   }
   node {
-    input: "128"
-    output: "129"
+    input: "126"
+    output: "127"
     op_type: "Relu"
   }
   node {
-    input: "129"
-    output: "130"
+    input: "127"
+    output: "128"
     op_type: "MaxPool"
     attribute {
       name: "kernel_shape"
@@ -710,9 +1006,9 @@ graph {
     }
   }
   node {
-    input: "130"
-    input: "44"
-    output: "132"
+    input: "128"
+    input: "61"
+    output: "129"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -747,9 +1043,9 @@ graph {
     }
   }
   node {
-    input: "132"
-    input: "45"
-    output: "133"
+    input: "129"
+    input: "62"
+    output: "130"
     op_type: "Add"
     attribute {
       name: "broadcast"
@@ -763,11 +1059,102 @@ graph {
     }
   }
   node {
+    input: "130"
+    input: "63"
+    input: "64"
+    input: "65"
+    input: "66"
+    output: "131"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "is_test"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "epsilon"
+      f: 9.99999974737875e-06
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.899999976158142
+      type: FLOAT
+    }
+    attribute {
+      name: "consumed_inputs"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "131"
+    output: "132"
+    op_type: "Relu"
+  }
+  node {
+    input: "132"
+    input: "67"
+    output: "133"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 3
+      ints: 3
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+  }
+  node {
     input: "133"
-    input: "46"
-    input: "47"
-    input: "48"
-    input: "49"
+    input: "68"
+    output: "134"
+    op_type: "Add"
+    attribute {
+      name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "axis"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "134"
+    input: "69"
+    input: "70"
+    input: "71"
+    input: "72"
     output: "135"
     op_type: "BatchNormalization"
     attribute {
@@ -802,8 +1189,8 @@ graph {
   }
   node {
     input: "136"
-    input: "50"
-    output: "138"
+    input: "73"
+    output: "137"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -833,33 +1220,33 @@ graph {
     }
     attribute {
       name: "group"
+      i: 1
+      type: INT
+    }
+  }
+  node {
+    input: "137"
+    input: "74"
+    output: "138"
+    op_type: "Add"
+    attribute {
+      name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "axis"
       i: 1
       type: INT
     }
   }
   node {
     input: "138"
-    input: "51"
+    input: "75"
+    input: "76"
+    input: "77"
+    input: "78"
     output: "139"
-    op_type: "Add"
-    attribute {
-      name: "broadcast"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "axis"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "139"
-    input: "52"
-    input: "53"
-    input: "54"
-    input: "55"
-    output: "141"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -883,427 +1270,40 @@ graph {
       ints: 0
       ints: 1
       ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "139"
+    output: "140"
+    op_type: "Relu"
+  }
+  node {
+    input: "140"
+    output: "141"
+    op_type: "MaxPool"
+    attribute {
+      name: "kernel_shape"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
       type: INTS
     }
   }
   node {
     input: "141"
     output: "142"
-    op_type: "Relu"
-  }
-  node {
-    input: "142"
-    input: "56"
-    output: "144"
-    op_type: "Conv"
-    attribute {
-      name: "kernel_shape"
-      ints: 3
-      ints: 3
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 1
-      ints: 1
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "group"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "144"
-    input: "57"
-    output: "145"
-    op_type: "Add"
-    attribute {
-      name: "broadcast"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "axis"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "145"
-    input: "58"
-    input: "59"
-    input: "60"
-    input: "61"
-    output: "147"
-    op_type: "BatchNormalization"
-    attribute {
-      name: "is_test"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "epsilon"
-      f: 9.99999974737875e-06
-      type: FLOAT
-    }
-    attribute {
-      name: "momentum"
-      f: 0.899999976158142
-      type: FLOAT
-    }
-    attribute {
-      name: "consumed_inputs"
-      ints: 0
-      ints: 0
-      ints: 0
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-  }
-  node {
-    input: "147"
-    output: "148"
-    op_type: "Relu"
-  }
-  node {
-    input: "148"
-    output: "149"
-    op_type: "MaxPool"
-    attribute {
-      name: "kernel_shape"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 0
-      ints: 0
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-  }
-  node {
-    input: "149"
-    input: "62"
-    output: "151"
-    op_type: "Conv"
-    attribute {
-      name: "kernel_shape"
-      ints: 3
-      ints: 3
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 1
-      ints: 1
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "group"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "151"
-    input: "63"
-    output: "152"
-    op_type: "Add"
-    attribute {
-      name: "broadcast"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "axis"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "152"
-    input: "64"
-    input: "65"
-    input: "66"
-    input: "67"
-    output: "154"
-    op_type: "BatchNormalization"
-    attribute {
-      name: "is_test"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "epsilon"
-      f: 9.99999974737875e-06
-      type: FLOAT
-    }
-    attribute {
-      name: "momentum"
-      f: 0.899999976158142
-      type: FLOAT
-    }
-    attribute {
-      name: "consumed_inputs"
-      ints: 0
-      ints: 0
-      ints: 0
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-  }
-  node {
-    input: "154"
-    output: "155"
-    op_type: "Relu"
-  }
-  node {
-    input: "155"
-    input: "68"
-    output: "157"
-    op_type: "Conv"
-    attribute {
-      name: "kernel_shape"
-      ints: 3
-      ints: 3
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 1
-      ints: 1
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "group"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "157"
-    input: "69"
-    output: "158"
-    op_type: "Add"
-    attribute {
-      name: "broadcast"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "axis"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "158"
-    input: "70"
-    input: "71"
-    input: "72"
-    input: "73"
-    output: "160"
-    op_type: "BatchNormalization"
-    attribute {
-      name: "is_test"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "epsilon"
-      f: 9.99999974737875e-06
-      type: FLOAT
-    }
-    attribute {
-      name: "momentum"
-      f: 0.899999976158142
-      type: FLOAT
-    }
-    attribute {
-      name: "consumed_inputs"
-      ints: 0
-      ints: 0
-      ints: 0
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-  }
-  node {
-    input: "160"
-    output: "161"
-    op_type: "Relu"
-  }
-  node {
-    input: "161"
-    input: "74"
-    output: "163"
-    op_type: "Conv"
-    attribute {
-      name: "kernel_shape"
-      ints: 3
-      ints: 3
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 1
-      ints: 1
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "group"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "163"
-    input: "75"
-    output: "164"
-    op_type: "Add"
-    attribute {
-      name: "broadcast"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "axis"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "164"
-    input: "76"
-    input: "77"
-    input: "78"
-    input: "79"
-    output: "166"
-    op_type: "BatchNormalization"
-    attribute {
-      name: "is_test"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "epsilon"
-      f: 9.99999974737875e-06
-      type: FLOAT
-    }
-    attribute {
-      name: "momentum"
-      f: 0.899999976158142
-      type: FLOAT
-    }
-    attribute {
-      name: "consumed_inputs"
-      ints: 0
-      ints: 0
-      ints: 0
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-  }
-  node {
-    input: "166"
-    output: "167"
-    op_type: "Relu"
-  }
-  node {
-    input: "167"
-    output: "168"
-    op_type: "MaxPool"
-    attribute {
-      name: "kernel_shape"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 0
-      ints: 0
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-  }
-  node {
-    input: "168"
-    output: "169"
     op_type: "Reshape"
     attribute {
       name: "shape"
@@ -1313,75 +1313,75 @@ graph {
     }
   }
   node {
+    input: "79"
+    output: "143"
+    op_type: "Transpose"
+    attribute {
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
+    }
+  }
+  node {
+    input: "142"
+    input: "143"
     input: "80"
-    output: "170"
-    op_type: "Transpose"
+    output: "145"
+    op_type: "Gemm"
     attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-      type: INTS
+      name: "alpha"
+      f: 1
+      type: FLOAT
+    }
+    attribute {
+      name: "beta"
+      f: 1
+      type: FLOAT
+    }
+    attribute {
+      name: "broadcast"
+      i: 1
+      type: INT
     }
   }
   node {
-    input: "169"
-    input: "170"
+    input: "145"
+    output: "146"
+    op_type: "Relu"
+  }
+  node {
+    input: "146"
+    output: "147"
+    output: "148"
+    op_type: "Dropout"
+    attribute {
+      name: "is_test"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "ratio"
+      f: 0.5
+      type: FLOAT
+    }
+  }
+  node {
     input: "81"
-    output: "172"
-    op_type: "Gemm"
+    output: "149"
+    op_type: "Transpose"
     attribute {
-      name: "alpha"
-      f: 1
-      type: FLOAT
-    }
-    attribute {
-      name: "beta"
-      f: 1
-      type: FLOAT
-    }
-    attribute {
-      name: "broadcast"
-      i: 1
-      type: INT
+      name: "perm"
+      ints: 1
+      ints: 0
+      type: INTS
     }
   }
   node {
-    input: "172"
-    output: "173"
-    op_type: "Relu"
-  }
-  node {
-    input: "173"
-    output: "175"
-    output: "176"
-    op_type: "Dropout"
-    attribute {
-      name: "is_test"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "ratio"
-      f: 0.5
-      type: FLOAT
-    }
-  }
-  node {
+    input: "147"
+    input: "149"
     input: "82"
-    output: "177"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-      type: INTS
-    }
-  }
-  node {
-    input: "175"
-    input: "177"
-    input: "83"
-    output: "179"
+    output: "151"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1400,14 +1400,14 @@ graph {
     }
   }
   node {
-    input: "179"
-    output: "180"
+    input: "151"
+    output: "152"
     op_type: "Relu"
   }
   node {
-    input: "180"
-    output: "182"
-    output: "183"
+    input: "152"
+    output: "153"
+    output: "154"
     op_type: "Dropout"
     attribute {
       name: "is_test"
@@ -1421,8 +1421,8 @@ graph {
     }
   }
   node {
-    input: "84"
-    output: "184"
+    input: "83"
+    output: "155"
     op_type: "Transpose"
     attribute {
       name: "perm"
@@ -1432,10 +1432,10 @@ graph {
     }
   }
   node {
-    input: "182"
-    input: "184"
-    input: "85"
-    output: "186"
+    input: "153"
+    input: "155"
+    input: "84"
+    output: "157"
     op_type: "Gemm"
     attribute {
       name: "alpha"
@@ -1455,7 +1455,7 @@ graph {
   }
   name: "torch-jit-export"
   input {
-    name: "1"
+    name: "0"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -1477,7 +1477,7 @@ graph {
     }
   }
   input {
-    name: "2"
+    name: "1"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -1493,6 +1493,19 @@ graph {
           }
           dim {
             dim_value: 3
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "2"
+    type {
+      tensor_type {
+        elem_type: FLOAT
+        shape {
+          dim {
+            dim_value: 64
           }
         }
       }
@@ -1559,6 +1572,15 @@ graph {
           dim {
             dim_value: 64
           }
+          dim {
+            dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -1571,15 +1593,6 @@ graph {
         shape {
           dim {
             dim_value: 64
-          }
-          dim {
-            dim_value: 64
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -1644,7 +1657,16 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
+            dim_value: 128
+          }
+          dim {
             dim_value: 64
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
           }
         }
       }
@@ -1658,15 +1680,6 @@ graph {
         shape {
           dim {
             dim_value: 128
-          }
-          dim {
-            dim_value: 64
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -1733,6 +1746,15 @@ graph {
           dim {
             dim_value: 128
           }
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -1745,15 +1767,6 @@ graph {
         shape {
           dim {
             dim_value: 128
-          }
-          dim {
-            dim_value: 128
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -1818,7 +1831,16 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
+            dim_value: 256
+          }
+          dim {
             dim_value: 128
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
           }
         }
       }
@@ -1832,15 +1854,6 @@ graph {
         shape {
           dim {
             dim_value: 256
-          }
-          dim {
-            dim_value: 128
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -1907,6 +1920,15 @@ graph {
           dim {
             dim_value: 256
           }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -1919,15 +1941,6 @@ graph {
         shape {
           dim {
             dim_value: 256
-          }
-          dim {
-            dim_value: 256
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -1994,6 +2007,15 @@ graph {
           dim {
             dim_value: 256
           }
+          dim {
+            dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -2006,15 +2028,6 @@ graph {
         shape {
           dim {
             dim_value: 256
-          }
-          dim {
-            dim_value: 256
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2079,7 +2092,16 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
+            dim_value: 512
+          }
+          dim {
             dim_value: 256
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
           }
         }
       }
@@ -2093,15 +2115,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 256
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2168,6 +2181,15 @@ graph {
           dim {
             dim_value: 512
           }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -2180,15 +2202,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 512
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2255,6 +2268,15 @@ graph {
           dim {
             dim_value: 512
           }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -2267,15 +2289,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 512
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2342,6 +2355,15 @@ graph {
           dim {
             dim_value: 512
           }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -2354,15 +2376,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 512
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2429,6 +2442,15 @@ graph {
           dim {
             dim_value: 512
           }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -2441,15 +2463,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 512
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2516,6 +2529,15 @@ graph {
           dim {
             dim_value: 512
           }
+          dim {
+            dim_value: 512
+          }
+          dim {
+            dim_value: 3
+          }
+          dim {
+            dim_value: 3
+          }
         }
       }
     }
@@ -2528,15 +2550,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 512
-          }
-          dim {
-            dim_value: 3
-          }
-          dim {
-            dim_value: 3
           }
         }
       }
@@ -2601,7 +2614,10 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
-            dim_value: 512
+            dim_value: 4096
+          }
+          dim {
+            dim_value: 25088
           }
         }
       }
@@ -2616,9 +2632,6 @@ graph {
           dim {
             dim_value: 4096
           }
-          dim {
-            dim_value: 25088
-          }
         }
       }
     }
@@ -2629,6 +2642,9 @@ graph {
       tensor_type {
         elem_type: FLOAT
         shape {
+          dim {
+            dim_value: 4096
+          }
           dim {
             dim_value: 4096
           }
@@ -2645,9 +2661,6 @@ graph {
           dim {
             dim_value: 4096
           }
-          dim {
-            dim_value: 4096
-          }
         }
       }
     }
@@ -2658,6 +2671,9 @@ graph {
       tensor_type {
         elem_type: FLOAT
         shape {
+          dim {
+            dim_value: 1000
+          }
           dim {
             dim_value: 4096
           }
@@ -2674,28 +2690,12 @@ graph {
           dim {
             dim_value: 1000
           }
-          dim {
-            dim_value: 4096
-          }
-        }
-      }
-    }
-  }
-  input {
-    name: "85"
-    type {
-      tensor_type {
-        elem_type: FLOAT
-        shape {
-          dim {
-            dim_value: 1000
-          }
         }
       }
     }
   }
   output {
-    name: "186"
+    name: "157"
     type {
       tensor_type {
         elem_type: FLOAT

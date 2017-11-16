@@ -4,9 +4,9 @@ producer_version: "0.2"
 domain: "com.facebook"
 graph {
   node {
+    input: "0"
     input: "1"
-    input: "2"
-    output: "20"
+    output: "19"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -41,8 +41,8 @@ graph {
     }
   }
   node {
-    input: "20"
-    output: "22"
+    input: "19"
+    output: "20"
     op_type: "LeakyRelu"
     attribute {
       name: "alpha"
@@ -51,9 +51,9 @@ graph {
     }
   }
   node {
-    input: "22"
-    input: "3"
-    output: "24"
+    input: "20"
+    input: "2"
+    output: "22"
     op_type: "Conv"
     attribute {
       name: "kernel_shape"
@@ -88,12 +88,12 @@ graph {
     }
   }
   node {
-    input: "24"
+    input: "22"
+    input: "3"
     input: "4"
     input: "5"
     input: "6"
-    input: "7"
-    output: "26"
+    output: "23"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -121,7 +121,87 @@ graph {
     }
   }
   node {
+    input: "23"
+    output: "24"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.200000002980232
+      type: FLOAT
+    }
+  }
+  node {
+    input: "24"
+    input: "7"
+    output: "26"
+    op_type: "Conv"
+    attribute {
+      name: "kernel_shape"
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 2
+      ints: 2
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 1
+      ints: 1
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
+    }
+  }
+  node {
     input: "26"
+    input: "8"
+    input: "9"
+    input: "10"
+    input: "11"
+    output: "27"
+    op_type: "BatchNormalization"
+    attribute {
+      name: "is_test"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "epsilon"
+      f: 9.99999974737875e-06
+      type: FLOAT
+    }
+    attribute {
+      name: "momentum"
+      f: 0.899999976158142
+      type: FLOAT
+    }
+    attribute {
+      name: "consumed_inputs"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+  }
+  node {
+    input: "27"
     output: "28"
     op_type: "LeakyRelu"
     attribute {
@@ -132,7 +212,7 @@ graph {
   }
   node {
     input: "28"
-    input: "8"
+    input: "12"
     output: "30"
     op_type: "Conv"
     attribute {
@@ -169,11 +249,11 @@ graph {
   }
   node {
     input: "30"
-    input: "9"
-    input: "10"
-    input: "11"
-    input: "12"
-    output: "32"
+    input: "13"
+    input: "14"
+    input: "15"
+    input: "16"
+    output: "31"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"
@@ -198,143 +278,63 @@ graph {
       ints: 1
       ints: 1
       type: INTS
+    }
+  }
+  node {
+    input: "31"
+    output: "32"
+    op_type: "LeakyRelu"
+    attribute {
+      name: "alpha"
+      f: 0.200000002980232
+      type: FLOAT
     }
   }
   node {
     input: "32"
+    input: "17"
     output: "34"
-    op_type: "LeakyRelu"
+    op_type: "Conv"
     attribute {
-      name: "alpha"
-      f: 0.200000002980232
-      type: FLOAT
+      name: "kernel_shape"
+      ints: 4
+      ints: 4
+      type: INTS
+    }
+    attribute {
+      name: "strides"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "pads"
+      ints: 0
+      ints: 0
+      ints: 0
+      ints: 0
+      type: INTS
+    }
+    attribute {
+      name: "dilations"
+      ints: 1
+      ints: 1
+      type: INTS
+    }
+    attribute {
+      name: "group"
+      i: 1
+      type: INT
     }
   }
   node {
     input: "34"
-    input: "13"
-    output: "36"
-    op_type: "Conv"
-    attribute {
-      name: "kernel_shape"
-      ints: 4
-      ints: 4
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 2
-      ints: 2
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 1
-      ints: 1
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "group"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "36"
-    input: "14"
-    input: "15"
-    input: "16"
-    input: "17"
-    output: "38"
-    op_type: "BatchNormalization"
-    attribute {
-      name: "is_test"
-      i: 1
-      type: INT
-    }
-    attribute {
-      name: "epsilon"
-      f: 9.99999974737875e-06
-      type: FLOAT
-    }
-    attribute {
-      name: "momentum"
-      f: 0.899999976158142
-      type: FLOAT
-    }
-    attribute {
-      name: "consumed_inputs"
-      ints: 0
-      ints: 0
-      ints: 0
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-  }
-  node {
-    input: "38"
-    output: "40"
-    op_type: "LeakyRelu"
-    attribute {
-      name: "alpha"
-      f: 0.200000002980232
-      type: FLOAT
-    }
-  }
-  node {
-    input: "40"
-    input: "18"
-    output: "42"
-    op_type: "Conv"
-    attribute {
-      name: "kernel_shape"
-      ints: 4
-      ints: 4
-      type: INTS
-    }
-    attribute {
-      name: "strides"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "pads"
-      ints: 0
-      ints: 0
-      ints: 0
-      ints: 0
-      type: INTS
-    }
-    attribute {
-      name: "dilations"
-      ints: 1
-      ints: 1
-      type: INTS
-    }
-    attribute {
-      name: "group"
-      i: 1
-      type: INT
-    }
-  }
-  node {
-    input: "42"
-    output: "43"
+    output: "35"
     op_type: "Sigmoid"
   }
   node {
-    input: "43"
-    output: "44"
+    input: "35"
+    output: "36"
     op_type: "Reshape"
     attribute {
       name: "shape"
@@ -345,7 +345,7 @@ graph {
   }
   name: "torch-jit-export"
   input {
-    name: "1"
+    name: "0"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -367,7 +367,7 @@ graph {
     }
   }
   input {
-    name: "2"
+    name: "1"
     type {
       tensor_type {
         elem_type: FLOAT
@@ -377,6 +377,28 @@ graph {
           }
           dim {
             dim_value: 3
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
+          }
+        }
+      }
+    }
+  }
+  input {
+    name: "2"
+    type {
+      tensor_type {
+        elem_type: FLOAT
+        shape {
+          dim {
+            dim_value: 128
+          }
+          dim {
+            dim_value: 64
           }
           dim {
             dim_value: 4
@@ -396,15 +418,6 @@ graph {
         shape {
           dim {
             dim_value: 128
-          }
-          dim {
-            dim_value: 64
-          }
-          dim {
-            dim_value: 4
-          }
-          dim {
-            dim_value: 4
           }
         }
       }
@@ -456,7 +469,16 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
+            dim_value: 256
+          }
+          dim {
             dim_value: 128
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
           }
         }
       }
@@ -470,15 +492,6 @@ graph {
         shape {
           dim {
             dim_value: 256
-          }
-          dim {
-            dim_value: 128
-          }
-          dim {
-            dim_value: 4
-          }
-          dim {
-            dim_value: 4
           }
         }
       }
@@ -530,7 +543,16 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
+            dim_value: 512
+          }
+          dim {
             dim_value: 256
+          }
+          dim {
+            dim_value: 4
+          }
+          dim {
+            dim_value: 4
           }
         }
       }
@@ -544,15 +566,6 @@ graph {
         shape {
           dim {
             dim_value: 512
-          }
-          dim {
-            dim_value: 256
-          }
-          dim {
-            dim_value: 4
-          }
-          dim {
-            dim_value: 4
           }
         }
       }
@@ -604,19 +617,6 @@ graph {
         elem_type: FLOAT
         shape {
           dim {
-            dim_value: 512
-          }
-        }
-      }
-    }
-  }
-  input {
-    name: "18"
-    type {
-      tensor_type {
-        elem_type: FLOAT
-        shape {
-          dim {
             dim_value: 1
           }
           dim {
@@ -633,7 +633,7 @@ graph {
     }
   }
   output {
-    name: "44"
+    name: "36"
     type {
       tensor_type {
         elem_type: FLOAT

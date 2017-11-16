@@ -1,4 +1,4 @@
-graph torch-jit-export (%name: "1"
+graph torch-jit-export (%name: "0"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -12,7 +12,7 @@ type {
     }
   }
 }
-, %name: "2"
+, %name: "1"
 type {
   tensor_type {
     elem_type: FLOAT
@@ -27,8 +27,8 @@ type {
   }
 }
 ) {
-  %3 = Concat[axis = 1](%1, %2)
-  return %name: "3"
+  %2 = Concat[axis = 1](%0, %1)
+  return %name: "2"
 type {
   tensor_type {
     elem_type: FLOAT
