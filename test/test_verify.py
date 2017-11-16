@@ -26,7 +26,7 @@ class TestVerify(TestCase):
         class BrokenAdd(Function):
             @staticmethod
             def symbolic(g, a, b):
-                return g.appendNode(g.create("Add", [a, b]))
+                return g.op("Add", a, b)
 
             @staticmethod
             def forward(ctx, a, b):
