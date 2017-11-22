@@ -23,12 +23,6 @@
 #include "torch/csrc/jit/type.h"
 #include "torch/csrc/jit/graph_node_list.h"
 
-namespace torch { namespace autograd {
-
-struct Function;
-
-}} // namespace torch::autograd
-
 namespace torch { namespace jit {
 
 // Graph represents one "function" of computation.
@@ -79,7 +73,7 @@ private:
   size_t unique_ = 0;          // unique id
   size_t stage_ = 0;           // 0-forward, 1-backward, 2-double-backward,...
   use_list uses_;
-  std::string debug_name_;
+  std::string unique_name_;
   TypePtr type_;
 public:
   bool hasType() const {
@@ -92,13 +86,6 @@ public:
   void inferTypeFrom(const at::Tensor& output) {
     setType(std::make_shared<TensorType>(output));
   }
-  Value* setDebugName(const std::string & name) {
-    debug_name_ = name;
-    return this;
-  }
-  const std::string & debugName() const {
-    return debug_name_;
-  }
   const TypePtr & type() const {
     JIT_ASSERT(type_ != nullptr);
     return type_;
@@ -106,16 +93,17 @@ public:
   const TypePtr & typeOption() const {
     return type_;
   }
-  bool isHandle() const {
-    return hasType() && type()->kind() == TypeKind::HandleType;
-  }
   size_t unique() const {
     return unique_;
   }
   std::string uniqueName() const {
-    if(debug_name_.size() > 0)
-      return debugName() + "_" + std::to_string(unique());
+    if(unique_name_.size() > 0)
+      return unique_name_;
     return std::to_string(unique());
+  }
+  Value* setUniqueName(const std::string & name) {
+    unique_name_ = name;
+    return this;
   }
   Value* setStage(size_t s) {
     stage_ = s;
@@ -153,7 +141,9 @@ public:
 
   Value* copyMetadata(Value * from) {
     if(from->hasType()) setType(from->type());
-    setDebugName(from->debugName());
+    if (from->unique_name_ != "") {
+      setUniqueName(from->uniqueName());
+    }
     return this;
   }
 
@@ -527,7 +517,6 @@ TH_DISALLOW_COPY_AND_ASSIGN(Graph);
 friend struct Node;
 friend struct Value;
 private:
-
   // only used to keep track of allocated nodes
   // actual representation of Graph is done with
   // inputs, outputs, nodes
@@ -545,12 +534,25 @@ private:
   Node * const output_;
   Node * const input_;
 
+  std::vector<at::Tensor> initializers_;
+  std::vector<std::string> initializer_names_;
+
 public:
   Graph()
   : next_unique_(0)
   , new_node_stage_(0)
   , output_(initOutput(create(kReturn, 0))), input_(create(kParam, 0)) {}
 
+  void addInitializer(at::Tensor initializer, std::string name) {
+    initializers_.push_back(initializer);
+    initializer_names_.push_back(name);
+  }
+  const std::vector<at::Tensor>& initializers() {
+    return initializers_;
+  }
+  const std::vector<std::string>& initializer_names() {
+    return initializer_names_;
+  }
   at::ArrayRef<Value*> inputs() {
     return input_->outputs();
   }
@@ -821,7 +823,7 @@ inline void Node::destroy() {
 */
 
 std::ostream& operator<<(std::ostream & out, const Graph & g);
-std::ostream& operator<<(std::ostream & out, const Type & t);
+std::ostream& operator<<(std::ostream & out, const TensorType & t);
 std::ostream& operator<<(std::ostream & out, const Node & t);
 
 /************* All nodes not required to be defined before Graph **************/

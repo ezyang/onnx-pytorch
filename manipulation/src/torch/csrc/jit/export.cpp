@@ -14,7 +14,7 @@ std::string value_name(Value* n) {
 }
 
 
-void encodeGraph(onnx::GraphProto * p_g, const std::shared_ptr<Graph> & g, const std::vector<at::Tensor> & initializers);
+void encodeGraph(onnx::GraphProto * p_g, const std::shared_ptr<Graph> & g);
 
 void encodeTensor(onnx::TensorProto * p, const at::Tensor & tensor) {
   for(auto d : tensor.sizes()) {
@@ -107,26 +107,32 @@ void addAttribute(onnx::NodeProto * n_p, jit::Node * n, jit::Symbol name) {
     case AttributeKind::g: {
       attr->set_type(onnx::AttributeProto_AttributeType_GRAPH);
       auto g = attr->mutable_g();
-      encodeGraph(g, n->g(name), {});
+      encodeGraph(g, n->g(name));
     } break;
     case AttributeKind::gs:
       attr->set_type(onnx::AttributeProto_AttributeType_GRAPHS);
       for(auto & v : n->gs(name)) {
         auto g = attr->add_graphs();
-        encodeGraph(g, v, {});
+        encodeGraph(g, v);
       }
       break;
   }
 }
 
+const Dimension* dd = nullptr;
+
 void encodeTypeProtoTensorType(onnx::TypeProto_TensorTypeProto* tensor_type, Value* n) {
   onnx::TypeProto_TensorShapeProto* shape = tensor_type->mutable_shape();
-  JIT_ASSERT(n->hasType());
-  TensorType* node_type = n->type()->expect<TensorType>();
-  const std::vector<std::int64_t>& sizes = node_type->sizes();
-  for (std::int64_t s : sizes) {
+  TensorType* node_type = n->type().get();
+  const std::vector<Dimension>& dims = node_type->sizes();
+  for (const Dimension& d : dims) {
+    dd = &d;
     auto dim = shape->add_dim();
-    dim->set_dim_value(s);
+    if (d.is_int) {
+      dim->set_dim_value(d.dim);
+    } else {
+      dim->set_dim_param(d.param);
+    }
   }
   onnx::TensorProto_DataType onnx_type;
   switch(node_type->scalarType()) {
@@ -163,10 +169,12 @@ void encodeValueInfo(onnx::ValueInfoProto* v, Value* n) {
   v->set_name(value_name(n));
   onnx::TypeProto* t = v->mutable_type();
   onnx::TypeProto_TensorTypeProto* tensor_type = t->mutable_tensor_type();
-  encodeTypeProtoTensorType(tensor_type, n);
+  if (n->hasType()) {
+    encodeTypeProtoTensorType(tensor_type, n);
+  }
 }
 
-void encodeGraph(onnx::GraphProto * p_g, const std::shared_ptr<Graph> & g, const std::vector<at::Tensor> & initializers) {
+void encodeGraph(onnx::GraphProto * p_g, const std::shared_ptr<Graph> & g) {
   JIT_ASSERT(p_g != nullptr);
   p_g->set_name("torch-jit-export");
 
@@ -196,27 +204,26 @@ void encodeGraph(onnx::GraphProto * p_g, const std::shared_ptr<Graph> & g, const
       addAttribute(p_n, node, attr_name);
     }
   }
-  auto num_initializers = initializers.size();
-  int inputs_count = g->inputs().size() - num_initializers;
-  for (auto & tensor : initializers) {
+  auto num_initializers = g->initializers().size();
+
+  for (int i = 0; i < g->initializers().size(); i++) {
     auto p = p_g->add_initializer();
-    encodeTensor(p, tensor);
+    p->set_name(g->initializer_names()[i]);
+    encodeTensor(p, g->initializers()[i]);
   }
 }
 
-void encodeModel(onnx::ModelProto* p_m, const std::shared_ptr<Graph>& g,
-                 const std::vector<at::Tensor>& initializers) {
+void encodeModel(onnx::ModelProto* p_m, const std::shared_ptr<Graph>& g) {
   onnx::GraphProto* p_g = p_m->mutable_graph();
-  encodeGraph(p_g, g, initializers);
+  encodeGraph(p_g, g);
 }
 
 }
 
-std::string ExportGraph(const std::shared_ptr<Graph>& graph,
-                        const std::vector<at::Tensor> & initializers) {
+std::string ExportGraph(const std::shared_ptr<Graph>& graph) {
 
   onnx::ModelProto model_proto;
-  encodeModel(&model_proto, graph, initializers);
+  encodeModel(&model_proto, graph);
 
   std::string out;
   model_proto.SerializeToString(&out);
