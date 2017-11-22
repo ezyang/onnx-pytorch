@@ -11,10 +11,8 @@
 
 #include <ATen/ATen.h>
 
-#include "torch/csrc/utils/object_ptr.h"
 #include "torch/csrc/utils/auto_gpu.h"
 #include "torch/csrc/utils/disallow_copy.h"
-#include "torch/csrc/utils/python_stub.h"
 
 #include "ATen/ArrayRef.h"
 #include "torch/csrc/jit/generic_if.h"
@@ -60,21 +58,12 @@ static inline bool operator==(const Use & a, const Use & b) {
   return a.user == b.user && a.offset == b.offset;
 }
 
-// SourceLocation represents source code-level debug information for a node.
-// It contains a Python stack trace that represents the provenance of a given
-// node in the trace.
-struct SourceLocation {
-  SourceLocation(std::string python_traceback)
-  : python_traceback(std::move(python_traceback)) {}
-  std::string python_traceback;
-};
 
 // the list types are intentionally simple, but we type-def
 // them here so if we need to change them, refactoring will be easier
 using node_list = std::vector<Node*>;
 using value_list = std::vector<Value*>;
 using use_list = std::vector<Use>;
-using pyobj_list = std::vector<THPObjectPtr>;
 template<typename T>
 using ArrayRef = at::ArrayRef<T>;
 using NodeKind = Symbol;
@@ -199,20 +188,12 @@ private:
   std::vector<Value*> inputs_;
   std::vector<Value*> outputs_;
   Graph* graph_;
-  std::shared_ptr<SourceLocation> source_location_;
   size_t stage_;
 protected:
   Node(Graph * graph_, NodeKind kind_); //defined after graph
 public:
   NodeKind kind() const {
     return kind_;
-  }
-  Node* setSourceLocation(std::shared_ptr<SourceLocation> sl) {
-    source_location_ = sl;
-    return this;
-  }
-  std::shared_ptr<SourceLocation> getSourceLocation() const {
-    return source_location_;
   }
   Graph * owningGraph() {
     return graph_;
@@ -537,7 +518,6 @@ protected:
   // NB: This does NOT clone stages.  You're expected to set the stage correctly
   // if you are going to preserve it.
   virtual void cloneFrom(Node * s) {
-    setSourceLocation(s->getSourceLocation());
     copyAttributes(*s);
   }
 };
@@ -680,8 +660,6 @@ public:
     n->g_(kSubgraph,std::make_shared<Graph>());
     return n;
   }
-  Node * createPythonOp(THPObjectPtr&& pyobj, const std::string & cconv, bool is_legacy, pyobj_list&& scalar_args);
-  Node * createCppOp(const std::shared_ptr<torch::autograd::Function> & fn);
   // clone n, making a new node in _this_ graph.
   // use node_map to translate inputs of n to inputs of the cloned node
   Node * createClone(Node * n, std::function<Value*(Value*)> value_map) {
@@ -835,8 +813,6 @@ inline void Node::destroy() {
   Node * n = ...;
   IR_IF(n,Select)
     cout << "Select of" << value->input() << "\n";
-  IR_ELSEIF(PythonOp)
-    cout << value->pyobj << "\n";
   IR_ELSEIF(Add)
     cout << "Add" << \n";
   IR_ELSE() // optional
@@ -849,71 +825,6 @@ std::ostream& operator<<(std::ostream & out, const Type & t);
 std::ostream& operator<<(std::ostream & out, const Node & t);
 
 /************* All nodes not required to be defined before Graph **************/
-
- // execute a Python function, used for Ops we can't optimize but that we want to optimize around
-struct PythonOp : public Node {
-  static const NodeKind Kind = kPythonOp;
-  PythonOp(Graph * graph)
-  : Node(graph,kPythonOp) {}
-  PythonOp* init(THPObjectPtr&& pyobj, const std::string & cconv, bool is_legacy, pyobj_list&& scalar_args) {
-    this->pyobj = std::move(pyobj);
-    this->scalar_args = std::move(scalar_args);
-    this->cconv = cconv;
-    this->is_legacy = is_legacy;
-    return this;
-  }
-  virtual Node * allocNewInstance(Graph * g) override {
-    return new PythonOp(g);
-  }
-  //TODO: make this non-autograd specific
-  //remove is_legacy, avoid THPObjectPtr to avoid big PyTorch dependency
-
-  // The Python object which contains the implementation of this function.
-  // This is either a class (non-legacy) or an object (legacy).  See
-  // TraceInterpreterState for execution semantics.
-  THPObjectPtr pyobj;
-  // The calling convention for the Python function.
-  // 's' -- python scalar argument
-  // 't' -- tensor argument
-  std::string cconv;
-  bool is_legacy;
-  // Scalar arguments to the Python function.  Not necessarily passed to
-  // the function in this order; see cconv for the correct order.
-  std::vector<THPObjectPtr> scalar_args;
-  std::string name() const;
-  virtual void cloneFrom(Node * other_) override;
-};
-inline Node * Graph::createPythonOp(THPObjectPtr&& pyobj, const std::string & cconv, bool is_legacy, pyobj_list&& scalar_args) {
-  auto op = new PythonOp(this);
-  return op->init(std::move(pyobj),cconv,is_legacy,std::move(scalar_args));
-}
-
-// A Cpp operator is an operator which dispatches directly to an autograd function.
-// TODO: These are not executable without reentrant engine.
-struct CppOp : public Node {
-  static const NodeKind Kind = kCppOp;
-  CppOp(Graph * g)
-  : Node(g,kCppOp) {}
-  std::shared_ptr<torch::autograd::Function> fn;
-  std::string name() const;
-  CppOp* init(std::shared_ptr<torch::autograd::Function> fn) {
-    JIT_ASSERT(fn);
-    this->fn = std::move(fn);
-    return this;
-  }
-  virtual Node * allocNewInstance(Graph * g) override {
-    return new CppOp(g);
-  }
-  virtual void cloneFrom(Node * other_) override {
-    Node::cloneFrom(other_);
-    auto other = other_->cast<CppOp>();
-    this->fn = other->fn;
-  }
-};
-inline Node * Graph::createCppOp(const std::shared_ptr<torch::autograd::Function> & fn) {
-  auto op = new CppOp(this);
-  return op->init(fn);
-}
 
 inline graph_node_list_iterator Node::iterator() {
   return graph_node_list_iterator(this, 0);

@@ -1,11 +1,4 @@
-#include <Python.h>
 #include "ir.h"
-
-#include "torch/csrc/utils/auto_gil.h"
-#include "torch/csrc/utils/python_strings.h"
-#include "torch/csrc/autograd/function.h"
-
-#include "pybind11/pybind11.h"
 
 #include <iostream>
 #include <unordered_map>
@@ -16,24 +9,10 @@
 #include <algorithm>
 #include <string>
 
-namespace py = pybind11;
-
 namespace torch { namespace jit {
 
 constexpr int max_tensor_display_size = 10;
 
-std::string getPythonName(const PyObject* obj, bool is_legacy) {
-  AutoGIL gil;
-  if (is_legacy) {
-    return std::string(obj->ob_type->tp_name);
-  } else {
-    // NB: hypothetically __name__ could mutate the Python
-    // object in a externally visible way. Please don't!
-    auto wobj = const_cast<PyObject*>(obj);
-    THPObjectPtr name{PyObject_GetAttrString(wobj, "__name__")};
-    return THPUtils_unpackString(name.get());
-  }
-}
 void printValueRef(std::ostream & out, const Value * n) {
   out << "%" << n->uniqueName();
 }
@@ -53,52 +32,6 @@ std::ostream& operator<<(std::ostream & out, const at::ArrayRef<T> & nodes) {
     printValueRef(out, n);
   }
   return out;
-}
-std::ostream& printPyObject(std::ostream & out, const THPObjectPtr& obj) {
-  AutoGIL gil;
-  auto pyobj = py::handle(const_cast<PyObject*>(obj.get()));
-  if (py::isinstance<py::tuple>(pyobj)) {
-    // This special-case for printing tuples handles a problem where
-    // str((2L, 3L)) outputs "(2L, 3L)" in Python 2 but "(2, 3)"
-    // in Python 3.  In order to suppress the L-suffix, we must
-    // manually print the string ourselves, calling str() on the
-    // sub-elements.
-    //
-    // This is a fairly fragile fix (What if you have nested tuples
-    // in tuples? What if you have dictionaries?) but it seems to hit
-    // the cases that are triggered in practice in onnx-pytorch.  Revisit
-    // this code if this is not the case.
-    //
-    // By the way, one non-solution for this problem is to monkeypatch
-    // tuple.__str__; this doesn't work because Python doesn't allow
-    // monkeypatching methods of built-in types.
-    auto pytuple = pyobj.cast<py::tuple>();
-    out << "(";
-    size_t i = 0;
-    for (auto& o : pytuple) {
-      if (i > 0) {
-        out << ", ";
-      }
-      THPObjectPtr str(py::str(o).release().ptr());
-      out << THPUtils_unpackString(str.get());
-      i++;
-    }
-    if (i == 1) {
-      out << ",";
-    }
-    out << ")";
-    return out;
-  } else {
-    return out << THPUtils_unpackString(py::str(pyobj).ptr());
-  }
-}
-
-std::string PythonOp::name() const {
-  return getPythonName(pyobj.get(),is_legacy);
-}
-
-std::string CppOp::name() const {
-  return fn->name();
 }
 
 struct const_value_list_with_types {
@@ -214,25 +147,13 @@ std::ostream& printNode(std::ostream & out, const Node * n, std::vector<const No
   auto outputs = n->outputs();
   out << const_value_list_with_types(outputs);
   out << " = ";
-  IR_IFM_CONST(n,PythonOp)
-    out << "^" << value->name();
-    out << "(";
-    int i = 0;
-    for (auto& scalar : value->scalar_args) {
-      if (i++ > 0)
-        out << ", ";
-      printPyObject(out, scalar);
-    }
-    out << ")";
-  IR_ELSEIF(FusionGroup)
+  IR_IF(n, FusionGroup)
     if(groups) {
       out << "fusion_group_" << groups->size();
       groups->push_back(value);
     } else {
       out << "fusion_group[" << *n->g(kSubgraph) << "]";
     }
-  IR_ELSEIFM_CONST(CppOp)
-    out << "CppOp[" << value->name() << "]";
   IR_ELSE()
     out << symbolToString(n->kind());
     if(n->hasAttributes()) {
@@ -329,7 +250,6 @@ void Node::lint() const {
   // - Return uses is zero
   // - Param inputs is zero
   // - Select inputs is one
-  // - Python operator cconv is correct
 
   IR_IF(this,Constant)
     JIT_ASSERT(inputs_.size() == 0);
@@ -337,22 +257,6 @@ void Node::lint() const {
     JIT_ASSERT(outputs().size() == 0);
   IR_ELSEIF(Param)
     JIT_ASSERT(inputs_.size() == 0);
-  IR_ELSEIFM_CONST(PythonOp)
-    std::size_t n_scalars = 0, n_tensors = 0;
-    for (auto c : value->cconv) {
-      if (c == 's') {
-        n_scalars++;
-      } else if (c == 't') {
-        n_tensors++;
-      } else {
-        JIT_ASSERT(0);
-      }
-      JIT_ASSERT(static_cast<bool>(value->pyobj));
-    }
-    JIT_ASSERT(n_scalars == value->scalar_args.size());
-    JIT_ASSERT(n_tensors == inputs_.size());
-  IR_ELSEIFM_CONST(CppOp)
-    // TODO: add invariants
   IR_ELSEIF(Eval)
     // TODO: add invariants
   // TODO: It's not good for these ops to be top-level, it makes cases longer.
@@ -471,18 +375,5 @@ void LintGraph(std::shared_ptr<Graph>& graph) {
   graph->lint();
 }
 
-
-void PythonOp::cloneFrom(Node * other_) {
-  Node::cloneFrom(other_);
-  auto other = other_->cast<PythonOp>();
-  this->cconv = other->cconv;
-  this->is_legacy = other->is_legacy;
-  Py_INCREF(other->pyobj.get());
-  this->pyobj = THPObjectPtr(other->pyobj.get());
-  for(auto & sa : other->scalar_args) {
-    Py_INCREF(sa.get());
-    this->scalar_args.emplace_back(sa.get());
-  }
-}
 
 }}
