@@ -8,3 +8,6 @@
 [submodule "onnx-caffe2"]
 	path = onnx-caffe2
 	url = https://github.com/onnx/onnx-caffe2.git
+[submodule "manipulation/aten"]
+	path = manipulation/aten
+	url = https://github.com/zdevito/ATen.git
