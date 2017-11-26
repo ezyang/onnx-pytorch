@@ -1,1366 +1,175 @@
-graph torch-jit-export (%name: "0"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 2
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 224
-      }
-      dim {
-        dim_value: 224
-      }
-    }
-  }
-}
-, %name: "1"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "2"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "3"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "4"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "5"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "6"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "7"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "8"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "9"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "10"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "11"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "12"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "13"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "14"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "15"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "16"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "17"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "18"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "19"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "20"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "21"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "22"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "23"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "24"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 128
-      }
-    }
-  }
-}
-, %name: "25"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 128
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "26"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "27"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "28"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "29"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "30"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "31"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "32"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "33"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "34"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "35"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "36"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "37"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "38"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "39"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "40"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "41"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "42"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "43"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "44"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "45"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "46"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "47"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "48"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 256
-      }
-    }
-  }
-}
-, %name: "49"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 256
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "50"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "51"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "52"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "53"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "54"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "55"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "56"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "57"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "58"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "59"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "60"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "61"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "62"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "63"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "64"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "65"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "66"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "67"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "68"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "69"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "70"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "71"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "72"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "73"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "74"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "75"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "76"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "77"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "78"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "79"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "80"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "81"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "82"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "83"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "84"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "85"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "86"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "87"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "88"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "89"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "90"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "91"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 512
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "92"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "93"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "94"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "95"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "96"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 512
-      }
-    }
-  }
-}
-, %name: "97"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 4096
-      }
-      dim {
-        dim_value: 25088
-      }
-    }
-  }
-}
-, %name: "98"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 4096
-      }
-    }
-  }
-}
-, %name: "99"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 4096
-      }
-      dim {
-        dim_value: 4096
-      }
-    }
-  }
-}
-, %name: "100"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 4096
-      }
-    }
-  }
-}
-, %name: "101"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 1000
-      }
-      dim {
-        dim_value: 4096
-      }
-    }
-  }
-}
-, %name: "102"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 1000
-      }
-    }
-  }
-}
+graph torch-jit-export (
+  %0[FLOAT, 2x3x224x224]
+  %1[FLOAT, 64x3x3x3]
+  %2[FLOAT, 64]
+  %3[FLOAT, 64]
+  %4[FLOAT, 64]
+  %5[FLOAT, 64]
+  %6[FLOAT, 64]
+  %7[FLOAT, 64x64x3x3]
+  %8[FLOAT, 64]
+  %9[FLOAT, 64]
+  %10[FLOAT, 64]
+  %11[FLOAT, 64]
+  %12[FLOAT, 64]
+  %13[FLOAT, 128x64x3x3]
+  %14[FLOAT, 128]
+  %15[FLOAT, 128]
+  %16[FLOAT, 128]
+  %17[FLOAT, 128]
+  %18[FLOAT, 128]
+  %19[FLOAT, 128x128x3x3]
+  %20[FLOAT, 128]
+  %21[FLOAT, 128]
+  %22[FLOAT, 128]
+  %23[FLOAT, 128]
+  %24[FLOAT, 128]
+  %25[FLOAT, 256x128x3x3]
+  %26[FLOAT, 256]
+  %27[FLOAT, 256]
+  %28[FLOAT, 256]
+  %29[FLOAT, 256]
+  %30[FLOAT, 256]
+  %31[FLOAT, 256x256x3x3]
+  %32[FLOAT, 256]
+  %33[FLOAT, 256]
+  %34[FLOAT, 256]
+  %35[FLOAT, 256]
+  %36[FLOAT, 256]
+  %37[FLOAT, 256x256x3x3]
+  %38[FLOAT, 256]
+  %39[FLOAT, 256]
+  %40[FLOAT, 256]
+  %41[FLOAT, 256]
+  %42[FLOAT, 256]
+  %43[FLOAT, 256x256x3x3]
+  %44[FLOAT, 256]
+  %45[FLOAT, 256]
+  %46[FLOAT, 256]
+  %47[FLOAT, 256]
+  %48[FLOAT, 256]
+  %49[FLOAT, 512x256x3x3]
+  %50[FLOAT, 512]
+  %51[FLOAT, 512]
+  %52[FLOAT, 512]
+  %53[FLOAT, 512]
+  %54[FLOAT, 512]
+  %55[FLOAT, 512x512x3x3]
+  %56[FLOAT, 512]
+  %57[FLOAT, 512]
+  %58[FLOAT, 512]
+  %59[FLOAT, 512]
+  %60[FLOAT, 512]
+  %61[FLOAT, 512x512x3x3]
+  %62[FLOAT, 512]
+  %63[FLOAT, 512]
+  %64[FLOAT, 512]
+  %65[FLOAT, 512]
+  %66[FLOAT, 512]
+  %67[FLOAT, 512x512x3x3]
+  %68[FLOAT, 512]
+  %69[FLOAT, 512]
+  %70[FLOAT, 512]
+  %71[FLOAT, 512]
+  %72[FLOAT, 512]
+  %73[FLOAT, 512x512x3x3]
+  %74[FLOAT, 512]
+  %75[FLOAT, 512]
+  %76[FLOAT, 512]
+  %77[FLOAT, 512]
+  %78[FLOAT, 512]
+  %79[FLOAT, 512x512x3x3]
+  %80[FLOAT, 512]
+  %81[FLOAT, 512]
+  %82[FLOAT, 512]
+  %83[FLOAT, 512]
+  %84[FLOAT, 512]
+  %85[FLOAT, 512x512x3x3]
+  %86[FLOAT, 512]
+  %87[FLOAT, 512]
+  %88[FLOAT, 512]
+  %89[FLOAT, 512]
+  %90[FLOAT, 512]
+  %91[FLOAT, 512x512x3x3]
+  %92[FLOAT, 512]
+  %93[FLOAT, 512]
+  %94[FLOAT, 512]
+  %95[FLOAT, 512]
+  %96[FLOAT, 512]
+  %97[FLOAT, 4096x25088]
+  %98[FLOAT, 4096]
+  %99[FLOAT, 4096x4096]
+  %100[FLOAT, 4096]
+  %101[FLOAT, 1000x4096]
+  %102[FLOAT, 1000]
 ) {
-  %103 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%0, %1)
-  %104 = Add[broadcast = 1, axis = 1](%103, %2)
-  %105 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%104, %3, %4, %5, %6)
+  %103 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%0, %1)
+  %104 = Add[axis = 1, broadcast = 1](%103, %2)
+  %105 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%104, %3, %4, %5, %6)
   %106 = Relu(%105)
-  %107 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%106, %7)
-  %108 = Add[broadcast = 1, axis = 1](%107, %8)
-  %109 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%108, %9, %10, %11, %12)
+  %107 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%106, %7)
+  %108 = Add[axis = 1, broadcast = 1](%107, %8)
+  %109 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%108, %9, %10, %11, %12)
   %110 = Relu(%109)
   %111 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%110)
-  %112 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%111, %13)
-  %113 = Add[broadcast = 1, axis = 1](%112, %14)
-  %114 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%113, %15, %16, %17, %18)
+  %112 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%111, %13)
+  %113 = Add[axis = 1, broadcast = 1](%112, %14)
+  %114 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%113, %15, %16, %17, %18)
   %115 = Relu(%114)
-  %116 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%115, %19)
-  %117 = Add[broadcast = 1, axis = 1](%116, %20)
-  %118 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%117, %21, %22, %23, %24)
+  %116 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%115, %19)
+  %117 = Add[axis = 1, broadcast = 1](%116, %20)
+  %118 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%117, %21, %22, %23, %24)
   %119 = Relu(%118)
   %120 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%119)
-  %121 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%120, %25)
-  %122 = Add[broadcast = 1, axis = 1](%121, %26)
-  %123 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%122, %27, %28, %29, %30)
+  %121 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%120, %25)
+  %122 = Add[axis = 1, broadcast = 1](%121, %26)
+  %123 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%122, %27, %28, %29, %30)
   %124 = Relu(%123)
-  %125 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%124, %31)
-  %126 = Add[broadcast = 1, axis = 1](%125, %32)
-  %127 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%126, %33, %34, %35, %36)
+  %125 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%124, %31)
+  %126 = Add[axis = 1, broadcast = 1](%125, %32)
+  %127 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%126, %33, %34, %35, %36)
   %128 = Relu(%127)
-  %129 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%128, %37)
-  %130 = Add[broadcast = 1, axis = 1](%129, %38)
-  %131 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%130, %39, %40, %41, %42)
+  %129 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%128, %37)
+  %130 = Add[axis = 1, broadcast = 1](%129, %38)
+  %131 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%130, %39, %40, %41, %42)
   %132 = Relu(%131)
-  %133 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%132, %43)
-  %134 = Add[broadcast = 1, axis = 1](%133, %44)
-  %135 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%134, %45, %46, %47, %48)
+  %133 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%132, %43)
+  %134 = Add[axis = 1, broadcast = 1](%133, %44)
+  %135 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%134, %45, %46, %47, %48)
   %136 = Relu(%135)
   %137 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%136)
-  %138 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%137, %49)
-  %139 = Add[broadcast = 1, axis = 1](%138, %50)
-  %140 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%139, %51, %52, %53, %54)
+  %138 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%137, %49)
+  %139 = Add[axis = 1, broadcast = 1](%138, %50)
+  %140 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%139, %51, %52, %53, %54)
   %141 = Relu(%140)
-  %142 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%141, %55)
-  %143 = Add[broadcast = 1, axis = 1](%142, %56)
-  %144 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%143, %57, %58, %59, %60)
+  %142 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%141, %55)
+  %143 = Add[axis = 1, broadcast = 1](%142, %56)
+  %144 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%143, %57, %58, %59, %60)
   %145 = Relu(%144)
-  %146 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%145, %61)
-  %147 = Add[broadcast = 1, axis = 1](%146, %62)
-  %148 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%147, %63, %64, %65, %66)
+  %146 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%145, %61)
+  %147 = Add[axis = 1, broadcast = 1](%146, %62)
+  %148 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%147, %63, %64, %65, %66)
   %149 = Relu(%148)
-  %150 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%149, %67)
-  %151 = Add[broadcast = 1, axis = 1](%150, %68)
-  %152 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%151, %69, %70, %71, %72)
+  %150 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%149, %67)
+  %151 = Add[axis = 1, broadcast = 1](%150, %68)
+  %152 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%151, %69, %70, %71, %72)
   %153 = Relu(%152)
   %154 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%153)
-  %155 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%154, %73)
-  %156 = Add[broadcast = 1, axis = 1](%155, %74)
-  %157 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%156, %75, %76, %77, %78)
+  %155 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%154, %73)
+  %156 = Add[axis = 1, broadcast = 1](%155, %74)
+  %157 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%156, %75, %76, %77, %78)
   %158 = Relu(%157)
-  %159 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%158, %79)
-  %160 = Add[broadcast = 1, axis = 1](%159, %80)
-  %161 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%160, %81, %82, %83, %84)
+  %159 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%158, %79)
+  %160 = Add[axis = 1, broadcast = 1](%159, %80)
+  %161 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%160, %81, %82, %83, %84)
   %162 = Relu(%161)
-  %163 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%162, %85)
-  %164 = Add[broadcast = 1, axis = 1](%163, %86)
-  %165 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%164, %87, %88, %89, %90)
+  %163 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%162, %85)
+  %164 = Add[axis = 1, broadcast = 1](%163, %86)
+  %165 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%164, %87, %88, %89, %90)
   %166 = Relu(%165)
-  %167 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%166, %91)
-  %168 = Add[broadcast = 1, axis = 1](%167, %92)
-  %169 = BatchNormalization[is_test = 1, epsilon = 9.99999974737875e-06, momentum = 0.899999976158142, consumed_inputs = [0, 0, 0, 1, 1]](%168, %93, %94, %95, %96)
+  %167 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%166, %91)
+  %168 = Add[axis = 1, broadcast = 1](%167, %92)
+  %169 = BatchNormalization[consumed_inputs = [0, 0, 0, 1, 1], epsilon = 9.99999974737875e-06, is_test = 1, momentum = 0.899999976158142](%168, %93, %94, %95, %96)
   %170 = Relu(%169)
   %171 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%170)
   %172 = Reshape[shape = [2, -1]](%171)
@@ -1374,19 +183,5 @@ type {
   %183, %184 = Dropout[is_test = 1, ratio = 0.5](%182)
   %185 = Transpose[perm = [1, 0]](%101)
   %187 = Gemm[alpha = 1, beta = 1, broadcast = 1](%183, %185, %102)
-  return %name: "187"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 2
-      }
-      dim {
-        dim_value: 1000
-      }
-    }
-  }
-}
-
+  return %187
 }
