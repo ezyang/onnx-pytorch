@@ -12,8 +12,8 @@ graph {
     output: "5"
     output: "6"
     output: "7"
-    output: "batch_norm_dead_output_8"
-    output: "batch_norm_dead_output_9"
+    output: "batch_norm_dead_output-8"
+    output: "batch_norm_dead_output-9"
     op_type: "BatchNormalization"
     attribute {
       name: "is_test"

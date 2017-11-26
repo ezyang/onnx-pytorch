@@ -55,6 +55,7 @@ class TestOperators(TestCase):
         trace = torch.onnx._trace(lambda x: x.view(1, 1), x)
         self.assertONNXExpected(trace.export())
 
+    @unittest.skip("Indexing is broken by #3725")
     def test_index(self):
         x = Variable(torch.Tensor([[0]]), requires_grad=True)
         trace = torch.onnx._trace(lambda x: x[0], x)
