@@ -11,7 +11,7 @@ from model_defs.srresnet import SRResNet
 from model_defs.dcgan import _netD, _netG, weights_init, bsz, imgsz, nz
 from model_defs.op_test import DummyNet, ConcatNet, PermuteNet, PReluNet
 
-from test_common import TestCase, run_tests, skipIfNoLapack
+from test_common import TestCase, run_tests, skipIfNoLapack, skipIfTravis
 
 import torch
 import torch.onnx
@@ -86,6 +86,7 @@ class TestModels(TestCase):
                      volatile=True)
         self.exportTest(toC(SRResNet(rescale_factor=4, n_filters=64, n_blocks=8)), toC(x))
 
+    @skipIfTravis
     @skipIfNoLapack
     def test_super_resolution(self):
         x = Variable(
@@ -105,6 +106,7 @@ class TestModels(TestCase):
                      volatile=True)
         self.exportTest(toC(MNIST()), toC(x))
 
+    @skipIfTravis
     def test_vgg(self):
         # VGG 16-layer model (configuration "D")
         x = Variable(torch.randn(BATCH_SIZE, 3, 224, 224).fill_(1.0),
