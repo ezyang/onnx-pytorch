@@ -1,181 +1,27 @@
-graph torch-jit-export (%name: "0"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 2
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 224
-      }
-      dim {
-        dim_value: 224
-      }
-    }
-  }
-}
-, %name: "1"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 5
-      }
-      dim {
-        dim_value: 5
-      }
-    }
-  }
-}
-, %name: "2"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "3"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "4"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 64
-      }
-    }
-  }
-}
-, %name: "5"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 32
-      }
-      dim {
-        dim_value: 64
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "6"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 32
-      }
-    }
-  }
-}
-, %name: "7"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 9
-      }
-      dim {
-        dim_value: 32
-      }
-      dim {
-        dim_value: 3
-      }
-      dim {
-        dim_value: 3
-      }
-    }
-  }
-}
-, %name: "8"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 9
-      }
-    }
-  }
-}
+graph torch-jit-export (
+  %0[FLOAT, 2x1x224x224]
+  %1[FLOAT, 64x1x5x5]
+  %2[FLOAT, 64]
+  %3[FLOAT, 64x64x3x3]
+  %4[FLOAT, 64]
+  %5[FLOAT, 32x64x3x3]
+  %6[FLOAT, 32]
+  %7[FLOAT, 9x32x3x3]
+  %8[FLOAT, 9]
 ) {
-  %9 = Conv[kernel_shape = [5, 5], strides = [1, 1], pads = [2, 2, 2, 2], dilations = [1, 1], group = 1](%0, %1)
-  %10 = Add[broadcast = 1, axis = 1](%9, %2)
+  %9 = Conv[dilations = [1, 1], group = 1, kernel_shape = [5, 5], pads = [2, 2, 2, 2], strides = [1, 1]](%0, %1)
+  %10 = Add[axis = 1, broadcast = 1](%9, %2)
   %11 = Relu(%10)
-  %12 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%11, %3)
-  %13 = Add[broadcast = 1, axis = 1](%12, %4)
+  %12 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%11, %3)
+  %13 = Add[axis = 1, broadcast = 1](%12, %4)
   %14 = Relu(%13)
-  %15 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%14, %5)
-  %16 = Add[broadcast = 1, axis = 1](%15, %6)
+  %15 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%14, %5)
+  %16 = Add[axis = 1, broadcast = 1](%15, %6)
   %17 = Relu(%16)
-  %18 = Conv[kernel_shape = [3, 3], strides = [1, 1], pads = [1, 1, 1, 1], dilations = [1, 1], group = 1](%17, %7)
-  %19 = Add[broadcast = 1, axis = 1](%18, %8)
+  %18 = Conv[dilations = [1, 1], group = 1, kernel_shape = [3, 3], pads = [1, 1, 1, 1], strides = [1, 1]](%17, %7)
+  %19 = Add[axis = 1, broadcast = 1](%18, %8)
   %20 = Reshape[shape = [2, 1, 3, 3, 224, 224]](%19)
   %21 = Transpose[perm = [0, 1, 4, 2, 5, 3]](%20)
   %22 = Reshape[shape = [2, 1, 672, 672]](%21)
-  return %name: "22"
-type {
-  tensor_type {
-    elem_type: FLOAT
-    shape {
-      dim {
-        dim_value: 2
-      }
-      dim {
-        dim_value: 1
-      }
-      dim {
-        dim_value: 672
-      }
-      dim {
-        dim_value: 672
-      }
-    }
-  }
-}
-
+  return %22
 }

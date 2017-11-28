@@ -55,6 +55,7 @@ class TestOperators(TestCase):
         trace = torch.onnx._trace(lambda x: x.view(1, 1), x)
         self.assertONNXExpected(trace.export())
 
+    @unittest.skip("Indexing is broken by #3725")
     def test_index(self):
         x = Variable(torch.Tensor([[0]]), requires_grad=True)
         trace = torch.onnx._trace(lambda x: x[0], x)
@@ -112,6 +113,11 @@ class TestOperators(TestCase):
     def test_permute2(self):
         x = Variable(torch.Tensor([[[[[[0]]]]]]), requires_grad=True)
         self.assertONNXExpected(export_to_string(FuncModule(lambda x: x.permute(0, 1, 4, 2, 5, 3)), (x, )))
+
+    def test_pad(self):
+        x = Variable(torch.Tensor([[[[0, 1, 1, 1], [2, 3, 7, 7]]]]), requires_grad=True)
+        trace = torch.onnx._trace(nn.ReflectionPad2d((3, 4, 1, 2)), x)
+        self.assertONNXExpected(trace.export())
 
     def test_params(self):
         x = Variable(torch.Tensor([[1, 2], [3, 4]]), requires_grad=True)

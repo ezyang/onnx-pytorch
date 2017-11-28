@@ -48,7 +48,7 @@ def test_embed_params(proto, model, input, state_dict=None, use_gpu=True):
       for k in model.state_dict():
         parameters.append(state_dict[k])
     else:
-      parameters = model.state_dict().values()
+      parameters = list(model.state_dict().values())
 
     W = {}
     for k, v in zip(model_def.graph.input, _flatten((input, parameters))):

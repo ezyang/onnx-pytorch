@@ -6,6 +6,8 @@ from onnx_pytorch.verify import verify
 
 from test_common import TestCase, run_tests
 
+import unittest
+
 
 class TestVerify(TestCase):
     maxDiff = None
@@ -89,6 +91,7 @@ class TestVerify(TestCase):
         self.assertVerifyExpectFail(MyModel(), x, backend)
 
 
+    @unittest.skip("Indexing is broken by #3725")
     def test_embedded_constant_difference(self):
         class MyModel(Module):
             def __init__(self):
