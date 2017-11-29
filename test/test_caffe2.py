@@ -174,7 +174,6 @@ class TestCaffe2Backend(unittest.TestCase):
         self.run_model_test(alexnet, train=False, batch_size=BATCH_SIZE,
                             state_dict=state_dict)
 
-    @skipIfTravis
     def test_dcgan(self):
         # dcgan is flaky on some seeds, see:
         # https://github.com/ProjectToffee/onnx/pull/70
@@ -252,6 +251,7 @@ class TestCaffe2Backend(unittest.TestCase):
                             batch_size=BATCH_SIZE, state_dict=state_dict,
                             input=x, use_gpu=False)
 
+    @skipIfTravis
     def test_vgg16(self):
         vgg16 = make_vgg16()
         state_dict = model_zoo.load_url(model_urls['vgg16'])
