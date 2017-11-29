@@ -33,7 +33,7 @@ from model_defs.mnist import MNIST
 import onnx
 import onnx_caffe2.backend as c2
 
-from test_common import skipIfTravis, skipIfNoLapack
+from test_common import skipIfTravis, skipIfNoLapack, skipIfNoCuda
 
 skip = unittest.skip
 
@@ -174,6 +174,7 @@ class TestCaffe2Backend(unittest.TestCase):
         self.run_model_test(alexnet, train=False, batch_size=BATCH_SIZE,
                             state_dict=state_dict)
 
+    @skipIfNoCuda
     def test_dcgan(self):
         # dcgan is flaky on some seeds, see:
         # https://github.com/ProjectToffee/onnx/pull/70

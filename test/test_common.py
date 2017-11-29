@@ -12,10 +12,19 @@ from common import *
 torch.set_default_tensor_type('torch.FloatTensor')
 
 
-def skipIfTravis(f):
-    @functools.wraps(f)
-    def wrapper(*args, **kwargs):
-        if os.getenv('TRAVIS'):
-            raise unittest.SkipTest('Skip In Travis')
-        return f(*args, **kwargs)
-    return wrapper
+def _skipper(condition, reason):
+    def decorator(f):
+        @functools.wraps(f)
+        def wrapper(*args, **kwargs):
+            if condition():
+                raise unittest.SkipTest(reason)
+            return f(*args, **kwargs)
+        return wrapper
+    return decorator
+
+
+skipIfNoCuda = _skipper(lambda: not torch.cuda.is_available(),
+                        'CUDA is not available')
+
+skipIfTravis = _skipper(lambda: os.getenv('TRAVIS'),
+                        'Skip In Travis')
