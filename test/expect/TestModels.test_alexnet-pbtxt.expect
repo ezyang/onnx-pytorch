@@ -390,19 +390,8 @@ graph {
     }
   }
   node {
-    input: "11"
-    output: "38"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-      type: INTS
-    }
-  }
-  node {
     input: "36"
-    input: "38"
+    input: "11"
     input: "12"
     output: "40"
     op_type: "Gemm"
@@ -418,6 +407,11 @@ graph {
     }
     attribute {
       name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "transB"
       i: 1
       type: INT
     }
@@ -444,19 +438,8 @@ graph {
     }
   }
   node {
-    input: "13"
-    output: "44"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-      type: INTS
-    }
-  }
-  node {
     input: "42"
-    input: "44"
+    input: "13"
     input: "14"
     output: "46"
     op_type: "Gemm"
@@ -475,6 +458,11 @@ graph {
       i: 1
       type: INT
     }
+    attribute {
+      name: "transB"
+      i: 1
+      type: INT
+    }
   }
   node {
     input: "46"
@@ -482,19 +470,8 @@ graph {
     op_type: "Relu"
   }
   node {
-    input: "15"
-    output: "48"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-      type: INTS
-    }
-  }
-  node {
     input: "47"
-    input: "48"
+    input: "15"
     input: "16"
     output: "50"
     op_type: "Gemm"
@@ -510,6 +487,11 @@ graph {
     }
     attribute {
       name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "transB"
       i: 1
       type: INT
     }

@@ -9806,19 +9806,8 @@ graph {
     }
   }
   node {
-    input: "605"
-    output: "1153"
-    op_type: "Transpose"
-    attribute {
-      name: "perm"
-      ints: 1
-      ints: 0
-      type: INTS
-    }
-  }
-  node {
     input: "1152"
-    input: "1153"
+    input: "605"
     input: "606"
     output: "1155"
     op_type: "Gemm"
@@ -9834,6 +9823,11 @@ graph {
     }
     attribute {
       name: "broadcast"
+      i: 1
+      type: INT
+    }
+    attribute {
+      name: "transB"
       i: 1
       type: INT
     }
