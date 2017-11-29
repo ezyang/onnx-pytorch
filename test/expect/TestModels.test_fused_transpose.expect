@@ -1,0 +1,8 @@
+graph torch-jit-export (
+  %1[FLOAT, 10x5]
+  %2[FLOAT, 5x5]
+  %3[FLOAT, 5]
+) {
+  %7 = Gemm[alpha = 1, beta = 1, broadcast = 1](%1, %2, %3)
+  return %7
+}
