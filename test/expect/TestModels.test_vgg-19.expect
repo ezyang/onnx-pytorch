@@ -93,15 +93,12 @@ graph torch-jit-export (
   %90 = Relu(%89)
   %91 = MaxPool[kernel_shape = [2, 2], pads = [0, 0], strides = [2, 2]](%90)
   %92 = Reshape[shape = [2, -1]](%91)
-  %93 = Transpose[perm = [1, 0]](%33)
-  %95 = Gemm[alpha = 1, beta = 1, broadcast = 1](%92, %93, %34)
+  %95 = Gemm[alpha = 1, beta = 1, broadcast = 1, transB = 1](%92, %33, %34)
   %96 = Relu(%95)
   %97, %98 = Dropout[is_test = 1, ratio = 0.5](%96)
-  %99 = Transpose[perm = [1, 0]](%35)
-  %101 = Gemm[alpha = 1, beta = 1, broadcast = 1](%97, %99, %36)
+  %101 = Gemm[alpha = 1, beta = 1, broadcast = 1, transB = 1](%97, %35, %36)
   %102 = Relu(%101)
   %103, %104 = Dropout[is_test = 1, ratio = 0.5](%102)
-  %105 = Transpose[perm = [1, 0]](%37)
-  %107 = Gemm[alpha = 1, beta = 1, broadcast = 1](%103, %105, %38)
+  %107 = Gemm[alpha = 1, beta = 1, broadcast = 1, transB = 1](%103, %37, %38)
   return %107
 }

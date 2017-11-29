@@ -1033,7 +1033,6 @@ graph torch-jit-export (
   %1150 = Relu(%1149)
   %1151 = AveragePool[kernel_shape = [7, 7], pads = [0, 0], strides = [7, 7]](%1150)
   %1152 = Reshape[shape = [2, -1]](%1151)
-  %1153 = Transpose[perm = [1, 0]](%605)
-  %1155 = Gemm[alpha = 1, beta = 1, broadcast = 1](%1152, %1153, %606)
+  %1155 = Gemm[alpha = 1, beta = 1, broadcast = 1, transB = 1](%1152, %605, %606)
   return %1155
 }
