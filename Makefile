@@ -11,8 +11,8 @@ pytorch:
 pytorch-develop:
 	cd pytorch && python setup.py develop
 test:
-	python test/test_operators.py
-	python test/test_models.py
-	python test/test_caffe2.py
-	python test/test_verify.py
-	python test/test_pytorch_helper.py
+	python test/test_operators.py -v
+	python test/test_models.py -v
+	python test/test_caffe2.py -v
+	python test/test_verify.py -v
+	python test/test_pytorch_helper.py -v

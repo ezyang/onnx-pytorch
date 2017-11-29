@@ -9,8 +9,12 @@ from onnx_pytorch.pytorch_helper import PyTorchModule
 import unittest
 from caffe2.python.core import workspace
 
+from test_common import skipIfNoLapack
+
 
 class TestCaffe2Backend(unittest.TestCase):
+
+    @skipIfNoLapack
     def test_helper(self):
 
 
