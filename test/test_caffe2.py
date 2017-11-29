@@ -33,6 +33,8 @@ from model_defs.mnist import MNIST
 import onnx
 import onnx_caffe2.backend as c2
 
+from test_common import skipIfTravis, skipIfNoLapack
+
 skip = unittest.skip
 
 
@@ -61,18 +63,6 @@ def do_export(model, inputs, *args, **kwargs):
     f = io.BytesIO()
     out = torch.onnx._export(model, inputs, f, *args, **kwargs)
     return f.getvalue(), out
-
-
-def skipIfNoLapack(fn):
-    @wraps(fn)
-    def wrapper(*args, **kwargs):
-        try:
-            fn(*args, **kwargs)
-        except Exception as e:
-            if 'Lapack library not found' in e.args[0]:
-                raise unittest.SkipTest('Compiled without Lapack')
-            raise
-    return wrapper
 
 
 torch.set_default_tensor_type('torch.FloatTensor')
@@ -184,6 +174,7 @@ class TestCaffe2Backend(unittest.TestCase):
         self.run_model_test(alexnet, train=False, batch_size=BATCH_SIZE,
                             state_dict=state_dict)
 
+    @skipIfTravis
     def test_dcgan(self):
         # dcgan is flaky on some seeds, see:
         # https://github.com/ProjectToffee/onnx/pull/70
@@ -251,6 +242,7 @@ class TestCaffe2Backend(unittest.TestCase):
                             batch_size=1, state_dict=state_dict,
                             input=x, use_gpu=False)
 
+    @skipIfTravis
     @skipIfNoLapack
     def test_super_resolution(self):
         super_resolution_net = SuperResolutionNet(upscale_factor=3)
