@@ -12,7 +12,7 @@ setup(
     description="PyTorch helpers for working with Open Neural Network Exchange format",
     install_requires=['numpy', 'onnx'],
     setup_requires=[],
-    tests_require=['onnx-caffe2'],
+    tests_require=[],
     packages=find_packages(),
     author='ezyang',
     author_email='ezyang@fb.com',
