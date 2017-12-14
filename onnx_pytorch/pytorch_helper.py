@@ -57,8 +57,7 @@ def PyTorchModule(helper, model, sample_arguments, caffe2_inputs, prefix_name=No
     torch.onnx.export(
         model, sample_arguments,  f, export_params=True)
     onnx_model = onnx.load(io.BytesIO(f.getvalue()))
-    init_net, predict_net = Caffe2Backend.onnx_graph_to_caffe2_net(
-        onnx_model.graph)
+    init_net, predict_net = Caffe2Backend.onnx_graph_to_caffe2_net(onnx_model)
 
     initialized = set([x.name for x in onnx_model.graph.initializer])
     uninitialized_inputs = {x.name: i for i, x in enumerate(
